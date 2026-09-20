@@ -133,26 +133,39 @@ function renderExerciseList(categoryKey) {
     showView('category');
     elements.categoriesContainer.innerHTML = '';
     
-    // Header
-    const header = document.createElement('h2');
-    header.className = 'section-header';
-    header.innerHTML = `${getCategoryIcon(categoryKey)} ${category.name}`;
-    elements.categoriesContainer.appendChild(header);
+    // Tabs Container
+    const tabsContainer = document.createElement('div');
+    tabsContainer.className = 'exercise-tabs';
     
-    // Übungen als Liste
+    // Alle Kategorien als Tabs
+    Object.entries(exercisesData.categories).forEach(([key, cat]) => {
+        const tab = document.createElement('button');
+        tab.className = 'exercise-tab';
+        if (key === categoryKey) {
+            tab.classList.add('active');
+        }
+        tab.innerHTML = `${getCategoryIcon(key)}<span>${cat.name}</span>`;
+        tab.addEventListener('click', () => {
+            renderExerciseList(key);
+        });
+        tabsContainer.appendChild(tab);
+    });
+    
+    elements.categoriesContainer.appendChild(tabsContainer);
+    
+    // Übungen darunter
     const exercisesList = document.createElement('div');
-    exercisesList.style.padding = '0 1rem';
+    exercisesList.className = 'exercises-list';
     
     exercises.forEach(exercise => {
         const item = document.createElement('div');
-        item.className = 'category-card';
-        item.style.marginBottom = '1rem';
+        item.className = 'exercise-item';
         item.innerHTML = `
             <div style="text-align: left;">
-                <div class="category-name" style="font-size: 1.1rem; margin-bottom: 0.5rem;">
+                <div class="exercise-item-name">
                     ${exercise.name}
                 </div>
-                <div style="color: var(--color-text-secondary); font-size: 0.85rem;">
+                <div class="exercise-item-meta">
                     ⏱️ ${exercise.duration} | ${exercise.solo ? '👤 Solo' : '👥 2+ Personen'}
                 </div>
             </div>
