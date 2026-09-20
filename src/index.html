@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interaktiver Fußball-Trainings-Guide">
+    <meta name="theme-color" content="#2d5016">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><circle cx='96' cy='96' r='90' fill='%232d5016'/><circle cx='96' cy='96' r='30' fill='white'/></svg>">
+    <link rel="stylesheet" href="styles.css">
+    <title>Trainings-Guide</title>
+</head>
+<body>
+    <div id="app">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <h1 class="navbar-title">⚽ Trainings-Guide</h1>
+            <button id="menu-btn" class="menu-btn">☰</button>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main">
+            <!-- Category View -->
+            <div id="category-view" class="view active">
+                <div class="categories-container">
+                    <!-- Dynamisch gefüllt -->
+                </div>
+            </div>
+
+            <!-- Exercise View -->
+            <div id="exercise-view" class="view">
+                <div class="exercise-container">
+                    <!-- Dynamisch gefüllt -->
+                </div>
+            </div>
+
+            <!-- Video Placeholder -->
+            <div id="video-view" class="view">
+                <div class="video-placeholder">
+                    <div class="video-icon">🎬</div>
+                    <p>Video-Platzhalter</p>
+                    <small id="video-title"></small>
+                </div>
+            </div>
+        </main>
+
+        <!-- Sidebar Menu -->
+        <aside id="sidebar" class="sidebar">
+            <div class="sidebar-header">
+                <h2>Kategorien</h2>
+                <button id="close-menu" class="close-btn">✕</button>
+            </div>
+            <nav id="categories-nav" class="categories-nav">
+                <!-- Dynamisch gefüllt -->
+            </nav>
+            <hr>
+            <div class="sidebar-footer">
+                <p><small>Offline verfügbar</small></p>
+                <p><small>U11/U12 • Competitive</small></p>
+            </div>
+        </aside>
+
+        <!-- Back Button -->
+        <button id="back-btn" class="back-btn hidden">← Zurück</button>
+    </div>
+
+    <!-- Loading Indicator -->
+    <div id="loading" class="loading hidden">
+        <div class="spinner"></div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js').catch(() => {});
+        }
+    </script>
+</body>
+</html>
