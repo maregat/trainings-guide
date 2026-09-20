@@ -2,9 +2,6 @@ let exercisesData = null;
 let currentView = 'categories';
 let currentCategory = null;
 
-// Detect if running on GitHub Pages or locally
-const BASE_URL = window.location.hostname.includes('github.io') ? '/trainings-guide/' : '/';
-
 const elements = {
     app: document.getElementById('app'),
     categoryView: document.getElementById('category-view'),
@@ -30,7 +27,7 @@ async function init() {
         showLoading();
         
         // Lade exercises.json
-        const response = await fetch(BASE_URL + 'data/exercises.json');
+        const response = await fetch('../data/exercises.json');
         if (!response.ok) throw new Error('Fehler beim Laden von exercises.json');
         
         exercisesData = await response.json();
