@@ -103,9 +103,8 @@ html, body {
 
 /* Main Content */
 .main {
-    flex: 1;
     overflow-y: auto;
-    padding: 1rem;
+    padding: 0;
     display: flex;
     position: relative;
     -webkit-overflow-scrolling: touch;
@@ -113,6 +112,7 @@ html, body {
     grid-row: 2;
     z-index: 1;
     min-height: 0;
+    flex-direction: column;
 }
 
 @media (min-width: 768px) {
@@ -127,6 +127,8 @@ html, body {
     width: 100%;
     display: none;
     flex-direction: column;
+    flex: 1;
+    min-height: 0;
 }
 
 .view.active {
@@ -135,10 +137,24 @@ html, body {
 
 /* Categories */
 .categories-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+    width: 100%;
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Switch to Flex when Exercise Tabs are present */
+.categories-container:has(.exercise-tabs) {
     display: flex;
     flex-direction: column;
-    width: 100%;
     gap: 0;
+    padding: 0;
+    overflow: visible;
 }
 
 /* Exercise Tabs */
@@ -217,7 +233,6 @@ html, body {
 .exercise-item-meta {
     font-size: 0.85rem;
     color: var(--color-text-secondary);
-}
 }
 
 .category-card {
