@@ -178,8 +178,10 @@ html, body {
 .exercise-container {
     background: var(--color-white);
     border-radius: 12px;
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
     box-shadow: var(--shadow-md);
+    -webkit-overflow-scrolling: touch;
 }
 
 .exercise-header {
