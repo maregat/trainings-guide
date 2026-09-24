@@ -294,7 +294,7 @@
         "motivation": "Mit unterschiedlicher Musik"
       },
       "progressionPath": ["Football Dance (Basis)", "Coerver Sets"],
-      "videoPlaceholder": {"url": "https://www.youtube.com/embed/IeMYh7roBjk?start=24&end=30&loop=1&playlist=IeMYh7roBjk", "duration": "0:24-0:30"}
+      "videoPlaceholder": {"url": "https://www.youtube.com/embed/dQw4w9WgXcQ?start=0&end=10&loop=1&playlist=dQw4w9WgXcQ", "duration": "0:10"}
     },
     "warmup_ballfeeling_roll_between": {
       "id": "warmup_ballfeeling_roll_between",
