@@ -212,15 +212,32 @@ function renderExerciseDetail(exerciseId) {
     
     // Video Placeholder
     if (exercise.videoPlaceholder) {
-        html += `
-            <div style="padding: 0 1.5rem;">
-                <div class="video-placeholder" onclick="showVideoPlaceholder('${exercise.name}', '${exercise.videoPlaceholder.duration}')">
-                    <div class="video-icon">🎬</div>
-                    <p>Video anschauen</p>
-                    <small>~${exercise.videoPlaceholder.duration}</small>
+        if (exercise.videoPlaceholder.url) {
+            // Echtes YouTube Video
+            html += `
+                <div style="padding: 0 1.5rem; margin-bottom: 1.5rem;">
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px;">
+                        <iframe 
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+                            src="${exercise.videoPlaceholder.url}" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen
+                        ></iframe>
+                    </div>
                 </div>
-            </div>
-        `;
+            `;
+        } else {
+            // Platzhalter für später
+            html += `
+                <div style="padding: 0 1.5rem;">
+                    <div class="video-placeholder">
+                        <div class="video-icon">🎬</div>
+                        <p>Video folgt in Kürze</p>
+                        <small>~${exercise.videoPlaceholder.duration}</small>
+                    </div>
+                </div>
+            `;
+        }
     }
     
     // Aufbau / Setup
