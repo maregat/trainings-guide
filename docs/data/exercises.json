@@ -57,6 +57,11 @@
       "name": "Juggling (Hochhalten)",
       "description": "Schult vor allem Ballgefühl und Koordination",
       "order": 6
+    },
+    "partner": {
+      "name": "Partnerübungen",
+      "description": "Diese Übungen benötigen eine zweite Person",
+      "order": 7
     }
   },
   "exercises": {
@@ -289,7 +294,7 @@
         "motivation": "Mit unterschiedlicher Musik"
       },
       "progressionPath": ["Football Dance (Basis)", "Coerver Sets"],
-      "videoPlaceholder": {"url": null, "duration": "0:15-0:25"}
+      "videoPlaceholder": {"url": "https://www.youtube.com/embed/IeMYh7roBjk?start=24&end=30&loop=1&playlist=IeMYh7roBjk", "duration": "0:24-0:30"}
     },
     "warmup_ballfeeling_roll_between": {
       "id": "warmup_ballfeeling_roll_between",
@@ -875,9 +880,9 @@
     },
     "partner_sharp_passes": {
       "id": "partner_sharp_passes",
-      "category": "ballIntake",
+      "category": "partner",
       "name": "Scharfe Flachpässe mit Annahme",
-      "order": 3,
+      "order": 1,
       "description": "Direkte Annahme und Weiterspiel bei realistischerem Passtempo als an der Wand.",
       "duration": "2-3 Serien à 10-15 Pässe",
       "setup": {"equipment": ["1 Ball", "2 Personen"], "space": "Ca. 5-10m", "solo": false, "partnerNeeded": true},
@@ -900,9 +905,9 @@
     },
     "partner_high_balls": {
       "id": "partner_high_balls",
-      "category": "ballIntake",
+      "category": "partner",
       "name": "Hohe Bälle zuwerfen/schießen",
-      "order": 4,
+      "order": 2,
       "description": "Annahme mit Oberschenkel oder Brust, danach Mitnahme in freien Raum.",
       "duration": "2-3 Serien à 10 Bälle",
       "setup": {"equipment": ["1 Ball", "2 Personen"], "space": "Ca. 8-10m", "solo": false, "partnerNeeded": true},
@@ -925,9 +930,9 @@
     },
     "partner_1v1_tight": {
       "id": "partner_1v1_tight",
-      "category": "dribbling",
+      "category": "partner",
       "name": "1-gegen-1 auf engem Raum",
-      "order": 8,
+      "order": 3,
       "description": "Ein Spieler verteidigt passiv bis halbaktiv, der andere übt Dribbling und Richtungswechsel unter echtem Druck.",
       "duration": "3-5 Minuten, mehrere Serien",
       "setup": {"equipment": ["1 Ball", "2 Personen", "4 Hütchen"], "space": "Ca. 5×5m", "solo": false, "partnerNeeded": true},
