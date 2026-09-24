@@ -1,6 +1,7 @@
 let exercisesData = null;
 let currentView = 'categories';
 let currentCategory = null;
+let currentExerciseId = null;
 
 const elements = {
     app: document.getElementById('app'),
@@ -34,6 +35,7 @@ async function init() {
         
         // Setup Event Listener
         setupEventListeners();
+        setupModalListeners();
         
         // Render Categories
         renderCategories();
@@ -193,6 +195,8 @@ function renderExerciseDetail(exerciseId) {
     const exercise = exercisesData.exercises[exerciseId];
     if (!exercise) return;
     
+    currentExerciseId = exerciseId;
+    
     showView('exercise');
     
     let html = `
@@ -224,6 +228,7 @@ function renderExerciseDetail(exerciseId) {
                             allowfullscreen
                         ></iframe>
                     </div>
+                    <button onclick="openVideoEditModal('${exercise.id}')" style="margin-top: 0.5rem; padding: 0.5rem 1rem; background: #f0f0f0; border: none; border-radius: 6px; cursor: pointer; font-size: 0.85rem;">✏️ Video bearbeiten</button>
                 </div>
             `;
         } else {
@@ -235,6 +240,7 @@ function renderExerciseDetail(exerciseId) {
                         <p>Video folgt in Kürze</p>
                         <small>~${exercise.videoPlaceholder.duration}</small>
                     </div>
+                    <button onclick="openVideoEditModal('${exercise.id}')" style="margin-top: 0.5rem; padding: 0.5rem 1rem; background: #f0f0f0; border: none; border-radius: 6px; cursor: pointer; font-size: 0.85rem; width: 100%;">+ Video hinzufügen</button>
                 </div>
             `;
         }
@@ -375,6 +381,121 @@ function showVideoPlaceholder(title, duration) {
     elements.videoTitle.textContent = `${title} (${duration})`;
     showView('video');
     elements.backBtn.classList.remove('hidden');
+}
+
+// ============================================
+// Video Edit Modal
+// ============================================
+
+function extractVideoId(urlOrId) {
+    // Handle full URL
+    if (urlOrId.includes('youtube.com') || urlOrId.includes('youtu.be')) {
+        const match = urlOrId.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([^&\n?#]+)/);
+        return match ? match[1] : null;
+    }
+    // Assume it's already an ID
+    return urlOrId;
+}
+
+function generateEmbedUrl(videoId, startSeconds, endSeconds) {
+    if (!videoId) return null;
+    const start = parseInt(startSeconds) || 0;
+    const end = parseInt(endSeconds) || 30;
+    return `https://www.youtube.com/embed/${videoId}?start=${start}&end=${end}&loop=1&playlist=${videoId}`;
+}
+
+function openVideoModal() {
+    document.getElementById('video-modal').classList.remove('hidden');
+    document.getElementById('modal-backdrop').classList.remove('hidden');
+}
+
+function closeVideoModal() {
+    document.getElementById('video-modal').classList.add('hidden');
+    document.getElementById('modal-backdrop').classList.add('hidden');
+    // Reset form
+    document.getElementById('video-url').value = '';
+    document.getElementById('video-start').value = '0';
+    document.getElementById('video-end').value = '30';
+    document.getElementById('video-preview').classList.add('hidden');
+    document.getElementById('embed-url').value = '';
+}
+
+function generatePreview() {
+    const urlInput = document.getElementById('video-url').value.trim();
+    const startInput = document.getElementById('video-start').value;
+    const endInput = document.getElementById('video-end').value;
+    
+    if (!urlInput) {
+        alert('Bitte gib eine YouTube-URL oder Video-ID ein');
+        return;
+    }
+    
+    const videoId = extractVideoId(urlInput);
+    if (!videoId) {
+        alert('Ungültige YouTube-URL oder Video-ID');
+        return;
+    }
+    
+    const embedUrl = generateEmbedUrl(videoId, startInput, endInput);
+    
+    // Show preview
+    const preview = document.getElementById('video-preview');
+    preview.innerHTML = `<iframe src="${embedUrl}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+    preview.classList.remove('hidden');
+    
+    // Update embed URL field
+    document.getElementById('embed-url').value = embedUrl;
+}
+
+function copyEmbedUrl() {
+    const urlField = document.getElementById('embed-url');
+    if (!urlField.value) {
+        alert('Bitte erstelle zuerst ein Preview');
+        return;
+    }
+    
+    urlField.select();
+    document.execCommand('copy');
+    alert('Embed-URL kopiert! Du kannst sie jetzt in die exercises.json eintragen.');
+}
+
+function saveVideoLocally() {
+    const embedUrl = document.getElementById('embed-url').value;
+    if (!embedUrl) {
+        alert('Bitte erstelle zuerst ein Preview');
+        return;
+    }
+    
+    // Save to localStorage for current exercise
+    if (currentExerciseId) {
+        const videoData = {
+            url: embedUrl,
+            saved: new Date().toISOString()
+        };
+        localStorage.setItem(`video_${currentExerciseId}`, JSON.stringify(videoData));
+        alert('Video-Link lokal gespeichert! (Nur auf diesem Gerät)');
+        closeVideoModal();
+    }
+}
+
+function openVideoEditModal(exerciseId) {
+    currentExerciseId = exerciseId;
+    openVideoModal();
+}
+
+// Setup Modal Event Listeners
+function setupModalListeners() {
+    document.getElementById('close-modal').addEventListener('click', closeVideoModal);
+    document.getElementById('cancel-modal-btn').addEventListener('click', closeVideoModal);
+    document.getElementById('modal-backdrop').addEventListener('click', closeVideoModal);
+    document.getElementById('generate-preview-btn').addEventListener('click', generatePreview);
+    document.getElementById('copy-url-btn').addEventListener('click', copyEmbedUrl);
+    document.getElementById('save-video-btn').addEventListener('click', saveVideoLocally);
+    
+    // Generate preview on Enter in end field
+    document.getElementById('video-end').addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') generatePreview();
+    });
 }
 
 function goBack() {
