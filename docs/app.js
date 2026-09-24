@@ -224,8 +224,9 @@ function renderExerciseDetail(exerciseId) {
                         <iframe 
                             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
                             src="${exercise.videoPlaceholder.url}" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
                             allowfullscreen
+                            referrerpolicy="no-referrer-when-downgrade"
                         ></iframe>
                     </div>
                     <button onclick="openVideoEditModal('${exercise.id}')" style="margin-top: 0.5rem; padding: 0.5rem 1rem; background: #f0f0f0; border: none; border-radius: 6px; cursor: pointer; font-size: 0.85rem;">✏️ Video bearbeiten</button>
@@ -440,7 +441,7 @@ function generatePreview() {
     
     // Show preview
     const preview = document.getElementById('video-preview');
-    preview.innerHTML = `<iframe src="${embedUrl}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+    preview.innerHTML = `<iframe src="${embedUrl}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>`;
     preview.classList.remove('hidden');
     
     // Update embed URL field
