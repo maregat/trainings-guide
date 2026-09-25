@@ -57,11 +57,6 @@
       "name": "Juggling (Hochhalten)",
       "description": "Schult vor allem Ballgefühl und Koordination",
       "order": 6
-    },
-    "partner": {
-      "name": "Partnerübungen",
-      "description": "Diese Übungen benötigen eine zweite Person",
-      "order": 7
     }
   },
   "exercises": {
