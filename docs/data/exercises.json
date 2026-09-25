@@ -113,14 +113,9 @@
         "Linienspringen vor/zurück",
         "Koordinationsleiter"
       ],
-      "videoPlaceholder": {
+      "videoLink": {
         "url": null,
-        "duration": "0:20-0:30",
-        "keyframes": [
-          "Start-Position",
-          "Sprung-Technik",
-          "Rhythmus"
-        ]
+        "title": null
       }
     },
     "warmup_coordination_line_jump_both": {
@@ -168,9 +163,9 @@
         "Seitliches Linienspringen – beidbeinig (aktuell)",
         "Linienspringen vor/zurück"
       ],
-      "videoPlaceholder": {
+      "videoLink": {
         "url": null,
-        "duration": "0:20-0:30"
+        "title": null
       }
     },
     "warmup_coordination_line_forward_back": {
@@ -218,9 +213,9 @@
         "Linienspringen vor/zurück (aktuell)",
         "Koordinationsleiter"
       ],
-      "videoPlaceholder": {
+      "videoLink": {
         "url": null,
-        "duration": "0:20-0:30"
+        "title": null
       }
     },
     "warmup_coordination_ladder_one": {
@@ -269,9 +264,9 @@
         "Zwei Kontakte pro Feld",
         "Seitwärts"
       ],
-      "videoPlaceholder": {
+      "videoLink": {
         "url": null,
-        "duration": "0:20-0:30"
+        "title": null
       }
     },
     "warmup_coordination_ladder_two": {
@@ -320,9 +315,9 @@
         "Ein Kontakt (schwerer)",
         "Seitwärts"
       ],
-      "videoPlaceholder": {
+      "videoLink": {
         "url": null,
-        "duration": "0:20-0:30"
+        "title": null
       }
     },
     "warmup_ballfeeling_toe_taps": {
@@ -372,9 +367,9 @@
         "Football Dance",
         "Coerver Sets"
       ],
-      "videoPlaceholder": {
+      "videoLink": {
         "url": null,
-        "duration": "0:15-0:25"
+        "title": null
       }
     },
     "warmup_ballfeeling_football_dance": {
@@ -423,9 +418,9 @@
         "Football Dance (Basis)",
         "Coerver Sets"
       ],
-      "videoPlaceholder": {
-        "url": "https://www.youtube.com/embed/dQw4w9WgXcQ?start=0&end=10&loop=1&playlist=dQw4w9WgXcQ",
-        "duration": "0:10"
+      "videoLink": {
+        "url": null,
+        "title": null
       }
     },
     "warmup_ballfeeling_roll_between": {
@@ -474,9 +469,9 @@
         "Rollen (Basis)",
         "Pull-Push"
       ],
-      "videoPlaceholder": {
+      "videoLink": {
         "url": null,
-        "duration": "0:15-0:25"
+        "title": null
       }
     },
     "warmup_ballfeeling_sole_pull_push": {
@@ -525,9 +520,9 @@
         "Pull-Push (Basis)",
         "Sole Drag"
       ],
-      "videoPlaceholder": {
+      "videoLink": {
         "url": null,
-        "duration": "0:15-0:25"
+        "title": null
       }
     },
     "warmup_ballfeeling_inside_outside_tipping": {
@@ -576,9 +571,9 @@
         "Innen/Außen (Basis)",
         "Coerver Sets"
       ],
-      "videoPlaceholder": {
+      "videoLink": {
         "url": null,
-        "duration": "0:15-0:25"
+        "title": null
       }
     },
     "technical_first_touch_wall": {
@@ -627,9 +622,9 @@
         "Hochwurf-Annahme",
         "Mit Partner"
       ],
-      "videoPlaceholder": {
+      "videoLink": {
         "url": null,
-        "duration": "0:20-0:30"
+        "title": null
       }
     },
     "technical_first_touch_throw": {
@@ -676,9 +671,9 @@
         "Hochwurf (aktuell)",
         "Mit Partner"
       ],
-      "videoPlaceholder": {
+      "videoLink": {
         "url": null,
-        "duration": "0:20-0:30"
+        "title": null
       }
     },
     "technical_ballintake_wall": {
@@ -727,9 +722,9 @@
         "Hütchen-Mitnahme",
         "Mit Partner"
       ],
-      "videoPlaceholder": {
+      "videoLink": {
         "url": null,
-        "duration": "0:20-0:30"
+        "title": null
       }
     },
     "technical_ballintake_cones": {
@@ -777,9 +772,9 @@
         "Hütchen-Mitnahme (aktuell)",
         "Mit Partner"
       ],
-      "videoPlaceholder": {
+      "videoLink": {
         "url": null,
-        "duration": "0:20-0:30"
+        "title": null
       }
     },
     "technical_ballcontrol_inside_outside": {
@@ -826,9 +821,9 @@
         "Innen/Außen (aktuell)",
         "Mit Hütchen"
       ],
-      "videoPlaceholder": {
+      "videoLink": {
         "url": null,
-        "duration": "0:20-0:30"
+        "title": null
       }
     },
     "technical_ballcontrol_sole_roll": {
@@ -875,9 +870,9 @@
         "Sohlenrollen (aktuell)",
         "Mit Hütchen"
       ],
-      "videoPlaceholder": {
+      "videoLink": {
         "url": null,
-        "duration": "0:20-0:30"
+        "title": null
       }
     },
     "technical_dribbling_slalom_basis": {
@@ -931,9 +926,9 @@
         "Versetzt",
         "Mit Finten"
       ],
-      "videoPlaceholder": {
+      "videoLink": {
         "url": null,
-        "duration": "0:25-0:35"
+        "title": null
       }
     },
     "technical_dribbling_speed_slalom": {
@@ -982,9 +977,9 @@
         "Speed-Slalom (aktuell)",
         "Präzisions-Slalom"
       ],
-      "videoPlaceholder": {
+      "videoLink": {
         "url": null,
-        "duration": "0:20-0:30"
+        "title": null
       }
     },
     "technical_dribbling_precision_straight": {
@@ -1033,9 +1028,9 @@
         "Präzision versetzt",
         "Basis-Slalom"
       ],
-      "videoPlaceholder": {
+      "videoLink": {
         "url": null,
-        "duration": "0:25-0:35"
+        "title": null
       }
     },
     "technical_dribbling_precision_offset": {
@@ -1083,9 +1078,9 @@
         "Versetzt (aktuell)",
         "Mit Finten"
       ],
-      "videoPlaceholder": {
+      "videoLink": {
         "url": null,
-        "duration": "0:25-0:35"
+        "title": null
       }
     },
     "technical_dribbling_l_drill": {
@@ -1133,9 +1128,9 @@
         "L-Drill (aktuell)",
         "Box-Dribbling"
       ],
-      "videoPlaceholder": {
+      "videoLink": {
         "url": null,
-        "duration": "0:20-0:30"
+        "title": null
       }
     },
     "technical_dribbling_box": {
@@ -1183,9 +1178,9 @@
         "Box-Dribbling (aktuell)",
         "Mit Partner"
       ],
-      "videoPlaceholder": {
+      "videoLink": {
         "url": null,
-        "duration": "0:25-0:35"
+        "title": null
       }
     },
     "technical_dribbling_zigzag_stepover": {
@@ -1233,9 +1228,9 @@
         "Zick-Zack (aktuell)",
         "Mit Partner"
       ],
-      "videoPlaceholder": {
+      "videoLink": {
         "url": null,
-        "duration": "0:25-0:35"
+        "title": null
       }
     },
     "technical_directionchange_star": {
@@ -1284,9 +1279,9 @@
         "Gates",
         "Kastenwechsel"
       ],
-      "videoPlaceholder": {
+      "videoLink": {
         "url": null,
-        "duration": "0:20-0:30"
+        "title": null
       }
     },
     "technical_directionchange_gates": {
@@ -1335,9 +1330,9 @@
         "Mit Finten",
         "Mit Partner"
       ],
-      "videoPlaceholder": {
+      "videoLink": {
         "url": null,
-        "duration": "0:20-0:30"
+        "title": null
       }
     },
     "technical_directionchange_box": {
@@ -1385,9 +1380,9 @@
         "Kastenwechsel (aktuell)",
         "Mit Partner"
       ],
-      "videoPlaceholder": {
+      "videoLink": {
         "url": null,
-        "duration": "0:20-0:30"
+        "title": null
       }
     },
     "technical_juggling_level1": {
@@ -1435,9 +1430,9 @@
         "Level 2 – abwechselnd",
         "Level 3"
       ],
-      "videoPlaceholder": {
+      "videoLink": {
         "url": null,
-        "duration": "0:15-0:20"
+        "title": null
       }
     },
     "technical_juggling_level2": {
@@ -1484,9 +1479,9 @@
         "Level 2 (aktuell)",
         "Level 3 – Körperteile"
       ],
-      "videoPlaceholder": {
+      "videoLink": {
         "url": null,
-        "duration": "0:15-0:20"
+        "title": null
       }
     },
     "technical_juggling_level3": {
@@ -1533,9 +1528,9 @@
         "Level 3 (aktuell)",
         "Level 4 – Bewegung"
       ],
-      "videoPlaceholder": {
+      "videoLink": {
         "url": null,
-        "duration": "0:15-0:20"
+        "title": null
       }
     },
     "technical_juggling_level4": {
@@ -1583,9 +1578,9 @@
         "Mit Partner",
         "Im Spiel"
       ],
-      "videoPlaceholder": {
+      "videoLink": {
         "url": null,
-        "duration": "0:15-0:20"
+        "title": null
       }
     },
     "partner_sharp_passes": {
@@ -1635,9 +1630,9 @@
         "Mit Richtungswechsel",
         "1v1"
       ],
-      "videoPlaceholder": {
+      "videoLink": {
         "url": null,
-        "duration": "0:20-0:30"
+        "title": null
       }
     },
     "partner_high_balls": {
@@ -1687,9 +1682,9 @@
         "Mit leichtem Druck",
         "1v1"
       ],
-      "videoPlaceholder": {
+      "videoLink": {
         "url": null,
-        "duration": "0:20-0:30"
+        "title": null
       }
     },
     "partner_1v1_tight": {
@@ -1740,9 +1735,9 @@
         "Mit Tor",
         "Mit mehreren Bällen"
       ],
-      "videoPlaceholder": {
+      "videoLink": {
         "url": null,
-        "duration": "0:25-0:35"
+        "title": null
       }
     }
   },
