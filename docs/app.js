@@ -240,10 +240,6 @@ function renderExerciseDetail(exerciseId) {
         }
     }
     
-            `;
-        }
-    }
-    
     // Aufbau / Setup
     if (exercise.setup) {
         html += `
