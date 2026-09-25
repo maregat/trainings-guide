@@ -80,19 +80,22 @@ function setupPullToRefresh() {
     const pullToRefreshEl = document.getElementById('pull-to-refresh');
     
     main.addEventListener('touchstart', (e) => {
+        // Nur merken, nicht aktiv werden
         if (main.scrollTop === 0) {
             pullStartY = e.touches[0].clientY;
-            isPulling = true;
         }
     }, { passive: true });
     
     main.addEventListener('touchmove', (e) => {
-        if (!isPulling) return;
+        if (main.scrollTop !== 0) return;
         
         const pullDistance = e.touches[0].clientY - pullStartY;
         
-        if (pullDistance > 0 && main.scrollTop === 0) {
-            e.preventDefault();
+        // Nur wenn nach unten gezogen wird
+        if (pullDistance > 0) {
+            isPulling = true;
+            e.preventDefault(); // Verhindert Scrolling
+            
             pullToRefreshEl.style.transform = `translateY(${Math.min(pullDistance, 80) - 100}px)`;
             
             if (pullDistance > 80) {
@@ -122,6 +125,7 @@ function setupPullToRefresh() {
         }
     }, { passive: true });
 }
+
 
 async function refreshApp() {
     const pullToRefreshEl = document.getElementById('pull-to-refresh');
