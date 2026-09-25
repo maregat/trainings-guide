@@ -74,7 +74,9 @@
       "description": "Auf einem Bein seitlich über eine Linie hin- und herspringen.",
       "duration": "60-90 Sekunden pro Bein",
       "setup": {
-        "equipment": ["Linie oder Kreppband"],
+        "equipment": [
+          "Linie oder Kreppband"
+        ],
         "space": "Minimal (ca. 2m x 2m)",
         "solo": true
       },
@@ -119,7 +121,11 @@
       "videoPlaceholder": {
         "url": null,
         "duration": "0:20-0:30",
-        "keyframes": ["Start-Position", "Sprung-Technik", "Rhythmus"]
+        "keyframes": [
+          "Start-Position",
+          "Sprung-Technik",
+          "Rhythmus"
+        ]
       }
     },
     "warmup_coordination_line_jump_both": {
@@ -131,17 +137,31 @@
       "description": "Mit geschlossenen Füßen seitlich über die Linie hin- und herspringen.",
       "duration": "60-90 Sekunden",
       "setup": {
-        "equipment": ["Linie oder Kreppband"],
+        "equipment": [
+          "Linie oder Kreppband"
+        ],
         "space": "Minimal (ca. 2m x 2m)",
         "solo": true
       },
       "technique": {
-        "keyPoints": ["Füße zusammen", "Zügiger Rhythmus", "Elastische Landung"],
+        "keyPoints": [
+          "Füße zusammen",
+          "Zügiger Rhythmus",
+          "Elastische Landung"
+        ],
         "focus": "Rhythmusgefühl, schnelle Bodenkontaktzeit"
       },
       "commonMistakes": [
-        {"mistake": "Füße zu weit auseinander", "consequence": "Verliert die Einheit", "correction": "Eng zusammenhalten"},
-        {"mistake": "Ungleichmäßiger Rhythmus", "consequence": "Trainiert Rhythmus nicht", "correction": "Mit Musik trainieren"}
+        {
+          "mistake": "Füße zu weit auseinander",
+          "consequence": "Verliert die Einheit",
+          "correction": "Eng zusammenhalten"
+        },
+        {
+          "mistake": "Ungleichmäßiger Rhythmus",
+          "consequence": "Trainiert Rhythmus nicht",
+          "correction": "Mit Musik trainieren"
+        }
       ],
       "coachingTips": {
         "observation": "Regelmäßigkeit des Rhythmus beobachten",
@@ -149,8 +169,14 @@
         "scaling_harder": "Schnelleres Tempo (160+ BPM)",
         "motivation": "Mit Musik"
       },
-      "progressionPath": ["Seitliches Linienspringen – beidbeinig (aktuell)", "Linienspringen vor/zurück"],
-      "videoPlaceholder": {"url": null, "duration": "0:20-0:30"}
+      "progressionPath": [
+        "Seitliches Linienspringen – beidbeinig (aktuell)",
+        "Linienspringen vor/zurück"
+      ],
+      "videoPlaceholder": {
+        "url": null,
+        "duration": "0:20-0:30"
+      }
     },
     "warmup_coordination_line_forward_back": {
       "id": "warmup_coordination_line_forward_back",
@@ -161,17 +187,31 @@
       "description": "Beidbeinig vorwärts über die Linie springen, dann rückwärts zurück.",
       "duration": "60-90 Sekunden",
       "setup": {
-        "equipment": ["Linie oder Kreppband"],
+        "equipment": [
+          "Linie oder Kreppband"
+        ],
         "space": "Minimal (ca. 3m x 2m)",
         "solo": true
       },
       "technique": {
-        "keyPoints": ["Kraftvolle Sprünge", "Schnelle Richtungswechsel", "Schnelle Bodenkontaktzeit"],
+        "keyPoints": [
+          "Kraftvolle Sprünge",
+          "Schnelle Richtungswechsel",
+          "Schnelle Bodenkontaktzeit"
+        ],
         "focus": "Explosive Kraft, Richtungswechsel-Schnelligkeit"
       },
       "commonMistakes": [
-        {"mistake": "Lange Bodenkontaktzeit", "consequence": "Trainiert nicht die Explosivität", "correction": "Federnde Landung, schnell weg"},
-        {"mistake": "Rückwärts schwächer", "consequence": "Asymmetrische Entwicklung", "correction": "Gleich Zeit für beide Richtungen"}
+        {
+          "mistake": "Lange Bodenkontaktzeit",
+          "consequence": "Trainiert nicht die Explosivität",
+          "correction": "Federnde Landung, schnell weg"
+        },
+        {
+          "mistake": "Rückwärts schwächer",
+          "consequence": "Asymmetrische Entwicklung",
+          "correction": "Gleich Zeit für beide Richtungen"
+        }
       ],
       "coachingTips": {
         "observation": "Sprungkraft und Schnelligkeit beobachten",
@@ -179,8 +219,14 @@
         "scaling_harder": "Schnellere Wechsel, längere Serien",
         "motivation": "Mit Musik"
       },
-      "progressionPath": ["Linienspringen vor/zurück (aktuell)", "Koordinationsleiter"],
-      "videoPlaceholder": {"url": null, "duration": "0:20-0:30"}
+      "progressionPath": [
+        "Linienspringen vor/zurück (aktuell)",
+        "Koordinationsleiter"
+      ],
+      "videoPlaceholder": {
+        "url": null,
+        "duration": "0:20-0:30"
+      }
     },
     "warmup_coordination_ladder_one": {
       "id": "warmup_coordination_ladder_one",
@@ -191,17 +237,31 @@
       "description": "Mit einem schnellen Schritt durch jedes Feld laufen.",
       "duration": "2-3 Durchgänge à 20-30 Sekunden",
       "setup": {
-        "equipment": ["Koordinationsleiter"],
+        "equipment": [
+          "Koordinationsleiter"
+        ],
         "space": "Linear, ca. 4-5m lang",
         "solo": true
       },
       "technique": {
-        "keyPoints": ["Ein Fuß pro Feld", "Schnelle Schritte", "Blick nach vorne"],
+        "keyPoints": [
+          "Ein Fuß pro Feld",
+          "Schnelle Schritte",
+          "Blick nach vorne"
+        ],
         "focus": "Schnelligkeit, Koordination der Beine"
       },
       "commonMistakes": [
-        {"mistake": "Schaut nach unten", "consequence": "Schlechte Haltung", "correction": "Kopf oben, Augen nach vorne"},
-        {"mistake": "Zu langsam", "consequence": "Trainiert nicht die Schnelligkeit", "correction": "Höheres Tempo"}
+        {
+          "mistake": "Schaut nach unten",
+          "consequence": "Schlechte Haltung",
+          "correction": "Kopf oben, Augen nach vorne"
+        },
+        {
+          "mistake": "Zu langsam",
+          "consequence": "Trainiert nicht die Schnelligkeit",
+          "correction": "Höheres Tempo"
+        }
       ],
       "coachingTips": {
         "observation": "U11/U12 haben oft noch Koordinationsprobleme – normal",
@@ -209,8 +269,15 @@
         "scaling_harder": "Schnelleres Tempo",
         "motivation": "Mit Musik trainieren"
       },
-      "progressionPath": ["Ein Kontakt (aktuell)", "Zwei Kontakte pro Feld", "Seitwärts"],
-      "videoPlaceholder": {"url": null, "duration": "0:20-0:30"}
+      "progressionPath": [
+        "Ein Kontakt (aktuell)",
+        "Zwei Kontakte pro Feld",
+        "Seitwärts"
+      ],
+      "videoPlaceholder": {
+        "url": null,
+        "duration": "0:20-0:30"
+      }
     },
     "warmup_coordination_ladder_two": {
       "id": "warmup_coordination_ladder_two",
@@ -221,17 +288,31 @@
       "description": "Mit zwei Schritten pro Feld durch die Leiter laufen.",
       "duration": "2-3 Durchgänge à 30-40 Sekunden",
       "setup": {
-        "equipment": ["Koordinationsleiter"],
+        "equipment": [
+          "Koordinationsleiter"
+        ],
         "space": "Linear, ca. 4-5m lang",
         "solo": true
       },
       "technique": {
-        "keyPoints": ["Zwei Schritte pro Feld", "Gleichmäßiger Rhythmus", "Etwas kontrollierter"],
+        "keyPoints": [
+          "Zwei Schritte pro Feld",
+          "Gleichmäßiger Rhythmus",
+          "Etwas kontrollierter"
+        ],
         "focus": "Rhythmuskontrolle, Koordination"
       },
       "commonMistakes": [
-        {"mistake": "Ungleichmäßige Schritte", "consequence": "Rhythmus verfälscht", "correction": "Mit Musik trainieren"},
-        {"mistake": "Zu viel Oberkörper-Beugung", "consequence": "Ineffizient", "correction": "Aufrecht halten"}
+        {
+          "mistake": "Ungleichmäßige Schritte",
+          "consequence": "Rhythmus verfälscht",
+          "correction": "Mit Musik trainieren"
+        },
+        {
+          "mistake": "Zu viel Oberkörper-Beugung",
+          "consequence": "Ineffizient",
+          "correction": "Aufrecht halten"
+        }
       ],
       "coachingTips": {
         "observation": "Guter Einstieg – nicht zu schnell",
@@ -239,8 +320,15 @@
         "scaling_harder": "Ein Schritt pro Feld",
         "motivation": "Mit verschiedenen BPM"
       },
-      "progressionPath": ["Zwei Kontakte (aktuell)", "Ein Kontakt (schwerer)", "Seitwärts"],
-      "videoPlaceholder": {"url": null, "duration": "0:20-0:30"}
+      "progressionPath": [
+        "Zwei Kontakte (aktuell)",
+        "Ein Kontakt (schwerer)",
+        "Seitwärts"
+      ],
+      "videoPlaceholder": {
+        "url": null,
+        "duration": "0:20-0:30"
+      }
     },
     "warmup_ballfeeling_toe_taps": {
       "id": "warmup_ballfeeling_toe_taps",
@@ -251,14 +339,32 @@
       "coeverSet": "basis",
       "description": "Ball abwechselnd mit den Fußspitzen von oben antippen.",
       "duration": "40 Sekunden aktiv / 20 Sekunden Pause",
-      "setup": {"equipment": ["1 Ball"], "space": "Auf der Stelle", "solo": true},
+      "setup": {
+        "equipment": [
+          "1 Ball"
+        ],
+        "space": "Auf der Stelle",
+        "solo": true
+      },
       "technique": {
-        "keyPoints": ["Leichte Taps", "Rhythmische Bewegungen", "Aufrechte Haltung"],
+        "keyPoints": [
+          "Leichte Taps",
+          "Rhythmische Bewegungen",
+          "Aufrechte Haltung"
+        ],
         "focus": "Ballgefühl mit Fußspitzen, feines Ballkontakt-Feeling"
       },
       "commonMistakes": [
-        {"mistake": "Klopft zu fest", "consequence": "Ball springt weg", "correction": "Leichte Taps"},
-        {"mistake": "Zu langsam", "consequence": "Trainiert nicht Schnelligkeit", "correction": "Tempo erhöhen"}
+        {
+          "mistake": "Klopft zu fest",
+          "consequence": "Ball springt weg",
+          "correction": "Leichte Taps"
+        },
+        {
+          "mistake": "Zu langsam",
+          "consequence": "Trainiert nicht Schnelligkeit",
+          "correction": "Tempo erhöhen"
+        }
       ],
       "coachingTips": {
         "observation": "Eine der wichtigsten Basis-Übungen",
@@ -266,8 +372,15 @@
         "scaling_harder": "Schnelleres Tempo (140+ BPM)",
         "motivation": "Mit Musik trainieren"
       },
-      "progressionPath": ["Toe-Taps (Basis)", "Football Dance", "Coerver Sets"],
-      "videoPlaceholder": {"url": null, "duration": "0:15-0:25"}
+      "progressionPath": [
+        "Toe-Taps (Basis)",
+        "Football Dance",
+        "Coerver Sets"
+      ],
+      "videoPlaceholder": {
+        "url": null,
+        "duration": "0:15-0:25"
+      }
     },
     "warmup_ballfeeling_football_dance": {
       "id": "warmup_ballfeeling_football_dance",
@@ -278,14 +391,32 @@
       "coeverSet": "basis",
       "description": "Ball in schnellem Fußwechsel antippen – tänzelnde Bewegung.",
       "duration": "40 Sekunden aktiv / 20 Sekunden Pause",
-      "setup": {"equipment": ["1 Ball"], "space": "Auf der Stelle", "solo": true},
+      "setup": {
+        "equipment": [
+          "1 Ball"
+        ],
+        "space": "Auf der Stelle",
+        "solo": true
+      },
       "technique": {
-        "keyPoints": ["Schneller Wechsel", "Tänzelnde Bewegung", "Rhythmisch"],
+        "keyPoints": [
+          "Schneller Wechsel",
+          "Tänzelnde Bewegung",
+          "Rhythmisch"
+        ],
         "focus": "Rhythmusgefühl, schnelle Fuß-Koordination"
       },
       "commonMistakes": [
-        {"mistake": "Ungleichmäßiger Rhythmus", "consequence": "Ineffizient", "correction": "Mit Musik trainieren"},
-        {"mistake": "Zu langsam", "consequence": "Trainiert nicht das Gefühl", "correction": "Tempo erhöhen"}
+        {
+          "mistake": "Ungleichmäßiger Rhythmus",
+          "consequence": "Ineffizient",
+          "correction": "Mit Musik trainieren"
+        },
+        {
+          "mistake": "Zu langsam",
+          "consequence": "Trainiert nicht das Gefühl",
+          "correction": "Tempo erhöhen"
+        }
       ],
       "coachingTips": {
         "observation": "Achte auf Gleichmäßigkeit",
@@ -293,8 +424,14 @@
         "scaling_harder": "Schnelleres Tempo",
         "motivation": "Mit unterschiedlicher Musik"
       },
-      "progressionPath": ["Football Dance (Basis)", "Coerver Sets"],
-      "videoPlaceholder": {"url": "https://www.youtube.com/embed/dQw4w9WgXcQ?start=0&end=10&loop=1&playlist=dQw4w9WgXcQ", "duration": "0:10"}
+      "progressionPath": [
+        "Football Dance (Basis)",
+        "Coerver Sets"
+      ],
+      "videoPlaceholder": {
+        "url": "https://www.youtube.com/embed/dQw4w9WgXcQ?start=0&end=10&loop=1&playlist=dQw4w9WgXcQ",
+        "duration": "0:10"
+      }
     },
     "warmup_ballfeeling_roll_between": {
       "id": "warmup_ballfeeling_roll_between",
@@ -305,14 +442,32 @@
       "coeverSet": "basis",
       "description": "Im Stehen den Ball abwechselnd mit rechts und links zwischen den Füßen hin- und herrollen.",
       "duration": "40 Sekunden aktiv / 20 Sekunden Pause",
-      "setup": {"equipment": ["1 Ball"], "space": "Auf der Stelle", "solo": true},
+      "setup": {
+        "equipment": [
+          "1 Ball"
+        ],
+        "space": "Auf der Stelle",
+        "solo": true
+      },
       "technique": {
-        "keyPoints": ["Mit der Sohle rollen", "Abwechselnd", "Sanfte Bewegungen"],
+        "keyPoints": [
+          "Mit der Sohle rollen",
+          "Abwechselnd",
+          "Sanfte Bewegungen"
+        ],
         "focus": "Ballkontrolle mit der Sohle, Feinmotorik"
       },
       "commonMistakes": [
-        {"mistake": "Ball rückt zu weit weg", "consequence": "Unkontrolliert", "correction": "Kürzere Rollbewegungen"},
-        {"mistake": "Nutzt falsche Fußfläche", "consequence": "Trainiert falsche Technik", "correction": "Sohle nutzen"}
+        {
+          "mistake": "Ball rückt zu weit weg",
+          "consequence": "Unkontrolliert",
+          "correction": "Kürzere Rollbewegungen"
+        },
+        {
+          "mistake": "Nutzt falsche Fußfläche",
+          "consequence": "Trainiert falsche Technik",
+          "correction": "Sohle nutzen"
+        }
       ],
       "coachingTips": {
         "observation": "Trainiert Sohlen-Kontrolle",
@@ -320,8 +475,14 @@
         "scaling_harder": "Schnellere Rollen",
         "motivation": "Mit Musik"
       },
-      "progressionPath": ["Rollen (Basis)", "Pull-Push"],
-      "videoPlaceholder": {"url": null, "duration": "0:15-0:25"}
+      "progressionPath": [
+        "Rollen (Basis)",
+        "Pull-Push"
+      ],
+      "videoPlaceholder": {
+        "url": null,
+        "duration": "0:15-0:25"
+      }
     },
     "warmup_ballfeeling_sole_pull_push": {
       "id": "warmup_ballfeeling_sole_pull_push",
@@ -332,14 +493,32 @@
       "coeverSet": "basis",
       "description": "Ball mit der Sohle antippen und sofort wieder wegziehen, auf der Stelle.",
       "duration": "40 Sekunden aktiv / 20 Sekunden Pause",
-      "setup": {"equipment": ["1 Ball"], "space": "Auf der Stelle", "solo": true},
+      "setup": {
+        "equipment": [
+          "1 Ball"
+        ],
+        "space": "Auf der Stelle",
+        "solo": true
+      },
       "technique": {
-        "keyPoints": ["Pull = ziehen", "Push = drücken", "Schnelle Rhythmik"],
+        "keyPoints": [
+          "Pull = ziehen",
+          "Push = drücken",
+          "Schnelle Rhythmik"
+        ],
         "focus": "Sohlen-Kontrolle, schnelle Fuß-Reaktion"
       },
       "commonMistakes": [
-        {"mistake": "Zu grobe Bewegungen", "consequence": "Ball springt weg", "correction": "Sanftere Taps"},
-        {"mistake": "Ball pendelt", "consequence": "Unkontrolliert", "correction": "Auf der Stelle halten"}
+        {
+          "mistake": "Zu grobe Bewegungen",
+          "consequence": "Ball springt weg",
+          "correction": "Sanftere Taps"
+        },
+        {
+          "mistake": "Ball pendelt",
+          "consequence": "Unkontrolliert",
+          "correction": "Auf der Stelle halten"
+        }
       ],
       "coachingTips": {
         "observation": "Wichtige Coerver-Basis-Übung",
@@ -347,8 +526,14 @@
         "scaling_harder": "Schnelleres Tempo",
         "motivation": "Mit Musik"
       },
-      "progressionPath": ["Pull-Push (Basis)", "Sole Drag"],
-      "videoPlaceholder": {"url": null, "duration": "0:15-0:25"}
+      "progressionPath": [
+        "Pull-Push (Basis)",
+        "Sole Drag"
+      ],
+      "videoPlaceholder": {
+        "url": null,
+        "duration": "0:15-0:25"
+      }
     },
     "warmup_ballfeeling_inside_outside_tipping": {
       "id": "warmup_ballfeeling_inside_outside_tipping",
@@ -359,14 +544,32 @@
       "coeverSet": "basis",
       "description": "Ball auf der Stelle abwechselnd mit Innen- und Außenseite antippen.",
       "duration": "40 Sekunden aktiv / 20 Sekunden Pause",
-      "setup": {"equipment": ["1 Ball"], "space": "Auf der Stelle", "solo": true},
+      "setup": {
+        "equipment": [
+          "1 Ball"
+        ],
+        "space": "Auf der Stelle",
+        "solo": true
+      },
       "technique": {
-        "keyPoints": ["Abwechselnd Innen und Außen", "Leichte Taps", "Rhythmisch"],
+        "keyPoints": [
+          "Abwechselnd Innen und Außen",
+          "Leichte Taps",
+          "Rhythmisch"
+        ],
         "focus": "Ballkontrolle mit Innen- und Außenseite"
       },
       "commonMistakes": [
-        {"mistake": "Nutzt nicht klar Innen/Außen", "consequence": "Trainiert falsch", "correction": "Bewusst wechseln"},
-        {"mistake": "Ball springt weg", "consequence": "Unkontrolliert", "correction": "Sanftere Taps"}
+        {
+          "mistake": "Nutzt nicht klar Innen/Außen",
+          "consequence": "Trainiert falsch",
+          "correction": "Bewusst wechseln"
+        },
+        {
+          "mistake": "Ball springt weg",
+          "consequence": "Unkontrolliert",
+          "correction": "Sanftere Taps"
+        }
       ],
       "coachingTips": {
         "observation": "Beide Seiten gleich trainieren",
@@ -374,8 +577,14 @@
         "scaling_harder": "Schnelleres Tempo",
         "motivation": "Mit Musik"
       },
-      "progressionPath": ["Innen/Außen (Basis)", "Coerver Sets"],
-      "videoPlaceholder": {"url": null, "duration": "0:15-0:25"}
+      "progressionPath": [
+        "Innen/Außen (Basis)",
+        "Coerver Sets"
+      ],
+      "videoPlaceholder": {
+        "url": null,
+        "duration": "0:15-0:25"
+      }
     },
     "technical_first_touch_wall": {
       "id": "technical_first_touch_wall",
@@ -384,14 +593,33 @@
       "order": 1,
       "description": "Ball gegen eine Wand schießen und direkt wieder kontrolliert annehmen.",
       "duration": "2-3 Serien à 10-15 Kontakte",
-      "setup": {"equipment": ["1 Ball", "1 Wand"], "space": "Vor Wand, ca. 3-4m", "solo": true},
+      "setup": {
+        "equipment": [
+          "1 Ball",
+          "1 Wand"
+        ],
+        "space": "Vor Wand, ca. 3-4m",
+        "solo": true
+      },
       "technique": {
-        "keyPoints": ["Weicher First Touch", "Ball 'abfangen'", "Innenseite/Spann/Außenseite"],
+        "keyPoints": [
+          "Weicher First Touch",
+          "Ball 'abfangen'",
+          "Innenseite/Spann/Außenseite"
+        ],
         "focus": "First Touch, Kontrolle, Zeitgewinn"
       },
       "commonMistakes": [
-        {"mistake": "Ball zu hart geschossen", "consequence": "Kommt schnell zurück", "correction": "Variabler Tempo"},
-        {"mistake": "First Touch zu hart", "consequence": "Ball springt weg", "correction": "Weiches Stoppen"}
+        {
+          "mistake": "Ball zu hart geschossen",
+          "consequence": "Kommt schnell zurück",
+          "correction": "Variabler Tempo"
+        },
+        {
+          "mistake": "First Touch zu hart",
+          "consequence": "Ball springt weg",
+          "correction": "Weiches Stoppen"
+        }
       ],
       "coachingTips": {
         "observation": "Fundamentale Übung für First Touch",
@@ -399,8 +627,15 @@
         "scaling_harder": "Stärkere Pässe, schneller",
         "progression_partner": "Mit Partner"
       },
-      "progressionPath": ["Wandpass (aktuell)", "Hochwurf-Annahme", "Mit Partner"],
-      "videoPlaceholder": {"url": null, "duration": "0:20-0:30"}
+      "progressionPath": [
+        "Wandpass (aktuell)",
+        "Hochwurf-Annahme",
+        "Mit Partner"
+      ],
+      "videoPlaceholder": {
+        "url": null,
+        "duration": "0:20-0:30"
+      }
     },
     "technical_first_touch_throw": {
       "id": "technical_first_touch_throw",
@@ -409,14 +644,32 @@
       "order": 2,
       "description": "Ball hochwerfen (unterschiedliche Höhen) und mit Innenseite, Spann, Brust oder Oberschenkel annehmen.",
       "duration": "2-3 Serien à 10 Würfe",
-      "setup": {"equipment": ["1 Ball"], "space": "Offene Fläche", "solo": true},
+      "setup": {
+        "equipment": [
+          "1 Ball"
+        ],
+        "space": "Offene Fläche",
+        "solo": true
+      },
       "technique": {
-        "keyPoints": ["Unterschiedliche Höhen", "Verschiedene Körperteile", "Kontrolle beim Landen"],
+        "keyPoints": [
+          "Unterschiedliche Höhen",
+          "Verschiedene Körperteile",
+          "Kontrolle beim Landen"
+        ],
         "focus": "First Touch mit verschiedenen Flächen"
       },
       "commonMistakes": [
-        {"mistake": "Zu eintönig (immer gleiche Höhe)", "consequence": "Trainiert nur eine Situation", "correction": "Variierende Höhen"},
-        {"mistake": "Unkontrolliertes Landen", "consequence": "Ball fällt", "correction": "Weich landen, beidbeinig"}
+        {
+          "mistake": "Zu eintönig (immer gleiche Höhe)",
+          "consequence": "Trainiert nur eine Situation",
+          "correction": "Variierende Höhen"
+        },
+        {
+          "mistake": "Unkontrolliertes Landen",
+          "consequence": "Ball fällt",
+          "correction": "Weich landen, beidbeinig"
+        }
       ],
       "coachingTips": {
         "observation": "Variiert die Höhen und Körperteile",
@@ -424,8 +677,14 @@
         "scaling_harder": "Sehr hohe Würfe, schnell hintereinander",
         "progression_partner": "Mit Partner"
       },
-      "progressionPath": ["Hochwurf (aktuell)", "Mit Partner"],
-      "videoPlaceholder": {"url": null, "duration": "0:20-0:30"}
+      "progressionPath": [
+        "Hochwurf (aktuell)",
+        "Mit Partner"
+      ],
+      "videoPlaceholder": {
+        "url": null,
+        "duration": "0:20-0:30"
+      }
     },
     "technical_ballintake_wall": {
       "id": "technical_ballintake_wall",
@@ -434,14 +693,33 @@
       "order": 1,
       "description": "Ball an die Wand spielen, mit dem ersten Kontakt um 90° oder 180° wegdrehen.",
       "duration": "2-3 Serien à 10 Kontakte",
-      "setup": {"equipment": ["1 Ball", "1 Wand"], "space": "Vor Wand, ca. 3-4m", "solo": true},
+      "setup": {
+        "equipment": [
+          "1 Ball",
+          "1 Wand"
+        ],
+        "space": "Vor Wand, ca. 3-4m",
+        "solo": true
+      },
       "technique": {
-        "keyPoints": ["Schnelles Spiel zur Wand", "First Touch mit Drehung", "Wegdrehen (nicht zurück)"],
+        "keyPoints": [
+          "Schnelles Spiel zur Wand",
+          "First Touch mit Drehung",
+          "Wegdrehen (nicht zurück)"
+        ],
         "focus": "Ballannahme + sofortige Richtungsänderung"
       },
       "commonMistakes": [
-        {"mistake": "Zu viel Zeit zwischen Pass und Drehung", "consequence": "Zu langsam", "correction": "Direkter First-Touch mit Drehung"},
-        {"mistake": "Drehung ist nicht 90° oder 180°", "consequence": "Ungenau", "correction": "Bewusste Winkel"}
+        {
+          "mistake": "Zu viel Zeit zwischen Pass und Drehung",
+          "consequence": "Zu langsam",
+          "correction": "Direkter First-Touch mit Drehung"
+        },
+        {
+          "mistake": "Drehung ist nicht 90° oder 180°",
+          "consequence": "Ungenau",
+          "correction": "Bewusste Winkel"
+        }
       ],
       "coachingTips": {
         "observation": "Kombination aus Annahme + Bewegung",
@@ -449,8 +727,15 @@
         "scaling_harder": "180° Drehung, schneller",
         "progression_partner": "Mit Partner"
       },
-      "progressionPath": ["Wand-Mitnahme (aktuell)", "Hütchen-Mitnahme", "Mit Partner"],
-      "videoPlaceholder": {"url": null, "duration": "0:20-0:30"}
+      "progressionPath": [
+        "Wand-Mitnahme (aktuell)",
+        "Hütchen-Mitnahme",
+        "Mit Partner"
+      ],
+      "videoPlaceholder": {
+        "url": null,
+        "duration": "0:20-0:30"
+      }
     },
     "technical_ballintake_cones": {
       "id": "technical_ballintake_cones",
@@ -459,14 +744,33 @@
       "order": 2,
       "description": "Zugespielten Ball (Wand oder Partner) mit dem ersten Kontakt gezielt in Richtung eines Hütchens mitnehmen.",
       "duration": "2-3 Serien à 10 Kontakte",
-      "setup": {"equipment": ["1 Ball", "1 Hütchen"], "space": "Ca. 5m x 5m", "solo": true},
+      "setup": {
+        "equipment": [
+          "1 Ball",
+          "1 Hütchen"
+        ],
+        "space": "Ca. 5m x 5m",
+        "solo": true
+      },
       "technique": {
-        "keyPoints": ["Ball kontrolliert annehmen", "Gezielt zum Hütchen mitnehmen", "Blick nach oben"],
+        "keyPoints": [
+          "Ball kontrolliert annehmen",
+          "Gezielt zum Hütchen mitnehmen",
+          "Blick nach oben"
+        ],
         "focus": "Annahme mit Richtungswechsel"
       },
       "commonMistakes": [
-        {"mistake": "Schaut nur auf den Ball", "consequence": "Keine räumliche Orientierung", "correction": "Nach Ball-Kontakt raschauen"},
-        {"mistake": "Zu lange Ballmitnahme", "consequence": "Zu langsam", "correction": "Direkt zum Hütchen"}
+        {
+          "mistake": "Schaut nur auf den Ball",
+          "consequence": "Keine räumliche Orientierung",
+          "correction": "Nach Ball-Kontakt raschauen"
+        },
+        {
+          "mistake": "Zu lange Ballmitnahme",
+          "consequence": "Zu langsam",
+          "correction": "Direkt zum Hütchen"
+        }
       ],
       "coachingTips": {
         "observation": "Verbindung zu Spielsituation",
@@ -474,8 +778,14 @@
         "scaling_harder": "Entferntere Hütchen, schneller",
         "progression_partner": "Mit Partner"
       },
-      "progressionPath": ["Hütchen-Mitnahme (aktuell)", "Mit Partner"],
-      "videoPlaceholder": {"url": null, "duration": "0:20-0:30"}
+      "progressionPath": [
+        "Hütchen-Mitnahme (aktuell)",
+        "Mit Partner"
+      ],
+      "videoPlaceholder": {
+        "url": null,
+        "duration": "0:20-0:30"
+      }
     },
     "technical_ballcontrol_inside_outside": {
       "id": "technical_ballcontrol_inside_outside",
@@ -484,14 +794,32 @@
       "order": 1,
       "description": "Ball im Laufen abwechselnd mit Innen- und Außenseite touchieren, Tempo langsam steigern.",
       "duration": "3-5 Durchgänge à 20-30m",
-      "setup": {"equipment": ["1 Ball"], "space": "Linear, ca. 20-30m", "solo": true},
+      "setup": {
+        "equipment": [
+          "1 Ball"
+        ],
+        "space": "Linear, ca. 20-30m",
+        "solo": true
+      },
       "technique": {
-        "keyPoints": ["Abwechselnd Innen/Außen", "Im Laufen", "Tempo steigern"],
+        "keyPoints": [
+          "Abwechselnd Innen/Außen",
+          "Im Laufen",
+          "Tempo steigern"
+        ],
         "focus": "Ballkontrolle mit Innen- und Außenseite in Bewegung"
       },
       "commonMistakes": [
-        {"mistake": "Ball zu weit weg", "consequence": "Unkontrolliert", "correction": "Ball dicht am Fuß"},
-        {"mistake": "Nur eine Seite", "consequence": "Asymmetrisch", "correction": "Explizit wechseln"}
+        {
+          "mistake": "Ball zu weit weg",
+          "consequence": "Unkontrolliert",
+          "correction": "Ball dicht am Fuß"
+        },
+        {
+          "mistake": "Nur eine Seite",
+          "consequence": "Asymmetrisch",
+          "correction": "Explizit wechseln"
+        }
       ],
       "coachingTips": {
         "observation": "Achte auf Ballkontrolle im Laufen",
@@ -499,8 +827,14 @@
         "scaling_harder": "Schnelleres Tempo, mit Richtungswechseln",
         "progression_next": "Mit Hütchen"
       },
-      "progressionPath": ["Innen/Außen (aktuell)", "Mit Hütchen"],
-      "videoPlaceholder": {"url": null, "duration": "0:20-0:30"}
+      "progressionPath": [
+        "Innen/Außen (aktuell)",
+        "Mit Hütchen"
+      ],
+      "videoPlaceholder": {
+        "url": null,
+        "duration": "0:20-0:30"
+      }
     },
     "technical_ballcontrol_sole_roll": {
       "id": "technical_ballcontrol_sole_roll",
@@ -509,14 +843,32 @@
       "order": 2,
       "description": "Ball mit der Sohle vor sich herrollen, dabei Tempo und Richtung leicht variieren.",
       "duration": "3-5 Durchgänge à 20-30m",
-      "setup": {"equipment": ["1 Ball"], "space": "Offene Fläche", "solo": true},
+      "setup": {
+        "equipment": [
+          "1 Ball"
+        ],
+        "space": "Offene Fläche",
+        "solo": true
+      },
       "technique": {
-        "keyPoints": ["Mit der Sohle rollen", "In Bewegung", "Tempo und Richtung variieren"],
+        "keyPoints": [
+          "Mit der Sohle rollen",
+          "In Bewegung",
+          "Tempo und Richtung variieren"
+        ],
         "focus": "Ballkontrolle mit der Sohle"
       },
       "commonMistakes": [
-        {"mistake": "Ball zu weit weg", "consequence": "Keine Kontrolle", "correction": "Eng beim Fuß"},
-        {"mistake": "Zu monoton", "consequence": "Trainiert nur ein Muster", "correction": "Variiieren"}
+        {
+          "mistake": "Ball zu weit weg",
+          "consequence": "Keine Kontrolle",
+          "correction": "Eng beim Fuß"
+        },
+        {
+          "mistake": "Zu monoton",
+          "consequence": "Trainiert nur ein Muster",
+          "correction": "Variiieren"
+        }
       ],
       "coachingTips": {
         "observation": "Kontrolle und Variation beobachten",
@@ -524,8 +876,14 @@
         "scaling_harder": "Mehr Richtungswechsel, schneller",
         "progression_next": "Mit Hütchen-Parcours"
       },
-      "progressionPath": ["Sohlenrollen (aktuell)", "Mit Hütchen"],
-      "videoPlaceholder": {"url": null, "duration": "0:20-0:30"}
+      "progressionPath": [
+        "Sohlenrollen (aktuell)",
+        "Mit Hütchen"
+      ],
+      "videoPlaceholder": {
+        "url": null,
+        "duration": "0:20-0:30"
+      }
     },
     "technical_dribbling_slalom_basis": {
       "id": "technical_dribbling_slalom_basis",
@@ -534,15 +892,38 @@
       "order": 1,
       "description": "Ball eng am Fuß durch die Hütchen führen, abwechselnd mit Innen- und Außenseite.",
       "duration": "3-5 Durchgänge",
-      "setup": {"equipment": ["1 Ball", "6-8 Hütchen"], "space": "Linear, 1-1,5m Abstand", "solo": true},
+      "setup": {
+        "equipment": [
+          "1 Ball",
+          "6-8 Hütchen"
+        ],
+        "space": "Linear, 1-1,5m Abstand",
+        "solo": true
+      },
       "technique": {
-        "keyPoints": ["Ball eng am Fuß", "Innen/Außen abwechseln", "Kleine schnelle Kontakte"],
+        "keyPoints": [
+          "Ball eng am Fuß",
+          "Innen/Außen abwechseln",
+          "Kleine schnelle Kontakte"
+        ],
         "focus": "Ballkontrolle, Dribbel-Technik"
       },
       "commonMistakes": [
-        {"mistake": "Ball zu weit weg", "consequence": "Unkontrolliert", "correction": "Eng am Fuß"},
-        {"mistake": "Nur eine Seite", "consequence": "Asymmetrisch", "correction": "Bewusst wechseln"},
-        {"mistake": "Zu schnell, verliert Kontrolle", "consequence": "Ball geht verloren", "correction": "Erst langsam, dann schneller"}
+        {
+          "mistake": "Ball zu weit weg",
+          "consequence": "Unkontrolliert",
+          "correction": "Eng am Fuß"
+        },
+        {
+          "mistake": "Nur eine Seite",
+          "consequence": "Asymmetrisch",
+          "correction": "Bewusst wechseln"
+        },
+        {
+          "mistake": "Zu schnell, verliert Kontrolle",
+          "consequence": "Ball geht verloren",
+          "correction": "Erst langsam, dann schneller"
+        }
       ],
       "coachingTips": {
         "observation": "Ballkontrolle vor Tempo",
@@ -550,8 +931,15 @@
         "scaling_harder": "Kleinere Abstände, schneller, einfüßig",
         "progression_next": "Versetzt oder mit Finten"
       },
-      "progressionPath": ["Basis (aktuell)", "Versetzt", "Mit Finten"],
-      "videoPlaceholder": {"url": null, "duration": "0:25-0:35"}
+      "progressionPath": [
+        "Basis (aktuell)",
+        "Versetzt",
+        "Mit Finten"
+      ],
+      "videoPlaceholder": {
+        "url": null,
+        "duration": "0:25-0:35"
+      }
     },
     "technical_dribbling_speed_slalom": {
       "id": "technical_dribbling_speed_slalom",
@@ -560,14 +948,34 @@
       "order": 2,
       "description": "Mit möglichst hohem Tempo durch die Hütchen dribbeln, Zeit stoppen.",
       "duration": "4-6 Durchgänge",
-      "setup": {"equipment": ["1 Ball", "6 Hütchen", "Stoppuhr"], "space": "Linear, 2-3m Abstand", "solo": true},
+      "setup": {
+        "equipment": [
+          "1 Ball",
+          "6 Hütchen",
+          "Stoppuhr"
+        ],
+        "space": "Linear, 2-3m Abstand",
+        "solo": true
+      },
       "technique": {
-        "keyPoints": ["Maximales Tempo", "Längere Kontakte", "Effiziente Richtungswechsel"],
+        "keyPoints": [
+          "Maximales Tempo",
+          "Längere Kontakte",
+          "Effiziente Richtungswechsel"
+        ],
         "focus": "Dribbel-Geschwindigkeit"
       },
       "commonMistakes": [
-        {"mistake": "Verliert Ballkontrolle", "consequence": "Ball geht verloren", "correction": "Balancieren zwischen Tempo/Kontrolle"},
-        {"mistake": "Inkonstantes Tempo", "consequence": "Zeiten nicht aussagekräftig", "correction": "Konstantes Tempo halten"}
+        {
+          "mistake": "Verliert Ballkontrolle",
+          "consequence": "Ball geht verloren",
+          "correction": "Balancieren zwischen Tempo/Kontrolle"
+        },
+        {
+          "mistake": "Inkonstantes Tempo",
+          "consequence": "Zeiten nicht aussagekräftig",
+          "correction": "Konstantes Tempo halten"
+        }
       ],
       "coachingTips": {
         "observation": "Motivierend durch Zeitmessung",
@@ -575,8 +983,14 @@
         "scaling_harder": "Engere Abstände",
         "motivation": "Selbst-Wettkampf"
       },
-      "progressionPath": ["Speed-Slalom (aktuell)", "Präzisions-Slalom"],
-      "videoPlaceholder": {"url": null, "duration": "0:20-0:30"}
+      "progressionPath": [
+        "Speed-Slalom (aktuell)",
+        "Präzisions-Slalom"
+      ],
+      "videoPlaceholder": {
+        "url": null,
+        "duration": "0:20-0:30"
+      }
     },
     "technical_dribbling_precision_straight": {
       "id": "technical_dribbling_precision_straight",
@@ -585,14 +999,33 @@
       "order": 3,
       "description": "Ball in sehr kleinen, kontrollierten Kontakten durch eng stehende Hütchen führen.",
       "duration": "3-5 Durchgänge",
-      "setup": {"equipment": ["1 Ball", "6-8 Hütchen"], "space": "Linear, 0,5-1 Schritt Abstand", "solo": true},
+      "setup": {
+        "equipment": [
+          "1 Ball",
+          "6-8 Hütchen"
+        ],
+        "space": "Linear, 0,5-1 Schritt Abstand",
+        "solo": true
+      },
       "technique": {
-        "keyPoints": ["Sehr kleine Kontakte", "Eng am Fuß", "Kontrolle vor Tempo"],
+        "keyPoints": [
+          "Sehr kleine Kontakte",
+          "Eng am Fuß",
+          "Kontrolle vor Tempo"
+        ],
         "focus": "Ballgefühl, Präzision"
       },
       "commonMistakes": [
-        {"mistake": "Ball ist nicht eng genug", "consequence": "Kann verloren gehen", "correction": "Enger am Fuß"},
-        {"mistake": "Zu schnell", "consequence": "Verliert Kontrolle", "correction": "Bewusst langsam, präzise"}
+        {
+          "mistake": "Ball ist nicht eng genug",
+          "consequence": "Kann verloren gehen",
+          "correction": "Enger am Fuß"
+        },
+        {
+          "mistake": "Zu schnell",
+          "consequence": "Verliert Kontrolle",
+          "correction": "Bewusst langsam, präzise"
+        }
       ],
       "coachingTips": {
         "observation": "Fokus auf Ballkontrolle, nicht Tempo",
@@ -600,8 +1033,15 @@
         "scaling_harder": "Noch engere Abstände",
         "progression_next": "Mit Versatz"
       },
-      "progressionPath": ["Präzision gerade (aktuell)", "Präzision versetzt", "Basis-Slalom"],
-      "videoPlaceholder": {"url": null, "duration": "0:25-0:35"}
+      "progressionPath": [
+        "Präzision gerade (aktuell)",
+        "Präzision versetzt",
+        "Basis-Slalom"
+      ],
+      "videoPlaceholder": {
+        "url": null,
+        "duration": "0:25-0:35"
+      }
     },
     "technical_dribbling_precision_offset": {
       "id": "technical_dribbling_precision_offset",
@@ -610,14 +1050,33 @@
       "order": 4,
       "description": "Gleiche enge Abstände, aber Hütchen zusätzlich leicht versetzt – kombiniert Ballgefühl mit Richtungswechseln.",
       "duration": "3-5 Durchgänge",
-      "setup": {"equipment": ["1 Ball", "6-8 Hütchen"], "space": "Versetzt, 0,5-1 Schritt", "solo": true},
+      "setup": {
+        "equipment": [
+          "1 Ball",
+          "6-8 Hütchen"
+        ],
+        "space": "Versetzt, 0,5-1 Schritt",
+        "solo": true
+      },
       "technique": {
-        "keyPoints": ["Eng am Fuß", "Echte Richtungswechsel", "Kleine kontrollierte Bewegungen"],
+        "keyPoints": [
+          "Eng am Fuß",
+          "Echte Richtungswechsel",
+          "Kleine kontrollierte Bewegungen"
+        ],
         "focus": "Ballkontrolle + Richtungswechsel"
       },
       "commonMistakes": [
-        {"mistake": "Zu schnell durch Wechsel", "consequence": "Ball weg", "correction": "Bewusst kontrolliert"},
-        {"mistake": "Richtungswechsel sind zu groß", "consequence": "Ball zu weit weg", "correction": "Kleine, effiziente Wechsel"}
+        {
+          "mistake": "Zu schnell durch Wechsel",
+          "consequence": "Ball weg",
+          "correction": "Bewusst kontrolliert"
+        },
+        {
+          "mistake": "Richtungswechsel sind zu groß",
+          "consequence": "Ball zu weit weg",
+          "correction": "Kleine, effiziente Wechsel"
+        }
       ],
       "coachingTips": {
         "observation": "Kombination aus zwei Skills",
@@ -625,8 +1084,14 @@
         "scaling_harder": "Noch enger, noch schneller",
         "progression_next": "Mit Finten"
       },
-      "progressionPath": ["Versetzt (aktuell)", "Mit Finten"],
-      "videoPlaceholder": {"url": null, "duration": "0:25-0:35"}
+      "progressionPath": [
+        "Versetzt (aktuell)",
+        "Mit Finten"
+      ],
+      "videoPlaceholder": {
+        "url": null,
+        "duration": "0:25-0:35"
+      }
     },
     "technical_dribbling_l_drill": {
       "id": "technical_dribbling_l_drill",
@@ -635,14 +1100,33 @@
       "order": 5,
       "description": "Gerade andribbeln, am Eckhütchen scharfer 90°-Richtungswechsel (Inside Cut), dann weiter.",
       "duration": "4-6 Durchgänge",
-      "setup": {"equipment": ["1 Ball", "2 Hütchen (L-Form)"], "space": "Ca. 10-15m", "solo": true},
+      "setup": {
+        "equipment": [
+          "1 Ball",
+          "2 Hütchen (L-Form)"
+        ],
+        "space": "Ca. 10-15m",
+        "solo": true
+      },
       "technique": {
-        "keyPoints": ["Gerade anfahren", "Scharfer 90° Wechsel", "Inside Cut nutzen"],
+        "keyPoints": [
+          "Gerade anfahren",
+          "Scharfer 90° Wechsel",
+          "Inside Cut nutzen"
+        ],
         "focus": "Richtungswechsel-Technik"
       },
       "commonMistakes": [
-        {"mistake": "Richtungswechsel nicht 90°", "consequence": "Unrealistische Winkel", "correction": "Präzise 90° trainieren"},
-        {"mistake": "Ball zu weit weg beim Wechsel", "consequence": "Kann verloren gehen", "correction": "Eng am Fuß"}
+        {
+          "mistake": "Richtungswechsel nicht 90°",
+          "consequence": "Unrealistische Winkel",
+          "correction": "Präzise 90° trainieren"
+        },
+        {
+          "mistake": "Ball zu weit weg beim Wechsel",
+          "consequence": "Kann verloren gehen",
+          "correction": "Eng am Fuß"
+        }
       ],
       "coachingTips": {
         "observation": "Inside Cut ist zentral",
@@ -650,8 +1134,14 @@
         "scaling_harder": "Schneller, mehrere Ecken hintereinander",
         "progression_next": "Box-Dribbling"
       },
-      "progressionPath": ["L-Drill (aktuell)", "Box-Dribbling"],
-      "videoPlaceholder": {"url": null, "duration": "0:20-0:30"}
+      "progressionPath": [
+        "L-Drill (aktuell)",
+        "Box-Dribbling"
+      ],
+      "videoPlaceholder": {
+        "url": null,
+        "duration": "0:20-0:30"
+      }
     },
     "technical_dribbling_box": {
       "id": "technical_dribbling_box",
@@ -660,14 +1150,33 @@
       "order": 6,
       "description": "An jedem Hütchen eine andere Finte ausführen (Cruyff Turn, Step Over, Drag Back, Outside Cut).",
       "duration": "4-6 Durchgänge",
-      "setup": {"equipment": ["1 Ball", "4 Hütchen (Quadrat)"], "space": "Ca. 3×3m", "solo": true},
+      "setup": {
+        "equipment": [
+          "1 Ball",
+          "4 Hütchen (Quadrat)"
+        ],
+        "space": "Ca. 3×3m",
+        "solo": true
+      },
       "technique": {
-        "keyPoints": ["Verschiedene Finten", "Realistisch eingesetzt", "Kontrolliert"],
+        "keyPoints": [
+          "Verschiedene Finten",
+          "Realistisch eingesetzt",
+          "Kontrolliert"
+        ],
         "focus": "Finten-Vielfalt"
       },
       "commonMistakes": [
-        {"mistake": "Finten sind zu hastig", "consequence": "Ball geht verloren", "correction": "Bewusst und kontrolliert"},
-        {"mistake": "Immer gleiche Finte", "consequence": "Trainiert nicht die Vielfalt", "correction": "Verschiedene Finten"}
+        {
+          "mistake": "Finten sind zu hastig",
+          "consequence": "Ball geht verloren",
+          "correction": "Bewusst und kontrolliert"
+        },
+        {
+          "mistake": "Immer gleiche Finte",
+          "consequence": "Trainiert nicht die Vielfalt",
+          "correction": "Verschiedene Finten"
+        }
       ],
       "coachingTips": {
         "observation": "Vielfalt und Kontrolle",
@@ -675,8 +1184,14 @@
         "scaling_harder": "Schneller, komplexere Finten kombinieren",
         "progression_next": "Mit Partner"
       },
-      "progressionPath": ["Box-Dribbling (aktuell)", "Mit Partner"],
-      "videoPlaceholder": {"url": null, "duration": "0:25-0:35"}
+      "progressionPath": [
+        "Box-Dribbling (aktuell)",
+        "Mit Partner"
+      ],
+      "videoPlaceholder": {
+        "url": null,
+        "duration": "0:25-0:35"
+      }
     },
     "technical_dribbling_zigzag_stepover": {
       "id": "technical_dribbling_zigzag_stepover",
@@ -685,14 +1200,33 @@
       "order": 7,
       "description": "An jedem Hütchen einen Step Over ausführen, bevor die Richtung gewechselt wird.",
       "duration": "3-5 Durchgänge",
-      "setup": {"equipment": ["1 Ball", "6-8 Hütchen (versetzt)"], "space": "Versetzt, ca. 1,5-2m", "solo": true},
+      "setup": {
+        "equipment": [
+          "1 Ball",
+          "6-8 Hütchen (versetzt)"
+        ],
+        "space": "Versetzt, ca. 1,5-2m",
+        "solo": true
+      },
       "technique": {
-        "keyPoints": ["Step Over an jedem Hütchen", "Rhythmisch", "Effizient"],
+        "keyPoints": [
+          "Step Over an jedem Hütchen",
+          "Rhythmisch",
+          "Effizient"
+        ],
         "focus": "Step Over Technik in Dribbelsituation"
       },
       "commonMistakes": [
-        {"mistake": "Step Over zu groß", "consequence": "Ineffizient", "correction": "Kleine, schnelle Übersteiger"},
-        {"mistake": "Ball nicht eng genug", "consequence": "Wird abgenommen", "correction": "Dicht am Fuß nach Finte"}
+        {
+          "mistake": "Step Over zu groß",
+          "consequence": "Ineffizient",
+          "correction": "Kleine, schnelle Übersteiger"
+        },
+        {
+          "mistake": "Ball nicht eng genug",
+          "consequence": "Wird abgenommen",
+          "correction": "Dicht am Fuß nach Finte"
+        }
       ],
       "coachingTips": {
         "observation": "Kombination aus Dribbeln + Finte",
@@ -700,8 +1234,14 @@
         "scaling_harder": "Schnelleres Tempo",
         "progression_next": "Mit Partner"
       },
-      "progressionPath": ["Zick-Zack (aktuell)", "Mit Partner"],
-      "videoPlaceholder": {"url": null, "duration": "0:25-0:35"}
+      "progressionPath": [
+        "Zick-Zack (aktuell)",
+        "Mit Partner"
+      ],
+      "videoPlaceholder": {
+        "url": null,
+        "duration": "0:25-0:35"
+      }
     },
     "technical_directionchange_star": {
       "id": "technical_directionchange_star",
@@ -710,14 +1250,33 @@
       "order": 1,
       "description": "Von der Mitte zu einem Außenhütchen dribbeln, Richtungswechsel, zurück zur Mitte, nächstes Hütchen.",
       "duration": "2-3 Runden",
-      "setup": {"equipment": ["1 Ball", "1 Mittel + 4-6 Außenhütchen"], "space": "Stern-Formation, ca. 3-4m Radius", "solo": true},
+      "setup": {
+        "equipment": [
+          "1 Ball",
+          "1 Mittel + 4-6 Außenhütchen"
+        ],
+        "space": "Stern-Formation, ca. 3-4m Radius",
+        "solo": true
+      },
       "technique": {
-        "keyPoints": ["Von Mitte zu Außen", "Richtungswechsel", "Zurück zur Mitte"],
+        "keyPoints": [
+          "Von Mitte zu Außen",
+          "Richtungswechsel",
+          "Zurück zur Mitte"
+        ],
         "focus": "Richtungswechsel in Spielsituation"
       },
       "commonMistakes": [
-        {"mistake": "Richtungswechsel nicht scharf", "consequence": "Zu breit", "correction": "Enge, scharfe Wechsel"},
-        {"mistake": "Zu schnell, Ball verloren", "consequence": "Unkontrolliert", "correction": "Kontrolliertes Tempo"}
+        {
+          "mistake": "Richtungswechsel nicht scharf",
+          "consequence": "Zu breit",
+          "correction": "Enge, scharfe Wechsel"
+        },
+        {
+          "mistake": "Zu schnell, Ball verloren",
+          "consequence": "Unkontrolliert",
+          "correction": "Kontrolliertes Tempo"
+        }
       ],
       "coachingTips": {
         "observation": "Spielnahe Übung",
@@ -725,8 +1284,15 @@
         "scaling_harder": "Schneller, mit Finten",
         "progression_next": "Gates oder Kastenwechsel"
       },
-      "progressionPath": ["Sterndribbling (aktuell)", "Gates", "Kastenwechsel"],
-      "videoPlaceholder": {"url": null, "duration": "0:20-0:30"}
+      "progressionPath": [
+        "Sterndribbling (aktuell)",
+        "Gates",
+        "Kastenwechsel"
+      ],
+      "videoPlaceholder": {
+        "url": null,
+        "duration": "0:20-0:30"
+      }
     },
     "technical_directionchange_gates": {
       "id": "technical_directionchange_gates",
@@ -735,14 +1301,33 @@
       "order": 2,
       "description": "Durch ein Tor dribbeln, sofort Richtungswechsel Richtung nächstes Tor.",
       "duration": "2-3 Minuten durchgehend",
-      "setup": {"equipment": ["1 Ball", "Mehrere Hütchen-Paare"], "space": "Verteilt im Garten", "solo": true},
+      "setup": {
+        "equipment": [
+          "1 Ball",
+          "Mehrere Hütchen-Paare"
+        ],
+        "space": "Verteilt im Garten",
+        "solo": true
+      },
       "technique": {
-        "keyPoints": ["Durch das Tor", "Schneller Wechsel", "Nächstes Tor anfahren"],
+        "keyPoints": [
+          "Durch das Tor",
+          "Schneller Wechsel",
+          "Nächstes Tor anfahren"
+        ],
         "focus": "Schnelle Richtungswechsel"
       },
       "commonMistakes": [
-        {"mistake": "Ball nicht durch das Tor", "consequence": "Trainiert nicht das Durchfahren", "correction": "Zentral durch Tore"},
-        {"mistake": "Zu langsame Wechsel", "consequence": "Trainiert nicht Schnelligkeit", "correction": "Schnelle Richtungswechsel"}
+        {
+          "mistake": "Ball nicht durch das Tor",
+          "consequence": "Trainiert nicht das Durchfahren",
+          "correction": "Zentral durch Tore"
+        },
+        {
+          "mistake": "Zu langsame Wechsel",
+          "consequence": "Trainiert nicht Schnelligkeit",
+          "correction": "Schnelle Richtungswechsel"
+        }
       ],
       "coachingTips": {
         "observation": "Spielnahe, dynamische Übung",
@@ -750,8 +1335,15 @@
         "scaling_harder": "Kleinere Tore, schneller",
         "motivation": "Freier Fluss statt Richtungswechsel zählen"
       },
-      "progressionPath": ["Gates (aktuell)", "Mit Finten", "Mit Partner"],
-      "videoPlaceholder": {"url": null, "duration": "0:20-0:30"}
+      "progressionPath": [
+        "Gates (aktuell)",
+        "Mit Finten",
+        "Mit Partner"
+      ],
+      "videoPlaceholder": {
+        "url": null,
+        "duration": "0:20-0:30"
+      }
     },
     "technical_directionchange_box": {
       "id": "technical_directionchange_box",
@@ -760,14 +1352,33 @@
       "order": 3,
       "description": "Zum ersten Hütchen dribbeln, dort engen Richtungswechsel ausführen (Cruyff Turn oder Drag Back), zurück zum zweiten Hütchen.",
       "duration": "3-4 Serien",
-      "setup": {"equipment": ["1 Ball", "2 Hütchen"], "space": "Ca. 5-8m Abstand", "solo": true},
+      "setup": {
+        "equipment": [
+          "1 Ball",
+          "2 Hütchen"
+        ],
+        "space": "Ca. 5-8m Abstand",
+        "solo": true
+      },
       "technique": {
-        "keyPoints": ["Zu erstem Hütchen", "Enge Finte", "Zurück zum zweiten"],
+        "keyPoints": [
+          "Zu erstem Hütchen",
+          "Enge Finte",
+          "Zurück zum zweiten"
+        ],
         "focus": "Intensive Richtungswechsel"
       },
       "commonMistakes": [
-        {"mistake": "Finte ist zu groß", "consequence": "Nicht eng", "correction": "Kleine, enge Finten"},
-        {"mistake": "Kein Tempo nach Finte", "consequence": "Zu langsam", "correction": "Schnell weg nach Wechsel"}
+        {
+          "mistake": "Finte ist zu groß",
+          "consequence": "Nicht eng",
+          "correction": "Kleine, enge Finten"
+        },
+        {
+          "mistake": "Kein Tempo nach Finte",
+          "consequence": "Zu langsam",
+          "correction": "Schnell weg nach Wechsel"
+        }
       ],
       "coachingTips": {
         "observation": "Intensive Abläufe – kurze Pausen",
@@ -775,8 +1386,14 @@
         "scaling_harder": "Verschiedene Finten, schneller",
         "progression_next": "Mit Partner"
       },
-      "progressionPath": ["Kastenwechsel (aktuell)", "Mit Partner"],
-      "videoPlaceholder": {"url": null, "duration": "0:20-0:30"}
+      "progressionPath": [
+        "Kastenwechsel (aktuell)",
+        "Mit Partner"
+      ],
+      "videoPlaceholder": {
+        "url": null,
+        "duration": "0:20-0:30"
+      }
     },
     "technical_juggling_level1": {
       "id": "technical_juggling_level1",
@@ -785,14 +1402,32 @@
       "order": 1,
       "description": "Nur mit einem Fuß hochhalten, z.B. 10× rechts, danach 10× links (nicht mischen).",
       "duration": "2-3 Serien pro Fuß",
-      "setup": {"equipment": ["1 Ball"], "space": "Offener Raum", "solo": true},
+      "setup": {
+        "equipment": [
+          "1 Ball"
+        ],
+        "space": "Offener Raum",
+        "solo": true
+      },
       "technique": {
-        "keyPoints": ["Ein Fuß", "Sanfte Bewegungen", "Ball auf Höhe Hüfte"],
+        "keyPoints": [
+          "Ein Fuß",
+          "Sanfte Bewegungen",
+          "Ball auf Höhe Hüfte"
+        ],
         "focus": "Ballgefühl mit einem Fuß"
       },
       "commonMistakes": [
-        {"mistake": "Klopft zu hart", "consequence": "Ball springt weg", "correction": "Sanfte Taps"},
-        {"mistake": "Ball fällt schnell", "consequence": "Mangelnde Kontrolle", "correction": "Niedrigere Höhe"}
+        {
+          "mistake": "Klopft zu hart",
+          "consequence": "Ball springt weg",
+          "correction": "Sanfte Taps"
+        },
+        {
+          "mistake": "Ball fällt schnell",
+          "consequence": "Mangelnde Kontrolle",
+          "correction": "Niedrigere Höhe"
+        }
       ],
       "coachingTips": {
         "observation": "Level 1 – niedrige Ansprüche",
@@ -800,8 +1435,15 @@
         "scaling_harder": "Höhere Bälle, längere Serien",
         "motivation": "Personal-Challenge"
       },
-      "progressionPath": ["Level 1 (aktuell)", "Level 2 – abwechselnd", "Level 3"],
-      "videoPlaceholder": {"url": null, "duration": "0:15-0:20"}
+      "progressionPath": [
+        "Level 1 (aktuell)",
+        "Level 2 – abwechselnd",
+        "Level 3"
+      ],
+      "videoPlaceholder": {
+        "url": null,
+        "duration": "0:15-0:20"
+      }
     },
     "technical_juggling_level2": {
       "id": "technical_juggling_level2",
@@ -810,14 +1452,32 @@
       "order": 2,
       "description": "Ball abwechselnd mit rechts und links hochhalten.",
       "duration": "2-3 Serien",
-      "setup": {"equipment": ["1 Ball"], "space": "Offener Raum", "solo": true},
+      "setup": {
+        "equipment": [
+          "1 Ball"
+        ],
+        "space": "Offener Raum",
+        "solo": true
+      },
       "technique": {
-        "keyPoints": ["Abwechselnd R/L", "Rhythmisch", "Konsistente Höhe"],
+        "keyPoints": [
+          "Abwechselnd R/L",
+          "Rhythmisch",
+          "Konsistente Höhe"
+        ],
         "focus": "Rhythmus, Koordination"
       },
       "commonMistakes": [
-        {"mistake": "Ungleichmäßiger Rhythmus", "consequence": "Ball fällt", "correction": "Mit Musik trainieren"},
-        {"mistake": "Zu hohe Bälle", "consequence": "Schwer zu treffen", "correction": "Niedrigere Höhe"}
+        {
+          "mistake": "Ungleichmäßiger Rhythmus",
+          "consequence": "Ball fällt",
+          "correction": "Mit Musik trainieren"
+        },
+        {
+          "mistake": "Zu hohe Bälle",
+          "consequence": "Schwer zu treffen",
+          "correction": "Niedrigere Höhe"
+        }
       ],
       "coachingTips": {
         "observation": "Rhythmus ist zentral",
@@ -825,8 +1485,14 @@
         "scaling_harder": "Höhere Bälle, längere Serien",
         "motivation": "Zählen: wie viele?"
       },
-      "progressionPath": ["Level 2 (aktuell)", "Level 3 – Körperteile"],
-      "videoPlaceholder": {"url": null, "duration": "0:15-0:20"}
+      "progressionPath": [
+        "Level 2 (aktuell)",
+        "Level 3 – Körperteile"
+      ],
+      "videoPlaceholder": {
+        "url": null,
+        "duration": "0:15-0:20"
+      }
     },
     "technical_juggling_level3": {
       "id": "technical_juggling_level3",
@@ -835,14 +1501,32 @@
       "order": 3,
       "description": "Ball im Wechsel mit Fuß, Oberschenkel und Kopf hochhalten.",
       "duration": "2-3 Serien",
-      "setup": {"equipment": ["1 Ball"], "space": "Offener Raum", "solo": true},
+      "setup": {
+        "equipment": [
+          "1 Ball"
+        ],
+        "space": "Offener Raum",
+        "solo": true
+      },
       "technique": {
-        "keyPoints": ["Drei Körperteile", "Rhythmisch", "Kontrollierte Höhen"],
+        "keyPoints": [
+          "Drei Körperteile",
+          "Rhythmisch",
+          "Kontrollierte Höhen"
+        ],
         "focus": "Ballgefühl mit verschiedenen Flächen"
       },
       "commonMistakes": [
-        {"mistake": "Ungleichmäßige Höhen", "consequence": "Ball fällt", "correction": "Konsistente Höhen"},
-        {"mistake": "Zu schnell", "consequence": "Verliert Kontrolle", "correction": "Langsamer, bewusst"}
+        {
+          "mistake": "Ungleichmäßige Höhen",
+          "consequence": "Ball fällt",
+          "correction": "Konsistente Höhen"
+        },
+        {
+          "mistake": "Zu schnell",
+          "consequence": "Verliert Kontrolle",
+          "correction": "Langsamer, bewusst"
+        }
       ],
       "coachingTips": {
         "observation": "Komplexer – Geduld",
@@ -850,8 +1534,14 @@
         "scaling_harder": "Schneller, längere Serien",
         "progression_next": "Level 4 – Bewegung"
       },
-      "progressionPath": ["Level 3 (aktuell)", "Level 4 – Bewegung"],
-      "videoPlaceholder": {"url": null, "duration": "0:15-0:20"}
+      "progressionPath": [
+        "Level 3 (aktuell)",
+        "Level 4 – Bewegung"
+      ],
+      "videoPlaceholder": {
+        "url": null,
+        "duration": "0:15-0:20"
+      }
     },
     "technical_juggling_level4": {
       "id": "technical_juggling_level4",
@@ -860,14 +1550,32 @@
       "order": 4,
       "description": "Hochhalten und dabei leicht bewegen, statt auf der Stelle stehen zu bleiben.",
       "duration": "2-3 Serien",
-      "setup": {"equipment": ["1 Ball"], "space": "Offene Fläche", "solo": true},
+      "setup": {
+        "equipment": [
+          "1 Ball"
+        ],
+        "space": "Offene Fläche",
+        "solo": true
+      },
       "technique": {
-        "keyPoints": ["Bewegen beim Hochhalten", "Leichte Bewegungen", "Rhythmus halten"],
+        "keyPoints": [
+          "Bewegen beim Hochhalten",
+          "Leichte Bewegungen",
+          "Rhythmus halten"
+        ],
         "focus": "Hochhalten in Bewegung"
       },
       "commonMistakes": [
-        {"mistake": "Zu schnell bewegen", "consequence": "Ball fällt", "correction": "Leichte, kontrollierte Bewegungen"},
-        {"mistake": "Rhythmus unterbrechen", "consequence": "Ball fällt", "correction": "Rhythmus konsistent halten"}
+        {
+          "mistake": "Zu schnell bewegen",
+          "consequence": "Ball fällt",
+          "correction": "Leichte, kontrollierte Bewegungen"
+        },
+        {
+          "mistake": "Rhythmus unterbrechen",
+          "consequence": "Ball fällt",
+          "correction": "Rhythmus konsistent halten"
+        }
       ],
       "coachingTips": {
         "observation": "Höchstes Level – spielnahe Situation",
@@ -875,24 +1583,51 @@
         "scaling_harder": "Schnellere Bewegungen, längere Strecken",
         "progression_next": "Mit Partner / im Spiel"
       },
-      "progressionPath": ["Level 4 (aktuell)", "Mit Partner", "Im Spiel"],
-      "videoPlaceholder": {"url": null, "duration": "0:15-0:20"}
+      "progressionPath": [
+        "Level 4 (aktuell)",
+        "Mit Partner",
+        "Im Spiel"
+      ],
+      "videoPlaceholder": {
+        "url": null,
+        "duration": "0:15-0:20"
+      }
     },
     "partner_sharp_passes": {
       "id": "partner_sharp_passes",
-      "category": "partner",
+      "category": "ballIntake",
       "name": "Scharfe Flachpässe mit Annahme",
       "order": 1,
       "description": "Direkte Annahme und Weiterspiel bei realistischerem Passtempo als an der Wand.",
       "duration": "2-3 Serien à 10-15 Pässe",
-      "setup": {"equipment": ["1 Ball", "2 Personen"], "space": "Ca. 5-10m", "solo": false, "partnerNeeded": true},
+      "setup": {
+        "equipment": [
+          "1 Ball",
+          "2 Personen"
+        ],
+        "space": "Ca. 5-10m",
+        "solo": false,
+        "partnerNeeded": true
+      },
       "technique": {
-        "keyPoints": ["Scharfer Flachpass", "First Touch", "Schnelle Weitergabe"],
+        "keyPoints": [
+          "Scharfer Flachpass",
+          "First Touch",
+          "Schnelle Weitergabe"
+        ],
         "focus": "First Touch unter realistischem Tempo"
       },
       "commonMistakes": [
-        {"mistake": "Pass ist zu schwach", "consequence": "Unrealistisch", "correction": "Scharfe Pässe"},
-        {"mistake": "Zu lange Pausen", "consequence": "Trainiert nicht Schnelligkeit", "correction": "Schnelle Pässe"}
+        {
+          "mistake": "Pass ist zu schwach",
+          "consequence": "Unrealistisch",
+          "correction": "Scharfe Pässe"
+        },
+        {
+          "mistake": "Zu lange Pausen",
+          "consequence": "Trainiert nicht Schnelligkeit",
+          "correction": "Schnelle Pässe"
+        }
       ],
       "coachingTips": {
         "observation": "Spielnahe – realistisches Tempo",
@@ -900,24 +1635,51 @@
         "scaling_harder": "Schnellere Pässe, weniger Zeit",
         "progression_next": "Mit Richtungswechsel"
       },
-      "progressionPath": ["Flachpässe (aktuell)", "Mit Richtungswechsel", "1v1"],
-      "videoPlaceholder": {"url": null, "duration": "0:20-0:30"}
+      "progressionPath": [
+        "Flachpässe (aktuell)",
+        "Mit Richtungswechsel",
+        "1v1"
+      ],
+      "videoPlaceholder": {
+        "url": null,
+        "duration": "0:20-0:30"
+      }
     },
     "partner_high_balls": {
       "id": "partner_high_balls",
-      "category": "partner",
+      "category": "ballIntake",
       "name": "Hohe Bälle zuwerfen/schießen",
       "order": 2,
       "description": "Annahme mit Oberschenkel oder Brust, danach Mitnahme in freien Raum.",
       "duration": "2-3 Serien à 10 Bälle",
-      "setup": {"equipment": ["1 Ball", "2 Personen"], "space": "Ca. 8-10m", "solo": false, "partnerNeeded": true},
+      "setup": {
+        "equipment": [
+          "1 Ball",
+          "2 Personen"
+        ],
+        "space": "Ca. 8-10m",
+        "solo": false,
+        "partnerNeeded": true
+      },
       "technique": {
-        "keyPoints": ["Hoher Ball", "Annahme mit Oberschenkel/Brust", "Mitnahme"],
+        "keyPoints": [
+          "Hoher Ball",
+          "Annahme mit Oberschenkel/Brust",
+          "Mitnahme"
+        ],
         "focus": "Luftballkontrolle"
       },
       "commonMistakes": [
-        {"mistake": "Zu flache Bälle", "consequence": "Trainiert nicht Luftbälle", "correction": "Echte hohe Bälle"},
-        {"mistake": "Unkontrollierte Mitnahme", "consequence": "Ball geht verloren", "correction": "Bewusste Mitnahme"}
+        {
+          "mistake": "Zu flache Bälle",
+          "consequence": "Trainiert nicht Luftbälle",
+          "correction": "Echte hohe Bälle"
+        },
+        {
+          "mistake": "Unkontrollierte Mitnahme",
+          "consequence": "Ball geht verloren",
+          "correction": "Bewusste Mitnahme"
+        }
       ],
       "coachingTips": {
         "observation": "Spielnahe Situation",
@@ -925,24 +1687,52 @@
         "scaling_harder": "Höhere Bälle, schneller hintereinander",
         "progression_next": "Mit Druck (verteidigender Partner)"
       },
-      "progressionPath": ["Hohe Bälle (aktuell)", "Mit leichtem Druck", "1v1"],
-      "videoPlaceholder": {"url": null, "duration": "0:20-0:30"}
+      "progressionPath": [
+        "Hohe Bälle (aktuell)",
+        "Mit leichtem Druck",
+        "1v1"
+      ],
+      "videoPlaceholder": {
+        "url": null,
+        "duration": "0:20-0:30"
+      }
     },
     "partner_1v1_tight": {
       "id": "partner_1v1_tight",
-      "category": "partner",
+      "category": "dribbling",
       "name": "1-gegen-1 auf engem Raum",
       "order": 3,
       "description": "Ein Spieler verteidigt passiv bis halbaktiv, der andere übt Dribbling und Richtungswechsel unter echtem Druck.",
       "duration": "3-5 Minuten, mehrere Serien",
-      "setup": {"equipment": ["1 Ball", "2 Personen", "4 Hütchen"], "space": "Ca. 5×5m", "solo": false, "partnerNeeded": true},
+      "setup": {
+        "equipment": [
+          "1 Ball",
+          "2 Personen",
+          "4 Hütchen"
+        ],
+        "space": "Ca. 5×5m",
+        "solo": false,
+        "partnerNeeded": true
+      },
       "technique": {
-        "keyPoints": ["Enge Raum-Begrenzung", "Dribbeln unter Druck", "Finten verwenden"],
+        "keyPoints": [
+          "Enge Raum-Begrenzung",
+          "Dribbeln unter Druck",
+          "Finten verwenden"
+        ],
         "focus": "Spielnahe Dribbelsituation"
       },
       "commonMistakes": [
-        {"mistake": "Verteidiger ist zu passiv", "consequence": "Trainiert nicht echten Druck", "correction": "Halbaktive Verteidigung"},
-        {"mistake": "Angreifer dribbelt zu lange", "consequence": "Wird ausgebremst", "correction": "Schnelle Finten, Richtungswechsel"}
+        {
+          "mistake": "Verteidiger ist zu passiv",
+          "consequence": "Trainiert nicht echten Druck",
+          "correction": "Halbaktive Verteidigung"
+        },
+        {
+          "mistake": "Angreifer dribbelt zu lange",
+          "consequence": "Wird ausgebremst",
+          "correction": "Schnelle Finten, Richtungswechsel"
+        }
       ],
       "coachingTips": {
         "observation": "Spielnahe, motivierend",
@@ -950,8 +1740,15 @@
         "scaling_harder": "Aktivere Verteidigung, kleinerer Raum",
         "progression_next": "Mit Tor / Endzone"
       },
-      "progressionPath": ["1v1 (aktuell)", "Mit Tor", "Mit mehreren Bällen"],
-      "videoPlaceholder": {"url": null, "duration": "0:25-0:35"}
+      "progressionPath": [
+        "1v1 (aktuell)",
+        "Mit Tor",
+        "Mit mehreren Bällen"
+      ],
+      "videoPlaceholder": {
+        "url": null,
+        "duration": "0:25-0:35"
+      }
     }
   },
   "coeverSets": {
