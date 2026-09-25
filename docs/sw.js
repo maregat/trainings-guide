@@ -1,4 +1,4 @@
-const CACHE_NAME = 'trainings-guide-v1';
+const CACHE_NAME = 'trainings-guide-v2';
 const STATIC_ASSETS = [
     '/',
     '/index.html',
@@ -50,7 +50,7 @@ self.addEventListener('activate', (event) => {
 });
 
 // ============================================
-// Fetch: Cache-First Strategy
+// Fetch: Smart Cache Strategy
 // ============================================
 
 self.addEventListener('fetch', (event) => {
@@ -64,6 +64,36 @@ self.addEventListener('fetch', (event) => {
         return;
     }
     
+    // Network-First für exercises.json (immer versuchen, neu zu laden)
+    if (event.request.url.includes('exercises.json')) {
+        event.respondWith(
+            fetch(event.request)
+                .then((response) => {
+                    if (response && response.status === 200) {
+                        // Cache die neue Version
+                        const responseToCache = response.clone();
+                        caches.open(CACHE_NAME).then((cache) => {
+                            cache.put(event.request, responseToCache);
+                        });
+                        return response;
+                    }
+                    return response;
+                })
+                .catch(() => {
+                    // Offline: Nutze gecachte Version
+                    return caches.match(event.request)
+                        .then((cachedResponse) => {
+                            if (cachedResponse) {
+                                return cachedResponse;
+                            }
+                            throw new Error('No cached data available');
+                        });
+                })
+        );
+        return;
+    }
+    
+    // Cache-First für alle anderen Assets (HTML, CSS, JS, etc.)
     event.respondWith(
         caches.match(event.request)
             .then((cachedResponse) => {
