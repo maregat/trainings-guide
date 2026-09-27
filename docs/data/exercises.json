@@ -4,7 +4,7 @@
     "ageGroup": "U11/U12",
     "skillLevel": "competitive",
     "lastUpdated": "2026-09-27T10:44:01.402168",
-    "totalExercises": 58,
+    "totalExercises": 57,
     "sources": [
       "Coerver Coaching Method",
       "DFB Trainingsmethodik",
@@ -300,7 +300,7 @@
       "id": "coo_basis_toe_taps",
       "category": "warmup_coerver",
       "order": 1,
-      "name": "Toe-Taps",
+      "name": "Sole Taps",
       "description": "Ball abwechselnd mit den Fußspitzen von oben antippen.",
       "duration": "40 Sekunden (+ 20 Sek Pause)",
       "setup": {
@@ -328,7 +328,7 @@
       },
       "progressionPath": [],
       "videoLink": {
-        "url": "https://www.youtube.com/watch?v=IeMYh7roBjk",
+        "url": "https://www.youtube.com/watch?v=IeMYh7roBjk&t=14s",
         "title": "Coerver-Referenzvideo"
       },
       "subCategory": "basis"
@@ -365,7 +365,7 @@
       },
       "progressionPath": [],
       "videoLink": {
-        "url": "https://www.youtube.com/watch?v=IeMYh7roBjk",
+        "url": "https://www.youtube.com/watch?v=IeMYh7roBjk&t=24s",
         "title": "Coerver-Referenzvideo"
       },
       "subCategory": "basis"
@@ -392,43 +392,6 @@
           "Rollbewegung"
         ],
         "focus": "Sohlengefühl"
-      },
-      "commonMistakes": [],
-      "coachingTips": {
-        "observation": "",
-        "scaling_easier": "",
-        "scaling_harder": "",
-        "motivation": ""
-      },
-      "progressionPath": [],
-      "videoLink": {
-        "url": "https://www.youtube.com/watch?v=IeMYh7roBjk",
-        "title": "Coerver-Referenzvideo"
-      },
-      "subCategory": "basis"
-    },
-    "coo_basis_sole_pullpush": {
-      "id": "coo_basis_sole_pullpush",
-      "category": "warmup_coerver",
-      "order": 4,
-      "name": "Sohle drauf – Pull-Push",
-      "description": "Ball mit der Sohle antippen und sofort wieder wegziehen.",
-      "duration": "40 Sekunden (+ 20 Sek Pause)",
-      "setup": {
-        "equipment": [
-          "Fußball"
-        ],
-        "space": "Minimal",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Sohle oben",
-          "Schnelle Bewegung",
-          "Auf der Stelle"
-        ],
-        "focus": "Sohlen-Reaktion"
       },
       "commonMistakes": [],
       "coachingTips": {
@@ -512,7 +475,7 @@
       },
       "progressionPath": [],
       "videoLink": {
-        "url": "https://www.youtube.com/watch?v=IeMYh7roBjk",
+        "url": "https://www.youtube.com/watch?v=IeMYh7roBjk&t=8s",
         "title": "Coerver-Referenzvideo (mit Zeitstempel)"
       },
       "subCategory": "rotation"
@@ -548,7 +511,7 @@
       },
       "progressionPath": [],
       "videoLink": {
-        "url": "https://www.youtube.com/watch?v=IeMYh7roBjk",
+        "url": "https://www.youtube.com/watch?v=IeMYh7roBjk&t=19s",
         "title": "Coerver-Referenzvideo (mit Zeitstempel)"
       },
       "subCategory": "rotation"
@@ -584,7 +547,7 @@
       },
       "progressionPath": [],
       "videoLink": {
-        "url": "https://www.youtube.com/watch?v=IeMYh7roBjk",
+        "url": "https://www.youtube.com/watch?v=IeMYh7roBjk&t=31s",
         "title": "Coerver-Referenzvideo (mit Zeitstempel)"
       },
       "subCategory": "rotation"
@@ -620,7 +583,7 @@
       },
       "progressionPath": [],
       "videoLink": {
-        "url": "https://www.youtube.com/watch?v=IeMYh7roBjk",
+        "url": "https://www.youtube.com/watch?v=IeMYh7roBjk&t=38s",
         "title": "Coerver-Referenzvideo (mit Zeitstempel)"
       },
       "subCategory": "rotation"
@@ -656,7 +619,7 @@
       },
       "progressionPath": [],
       "videoLink": {
-        "url": "https://www.youtube.com/watch?v=IeMYh7roBjk",
+        "url": "https://www.youtube.com/watch?v=IeMYh7roBjk&t=50s",
         "title": "Coerver-Referenzvideo (mit Zeitstempel)"
       },
       "subCategory": "rotation"
@@ -692,7 +655,7 @@
       },
       "progressionPath": [],
       "videoLink": {
-        "url": "https://www.youtube.com/watch?v=IeMYh7roBjk",
+        "url": "https://www.youtube.com/watch?v=IeMYh7roBjk&t=63s",
         "title": "Coerver-Referenzvideo (mit Zeitstempel)"
       },
       "subCategory": "rotation"
@@ -728,7 +691,7 @@
       },
       "progressionPath": [],
       "videoLink": {
-        "url": "https://www.youtube.com/watch?v=IeMYh7roBjk",
+        "url": "https://www.youtube.com/watch?v=IeMYh7roBjk&t=68s",
         "title": "Coerver-Referenzvideo (mit Zeitstempel)"
       },
       "subCategory": "rotation"
@@ -764,7 +727,7 @@
       },
       "progressionPath": [],
       "videoLink": {
-        "url": "https://www.youtube.com/watch?v=IeMYh7roBjk",
+        "url": "https://www.youtube.com/watch?v=IeMYh7roBjk&t=81s",
         "title": "Coerver-Referenzvideo (mit Zeitstempel)"
       },
       "subCategory": "rotation"
@@ -800,7 +763,7 @@
       },
       "progressionPath": [],
       "videoLink": {
-        "url": "https://www.youtube.com/watch?v=IeMYh7roBjk",
+        "url": "https://www.youtube.com/watch?v=IeMYh7roBjk&t=81s",
         "title": "Coerver-Referenzvideo (mit Zeitstempel)"
       },
       "subCategory": "rotation"
@@ -836,7 +799,7 @@
       },
       "progressionPath": [],
       "videoLink": {
-        "url": "https://www.youtube.com/watch?v=IeMYh7roBjk",
+        "url": "https://www.youtube.com/watch?v=IeMYh7roBjk&t=87s",
         "title": "Coerver-Referenzvideo (mit Zeitstempel)"
       },
       "subCategory": "rotation"
@@ -872,7 +835,7 @@
       },
       "progressionPath": [],
       "videoLink": {
-        "url": "https://www.youtube.com/watch?v=IeMYh7roBjk",
+        "url": "https://www.youtube.com/watch?v=IeMYh7roBjk&t=103s",
         "title": "Coerver-Referenzvideo (mit Zeitstempel)"
       },
       "subCategory": "rotation"
@@ -908,7 +871,7 @@
       },
       "progressionPath": [],
       "videoLink": {
-        "url": "https://www.youtube.com/watch?v=IeMYh7roBjk",
+        "url": "https://www.youtube.com/watch?v=IeMYh7roBjk&t=116s",
         "title": "Coerver-Referenzvideo (mit Zeitstempel)"
       },
       "subCategory": "rotation"
@@ -944,7 +907,7 @@
       },
       "progressionPath": [],
       "videoLink": {
-        "url": "https://www.youtube.com/watch?v=IeMYh7roBjk",
+        "url": "https://www.youtube.com/watch?v=IeMYh7roBjk&t=130s",
         "title": "Coerver-Referenzvideo (mit Zeitstempel)"
       },
       "subCategory": "rotation"
@@ -980,7 +943,7 @@
       },
       "progressionPath": [],
       "videoLink": {
-        "url": "https://www.youtube.com/watch?v=IeMYh7roBjk",
+        "url": "https://www.youtube.com/watch?v=IeMYh7roBjk&t=122s",
         "title": "Coerver-Referenzvideo (mit Zeitstempel)"
       },
       "subCategory": "rotation"
@@ -1016,7 +979,7 @@
       },
       "progressionPath": [],
       "videoLink": {
-        "url": "https://www.youtube.com/watch?v=IeMYh7roBjk",
+        "url": "https://www.youtube.com/watch?v=IeMYh7roBjk&t=137s",
         "title": "Coerver-Referenzvideo (mit Zeitstempel)"
       },
       "subCategory": "rotation"
@@ -1052,7 +1015,7 @@
       },
       "progressionPath": [],
       "videoLink": {
-        "url": "https://www.youtube.com/watch?v=IeMYh7roBjk",
+        "url": "https://www.youtube.com/watch?v=IeMYh7roBjk&t=146s",
         "title": "Coerver-Referenzvideo (mit Zeitstempel)"
       },
       "subCategory": "rotation"
@@ -1088,7 +1051,7 @@
       },
       "progressionPath": [],
       "videoLink": {
-        "url": "https://www.youtube.com/watch?v=IeMYh7roBjk",
+        "url": "https://www.youtube.com/watch?v=IeMYh7roBjk&t=153s",
         "title": "Coerver-Referenzvideo (mit Zeitstempel)"
       },
       "subCategory": "rotation"
@@ -1124,7 +1087,7 @@
       },
       "progressionPath": [],
       "videoLink": {
-        "url": "https://www.youtube.com/watch?v=IeMYh7roBjk",
+        "url": "https://www.youtube.com/watch?v=IeMYh7roBjk&t=170s",
         "title": "Coerver-Referenzvideo (mit Zeitstempel)"
       },
       "subCategory": "rotation"
@@ -1160,7 +1123,7 @@
       },
       "progressionPath": [],
       "videoLink": {
-        "url": "https://www.youtube.com/watch?v=IeMYh7roBjk",
+        "url": "https://www.youtube.com/watch?v=IeMYh7roBjk&t=195s",
         "title": "Coerver-Referenzvideo (mit Zeitstempel)"
       },
       "subCategory": "rotation"
@@ -1196,7 +1159,7 @@
       },
       "progressionPath": [],
       "videoLink": {
-        "url": "https://www.youtube.com/watch?v=IeMYh7roBjk",
+        "url": "https://www.youtube.com/watch?v=IeMYh7roBjk&t=202s",
         "title": "Coerver-Referenzvideo (mit Zeitstempel)"
       },
       "subCategory": "rotation"
@@ -1232,7 +1195,7 @@
       },
       "progressionPath": [],
       "videoLink": {
-        "url": "https://www.youtube.com/watch?v=IeMYh7roBjk",
+        "url": "https://www.youtube.com/watch?v=IeMYh7roBjk&t=209s",
         "title": "Coerver-Referenzvideo (mit Zeitstempel)"
       },
       "subCategory": "rotation"
