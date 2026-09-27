@@ -223,21 +223,45 @@ function renderExerciseDetail(exerciseId) {
             
             // Prüfe ob lokale MP4-Datei (HTML5 Video Player)
             if (videoUrl.includes('.mp4') || videoUrl.includes('./data/videos')) {
+                const videoId = 'video-' + exercise.id;
                 html += `
                     <div style="padding: 0 1.5rem; margin-bottom: 1.5rem;">
-                        <video 
-                            controls 
-                            muted
-                            playsinline
-                            style="width: 100%; height: auto; background: #000; border-radius: 8px;"
-                            preload="metadata">
-                            <source src="${videoUrl}" type="video/mp4">
-                            Dein Browser unterstützt HTML5 Video nicht.
-                        </video>
+                        <div style="position: relative; width: 100%; max-width: 100%; aspect-ratio: 16 / 9; background: #000; border-radius: 8px; overflow: hidden;">
+                            <video 
+                                id="${videoId}"
+                                controls 
+                                muted
+                                playsinline
+                                webkit-playsinline
+                                x5-playsinline
+                                disablePictureInPicture
+                                style="width: 100%; height: 100%; display: block; object-fit: contain;"
+                                preload="metadata">
+                                <source src="${videoUrl}" type="video/mp4">
+                                Dein Browser unterstützt HTML5 Video nicht.
+                            </video>
+                        </div>
                         <div style="margin-top: 0.75rem; font-size: 0.85rem;">
                             <button onclick="openVideoEditModal('${exercise.id}')" style="padding: 0.5rem 1rem; background: #f0f0f0; border: none; border-radius: 6px; cursor: pointer; font-size: 0.85rem;">✏️ Link bearbeiten</button>
                         </div>
                     </div>
+                    <script>
+                        (function() {
+                            const vid = document.getElementById('${videoId}');
+                            if (vid) {
+                                vid.addEventListener('fullscreenchange', (e) => {
+                                    if (document.fullscreenElement) {
+                                        document.exitFullscreen().catch(() => {});
+                                    }
+                                });
+                                vid.addEventListener('webkitfullscreenchange', (e) => {
+                                    if (document.webkitFullscreenElement) {
+                                        document.webkitExitFullscreen?.();
+                                    }
+                                });
+                            }
+                        })();
+                    </script>
                 `;
             }
             // Prüfe ob Vimeo
