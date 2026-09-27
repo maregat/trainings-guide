@@ -271,7 +271,7 @@ function renderExerciseList(categoryKey) {
                     ${exercise.name}
                 </div>
                 <div class="exercise-item-meta">
-                    ⏱️ ${exercise.duration} | ${exercise.solo ? '👤 Solo' : '👥 2+ Personen'}
+                    ⏱️ ${exercise.duration} | ${exercise.setup.solo ? '👤 Solo' : '👥 2+ Personen'}
                 </div>
             </div>
         `;
@@ -307,7 +307,7 @@ function renderExerciseDetail(exerciseId) {
             <h1 class="exercise-title">${exercise.name}</h1>
             <div class="exercise-meta">
                 <div class="meta-item">⏱️ ${exercise.duration}</div>
-                <div class="meta-item">${exercise.solo ? '👤 Solo' : '👥 2+ Personen'}</div>
+                <div class="meta-item">${exercise.setup.solo ? '👤 Solo' : '👥 2+ Personen'}</div>
                 ${exercise.setup?.equipment ? `<div class="meta-item">🎒 ${exercise.setup.equipment.length} Items</div>` : ''}
             </div>
         </div>
