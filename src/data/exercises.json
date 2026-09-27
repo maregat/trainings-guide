@@ -3,7 +3,7 @@
     "version": "2.0",
     "ageGroup": "U11/U12",
     "skillLevel": "competitive",
-    "lastUpdated": "2026-09-27T10:16:28.998063",
+    "lastUpdated": "2026-09-27T10:44:01.402168",
     "totalExercises": 51,
     "sources": [
       "Coerver Coaching Method",
@@ -1306,8 +1306,8 @@
           "Fußball"
         ],
         "space": "Freifläche",
-        "solo": true,
-        "partner": false
+        "solo": false,
+        "partner": true
       },
       "technique": {
         "keyPoints": [
