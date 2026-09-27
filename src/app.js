@@ -228,6 +228,7 @@ function renderExerciseDetail(exerciseId) {
                         <video 
                             controls 
                             muted
+                            playsinline
                             style="width: 100%; height: auto; background: #000; border-radius: 8px;"
                             preload="metadata">
                             <source src="${videoUrl}" type="video/mp4">
