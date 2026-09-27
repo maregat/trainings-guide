@@ -328,7 +328,7 @@
       },
       "progressionPath": [],
       "videoLink": {
-        "url": "./data/videos/sole_taps.webm",
+        "url": "./data/videos/sole_taps.mp4",
         "title": "Sole Taps"
       },
       "subCategory": "basis"
@@ -365,7 +365,7 @@
       },
       "progressionPath": [],
       "videoLink": {
-        "url": "./data/videos/football_dance.webm",
+        "url": "./data/videos/football_dance.mp4",
         "title": "Football Dance"
       },
       "subCategory": "basis"
@@ -475,7 +475,7 @@
       },
       "progressionPath": [],
       "videoLink": {
-        "url": "./data/videos/continuous_scissors.webm",
+        "url": "./data/videos/continuous_scissors.mp4",
         "title": "Continuous Scissors"
       },
       "subCategory": "rotation"
@@ -511,7 +511,7 @@
       },
       "progressionPath": [],
       "videoLink": {
-        "url": "./data/videos/sole_drag.webm",
+        "url": "./data/videos/sole_drag.mp4",
         "title": "Sole Drag"
       },
       "subCategory": "rotation"
@@ -547,7 +547,7 @@
       },
       "progressionPath": [],
       "videoLink": {
-        "url": "./data/videos/triple_sole_drag.webm",
+        "url": "./data/videos/triple_sole_drag.mp4",
         "title": "Triple Sole Drag"
       },
       "subCategory": "rotation"
@@ -583,7 +583,7 @@
       },
       "progressionPath": [],
       "videoLink": {
-        "url": "./data/videos/sole_drag_+_inside_push.webm",
+        "url": "./data/videos/sole_drag_+_inside_push.mp4",
         "title": "Sole Drag + Inside Push"
       },
       "subCategory": "rotation"
@@ -619,7 +619,7 @@
       },
       "progressionPath": [],
       "videoLink": {
-        "url": "./data/videos/sole_drag_+_outside_push.webm",
+        "url": "./data/videos/sole_drag_+_outside_push.mp4",
         "title": "Sole Drag + Outside Push"
       },
       "subCategory": "rotation"
@@ -655,7 +655,7 @@
       },
       "progressionPath": [],
       "videoLink": {
-        "url": "./data/videos/the_v__inside.webm",
+        "url": "./data/videos/the_v__inside.mp4",
         "title": "The V – Inside"
       },
       "subCategory": "rotation"
@@ -691,7 +691,7 @@
       },
       "progressionPath": [],
       "videoLink": {
-        "url": "./data/videos/the_v__outside.webm",
+        "url": "./data/videos/the_v__outside.mp4",
         "title": "The V – Outside"
       },
       "subCategory": "rotation"
@@ -763,7 +763,7 @@
       },
       "progressionPath": [],
       "videoLink": {
-        "url": "./data/videos/pull-push_instep_links.webm",
+        "url": "./data/videos/pull-push_instep_links.mp4",
         "title": "Pull-Push Instep (links)"
       },
       "subCategory": "rotation"
@@ -799,7 +799,7 @@
       },
       "progressionPath": [],
       "videoLink": {
-        "url": "./data/videos/triple_pull-push.webm",
+        "url": "./data/videos/triple_pull-push.mp4",
         "title": "Triple Pull-Push"
       },
       "subCategory": "rotation"
@@ -835,7 +835,7 @@
       },
       "progressionPath": [],
       "videoLink": {
-        "url": "./data/videos/rollover_+_stop_+_inside.webm",
+        "url": "./data/videos/rollover_+_stop_+_inside.mp4",
         "title": "Rollover + Stop + Inside"
       },
       "subCategory": "rotation"
@@ -871,7 +871,7 @@
       },
       "progressionPath": [],
       "videoLink": {
-        "url": "./data/videos/stop_+_slide.webm",
+        "url": "./data/videos/stop_+_slide.mp4",
         "title": "Stop + Slide"
       },
       "subCategory": "rotation"
@@ -907,7 +907,7 @@
       },
       "progressionPath": [],
       "videoLink": {
-        "url": "./data/videos/inside_cut.webm",
+        "url": "./data/videos/inside_cut.mp4",
         "title": "Inside Cut"
       },
       "subCategory": "rotation"
@@ -943,7 +943,7 @@
       },
       "progressionPath": [],
       "videoLink": {
-        "url": "./data/videos/outside_push_messi.webm",
+        "url": "./data/videos/outside_push_messi.mp4",
         "title": "Outside Push (Messi)"
       },
       "subCategory": "rotation"
@@ -979,7 +979,7 @@
       },
       "progressionPath": [],
       "videoLink": {
-        "url": "./data/videos/rollover_+_stop_instep.webm",
+        "url": "./data/videos/rollover_+_stop_instep.mp4",
         "title": "Rollover + Stop Instep"
       },
       "subCategory": "rotation"
@@ -1015,7 +1015,7 @@
       },
       "progressionPath": [],
       "videoLink": {
-        "url": "./data/videos/the_l_rechts.webm",
+        "url": "./data/videos/the_l_rechts.mp4",
         "title": "The L (rechts)"
       },
       "subCategory": "rotation"
@@ -1051,7 +1051,7 @@
       },
       "progressionPath": [],
       "videoLink": {
-        "url": "./data/videos/the_l_links.webm",
+        "url": "./data/videos/the_l_links.mp4",
         "title": "The L (links)"
       },
       "subCategory": "rotation"
@@ -1087,7 +1087,7 @@
       },
       "progressionPath": [],
       "videoLink": {
-        "url": "./data/videos/step_over.webm",
+        "url": "./data/videos/step_over.mp4",
         "title": "Step Over"
       },
       "subCategory": "rotation"
@@ -1123,7 +1123,7 @@
       },
       "progressionPath": [],
       "videoLink": {
-        "url": "./data/videos/around_two_cones_horizontal.webm",
+        "url": "./data/videos/around_two_cones_horizontal.mp4",
         "title": "Around Two Cones (horizontal)"
       },
       "subCategory": "rotation"
@@ -1159,7 +1159,7 @@
       },
       "progressionPath": [],
       "videoLink": {
-        "url": "./data/videos/around_two_cones_vertikal.webm",
+        "url": "./data/videos/around_two_cones_vertikal.mp4",
         "title": "Around Two Cones (vertikal)"
       },
       "subCategory": "rotation"
@@ -1195,7 +1195,7 @@
       },
       "progressionPath": [],
       "videoLink": {
-        "url": "./data/videos/around_four_cones.webm",
+        "url": "./data/videos/around_four_cones.mp4",
         "title": "Around Four Cones"
       },
       "subCategory": "rotation"
