@@ -69,6 +69,16 @@ mkdir -p ./docs/data
 cp ./src/data/exercises.json ./docs/data/exercises.json
 echo "   ✅ exercises.json ($(wc -c < ./docs/data/exercises.json) bytes)"
 
+# Kopiere Videos (falls vorhanden)
+if [ -d ./src/data/videos ]; then
+    mkdir -p ./docs/data/videos
+    cp -r ./src/data/videos/* ./docs/data/videos/ 2>/dev/null || true
+    video_count=$(find ./docs/data/videos -type f | wc -l)
+    if [ "$video_count" -gt 0 ]; then
+        echo "   ✅ Videos ($video_count Dateien)"
+    fi
+fi
+
 echo "✅ Daten-Dateien kopiert"
 echo ""
 

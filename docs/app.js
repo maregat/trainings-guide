@@ -219,15 +219,67 @@ function renderExerciseDetail(exerciseId) {
     // Video Link
     if (exercise.videoLink) {
         if (exercise.videoLink.url) {
-            // Link zu YouTube Video
-            html += `
-                <div style="padding: 0 1.5rem; margin-bottom: 1.5rem;">
-                    <a href="${exercise.videoLink.url}" target="_blank" style="display: inline-block; padding: 0.75rem 1.5rem; background: #ff0000; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; cursor: pointer;">
-                        🎥 Video anschauen
-                    </a>
-                    <button onclick="openVideoEditModal('${exercise.id}')" style="margin-left: 0.5rem; padding: 0.75rem 1rem; background: #f0f0f0; border: none; border-radius: 6px; cursor: pointer; font-size: 0.85rem;">✏️ Link bearbeiten</button>
-                </div>
-            `;
+            const videoUrl = exercise.videoLink.url;
+            
+            // Prüfe ob lokale MP4-Datei (HTML5 Video Player)
+            if (videoUrl.includes('.mp4') || videoUrl.includes('./data/videos')) {
+                html += `
+                    <div style="padding: 0 1.5rem; margin-bottom: 1.5rem;">
+                        <video 
+                            controls 
+                            style="width: 100%; height: auto; background: #000; border-radius: 8px;"
+                            preload="metadata">
+                            <source src="${videoUrl}" type="video/mp4">
+                            Dein Browser unterstützt HTML5 Video nicht.
+                        </video>
+                        <div style="margin-top: 0.75rem; font-size: 0.85rem;">
+                            <button onclick="openVideoEditModal('${exercise.id}')" style="padding: 0.5rem 1rem; background: #f0f0f0; border: none; border-radius: 6px; cursor: pointer; font-size: 0.85rem;">✏️ Link bearbeiten</button>
+                        </div>
+                    </div>
+                `;
+            }
+            // Prüfe ob Vimeo
+            else if (videoUrl.includes('vimeo.com')) {
+                // Vimeo: Video einbetten
+                // URL-Format: https://vimeo.com/1051337825/514bb750ce
+                // Embed-Format: https://player.vimeo.com/video/1051337825?h=514bb750ce
+                const vimeoMatch = videoUrl.match(/vimeo\.com\/(\d+)(?:\/([a-f0-9]+))?/);
+                if (vimeoMatch) {
+                    const videoId = vimeoMatch[1];
+                    const token = vimeoMatch[2];
+                    const embedUrl = token 
+                        ? `https://player.vimeo.com/video/${videoId}?h=${token}`
+                        : `https://player.vimeo.com/video/${videoId}`;
+                    
+                    html += `
+                        <div style="padding: 0 1.5rem; margin-bottom: 1.5rem;">
+                            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px;">
+                                <iframe 
+                                    src="${embedUrl}" 
+                                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 8px;"
+                                    allow="autoplay; fullscreen; picture-in-picture" 
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                            <div style="margin-top: 0.75rem; font-size: 0.85rem;">
+                                <a href="${videoUrl}" target="_blank" style="color: #0066cc; text-decoration: none;">🔗 Video auf Vimeo öffnen</a>
+                                <button onclick="openVideoEditModal('${exercise.id}')" style="margin-left: 0.5rem; padding: 0.5rem 1rem; background: #f0f0f0; border: none; border-radius: 6px; cursor: pointer; font-size: 0.85rem;">✏️ Link bearbeiten</button>
+                            </div>
+                        </div>
+                    `;
+                }
+            }
+            // YouTube oder andere Links
+            else {
+                html += `
+                    <div style="padding: 0 1.5rem; margin-bottom: 1.5rem;">
+                        <a href="${videoUrl}" target="_blank" style="display: inline-block; padding: 0.75rem 1.5rem; background: #ff0000; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; cursor: pointer;">
+                            🎥 Video anschauen
+                        </a>
+                        <button onclick="openVideoEditModal('${exercise.id}')" style="margin-left: 0.5rem; padding: 0.75rem 1rem; background: #f0f0f0; border: none; border-radius: 6px; cursor: pointer; font-size: 0.85rem;">✏️ Link bearbeiten</button>
+                    </div>
+                `;
+            }
         } else {
             // Platzhalter für später
             html += `
