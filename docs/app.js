@@ -227,6 +227,7 @@ function renderExerciseDetail(exerciseId) {
                     <div style="padding: 0 1.5rem; margin-bottom: 1.5rem;">
                         <video 
                             controls 
+                            muted
                             style="width: 100%; height: auto; background: #000; border-radius: 8px;"
                             preload="metadata">
                             <source src="${videoUrl}" type="video/mp4">
@@ -248,8 +249,8 @@ function renderExerciseDetail(exerciseId) {
                     const videoId = vimeoMatch[1];
                     const token = vimeoMatch[2];
                     const embedUrl = token 
-                        ? `https://player.vimeo.com/video/${videoId}?h=${token}`
-                        : `https://player.vimeo.com/video/${videoId}`;
+                        ? `https://player.vimeo.com/video/${videoId}?h=${token}&muted=1`
+                        : `https://player.vimeo.com/video/${videoId}?muted=1`;
                     
                     html += `
                         <div style="padding: 0 1.5rem; margin-bottom: 1.5rem;">
