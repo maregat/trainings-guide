@@ -36,7 +36,6 @@ async function init() {
         // Setup Event Listener
         setupEventListeners();
         setupModalListeners();
-        setupPullToRefresh();
         
         // Render Categories
         renderCategories();
@@ -75,107 +74,7 @@ function setupEventListeners() {
 let pullStartY = 0;
 let isPulling = false;
 
-function setupPullToRefresh() {
-    const main = document.querySelector('.main');
-    const pullToRefreshEl = document.getElementById('pull-to-refresh');
-    
-    main.addEventListener('touchstart', (e) => {
-        // Nur merken, nicht aktiv werden
-        if (main.scrollTop === 0) {
-            pullStartY = e.touches[0].clientY;
-        }
-    }, { passive: true });
-    
-    main.addEventListener('touchmove', (e) => {
-        if (main.scrollTop !== 0) return;
-        
-        const pullDistance = e.touches[0].clientY - pullStartY;
-        
-        // Nur wenn nach unten gezogen wird
-        if (pullDistance > 0) {
-            isPulling = true;
-            e.preventDefault(); // Verhindert Scrolling
-            
-            pullToRefreshEl.style.transform = `translateY(${Math.min(pullDistance, 80) - 100}px)`;
-            
-            if (pullDistance > 80) {
-                pullToRefreshEl.classList.add('visible');
-                pullToRefreshEl.querySelector('.refresh-text').textContent = 'Loslassen zum Aktualisieren';
-                pullToRefreshEl.querySelector('.refresh-icon').textContent = '↑';
-            } else {
-                pullToRefreshEl.classList.remove('visible');
-                pullToRefreshEl.querySelector('.refresh-text').textContent = 'Ziehen zum Aktualisieren...';
-                pullToRefreshEl.querySelector('.refresh-icon').textContent = '↓';
-            }
-        }
-    }, { passive: false });
-    
-    main.addEventListener('touchend', async (e) => {
-        if (!isPulling) return;
-        
-        isPulling = false;
-        const pullDistance = e.changedTouches[0].clientY - pullStartY;
-        
-        pullToRefreshEl.style.transform = 'translateY(-100%)';
-        pullToRefreshEl.classList.remove('visible');
-        
-        if (pullDistance > 80) {
-            // Trigger refresh
-            await refreshApp();
-        }
-    }, { passive: true });
-}
 
-
-async function refreshApp() {
-    const pullToRefreshEl = document.getElementById('pull-to-refresh');
-    pullToRefreshEl.classList.add('refreshing');
-    pullToRefreshEl.querySelector('.refresh-text').textContent = 'Wird aktualisiert...';
-    pullToRefreshEl.querySelector('.refresh-icon').textContent = '↻';
-    
-    try {
-        // Reload exercises data
-        const response = await fetch('./data/exercises.json?t=' + Date.now());
-        if (response.ok) {
-            exercisesData = await response.json();
-            
-            // Update current view
-            if (currentView === 'categories') {
-                renderCategories();
-                renderSidebar();
-            } else if (currentView === 'exerciseList') {
-                renderExerciseList(currentCategory);
-            } else if (currentView === 'exerciseDetail') {
-                renderExerciseDetail(currentExerciseId);
-            }
-            
-            // Trigger service worker update
-            if ('serviceWorker' in navigator) {
-                try {
-                    const reg = await navigator.serviceWorker.getRegistration();
-                    if (reg) {
-                        reg.update();
-                    }
-                } catch (e) {
-                    console.log('Service Worker update check failed');
-                }
-            }
-        }
-    } catch (error) {
-        console.error('Refresh error:', error);
-    }
-    
-    // Hide refresh indicator
-    setTimeout(() => {
-        pullToRefreshEl.classList.remove('refreshing');
-        pullToRefreshEl.style.transform = 'translateY(-100%)';
-    }, 500);
-}
-
-
-// ============================================
-// Views: Kategorie-Ansicht
-// ============================================
 
 function renderCategories() {
     const categories = exercisesData.categories;
