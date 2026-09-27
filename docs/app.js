@@ -27,8 +27,8 @@ async function init() {
     try {
         showLoading();
         
-        // Lade exercises.json
-        const response = await fetch('./data/exercises.json');
+        // Lade exercises.json mit Version-Busting (v6)
+        const response = await fetch('./data/exercises.json?v=6&t=' + Date.now());
         if (!response.ok) throw new Error('Fehler beim Laden von exercises.json');
         
         exercisesData = await response.json();
