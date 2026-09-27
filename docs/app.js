@@ -448,7 +448,8 @@ function getExercisesInCategory(categoryKey) {
 
 function getCategoryIcon(categoryKey) {
     const icons = {
-        warmup: '🔥',
+        warmup_coordination: '🏃',
+        warmup_coerver: '🎪',
         firstTouch: '🎯',
         ballIntake: '🔄',
         ballControl: '👣',
