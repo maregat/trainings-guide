@@ -224,6 +224,8 @@ function renderExerciseDetail(exerciseId) {
             // Prüfe ob lokale MP4-Datei (HTML5 Video Player)
             if (videoUrl.includes('.mp4') || videoUrl.includes('./data/videos')) {
                 const videoId = 'video-' + exercise.id;
+                // Poster URL: gleiche wie Video, aber .jpg statt .mp4
+                const posterUrl = videoUrl.replace(/\.mp4$/, '.jpg');
                 html += `
                     <div style="padding: 0 1.5rem; margin-bottom: 1.5rem;">
                         <div style="position: relative; width: 100%; max-width: 100%; aspect-ratio: 16 / 9; background: #000; border-radius: 8px; overflow: hidden;">
@@ -235,6 +237,7 @@ function renderExerciseDetail(exerciseId) {
                                 webkit-playsinline
                                 x5-playsinline
                                 disablePictureInPicture
+                                poster="${posterUrl}"
                                 style="width: 100%; height: 100%; display: block; object-fit: contain;"
                                 preload="metadata">
                                 <source src="${videoUrl}" type="video/mp4">
