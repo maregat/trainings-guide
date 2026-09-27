@@ -1306,8 +1306,8 @@
           "Fußball"
         ],
         "space": "Freifläche",
-        "solo": true,
-        "partner": false
+        "solo": false,
+        "partner": true
       },
       "technique": {
         "keyPoints": [
