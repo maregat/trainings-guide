@@ -33,28 +33,28 @@ echo "✅ /docs bereinigt"
 echo ""
 
 # ============================================
-# Copy app files
+# Copy src files
 # ============================================
 
-echo "📋 Step 2: Copy app/ → /docs (Web-Oberfläche)"
+echo "📋 Step 2: Copy src/ → /docs (Komplette Anwendung)"
 echo "─────────────────────────────────────────────────────────────────"
 
-cp ./app/index.html ./docs/index.html
+cp ./src/index.html ./docs/index.html
 echo "   ✅ index.html"
 
-cp ./app/app.js ./docs/app.js
+cp ./src/app.js ./docs/app.js
 echo "   ✅ app.js"
 
-cp ./app/styles.css ./docs/styles.css
+cp ./src/styles.css ./docs/styles.css
 echo "   ✅ styles.css"
 
-cp ./app/sw.js ./docs/sw.js
+cp ./src/sw.js ./docs/sw.js
 echo "   ✅ sw.js"
 
-cp ./app/manifest.json ./docs/manifest.json
+cp ./src/manifest.json ./docs/manifest.json
 echo "   ✅ manifest.json"
 
-echo "✅ Web-Dateien kopiert"
+echo "✅ App-Dateien kopiert"
 echo ""
 
 # ============================================
