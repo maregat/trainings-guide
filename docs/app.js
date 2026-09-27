@@ -576,7 +576,59 @@ function showError(message) {
 }
 
 // ============================================
+// Service Worker Update Check
+// ============================================
+
+function setupUpdateCheck() {
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.ready.then((registration) => {
+            console.log('Service Worker ready for update checks');
+            
+            // Checke alle 5 Sekunden auf Update (für schnelleres Testen)
+            // In Produktion: setInterval(checkForUpdates, 5 * 60 * 1000); // 5 Minuten
+            setInterval(checkForUpdates, 5000);
+            
+            // Sofort einmal checken
+            checkForUpdates();
+            
+            // Höre auf controllerchange
+            navigator.serviceWorker.addEventListener('controllerchange', () => {
+                console.log('New Service Worker activated');
+                showUpdateBanner();
+            });
+        });
+    }
+}
+
+function checkForUpdates() {
+    if (!navigator.serviceWorker.controller) return;
+    
+    fetch('./sw.js?v=' + Date.now(), { cache: 'no-store' })
+        .then(response => {
+            if (response.ok) {
+                navigator.serviceWorker.controller.postMessage({ type: 'CHECK_UPDATE' });
+            }
+        })
+        .catch(err => console.log('Update check failed:', err));
+}
+
+function showUpdateBanner() {
+    const banner = document.getElementById('update-banner');
+    const btn = document.getElementById('update-btn');
+    
+    banner.classList.remove('hidden');
+    
+    btn.addEventListener('click', () => {
+        // Reload with new service worker
+        window.location.reload();
+    });
+}
+
+// ============================================
 // Start
 // ============================================
 
-document.addEventListener('DOMContentLoaded', init);
+document.addEventListener('DOMContentLoaded', () => {
+    init();
+    setupUpdateCheck();
+});

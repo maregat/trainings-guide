@@ -1,11 +1,11 @@
-const CACHE_NAME = 'trainings-guide-v2';
+const CACHE_NAME = 'trainings-guide-v3';
 const STATIC_ASSETS = [
     '/',
     '/index.html',
     '/app.js',
     '/styles.css',
     '/manifest.json',
-    '../data/exercises.json'
+    'data/exercises.json'
 ];
 
 // ============================================
@@ -50,6 +50,17 @@ self.addEventListener('activate', (event) => {
 });
 
 // ============================================
+// Background Update Check
+// ============================================
+
+self.addEventListener('message', (event) => {
+    if (event.data && event.data.type === 'SKIP_WAITING') {
+        self.skipWaiting();
+    }
+});
+
+
+// ============================================
 // Fetch: Smart Cache Strategy
 // ============================================
 
@@ -64,8 +75,11 @@ self.addEventListener('fetch', (event) => {
         return;
     }
     
-    // Network-First für exercises.json (immer versuchen, neu zu laden)
-    if (event.request.url.includes('exercises.json')) {
+    // Network-First für kritische App-Dateien (app.js, styles.css, index.html)
+    if (event.request.url.includes('app.js') || 
+        event.request.url.includes('styles.css') || 
+        event.request.url.includes('index.html') ||
+        event.request.url.includes('exercises.json')) {
         event.respondWith(
             fetch(event.request)
                 .then((response) => {
