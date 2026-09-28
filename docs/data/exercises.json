@@ -1495,9 +1495,10 @@
       },
       "progressionPath": [],
       "videoLink": {
-        "url": null,
-        "title": null
-      }
+        "url": "./data/videos/bc_zig_zag.mp4",
+        "title": "Zig-Zag-Dribbeln"
+      },
+      "poster": "./data/videos/bc_zig_zag.jpg"
     },
     "bc_slalom": {
       "id": "bc_slalom",
@@ -1942,8 +1943,8 @@
         "acl_box_jump"
       ],
       "videoLink": {
-        "url": "https://www.youtube.com/watch?v=p5CijlnRc5w",
-        "title": "Glute Bridge – Technique Demonstration"
+        "url": null,
+        "title": "🏃‍♀️ Glute Bridge (Hüft-Strecker)"
       }
     },
     "acl_single_leg_squat": {
@@ -1986,8 +1987,8 @@
         "acl_box_jump"
       ],
       "videoLink": {
-        "url": "https://www.youtube.com/watch?v=ZXchV2OvQok",
-        "title": "Single Leg Squat Progression – Beginner to Advanced"
+        "url": null,
+        "title": "🏃‍♀️ Single-Leg Squat (Einbeinige Kniebeuge)"
       }
     },
     "acl_monster_walk": {
@@ -2029,8 +2030,8 @@
         "acl_clamshells"
       ],
       "videoLink": {
-        "url": "https://www.youtube.com/watch?v=u-Sz01sKG-c",
-        "title": "Monster Walk with Resistance Band – Full Demonstration"
+        "url": null,
+        "title": "🏃‍♀️ Monster Walk (Seitwärts mit Widerstandsband)"
       }
     },
     "acl_single_leg_deadlift": {
@@ -2073,8 +2074,8 @@
         "acl_box_jump"
       ],
       "videoLink": {
-        "url": "https://www.youtube.com/watch?v=L0R6vJ57GdQ",
-        "title": "Single Leg Deadlift – Proper Form Tutorial"
+        "url": null,
+        "title": "🏃‍♀️ Single-Leg Deadlift (Einbeiniges Hip-Hinge)"
       }
     },
     "acl_clamshells": {
@@ -2118,8 +2119,8 @@
         "acl_monster_walk"
       ],
       "videoLink": {
-        "url": "https://www.youtube.com/watch?v=bCw2YJXs7bA",
-        "title": "Clamshells Exercise – Glute Activation"
+        "url": null,
+        "title": "🏃‍♀️ Clamshells (Hüft-Abduktion liegend)"
       }
     },
     "acl_box_jump": {
@@ -2163,8 +2164,8 @@
         "acl_single_leg_squat"
       ],
       "videoLink": {
-        "url": "https://www.youtube.com/watch?v=6qb82B9OHdE",
-        "title": "Box Jump Technique – Landing Mechanics (Most Important!)"
+        "url": null,
+        "title": "🏃‍♀️ Box Jump (Plyometrics mit korrekter Landung)"
       }
     },
     "acl_lateral_lunge": {
@@ -2205,8 +2206,8 @@
       },
       "progressionPath": [],
       "videoLink": {
-        "url": "https://www.youtube.com/watch?v=EJ7M5UlWFd4",
-        "title": "Lateral Lunge Exercise – Proper Form"
+        "url": null,
+        "title": "🏃‍♀️ Lateral Lunge (Seitwärts-Ausfallschritt)"
       }
     },
     "acl_single_leg_balance": {
@@ -2246,8 +2247,8 @@
       },
       "progressionPath": [],
       "videoLink": {
-        "url": "https://www.youtube.com/watch?v=CJ-W3Xjp4nE",
-        "title": "Single Leg Balance – Proprioception Training"
+        "url": null,
+        "title": "🏃‍♀️ Single-Leg Balance (Einbeiniges Gleichgewicht)"
       }
     }
   }

@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Admin Panel - Video Upload</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 900px;
+            width: 100%;
+            padding: 40px;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 2em;
+        }
+
+        .logout-btn {
+            padding: 8px 16px;
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .logout-btn:hover {
+            background: #ff5252;
+        }
+
+        .login-panel {
+            display: none;
+        }
+
+        .login-panel.active {
+            display: flex !important;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .login-panel {
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .login-input {
+            padding: 12px 16px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+
+        .login-input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .login-btn {
+            padding: 12px 20px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .login-btn:hover {
+            background: #764ba2;
+        }
+
+        .main-panel {
+            display: block;
+        }
+
+        .main-panel.hidden {
+            display: none;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        select, input[type="text"] {
+            width: 100%;
+            padding: 10px 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 0.95em;
+            transition: border-color 0.3s;
+        }
+
+        select:focus, input[type="text"]:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .upload-zone {
+            border: 3px dashed #667eea;
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: #f8f9ff;
+            margin-bottom: 20px;
+        }
+
+        .upload-zone:hover {
+            border-color: #764ba2;
+            background: #f0f2ff;
+        }
+
+        .upload-zone.dragover {
+            border-color: #764ba2;
+            background: #e8ebff;
+            transform: scale(1.02);
+        }
+
+        .upload-zone input {
+            display: none;
+        }
+
+        .upload-icon {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .upload-text {
+            color: #667eea;
+            font-weight: 500;
+            font-size: 1.1em;
+        }
+
+        .upload-hint {
+            color: #999;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+
+        .video-preview {
+            display: none;
+            margin-bottom: 20px;
+        }
+
+        .video-preview.active {
+            display: block;
+        }
+
+        .preview-container {
+            position: relative;
+            aspect-ratio: 16 / 9;
+            background: #000;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .preview-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .preview-info {
+            background: #f0f0f0;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .exercise-current {
+            background: #f8f9ff;
+            padding: 12px;
+            border-left: 4px solid #667eea;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            font-size: 0.9em;
+        }
+
+        .exercise-current.empty {
+            color: #999;
+            border-left-color: #ddd;
+        }
+
+        .exercise-current strong {
+            color: #667eea;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        button {
+            flex: 1;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-upload {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-upload:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-upload:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .btn-delete {
+            background: #ff6b6b;
+            color: white;
+        }
+
+        .btn-delete:hover {
+            background: #ff5252;
+        }
+
+        .btn-cancel {
+            background: #f0f0f0;
+            color: #333;
+        }
+
+        .btn-cancel:hover {
+            background: #e0e0e0;
+        }
+
+        .status {
+            display: none;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 0.95em;
+            margin-top: 20px;
+        }
+
+        .status.active {
+            display: block;
+        }
+
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .status.processing {
+            background: #cce5ff;
+            color: #004085;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid currentColor;
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            .header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Login Panel -->
+        <div class="login-panel active" id="loginPanel">
+            <h1>🔐 Admin Login</h1>
+            <input 
+                type="password" 
+                class="login-input" 
+                id="passwordInput" 
+                placeholder="Passwort eingeben..."
+                autocomplete="off"
+            >
+            <button class="login-btn" id="loginBtn">Login</button>
+        </div>
+
+        <!-- Main Panel -->
+        <div class="main-panel hidden" id="mainPanel">
+            <div class="header">
+                <h1>🎬 Video Upload</h1>
+                <button class="logout-btn" id="logoutBtn">Logout</button>
+            </div>
+
+            <!-- Exercise Selection -->
+            <div class="section">
+                <div class="section-title">📋 Übung auswählen</div>
+                <div class="form-group">
+                    <label for="exerciseSelect">Übung:</label>
+                    <select id="exerciseSelect">
+                        <option value="">-- Bitte Übung wählen --</option>
+                    </select>
+                </div>
+                <div class="exercise-current empty" id="currentVideoInfo">
+                    Keine Übung ausgewählt
+                </div>
+            </div>
+
+            <!-- Video Upload -->
+            <div class="section">
+                <div class="section-title">📹 Video hochladen</div>
+                
+                <div class="upload-zone" id="uploadZone">
+                    <input type="file" id="videoInput" accept="video/*">
+                    <div class="upload-icon">📹</div>
+                    <div class="upload-text">Drag & drop your video here</div>
+                    <div class="upload-hint">or click to select • MP4, WebM, AVI, MOV, MKV...</div>
+                </div>
+
+                <!-- Video Preview -->
+                <div class="video-preview" id="videoPreview">
+                    <video id="previewVideo" style="width: 100%; max-height: 300px; background: #000; border-radius: 8px;" controls></video>
+                    <div class="preview-info" id="previewInfo"></div>
+                </div>
+
+                <!-- Upload Buttons -->
+                <div class="button-group">
+                    <button class="btn-upload" id="uploadBtn" disabled>✂️ Upload & Link</button>
+                    <button class="btn-delete" id="deleteBtn" disabled>🗑️ Delete Current</button>
+                    <button class="btn-cancel" id="cancelBtn">Clear</button>
+                </div>
+
+                <!-- Status -->
+                <div class="status" id="status"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentPassword = '';
+        let currentExercise = null;
+        let selectedFile = null;
+        let exercises = [];
+
+        const loginPanel = document.getElementById('loginPanel');
+        const mainPanel = document.getElementById('mainPanel');
+        const passwordInput = document.getElementById('passwordInput');
+        const loginBtn = document.getElementById('loginBtn');
+        const logoutBtn = document.getElementById('logoutBtn');
+        const exerciseSelect = document.getElementById('exerciseSelect');
+        const uploadZone = document.getElementById('uploadZone');
+        const videoInput = document.getElementById('videoInput');
+        const previewVideo = document.getElementById('previewVideo');
+        const videoPreview = document.getElementById('videoPreview');
+        const uploadBtn = document.getElementById('uploadBtn');
+        const deleteBtn = document.getElementById('deleteBtn');
+        const cancelBtn = document.getElementById('cancelBtn');
+        const status = document.getElementById('status');
+        const currentVideoInfo = document.getElementById('currentVideoInfo');
+
+        // Login
+        loginBtn.addEventListener('click', handleLogin);
+        passwordInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') handleLogin();
+        });
+
+        function handleLogin() {
+            currentPassword = passwordInput.value;
+            if (!currentPassword) {
+                showStatus('Bitte Passwort eingeben', 'error');
+                return;
+            }
+
+            // Try to load exercises to verify password
+            fetch('/api/exercises')
+                .then(r => r.json())
+                .then(data => {
+                    if (data.error) {
+                        showStatus('Login fehlgeschlagen', 'error');
+                        return;
+                    }
+
+                    exercises = data.exercises;
+                    loginPanel.classList.remove('active');
+                    mainPanel.classList.remove('hidden');
+                    loadExercises();
+                })
+                .catch(e => showStatus('Error: ' + e.message, 'error'));
+        }
+
+        // Logout
+        logoutBtn.addEventListener('click', () => {
+            currentPassword = '';
+            currentExercise = null;
+            selectedFile = null;
+            loginPanel.classList.add('active');
+            mainPanel.classList.add('hidden');
+            passwordInput.value = '';
+            videoPreview.classList.remove('active');
+            showStatus('', '');
+        });
+
+        function loadExercises() {
+            exerciseSelect.innerHTML = '<option value="">-- Bitte Übung wählen --</option>';
+            exercises.forEach(ex => {
+                const option = document.createElement('option');
+                option.value = ex.id;
+                option.textContent = ex.name;
+                exerciseSelect.appendChild(option);
+            });
+        }
+
+        exerciseSelect.addEventListener('change', () => {
+            const exId = exerciseSelect.value;
+            if (!exId) {
+                currentExercise = null;
+                currentVideoInfo.classList.add('empty');
+                currentVideoInfo.textContent = 'Keine Übung ausgewählt';
+                uploadBtn.disabled = true;
+                deleteBtn.disabled = true;
+                return;
+            }
+
+            currentExercise = exercises.find(e => e.id === exId);
+            updateCurrentVideoInfo();
+            uploadBtn.disabled = !selectedFile;
+            deleteBtn.disabled = !currentExercise.currentVideo;
+        });
+
+        function updateCurrentVideoInfo() {
+            if (!currentExercise) {
+                currentVideoInfo.classList.add('empty');
+                currentVideoInfo.textContent = 'Keine Übung ausgewählt';
+                return;
+            }
+
+            if (currentExercise.currentVideo) {
+                currentVideoInfo.classList.remove('empty');
+                currentVideoInfo.innerHTML = `<strong>📹 Aktuelles Video:</strong> ${currentExercise.currentVideo}`;
+            } else {
+                currentVideoInfo.classList.add('empty');
+                currentVideoInfo.textContent = '❌ Kein Video hochgeladen';
+            }
+        }
+
+        // Upload Zone
+        uploadZone.addEventListener('click', () => videoInput.click());
+        uploadZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadZone.classList.add('dragover');
+        });
+        uploadZone.addEventListener('dragleave', () => {
+            uploadZone.classList.remove('dragover');
+        });
+        uploadZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadZone.classList.remove('dragover');
+            handleFileSelect(e.dataTransfer.files[0]);
+        });
+        videoInput.addEventListener('change', (e) => {
+            handleFileSelect(e.target.files[0]);
+        });
+
+        function handleFileSelect(file) {
+            if (!file) return;
+
+            selectedFile = file;
+            uploadBtn.disabled = !currentExercise;
+
+            // Preview
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                previewVideo.src = e.target.result;
+                previewVideo.onloadedmetadata = () => {
+                    const duration = previewVideo.duration;
+                    const size = (file.size / (1024 * 1024)).toFixed(2);
+                    document.getElementById('previewInfo').textContent = 
+                        `${file.name} • ${size} MB • ${Math.floor(duration)}s`;
+                };
+                videoPreview.classList.add('active');
+            };
+            reader.readAsDataURL(file);
+        }
+
+        uploadBtn.addEventListener('click', () => {
+            if (!selectedFile || !currentExercise) {
+                showStatus('Bitte Video und Übung auswählen', 'error');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('file', selectedFile);
+            formData.append('exercise_id', currentExercise.id);
+            formData.append('password', currentPassword);
+
+            uploadBtn.disabled = true;
+            showStatus('Video wird hochgeladen...', 'processing');
+
+            fetch('/api/upload', {
+                method: 'POST',
+                body: formData
+            })
+            .then(r => r.json())
+            .then(data => {
+                if (data.error) {
+                    showStatus('Error: ' + data.error, 'error');
+                    uploadBtn.disabled = false;
+                    return;
+                }
+
+                showStatus(`✅ ${data.message} (${data.size_mb} MB)`, 'success');
+                currentExercise.currentVideo = data.url;
+                updateCurrentVideoInfo();
+                deleteBtn.disabled = false;
+                uploadBtn.disabled = false;
+
+                // Reset
+                selectedFile = null;
+                videoInput.value = '';
+                videoPreview.classList.remove('active');
+            })
+            .catch(e => {
+                showStatus('Error: ' + e.message, 'error');
+                uploadBtn.disabled = false;
+            });
+        });
+
+        deleteBtn.addEventListener('click', () => {
+            if (!currentExercise || !confirm('Wirklich löschen?')) return;
+
+            deleteBtn.disabled = true;
+            showStatus('Video wird gelöscht...', 'processing');
+
+            fetch(`/api/delete/${currentExercise.id}`, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({password: currentPassword})
+            })
+            .then(r => r.json())
+            .then(data => {
+                if (data.error) {
+                    showStatus('Error: ' + data.error, 'error');
+                    deleteBtn.disabled = currentExercise.currentVideo === null;
+                    return;
+                }
+
+                showStatus('✅ Video gelöscht', 'success');
+                currentExercise.currentVideo = null;
+                updateCurrentVideoInfo();
+                deleteBtn.disabled = true;
+            })
+            .catch(e => {
+                showStatus('Error: ' + e.message, 'error');
+                deleteBtn.disabled = false;
+            });
+        });
+
+        cancelBtn.addEventListener('click', () => {
+            selectedFile = null;
+            videoInput.value = '';
+            videoPreview.classList.remove('active');
+            showStatus('', '');
+        });
+
+        function showStatus(message, type) {
+            if (!message) {
+                status.classList.remove('active');
+                return;
+            }
+            status.innerHTML = type === 'processing' ? 
+                `<span class="spinner"></span>${message}` : message;
+            status.classList.remove('success', 'error', 'processing');
+            status.classList.add('active', type);
+        }
+
+        // Focus password on load
+        passwordInput.focus();
+    </script>
+</body>
+</html>
