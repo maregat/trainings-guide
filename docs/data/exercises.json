@@ -1,18 +1,4 @@
 {
-  "metadata": {
-    "version": "2.0",
-    "ageGroup": "U11/U12",
-    "skillLevel": "competitive",
-    "lastUpdated": "2026-09-27T10:44:01.402168",
-    "totalExercises": 57,
-    "sources": [
-      "Coerver Coaching Method",
-      "DFB Trainingsmethodik",
-      "UEFA Youth Development",
-      "Fußball-Grundlagen im Garten"
-    ],
-    "structure": "Warm-Up (Koordination + Coerver) → Schwerpunkt-Übungen"
-  },
   "categories": {
     "warmup_coordination": {
       "name": "Warm-Up – Koordination (ohne Ball)",
@@ -82,1418 +68,466 @@
   "exercises": {
     "coo_line_jump_single": {
       "id": "coo_line_jump_single",
-      "category": "warmup_coordination",
-      "order": 1,
       "name": "Seitliches Linienspringen – einbeinig",
+      "category": "warmup_coordination",
       "description": "Auf einem Bein seitlich über eine Linie hin- und herspringen. Rechtes und linkes Bein getrennt üben.",
       "duration": "60-90 Sekunden pro Bein",
-      "setup": {
-        "equipment": [
-          "Linie oder Kreppband"
-        ],
-        "space": "Minimal (2-3m)",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Auf einem Bein stehen",
-          "Seitlich über Linie springen",
-          "Rhythmischer Wechsel"
-        ],
-        "focus": "Einbeinige Balance"
-      },
-      "commonMistakes": [],
-      "coachingTips": {
-        "observation": "",
-        "scaling_easier": "",
-        "scaling_harder": "",
-        "motivation": ""
-      },
-      "progressionPath": [],
       "videoLink": {
         "url": null,
         "title": null
-      }
+      },
+      "poster": null
     },
     "coo_line_jump_both": {
       "id": "coo_line_jump_both",
-      "category": "warmup_coordination",
-      "order": 2,
       "name": "Seitliches Linienspringen – beidbeinig",
+      "category": "warmup_coordination",
       "description": "Mit geschlossenen Füßen seitlich über die Linie hin- und herspringen, zügiger Rhythmus.",
       "duration": "60-90 Sekunden",
-      "setup": {
-        "equipment": [
-          "Linie oder Kreppband"
-        ],
-        "space": "Minimal (2-3m)",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Füße geschlossen",
-          "Zügiger Rhythmus",
-          "Explosivität"
-        ],
-        "focus": "Schnellkraft"
-      },
-      "commonMistakes": [],
-      "coachingTips": {
-        "observation": "",
-        "scaling_easier": "",
-        "scaling_harder": "",
-        "motivation": ""
-      },
-      "progressionPath": [],
       "videoLink": {
         "url": null,
         "title": null
-      }
+      },
+      "poster": null
     },
     "coo_line_jump_forward": {
       "id": "coo_line_jump_forward",
-      "category": "warmup_coordination",
-      "order": 3,
       "name": "Linienspringen vor/zurück",
+      "category": "warmup_coordination",
       "description": "Beidbeinig vorwärts über die Linie springen, dann rückwärts zurück.",
       "duration": "60-90 Sekunden",
-      "setup": {
-        "equipment": [
-          "Linie oder Kreppband"
-        ],
-        "space": "Minimal (2-3m)",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Schnelle Bodenkontakte",
-          "Gerader Sprung",
-          "Richtungswechsel"
-        ],
-        "focus": "Schnellkraft"
-      },
-      "commonMistakes": [],
-      "coachingTips": {
-        "observation": "",
-        "scaling_easier": "",
-        "scaling_harder": "",
-        "motivation": ""
-      },
-      "progressionPath": [],
       "videoLink": {
         "url": null,
         "title": null
-      }
+      },
+      "poster": null
     },
     "coo_ladder_one_per_field": {
       "id": "coo_ladder_one_per_field",
-      "category": "warmup_coordination",
-      "order": 4,
       "name": "Koordinationsleiter – Ein Kontakt pro Feld",
+      "category": "warmup_coordination",
       "description": "Mit schnellen Schritten durch jedes Feld der Leiter laufen.",
       "duration": "60-90 Sekunden",
-      "setup": {
-        "equipment": [
-          "Koordinationsleiter"
-        ],
-        "space": "Leiter (5-7m lang)",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Schnelle Fußaufsätze",
-          "Ein Fuß pro Feld",
-          "Fokus auf Geschwindigkeit"
-        ],
-        "focus": "Fußgeschwindigkeit"
-      },
-      "commonMistakes": [],
-      "coachingTips": {
-        "observation": "",
-        "scaling_easier": "",
-        "scaling_harder": "",
-        "motivation": ""
-      },
-      "progressionPath": [],
       "videoLink": {
         "url": null,
         "title": null
-      }
+      },
+      "poster": null
     },
     "coo_ladder_two_per_field": {
       "id": "coo_ladder_two_per_field",
-      "category": "warmup_coordination",
-      "order": 5,
       "name": "Koordinationsleiter – Zwei Kontakte pro Feld",
+      "category": "warmup_coordination",
       "description": "Mit zwei Schritten pro Feld durch die Leiter laufen.",
       "duration": "60-90 Sekunden",
-      "setup": {
-        "equipment": [
-          "Koordinationsleiter"
-        ],
-        "space": "Leiter (5-7m lang)",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Zwei Schritte pro Feld",
-          "Gleichmäßiger Rhythmus",
-          "Kontrolle"
-        ],
-        "focus": "Rhythmusgefühl"
-      },
-      "commonMistakes": [],
-      "coachingTips": {
-        "observation": "",
-        "scaling_easier": "",
-        "scaling_harder": "",
-        "motivation": ""
-      },
-      "progressionPath": [],
       "videoLink": {
         "url": null,
         "title": null
-      }
+      },
+      "poster": null
     },
     "coo_ladder_sidestep": {
       "id": "coo_ladder_sidestep",
-      "category": "warmup_coordination",
-      "order": 6,
       "name": "Koordinationsleiter – Seitwärts (Sidestep)",
+      "category": "warmup_coordination",
       "description": "Seitlich, mit dem Körper quer zur Leiter, durch jedes Feld steigen.",
       "duration": "60-90 Sekunden",
-      "setup": {
-        "equipment": [
-          "Koordinationsleiter"
-        ],
-        "space": "Leiter (5-7m lang)",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Seitliche Bewegung",
-          "Körper quer zur Leiter",
-          "Kontrollierte Schritte"
-        ],
-        "focus": "Seitliche Beweglichkeit"
-      },
-      "commonMistakes": [],
-      "coachingTips": {
-        "observation": "",
-        "scaling_easier": "",
-        "scaling_harder": "",
-        "motivation": ""
-      },
-      "progressionPath": [],
       "videoLink": {
         "url": null,
         "title": null
-      }
+      },
+      "poster": null
     },
     "coo_basis_toe_taps": {
       "id": "coo_basis_toe_taps",
-      "category": "warmup_coerver",
-      "order": 1,
       "name": "Sole Taps",
+      "category": "warmup_coerver",
       "description": "Ball abwechselnd mit den Fußspitzen von oben antippen.",
       "duration": "40 Sekunden (+ 20 Sek Pause)",
-      "setup": {
-        "equipment": [
-          "Fußball"
-        ],
-        "space": "Minimal",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Fußspitzen oben",
-          "Abwechselnd rechts-links",
-          "Rhythmisches Tempo"
-        ],
-        "focus": "Fußspitzen-Kontrolle"
-      },
-      "commonMistakes": [],
-      "coachingTips": {
-        "observation": "",
-        "scaling_easier": "",
-        "scaling_harder": "",
-        "motivation": ""
-      },
-      "progressionPath": [],
       "videoLink": {
         "url": "./data/videos/sole_taps.mp4",
         "title": "Sole Taps"
       },
-      "subCategory": "basis"
+      "poster": null
     },
     "coo_basis_football_dance": {
       "id": "coo_basis_football_dance",
-      "category": "warmup_coerver",
-      "order": 2,
       "name": "Football Dance",
+      "category": "warmup_coerver",
       "description": "Ball in schnellem Fußwechsel antippen – tänzelnde, rhythmische Bewegung.",
       "duration": "40 Sekunden (+ 20 Sek Pause)",
-      "setup": {
-        "equipment": [
-          "Fußball"
-        ],
-        "space": "Minimal",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Schnelle Wechsel",
-          "Tänzelnde Bewegung",
-          "Rhythmus"
-        ],
-        "focus": "Fußgeschwindigkeit"
-      },
-      "commonMistakes": [],
-      "coachingTips": {
-        "observation": "",
-        "scaling_easier": "",
-        "scaling_harder": "",
-        "motivation": ""
-      },
-      "progressionPath": [],
       "videoLink": {
         "url": "./data/videos/football_dance.mp4",
         "title": "Football Dance"
       },
-      "subCategory": "basis"
+      "poster": null
     },
     "coo_basis_ball_roll": {
       "id": "coo_basis_ball_roll",
-      "category": "warmup_coerver",
-      "order": 3,
       "name": "Ball zwischen den Füßen rollen",
+      "category": "warmup_coerver",
       "description": "Im Stehen den Ball mit Sohle abwechselnd hin- und herrollen.",
       "duration": "40 Sekunden (+ 20 Sek Pause)",
-      "setup": {
-        "equipment": [
-          "Fußball"
-        ],
-        "space": "Minimal",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Sohle kontrolliert",
-          "Abwechselnde Füße",
-          "Rollbewegung"
-        ],
-        "focus": "Sohlengefühl"
-      },
-      "commonMistakes": [],
-      "coachingTips": {
-        "observation": "",
-        "scaling_easier": "",
-        "scaling_harder": "",
-        "motivation": ""
-      },
-      "progressionPath": [],
       "videoLink": {
         "url": "https://www.youtube.com/watch?v=IeMYh7roBjk",
         "title": "Coerver-Referenzvideo"
       },
-      "subCategory": "basis"
+      "poster": null
     },
     "coo_basis_inside_outside": {
       "id": "coo_basis_inside_outside",
-      "category": "warmup_coerver",
-      "order": 5,
       "name": "Innenseite-Außenseite-Tipping",
+      "category": "warmup_coerver",
       "description": "Ball auf der Stelle abwechselnd mit Innen- und Außenseite antippen.",
       "duration": "40 Sekunden (+ 20 Sek Pause)",
-      "setup": {
-        "equipment": [
-          "Fußball"
-        ],
-        "space": "Minimal",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Innenseite-Außenseite Wechsel",
-          "Rhythmisch",
-          "Auf der Stelle"
-        ],
-        "focus": "Fußseitenkontrolle"
-      },
-      "commonMistakes": [],
-      "coachingTips": {
-        "observation": "",
-        "scaling_easier": "",
-        "scaling_harder": "",
-        "motivation": ""
-      },
-      "progressionPath": [],
       "videoLink": {
         "url": "./data/videos/innen-aussen.mp4",
         "title": "Innenseite-Außenseite-Tipping"
       },
-      "subCategory": "basis"
+      "poster": null
     },
     "coo_set1_move1": {
       "id": "coo_set1_move1",
-      "category": "warmup_coerver",
-      "order": 6,
       "name": "Continuous Scissors",
+      "category": "warmup_coerver",
       "description": "Coerver Set 1: Continuous Scissors, Sole Drag, Triple Sole Drag",
       "duration": "40 Sekunden (+ 20 Sek Pause)",
-      "setup": {
-        "equipment": [
-          "Fußball",
-          "Optional: Hütchen"
-        ],
-        "space": "Minimal bis 10x10m",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Siehe Coerver-Referenz"
-        ],
-        "focus": "Ballkontrolle & Finesse"
-      },
-      "commonMistakes": [],
-      "coachingTips": {
-        "observation": "",
-        "scaling_easier": "",
-        "scaling_harder": "",
-        "motivation": ""
-      },
-      "progressionPath": [],
       "videoLink": {
         "url": "./data/videos/continuous_scissors.mp4",
         "title": "Continuous Scissors"
       },
-      "subCategory": "rotation"
+      "poster": null
     },
     "coo_set1_move2": {
       "id": "coo_set1_move2",
-      "category": "warmup_coerver",
-      "order": 7,
       "name": "Sole Drag",
+      "category": "warmup_coerver",
       "description": "Coerver Set 1: Continuous Scissors, Sole Drag, Triple Sole Drag",
       "duration": "40 Sekunden (+ 20 Sek Pause)",
-      "setup": {
-        "equipment": [
-          "Fußball",
-          "Optional: Hütchen"
-        ],
-        "space": "Minimal bis 10x10m",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Siehe Coerver-Referenz"
-        ],
-        "focus": "Ballkontrolle & Finesse"
-      },
-      "commonMistakes": [],
-      "coachingTips": {
-        "observation": "",
-        "scaling_easier": "",
-        "scaling_harder": "",
-        "motivation": ""
-      },
-      "progressionPath": [],
       "videoLink": {
         "url": "./data/videos/sole_drag.mp4",
         "title": "Sole Drag"
       },
-      "subCategory": "rotation"
+      "poster": null
     },
     "coo_set1_move3": {
       "id": "coo_set1_move3",
-      "category": "warmup_coerver",
-      "order": 8,
       "name": "Triple Sole Drag",
+      "category": "warmup_coerver",
       "description": "Coerver Set 1: Continuous Scissors, Sole Drag, Triple Sole Drag",
       "duration": "40 Sekunden (+ 20 Sek Pause)",
-      "setup": {
-        "equipment": [
-          "Fußball",
-          "Optional: Hütchen"
-        ],
-        "space": "Minimal bis 10x10m",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Siehe Coerver-Referenz"
-        ],
-        "focus": "Ballkontrolle & Finesse"
-      },
-      "commonMistakes": [],
-      "coachingTips": {
-        "observation": "",
-        "scaling_easier": "",
-        "scaling_harder": "",
-        "motivation": ""
-      },
-      "progressionPath": [],
       "videoLink": {
         "url": "./data/videos/triple_sole_drag.mp4",
         "title": "Triple Sole Drag"
       },
-      "subCategory": "rotation"
+      "poster": null
     },
     "coo_set2_move1": {
       "id": "coo_set2_move1",
-      "category": "warmup_coerver",
-      "order": 9,
       "name": "Sole Drag + Inside Push",
+      "category": "warmup_coerver",
       "description": "Coerver Set 2: Sole Drag Kombis + The V Inside",
       "duration": "40 Sekunden (+ 20 Sek Pause)",
-      "setup": {
-        "equipment": [
-          "Fußball",
-          "Optional: Hütchen"
-        ],
-        "space": "Minimal bis 10x10m",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Siehe Coerver-Referenz"
-        ],
-        "focus": "Ballkontrolle & Finesse"
-      },
-      "commonMistakes": [],
-      "coachingTips": {
-        "observation": "",
-        "scaling_easier": "",
-        "scaling_harder": "",
-        "motivation": ""
-      },
-      "progressionPath": [],
       "videoLink": {
         "url": "./data/videos/sole_drag_+_inside_push.mp4",
         "title": "Sole Drag + Inside Push"
       },
-      "subCategory": "rotation"
+      "poster": null
     },
     "coo_set2_move2": {
       "id": "coo_set2_move2",
-      "category": "warmup_coerver",
-      "order": 10,
       "name": "Sole Drag + Outside Push",
+      "category": "warmup_coerver",
       "description": "Coerver Set 2: Sole Drag Kombis + The V Inside",
       "duration": "40 Sekunden (+ 20 Sek Pause)",
-      "setup": {
-        "equipment": [
-          "Fußball",
-          "Optional: Hütchen"
-        ],
-        "space": "Minimal bis 10x10m",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Siehe Coerver-Referenz"
-        ],
-        "focus": "Ballkontrolle & Finesse"
-      },
-      "commonMistakes": [],
-      "coachingTips": {
-        "observation": "",
-        "scaling_easier": "",
-        "scaling_harder": "",
-        "motivation": ""
-      },
-      "progressionPath": [],
       "videoLink": {
         "url": "./data/videos/sole_drag_+_outside_push.mp4",
         "title": "Sole Drag + Outside Push"
       },
-      "subCategory": "rotation"
+      "poster": null
     },
     "coo_set2_move3": {
       "id": "coo_set2_move3",
-      "category": "warmup_coerver",
-      "order": 11,
       "name": "The V – Inside",
+      "category": "warmup_coerver",
       "description": "Coerver Set 2: Sole Drag Kombis + The V Inside",
       "duration": "40 Sekunden (+ 20 Sek Pause)",
-      "setup": {
-        "equipment": [
-          "Fußball",
-          "Optional: Hütchen"
-        ],
-        "space": "Minimal bis 10x10m",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Siehe Coerver-Referenz"
-        ],
-        "focus": "Ballkontrolle & Finesse"
-      },
-      "commonMistakes": [],
-      "coachingTips": {
-        "observation": "",
-        "scaling_easier": "",
-        "scaling_harder": "",
-        "motivation": ""
-      },
-      "progressionPath": [],
       "videoLink": {
         "url": "./data/videos/the_v__inside.mp4",
         "title": "The V – Inside"
       },
-      "subCategory": "rotation"
+      "poster": null
     },
     "coo_set3_move1": {
       "id": "coo_set3_move1",
-      "category": "warmup_coerver",
-      "order": 12,
       "name": "The V – Outside",
+      "category": "warmup_coerver",
       "description": "Coerver Set 3: The V Outside + Pull-Push Instep",
       "duration": "40 Sekunden (+ 20 Sek Pause)",
-      "setup": {
-        "equipment": [
-          "Fußball",
-          "Optional: Hütchen"
-        ],
-        "space": "Minimal bis 10x10m",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Siehe Coerver-Referenz"
-        ],
-        "focus": "Ballkontrolle & Finesse"
-      },
-      "commonMistakes": [],
-      "coachingTips": {
-        "observation": "",
-        "scaling_easier": "",
-        "scaling_harder": "",
-        "motivation": ""
-      },
-      "progressionPath": [],
       "videoLink": {
         "url": "./data/videos/the_v__outside.mp4",
         "title": "The V – Outside"
       },
-      "subCategory": "rotation"
+      "poster": null
     },
     "coo_set3_move2": {
       "id": "coo_set3_move2",
-      "category": "warmup_coerver",
-      "order": 13,
       "name": "Pull-Push Instep (rechts)",
+      "category": "warmup_coerver",
       "description": "Coerver Set 3: The V Outside + Pull-Push Instep",
       "duration": "40 Sekunden (+ 20 Sek Pause)",
-      "setup": {
-        "equipment": [
-          "Fußball",
-          "Optional: Hütchen"
-        ],
-        "space": "Minimal bis 10x10m",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Siehe Coerver-Referenz"
-        ],
-        "focus": "Ballkontrolle & Finesse"
-      },
-      "commonMistakes": [],
-      "coachingTips": {
-        "observation": "",
-        "scaling_easier": "",
-        "scaling_harder": "",
-        "motivation": ""
-      },
-      "progressionPath": [],
       "videoLink": {
         "url": "https://www.youtube.com/watch?v=IeMYh7roBjk&t=81s",
         "title": "Coerver-Referenzvideo (mit Zeitstempel)"
       },
-      "subCategory": "rotation"
+      "poster": null
     },
     "coo_set3_move3": {
       "id": "coo_set3_move3",
-      "category": "warmup_coerver",
-      "order": 14,
       "name": "Pull-Push Instep (links)",
+      "category": "warmup_coerver",
       "description": "Coerver Set 3: The V Outside + Pull-Push Instep",
       "duration": "40 Sekunden (+ 20 Sek Pause)",
-      "setup": {
-        "equipment": [
-          "Fußball",
-          "Optional: Hütchen"
-        ],
-        "space": "Minimal bis 10x10m",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Siehe Coerver-Referenz"
-        ],
-        "focus": "Ballkontrolle & Finesse"
-      },
-      "commonMistakes": [],
-      "coachingTips": {
-        "observation": "",
-        "scaling_easier": "",
-        "scaling_harder": "",
-        "motivation": ""
-      },
-      "progressionPath": [],
       "videoLink": {
         "url": "./data/videos/pull-push_instep_links.mp4",
         "title": "Pull-Push Instep (links)"
       },
-      "subCategory": "rotation"
+      "poster": null
     },
     "coo_set3_move4": {
       "id": "coo_set3_move4",
-      "category": "warmup_coerver",
-      "order": 15,
       "name": "Triple Pull-Push",
+      "category": "warmup_coerver",
       "description": "Coerver Set 3: The V Outside + Pull-Push Instep",
       "duration": "40 Sekunden (+ 20 Sek Pause)",
-      "setup": {
-        "equipment": [
-          "Fußball",
-          "Optional: Hütchen"
-        ],
-        "space": "Minimal bis 10x10m",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Siehe Coerver-Referenz"
-        ],
-        "focus": "Ballkontrolle & Finesse"
-      },
-      "commonMistakes": [],
-      "coachingTips": {
-        "observation": "",
-        "scaling_easier": "",
-        "scaling_harder": "",
-        "motivation": ""
-      },
-      "progressionPath": [],
       "videoLink": {
         "url": "./data/videos/triple_pull-push.mp4",
         "title": "Triple Pull-Push"
       },
-      "subCategory": "rotation"
+      "poster": null
     },
     "coo_set4_move1": {
       "id": "coo_set4_move1",
-      "category": "warmup_coerver",
-      "order": 16,
       "name": "Rollover + Stop + Inside",
+      "category": "warmup_coerver",
       "description": "Coerver Set 4: Rollover, Stop, Inside, Cuts",
       "duration": "40 Sekunden (+ 20 Sek Pause)",
-      "setup": {
-        "equipment": [
-          "Fußball",
-          "Optional: Hütchen"
-        ],
-        "space": "Minimal bis 10x10m",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Siehe Coerver-Referenz"
-        ],
-        "focus": "Ballkontrolle & Finesse"
-      },
-      "commonMistakes": [],
-      "coachingTips": {
-        "observation": "",
-        "scaling_easier": "",
-        "scaling_harder": "",
-        "motivation": ""
-      },
-      "progressionPath": [],
       "videoLink": {
         "url": "./data/videos/rollover_+_stop_+_inside.mp4",
         "title": "Rollover + Stop + Inside"
       },
-      "subCategory": "rotation"
+      "poster": null
     },
     "coo_set4_move2": {
       "id": "coo_set4_move2",
-      "category": "warmup_coerver",
-      "order": 17,
       "name": "Stop + Slide",
+      "category": "warmup_coerver",
       "description": "Coerver Set 4: Rollover, Stop, Inside, Cuts",
       "duration": "40 Sekunden (+ 20 Sek Pause)",
-      "setup": {
-        "equipment": [
-          "Fußball",
-          "Optional: Hütchen"
-        ],
-        "space": "Minimal bis 10x10m",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Siehe Coerver-Referenz"
-        ],
-        "focus": "Ballkontrolle & Finesse"
-      },
-      "commonMistakes": [],
-      "coachingTips": {
-        "observation": "",
-        "scaling_easier": "",
-        "scaling_harder": "",
-        "motivation": ""
-      },
-      "progressionPath": [],
       "videoLink": {
         "url": "./data/videos/stop_+_slide.mp4",
         "title": "Stop + Slide"
       },
-      "subCategory": "rotation"
+      "poster": null
     },
     "coo_set4_move3": {
       "id": "coo_set4_move3",
-      "category": "warmup_coerver",
-      "order": 18,
       "name": "Inside Cut",
+      "category": "warmup_coerver",
       "description": "Coerver Set 4: Rollover, Stop, Inside, Cuts",
       "duration": "40 Sekunden (+ 20 Sek Pause)",
-      "setup": {
-        "equipment": [
-          "Fußball",
-          "Optional: Hütchen"
-        ],
-        "space": "Minimal bis 10x10m",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Siehe Coerver-Referenz"
-        ],
-        "focus": "Ballkontrolle & Finesse"
-      },
-      "commonMistakes": [],
-      "coachingTips": {
-        "observation": "",
-        "scaling_easier": "",
-        "scaling_harder": "",
-        "motivation": ""
-      },
-      "progressionPath": [],
       "videoLink": {
         "url": "./data/videos/inside_cut.mp4",
         "title": "Inside Cut"
       },
-      "subCategory": "rotation"
+      "poster": null
     },
     "coo_set4_move4": {
       "id": "coo_set4_move4",
-      "category": "warmup_coerver",
-      "order": 19,
       "name": "Outside Push (Messi)",
+      "category": "warmup_coerver",
       "description": "Coerver Set 4: Rollover, Stop, Inside, Cuts",
       "duration": "40 Sekunden (+ 20 Sek Pause)",
-      "setup": {
-        "equipment": [
-          "Fußball",
-          "Optional: Hütchen"
-        ],
-        "space": "Minimal bis 10x10m",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Siehe Coerver-Referenz"
-        ],
-        "focus": "Ballkontrolle & Finesse"
-      },
-      "commonMistakes": [],
-      "coachingTips": {
-        "observation": "",
-        "scaling_easier": "",
-        "scaling_harder": "",
-        "motivation": ""
-      },
-      "progressionPath": [],
       "videoLink": {
         "url": "./data/videos/outside_push_messi.mp4",
         "title": "Outside Push (Messi)"
       },
-      "subCategory": "rotation"
+      "poster": null
     },
     "coo_set5_move1": {
       "id": "coo_set5_move1",
-      "category": "warmup_coerver",
-      "order": 20,
       "name": "Rollover + Stop Instep",
+      "category": "warmup_coerver",
       "description": "Coerver Set 5: Rollover, Stop Instep, The L, Step Over",
       "duration": "40 Sekunden (+ 20 Sek Pause)",
-      "setup": {
-        "equipment": [
-          "Fußball",
-          "Optional: Hütchen"
-        ],
-        "space": "Minimal bis 10x10m",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Siehe Coerver-Referenz"
-        ],
-        "focus": "Ballkontrolle & Finesse"
-      },
-      "commonMistakes": [],
-      "coachingTips": {
-        "observation": "",
-        "scaling_easier": "",
-        "scaling_harder": "",
-        "motivation": ""
-      },
-      "progressionPath": [],
       "videoLink": {
         "url": "./data/videos/rollover_+_stop_instep.mp4",
         "title": "Rollover + Stop Instep"
       },
-      "subCategory": "rotation"
+      "poster": null
     },
     "coo_set5_move2": {
       "id": "coo_set5_move2",
-      "category": "warmup_coerver",
-      "order": 21,
       "name": "The L (rechts)",
+      "category": "warmup_coerver",
       "description": "Coerver Set 5: Rollover, Stop Instep, The L, Step Over",
       "duration": "40 Sekunden (+ 20 Sek Pause)",
-      "setup": {
-        "equipment": [
-          "Fußball",
-          "Optional: Hütchen"
-        ],
-        "space": "Minimal bis 10x10m",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Siehe Coerver-Referenz"
-        ],
-        "focus": "Ballkontrolle & Finesse"
-      },
-      "commonMistakes": [],
-      "coachingTips": {
-        "observation": "",
-        "scaling_easier": "",
-        "scaling_harder": "",
-        "motivation": ""
-      },
-      "progressionPath": [],
       "videoLink": {
         "url": "./data/videos/the_l_rechts.mp4",
         "title": "The L (rechts)"
       },
-      "subCategory": "rotation"
+      "poster": null
     },
     "coo_set5_move3": {
       "id": "coo_set5_move3",
-      "category": "warmup_coerver",
-      "order": 22,
       "name": "The L (links)",
+      "category": "warmup_coerver",
       "description": "Coerver Set 5: Rollover, Stop Instep, The L, Step Over",
       "duration": "40 Sekunden (+ 20 Sek Pause)",
-      "setup": {
-        "equipment": [
-          "Fußball",
-          "Optional: Hütchen"
-        ],
-        "space": "Minimal bis 10x10m",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Siehe Coerver-Referenz"
-        ],
-        "focus": "Ballkontrolle & Finesse"
-      },
-      "commonMistakes": [],
-      "coachingTips": {
-        "observation": "",
-        "scaling_easier": "",
-        "scaling_harder": "",
-        "motivation": ""
-      },
-      "progressionPath": [],
       "videoLink": {
         "url": "./data/videos/the_l_links.mp4",
         "title": "The L (links)"
       },
-      "subCategory": "rotation"
+      "poster": null
     },
     "coo_set5_move4": {
       "id": "coo_set5_move4",
-      "category": "warmup_coerver",
-      "order": 23,
       "name": "Step Over",
+      "category": "warmup_coerver",
       "description": "Coerver Set 5: Rollover, Stop Instep, The L, Step Over",
       "duration": "40 Sekunden (+ 20 Sek Pause)",
-      "setup": {
-        "equipment": [
-          "Fußball",
-          "Optional: Hütchen"
-        ],
-        "space": "Minimal bis 10x10m",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Siehe Coerver-Referenz"
-        ],
-        "focus": "Ballkontrolle & Finesse"
-      },
-      "commonMistakes": [],
-      "coachingTips": {
-        "observation": "",
-        "scaling_easier": "",
-        "scaling_harder": "",
-        "motivation": ""
-      },
-      "progressionPath": [],
       "videoLink": {
         "url": "./data/videos/step_over.mp4",
         "title": "Step Over"
       },
-      "subCategory": "rotation"
+      "poster": null
     },
     "coo_set6_move1": {
       "id": "coo_set6_move1",
-      "category": "warmup_coerver",
-      "order": 24,
       "name": "Around Two Cones (horizontal)",
+      "category": "warmup_coerver",
       "description": "Coerver Set 6: Around Cones – Horizontal & Vertikal",
       "duration": "40 Sekunden (+ 20 Sek Pause)",
-      "setup": {
-        "equipment": [
-          "Fußball",
-          "Optional: Hütchen"
-        ],
-        "space": "Minimal bis 10x10m",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Siehe Coerver-Referenz"
-        ],
-        "focus": "Ballkontrolle & Finesse"
-      },
-      "commonMistakes": [],
-      "coachingTips": {
-        "observation": "",
-        "scaling_easier": "",
-        "scaling_harder": "",
-        "motivation": ""
-      },
-      "progressionPath": [],
       "videoLink": {
         "url": "./data/videos/around_two_cones_horizontal.mp4",
         "title": "Around Two Cones (horizontal)"
       },
-      "subCategory": "rotation"
+      "poster": null
     },
     "coo_set6_move2": {
       "id": "coo_set6_move2",
-      "category": "warmup_coerver",
-      "order": 25,
       "name": "Around Two Cones (vertikal)",
+      "category": "warmup_coerver",
       "description": "Coerver Set 6: Around Cones – Horizontal & Vertikal",
       "duration": "40 Sekunden (+ 20 Sek Pause)",
-      "setup": {
-        "equipment": [
-          "Fußball",
-          "Optional: Hütchen"
-        ],
-        "space": "Minimal bis 10x10m",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Siehe Coerver-Referenz"
-        ],
-        "focus": "Ballkontrolle & Finesse"
-      },
-      "commonMistakes": [],
-      "coachingTips": {
-        "observation": "",
-        "scaling_easier": "",
-        "scaling_harder": "",
-        "motivation": ""
-      },
-      "progressionPath": [],
       "videoLink": {
         "url": "./data/videos/around_two_cones_vertikal.mp4",
         "title": "Around Two Cones (vertikal)"
       },
-      "subCategory": "rotation"
+      "poster": null
     },
     "coo_set6_move3": {
       "id": "coo_set6_move3",
-      "category": "warmup_coerver",
-      "order": 26,
       "name": "Around Four Cones",
+      "category": "warmup_coerver",
       "description": "Coerver Set 6: Around Cones – Horizontal & Vertikal",
       "duration": "40 Sekunden (+ 20 Sek Pause)",
-      "setup": {
-        "equipment": [
-          "Fußball",
-          "Optional: Hütchen"
-        ],
-        "space": "Minimal bis 10x10m",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Siehe Coerver-Referenz"
-        ],
-        "focus": "Ballkontrolle & Finesse"
-      },
-      "commonMistakes": [],
-      "coachingTips": {
-        "observation": "",
-        "scaling_easier": "",
-        "scaling_harder": "",
-        "motivation": ""
-      },
-      "progressionPath": [],
       "videoLink": {
         "url": "./data/videos/around_four_cones.mp4",
         "title": "Around Four Cones"
       },
-      "subCategory": "rotation"
+      "poster": null
     },
     "ft_wall_reception": {
       "id": "ft_wall_reception",
-      "category": "firstTouch",
-      "order": 1,
       "name": "Wandpass-Annahme",
+      "category": "firstTouch",
       "description": "Ball gegen eine Wand schießen und sofort kontrolliert annehmen.",
       "duration": "10-15 Minuten",
-      "setup": {
-        "equipment": [
-          "Fußball",
-          "Wand"
-        ],
-        "space": "Wand",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Kontrolle beim Annehmen",
-          "Passhärte variieren",
-          "Verschiedene Annahmeflächen"
-        ],
-        "focus": "First Touch Kontrolle"
-      },
-      "commonMistakes": [],
-      "coachingTips": {
-        "observation": "",
-        "scaling_easier": "",
-        "scaling_harder": "",
-        "motivation": ""
-      },
-      "progressionPath": [],
       "videoLink": {
         "url": null,
         "title": null
-      }
+      },
+      "poster": null
     },
     "ft_throw_reception": {
       "id": "ft_throw_reception",
-      "category": "firstTouch",
-      "order": 2,
       "name": "Hochwurf-Annahme",
+      "category": "firstTouch",
       "description": "Ball hochwerfen und mit Innenseite, Spann, Brust, Oberschenkel annehmen.",
       "duration": "10-15 Minuten",
-      "setup": {
-        "equipment": [
-          "Fußball"
-        ],
-        "space": "Freifläche",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Verschiedene Annahmestellen",
-          "Höhen variieren",
-          "Weiche Annahme"
-        ],
-        "focus": "Multi-Surface First Touch"
-      },
-      "commonMistakes": [],
-      "coachingTips": {
-        "observation": "",
-        "scaling_easier": "",
-        "scaling_harder": "",
-        "motivation": ""
-      },
-      "progressionPath": [],
       "videoLink": {
         "url": null,
         "title": null
-      }
+      },
+      "poster": null
     },
     "ft_partner_pass": {
       "id": "ft_partner_pass",
-      "category": "firstTouch",
-      "order": 3,
       "name": "Partnerpässe – Verschiedene Höhen",
+      "category": "firstTouch",
       "description": "Partner wirft Ball aus verschiedenen Höhen; Spieler nimmt an.",
       "duration": "15 Minuten",
-      "setup": {
-        "equipment": [
-          "Fußball"
-        ],
-        "space": "Freifläche",
-        "solo": false,
-        "partner": true
-      },
-      "technique": {
-        "keyPoints": [
-          "Reaktion",
-          "Anpassung",
-          "Ballkontrolle"
-        ],
-        "focus": "First Touch unter Realitätsbedingungen"
-      },
-      "commonMistakes": [
-        {
-          "mistake": "Zu steifer Kontakt",
-          "consequence": "Ball springt weg",
-          "correction": "Beim Annehmen 'nachgeben'"
-        }
-      ],
-      "coachingTips": {
-        "observation": "",
-        "scaling_easier": "",
-        "scaling_harder": "",
-        "motivation": ""
-      },
-      "progressionPath": [],
       "videoLink": {
         "url": null,
         "title": null
-      }
+      },
+      "poster": null
     },
     "bi_wall_rotation": {
       "id": "bi_wall_rotation",
-      "category": "ballIntake",
-      "order": 1,
       "name": "Wand-Mitnahme mit Drehung",
+      "category": "ballIntake",
       "description": "Ball an die Wand spielen, mit erstem Kontakt um 90° oder 180° wegdrehen.",
       "duration": "10-15 Minuten",
-      "setup": {
-        "equipment": [
-          "Fußball",
-          "Wand"
-        ],
-        "space": "Wand",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Erste Kontrolle mit Richtung",
-          "90°/180° Drehung",
-          "Flüssige Bewegung"
-        ],
-        "focus": "Mitnahme mit Richtungswechsel"
-      },
-      "commonMistakes": [],
-      "coachingTips": {
-        "observation": "",
-        "scaling_easier": "",
-        "scaling_harder": "",
-        "motivation": ""
-      },
-      "progressionPath": [],
       "videoLink": {
         "url": null,
         "title": null
-      }
+      },
+      "poster": null
     },
     "bi_cone_intake": {
       "id": "bi_cone_intake",
-      "category": "ballIntake",
-      "order": 2,
       "name": "Hütchen-Mitnahme",
+      "category": "ballIntake",
       "description": "Zugespielten Ball mit erstem Kontakt gezielt in Richtung eines Hütchens mitnehmen.",
       "duration": "10-15 Minuten",
-      "setup": {
-        "equipment": [
-          "Fußball",
-          "Hütchen (3-4)"
-        ],
-        "space": "Freifläche",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Zielgerichtete Mitnahme",
-          "First Touch mit Richtung",
-          "Präzision"
-        ],
-        "focus": "Mitnahme in freien Raum"
-      },
-      "commonMistakes": [],
-      "coachingTips": {
-        "observation": "",
-        "scaling_easier": "",
-        "scaling_harder": "",
-        "motivation": ""
-      },
-      "progressionPath": [],
       "videoLink": {
         "url": null,
         "title": null
-      }
+      },
+      "poster": null
     },
     "bi_pressure_timing": {
       "id": "bi_pressure_timing",
-      "category": "ballIntake",
-      "order": 3,
       "name": "Mitnahme unter Zeitdruck",
+      "category": "ballIntake",
       "description": "Nach Signal (Klatschen/Pfeife) Mitnahme so schnell wie möglich.",
       "duration": "10-15 Minuten",
-      "setup": {
-        "equipment": [
-          "Fußball"
-        ],
-        "space": "Freifläche",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Schnelle Reaktion",
-          "Explosive Mitnahme",
-          "Richtungskontrolle"
-        ],
-        "focus": "Mitnahme unter Spieldruck"
-      },
-      "commonMistakes": [],
-      "coachingTips": {
-        "observation": "",
-        "scaling_easier": "",
-        "scaling_harder": "",
-        "motivation": ""
-      },
-      "progressionPath": [],
       "videoLink": {
         "url": null,
         "title": null
-      }
+      },
+      "poster": null
     },
     "bc_straight_line": {
       "id": "bc_straight_line",
-      "category": "ballControl",
-      "order": 1,
       "name": "Geradliniges Dribbeln – Parcours",
+      "category": "ballControl",
       "description": "Ball in gerader Linie führen, verschiedene Fußflächen nutzen (Innen, Außen, Spann).",
       "duration": "10-15 Minuten",
-      "setup": {
-        "equipment": [
-          "Fußball",
-          "Hütchen"
-        ],
-        "space": "Freifläche 10-15m",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Enger Ballkontakt",
-          "Fußwechsel",
-          "Kopf oben"
-        ],
-        "focus": "Enger Ballkontakt"
-      },
-      "commonMistakes": [],
-      "coachingTips": {
-        "observation": "",
-        "scaling_easier": "",
-        "scaling_harder": "",
-        "motivation": ""
-      },
-      "progressionPath": [],
       "videoLink": {
         "url": null,
         "title": null
-      }
+      },
+      "poster": null
     },
     "bc_zig_zag": {
       "id": "bc_zig_zag",
-      "category": "ballControl",
-      "order": 2,
       "name": "Zig-Zag-Dribbeln",
+      "category": "ballControl",
       "description": "Zwischen zwei Hütchenreihen dribbeln, Ball unter Kontrolle halten.",
       "duration": "10-15 Minuten",
-      "setup": {
-        "equipment": [
-          "Fußball",
-          "Hütchen (6-8)"
-        ],
-        "space": "Freifläche 10-15m",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Geschwindigkeit variabel",
-          "Ballkontakt eng",
-          "Richtungskontrolle"
-        ],
-        "focus": "Ballführung mit Richtungswechsel"
-      },
-      "commonMistakes": [],
-      "coachingTips": {
-        "observation": "",
-        "scaling_easier": "",
-        "scaling_harder": "",
-        "motivation": ""
-      },
-      "progressionPath": [],
       "videoLink": {
         "url": "./data/videos/bc_zig_zag.mp4",
         "title": "Zig-Zag-Dribbeln"
@@ -1502,754 +536,231 @@
     },
     "bc_slalom": {
       "id": "bc_slalom",
-      "category": "ballControl",
-      "order": 3,
       "name": "Slalom-Dribbeln",
+      "category": "ballControl",
       "description": "In Slalomlinie um Hütchen dribbeln – maximale Ballkontrolle.",
       "duration": "10-15 Minuten",
-      "setup": {
-        "equipment": [
-          "Fußball",
-          "Hütchen (5-6)"
-        ],
-        "space": "Freifläche 10-15m",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Kurze Ballkontakte",
-          "Hüftbewegung",
-          "Dynamische Positionierung"
-        ],
-        "focus": "Enge Ballkontrolle"
-      },
-      "commonMistakes": [],
-      "coachingTips": {
-        "observation": "",
-        "scaling_easier": "",
-        "scaling_harder": "",
-        "motivation": ""
-      },
-      "progressionPath": [],
       "videoLink": {
         "url": null,
         "title": null
-      }
+      },
+      "poster": null
     },
     "dr_speed_line": {
       "id": "dr_speed_line",
-      "category": "dribbling",
-      "order": 1,
       "name": "Sprint-Dribbling – Geradlinie",
+      "category": "dribbling",
       "description": "Ball auf Geschwindigkeit führen über längere Strecke (20-30m).",
       "duration": "10-15 Minuten",
-      "setup": {
-        "equipment": [
-          "Fußball",
-          "Hütchen"
-        ],
-        "space": "Freifläche 20-30m",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Schnelligkeit",
-          "Ballkontakt nicht verlieren",
-          "Kopf oben"
-        ],
-        "focus": "Schnelligkeit mit Ball"
-      },
-      "commonMistakes": [],
-      "coachingTips": {
-        "observation": "",
-        "scaling_easier": "",
-        "scaling_harder": "",
-        "motivation": ""
-      },
-      "progressionPath": [],
       "videoLink": {
         "url": null,
         "title": null
-      }
+      },
+      "poster": null
     },
     "dr_box_drill": {
       "id": "dr_box_drill",
-      "category": "dribbling",
-      "order": 2,
       "name": "Hütchen-Box-Drill",
+      "category": "dribbling",
       "description": "Um vier Hütchen in Box-Formation dribbeln, verschiedene Geschwindigkeiten.",
       "duration": "15-20 Minuten",
-      "setup": {
-        "equipment": [
-          "Fußball",
-          "Hütchen (4)"
-        ],
-        "space": "Freifläche 10x10m",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Richtungswechsel",
-          "Ballkontrolle",
-          "Beschleunigung"
-        ],
-        "focus": "Dribbling mit Wendungen"
-      },
-      "commonMistakes": [],
-      "coachingTips": {
-        "observation": "",
-        "scaling_easier": "",
-        "scaling_harder": "",
-        "motivation": ""
-      },
-      "progressionPath": [],
       "videoLink": {
         "url": null,
         "title": null
-      }
+      },
+      "poster": null
     },
     "dr_cone_weave": {
       "id": "dr_cone_weave",
-      "category": "dribbling",
-      "order": 3,
       "name": "Slalom zwischen Hütchen",
+      "category": "dribbling",
       "description": "Präzisions-Dribbling durch mehrere in Reihe stehende Hütchen.",
       "duration": "10-15 Minuten",
-      "setup": {
-        "equipment": [
-          "Fußball",
-          "Hütchen (6-8)"
-        ],
-        "space": "Freifläche",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Fußtechnik",
-          "Richtungswechsel",
-          "Ballkontakt"
-        ],
-        "focus": "Präzisions-Dribbling"
-      },
-      "commonMistakes": [],
-      "coachingTips": {
-        "observation": "",
-        "scaling_easier": "",
-        "scaling_harder": "",
-        "motivation": ""
-      },
-      "progressionPath": [],
       "videoLink": {
         "url": null,
         "title": null
-      }
+      },
+      "poster": null
     },
     "dc_90_degree": {
       "id": "dc_90_degree",
-      "category": "directionChange",
-      "order": 1,
       "name": "90°-Wechsel – Hütchen",
+      "category": "directionChange",
       "description": "Auf Hütchen zuspielen, Spieler nimmt an und dreht 90° ab.",
       "duration": "15 Minuten",
-      "setup": {
-        "equipment": [
-          "Fußball",
-          "Hütchen (4-5)"
-        ],
-        "space": "Freifläche 15x15m",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Schnelle Drehung",
-          "First Touch mit Richtung",
-          "Explosivität"
-        ],
-        "focus": "Schnelle Richtungswechsel"
-      },
-      "commonMistakes": [],
-      "coachingTips": {
-        "observation": "",
-        "scaling_easier": "",
-        "scaling_harder": "",
-        "motivation": ""
-      },
-      "progressionPath": [],
       "videoLink": {
         "url": null,
         "title": null
-      }
+      },
+      "poster": null
     },
     "dc_180_turn": {
       "id": "dc_180_turn",
-      "category": "directionChange",
-      "order": 2,
       "name": "180°-Wende – Ballkontakt",
+      "category": "directionChange",
       "description": "Ball führen, auf Signal schnelle 180°-Drehung ohne Ball zu verlieren.",
       "duration": "10-15 Minuten",
-      "setup": {
-        "equipment": [
-          "Fußball",
-          "Hütchen"
-        ],
-        "space": "Freifläche",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Schnelle Wendung",
-          "Ballkontrolle",
-          "Balance"
-        ],
-        "focus": "Enge Wendungen"
-      },
-      "commonMistakes": [],
-      "coachingTips": {
-        "observation": "",
-        "scaling_easier": "",
-        "scaling_harder": "",
-        "motivation": ""
-      },
-      "progressionPath": [],
       "videoLink": {
         "url": null,
         "title": null
-      }
+      },
+      "poster": null
     },
     "dc_cut_back": {
       "id": "dc_cut_back",
-      "category": "directionChange",
-      "order": 3,
       "name": "Cut-Back (Rückpass-Simulation)",
+      "category": "directionChange",
       "description": "Dribbeln, dann schneller Rückpass in neuer Richtung.",
       "duration": "15 Minuten",
-      "setup": {
-        "equipment": [
-          "Fußball",
-          "Hütchen (3-4)"
-        ],
-        "space": "Freifläche",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Ballkontrolle",
-          "Passe präzise",
-          "Timing"
-        ],
-        "focus": "Spielrealistische Richtungswechsel"
-      },
-      "commonMistakes": [],
-      "coachingTips": {
-        "observation": "",
-        "scaling_easier": "",
-        "scaling_harder": "",
-        "motivation": ""
-      },
-      "progressionPath": [],
       "videoLink": {
         "url": null,
         "title": null
-      }
+      },
+      "poster": null
     },
     "jgl_sole_to_instep": {
       "id": "jgl_sole_to_instep",
-      "category": "juggling",
-      "order": 1,
       "name": "Sohle-Spann-Wechsel",
+      "category": "juggling",
       "description": "Ball mit Sohle antippen, dann mit Spann hochhalten – Wechsel.",
       "duration": "5-10 Minuten",
-      "setup": {
-        "equipment": [
-          "Fußball"
-        ],
-        "space": "Minimal",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Sohlenkontakt",
-          "Spann-Kontrolle",
-          "Rhythmus"
-        ],
-        "focus": "Fußseitenkontrolle"
-      },
-      "commonMistakes": [],
-      "coachingTips": {
-        "observation": "",
-        "scaling_easier": "",
-        "scaling_harder": "",
-        "motivation": ""
-      },
-      "progressionPath": [],
       "videoLink": {
         "url": null,
         "title": null
-      }
+      },
+      "poster": null
     },
     "jgl_alternating_feet": {
       "id": "jgl_alternating_feet",
-      "category": "juggling",
-      "order": 2,
       "name": "Abwechselnd beide Füße",
+      "category": "juggling",
       "description": "Ball abwechselnd mit rechts und links hochhalten.",
       "duration": "5-10 Minuten",
-      "setup": {
-        "equipment": [
-          "Fußball"
-        ],
-        "space": "Minimal",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Abwechselnder Rhythmus",
-          "Balance",
-          "Höhenkontrolle"
-        ],
-        "focus": "Beidbeiniges Hochhalten"
-      },
-      "commonMistakes": [],
-      "coachingTips": {
-        "observation": "",
-        "scaling_easier": "",
-        "scaling_harder": "",
-        "motivation": ""
-      },
-      "progressionPath": [],
       "videoLink": {
         "url": null,
         "title": null
-      }
+      },
+      "poster": null
     },
     "jgl_inside_outside": {
       "id": "jgl_inside_outside",
-      "category": "juggling",
-      "order": 3,
       "name": "Innenseite-Außenseite",
+      "category": "juggling",
       "description": "Ball nur mit Innen- und Außenseite (kein Spann) hochhalten.",
       "duration": "5-10 Minuten",
-      "setup": {
-        "equipment": [
-          "Fußball"
-        ],
-        "space": "Minimal",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Innen-Außen Wechsel",
-          "Höhenkontrolle",
-          "Rhythmus"
-        ],
-        "focus": "Spezielle Fußseiten-Kontrolle"
-      },
-      "commonMistakes": [],
-      "coachingTips": {
-        "observation": "",
-        "scaling_easier": "",
-        "scaling_harder": "",
-        "motivation": ""
-      },
-      "progressionPath": [],
       "videoLink": {
         "url": null,
         "title": null
-      }
+      },
+      "poster": null
     },
     "jgl_thigh_chest": {
       "id": "jgl_thigh_chest",
-      "category": "juggling",
-      "order": 4,
       "name": "Oberschenkel-Brust-Variation",
+      "category": "juggling",
       "description": "Ball mit Oberschenkel oder Brust miteinbeziehen (nicht nur Fuß).",
       "duration": "5-10 Minuten",
-      "setup": {
-        "equipment": [
-          "Fußball"
-        ],
-        "space": "Minimal",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Multi-Surface Kontrolle",
-          "Balance",
-          "Koordination"
-        ],
-        "focus": "Ganzkörper-Ballkontrolle"
-      },
-      "commonMistakes": [],
-      "coachingTips": {
-        "observation": "",
-        "scaling_easier": "",
-        "scaling_harder": "",
-        "motivation": ""
-      },
-      "progressionPath": [],
       "videoLink": {
         "url": null,
         "title": null
-      }
+      },
+      "poster": null
     },
     "acl_glute_bridge": {
       "id": "acl_glute_bridge",
-      "category": "acl_prevention",
-      "order": 1,
       "name": "🏃‍♀️ Glute Bridge (Hüft-Strecker)",
+      "category": "acl_prevention",
       "description": "Liegende Hüftstreck-Übung zur Aktivierung und Kräftigung der Glutes. Essentiell zur Prävention von Knee Valgus (Knie nach innen) beim Landen und Sprinten.",
       "duration": "3-4 Minuten",
-      "setup": {
-        "equipment": [
-          "Matte oder Boden"
-        ],
-        "space": "Minimal",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Rückenlage, Knie gebeugt, Füße flach",
-          "Hüfte nach oben drücken (Linie Schulter-Hüfte-Knie)",
-          "Glutes oben 2-3 Sekunden kontrahieren",
-          "Langsam senken, KEIN Überstrecken der Wirbelsäule"
-        ],
-        "focus": "Glute-Aktivierung & Kraft"
-      },
-      "commonMistakes": [
-        "Zu hohe Wirbelsäulen-Extension (Rücken überextendieren)",
-        "Zu schnelle Bewegung ohne Pause oben",
-        "Gewicht auf Hals statt Schultern"
-      ],
-      "coachingTips": {
-        "observation": "Kontrolliere dass der Rücken nicht überextendiert wird",
-        "scaling_easier": "Ohne Partner oder Gewicht, langsamer Tempo",
-        "scaling_harder": "Mit Widerstandsband um Oberschenkel, oder Kurzhantel auf Hüfte",
-        "motivation": "Die stärksten Glutes = bestes Knie-Schutz!"
-      },
-      "progressionPath": [
-        "acl_single_leg_squat",
-        "acl_box_jump"
-      ],
       "videoLink": {
         "url": null,
         "title": "🏃‍♀️ Glute Bridge (Hüft-Strecker)"
-      }
+      },
+      "poster": null
     },
     "acl_single_leg_squat": {
       "id": "acl_single_leg_squat",
-      "category": "acl_prevention",
-      "order": 2,
       "name": "🏃‍♀️ Single-Leg Squat (Einbeinige Kniebeuge)",
+      "category": "acl_prevention",
       "description": "Kniebeuge auf einem Bein. Trainiert einbeinige Ausrichtung und verhindert Knee Valgus (Knie-Kollaps nach innen). KRITISCH für Prävention beim Landen und Drehen.",
       "duration": "4-5 Minuten",
-      "setup": {
-        "equipment": [
-          "Box oder Stuhl (optional)"
-        ],
-        "space": "Minimal (2-3m)",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Auf einem Bein stehen, anderes Bein angehoben",
-          "Knie des Standbeins beugen (45-90° je nach Level)",
-          "KRITISCH: Knie bleibt über Fußzehen (nicht nach innen!)",
-          "2-3 Sekunden halten, langsam aufrichten"
-        ],
-        "focus": "Einbeinige Beinausrichtung, Knee Valgus Prevention"
-      },
-      "commonMistakes": [
-        "Knie kollabiert nach innen (Valgus) = ACL-Risiko!",
-        "Zu tiefe Beugung wenn Level nicht bereit",
-        "Oberkörper kippt zur Seite"
-      ],
-      "coachingTips": {
-        "observation": "Stelle dich seitlich auf und beobachte: Knie muss über Zehen bleiben!",
-        "scaling_easier": "Mit Box sitzen (Quarter-Squat), oder mit Seil/TRX Unterstützung",
-        "scaling_harder": "Tiefere Beugung (90°), oder vollständiger Pistol Squat",
-        "motivation": "Das ist die Königin-Übung für ACL-Prävention!"
-      },
-      "progressionPath": [
-        "acl_single_leg_deadlift",
-        "acl_box_jump"
-      ],
       "videoLink": {
         "url": null,
         "title": "🏃‍♀️ Single-Leg Squat (Einbeinige Kniebeuge)"
-      }
+      },
+      "poster": null
     },
     "acl_monster_walk": {
       "id": "acl_monster_walk",
-      "category": "acl_prevention",
-      "order": 3,
       "name": "🏃‍♀️ Monster Walk (Seitwärts mit Widerstandsband)",
+      "category": "acl_prevention",
       "description": "Seitliches Gehen mit Widerstandsband um die Oberschenkel. Trainiert Hip Abduction und externe Rotation = Schlüssel zur Hüft-Stabilität und Prävention von Knee Valgus.",
       "duration": "3-4 Minuten",
-      "setup": {
-        "equipment": [
-          "Resistance Band (um Oberschenkel oder Unterschenkel)"
-        ],
-        "space": "Freifläche (5-10m für mehrere Schritte)",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Band um Oberschenkel oberhalb Knie",
-          "Leichte Kniebeugen (Quarter Squat, 20-30°)",
-          "Seitlich gehen, Bein aktiv nach außen spreizen gegen Band",
-          "Band bleibt angespannt die ganze Zeit (isometrisch)"
-        ],
-        "focus": "Hip Abduction/External Rotation, Glute Medius Aktivierung"
-      },
-      "commonMistakes": [
-        "Band zu locker (keine Spannung)",
-        "Nicht genug Kniebeugen",
-        "Mit Hüfte abweichen statt Bein abspreizen"
-      ],
-      "coachingTips": {
-        "observation": "Die Hüft-Abduktoren sollten brennen! Das bedeutet es funktioniert.",
-        "scaling_easier": "Leichteres Band (blau), größere Kniebeugen-Winkel",
-        "scaling_harder": "Schweres Band (rot/grün), tiefere Kniebeugen, diagonal oder vorwärts/rückwärts",
-        "motivation": "Starke Glutes = stabiles Knie bei allen Dreh- und Landungsbewegungen!"
-      },
-      "progressionPath": [
-        "acl_clamshells"
-      ],
       "videoLink": {
         "url": null,
         "title": "🏃‍♀️ Monster Walk (Seitwärts mit Widerstandsband)"
-      }
+      },
+      "poster": null
     },
     "acl_single_leg_deadlift": {
       "id": "acl_single_leg_deadlift",
-      "category": "acl_prevention",
-      "order": 4,
       "name": "🏃‍♀️ Single-Leg Deadlift (Einbeiniges Hip-Hinge)",
+      "category": "acl_prevention",
       "description": "Hüftbeugung auf einem Bein mit Kraft aus den Hamstrings und Glutes. Trainiert korrekte Hip-Hinge Mechanik und Posterior Chain Kraft = essentiell für ACL-Prävention.",
       "duration": "4-5 Minuten",
-      "setup": {
-        "equipment": [
-          "Keine (optional: leichte Kurzhantel 0,5-1 kg)"
-        ],
-        "space": "Minimal",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Auf einem Bein stehen",
-          "Hüfte nach vorne beugen (90°), anderes Bein nach hinten für Balance",
-          "Rücken bleibt gerade (NICHT runden!)",
-          "Mit Hüfte dominant bewegen, nicht mit Wirbelsäule",
-          "2-3 Sekunden oben halten, langsam zurück"
-        ],
-        "focus": "Posterior Chain Kraft, Hip-Hinge Muster, Balance"
-      },
-      "commonMistakes": [
-        "Wirbelsäule rundet sich (nicht hüftdominant)",
-        "Zu schnelle Bewegung",
-        "Standbein-Knie kollabiert"
-      ],
-      "coachingTips": {
-        "observation": "Kontrolliere dass der Rücken gerade bleibt. Hüfte dominant!",
-        "scaling_easier": "Nur mit Körpergewicht, kürzere Range",
-        "scaling_harder": "Mit Kurzhantel in der Hand, oder instabiler Untergrund",
-        "motivation": "Starke Hamstrings bremsen die Tibia = beste ACL-Versicherung!"
-      },
-      "progressionPath": [
-        "acl_box_jump"
-      ],
       "videoLink": {
         "url": null,
         "title": "🏃‍♀️ Single-Leg Deadlift (Einbeiniges Hip-Hinge)"
-      }
+      },
+      "poster": null
     },
     "acl_clamshells": {
       "id": "acl_clamshells",
-      "category": "acl_prevention",
-      "order": 5,
       "name": "🏃‍♀️ Clamshells (Hüft-Abduktion liegend)",
+      "category": "acl_prevention",
       "description": "Liegen auf der Seite, oberes Knie aufklappen. Trainiert Hip External Rotation und Abduction = Prävention von Knee Valgus durch Hüft-Stabilität.",
       "duration": "3-4 Minuten",
-      "setup": {
-        "equipment": [
-          "Matte",
-          "Optional: Resistance Band um Knie"
-        ],
-        "space": "Minimal",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Seitenlage, Hüfte 45°, Knie gebeugt",
-          "Oberes Knie langsam aufklappen (Hip Abduction + External Rotation)",
-          "Fersen bleiben zusammen (nur Knie spreizen)",
-          "2-3 Sekunden oben halten",
-          "Langsam senken, nicht fallen lassen"
-        ],
-        "focus": "Hip External Rotation, Glute Medius Aktivierung"
-      },
-      "commonMistakes": [
-        "Mit Rumpf abkippen (nicht rein Hüfte)",
-        "Fersen trennen",
-        "Zu schnelle Bewegung"
-      ],
-      "coachingTips": {
-        "observation": "Die Hüft-Abduktoren sollten brennen. Beobachte dass Rumpf stabil bleibt.",
-        "scaling_easier": "Ohne Band, langsamer Tempo",
-        "scaling_harder": "Mit Resistance Band um Knie, oder mit Gewicht",
-        "motivation": "15-20 Wiederholungen = langfristig stabiles Knie!"
-      },
-      "progressionPath": [
-        "acl_monster_walk"
-      ],
       "videoLink": {
         "url": null,
         "title": "🏃‍♀️ Clamshells (Hüft-Abduktion liegend)"
-      }
+      },
+      "poster": null
     },
     "acl_box_jump": {
       "id": "acl_box_jump",
-      "category": "acl_prevention",
-      "order": 6,
       "name": "🏃‍♀️ Box Jump (Plyometrics mit korrekter Landung)",
+      "category": "acl_prevention",
       "description": "Sprung auf eine Box mit Fokus auf KORREKTE Landungsmechanik. Das Wichtigste: 'Soft Landing' mit Knies über Zehen = direkte ACL-Prävention im dynamischen Movement.",
       "duration": "4-5 Minuten",
-      "setup": {
-        "equipment": [
-          "Box oder Stuhl (20-30cm Höhe)"
-        ],
-        "space": "Freifläche (1,5-2m)",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Stand parallel zur Box",
-          "Beide Beine gleichzeitig abspringen (Arme nach vorne)",
-          "LANDUNG = KRITISCH: Knie 45-60° gebeugt",
-          "KRITISCH: Knie bleibt über Zehen (NICHT nach innen/außen!)",
-          "Ganze Fußsohle hat Bodenkontakt",
-          "2-3 Sekunden halten, dann Schritt runter (nicht wieder springen)"
-        ],
-        "focus": "Landungsmechanik, Knee Valgus Prevention, Plyometrische Kraft"
-      },
-      "commonMistakes": [
-        "Starre Beine beim Landen = maximale ACL-Last!",
-        "Knie nach innen kollabieren (Valgus)",
-        "Nur auf Zehenspitzen landen"
-      ],
-      "coachingTips": {
-        "observation": "VIDEOS MACHEN! Jede Landung prüfen. 'Knees-In-Toes' ist die Nummer 1 Regel!",
-        "scaling_easier": "Niedrigere Box (10-15cm), oder Step-Up statt Jump",
-        "scaling_harder": "Höhere Box (40-50cm), oder kontinuierliche Triple Hop (3 Sprünge hintereinander)",
-        "motivation": "Das trainiert das Bewegungsmuster das im Spiel zählt: Springen, Landen, Sprinten!"
-      },
-      "progressionPath": [
-        "acl_single_leg_squat"
-      ],
       "videoLink": {
         "url": null,
         "title": "🏃‍♀️ Box Jump (Plyometrics mit korrekter Landung)"
-      }
+      },
+      "poster": null
     },
     "acl_lateral_lunge": {
       "id": "acl_lateral_lunge",
-      "category": "acl_prevention",
-      "order": 7,
       "name": "🏃‍♀️ Lateral Lunge (Seitwärts-Ausfallschritt)",
+      "category": "acl_prevention",
       "description": "Ausfallschritt seitwärts. Trainiert Frontal-Plane Stabilität = essentiell weil viele Fußball-Cuts seitwärts sind. Stärkt Adduktoren und Glutes für seitliche Stabilität.",
       "duration": "4-5 Minuten",
-      "setup": {
-        "equipment": [
-          "Keine (optional: leichte Kurzhantel für Goblet Hold)"
-        ],
-        "space": "Minimal (2-3m)",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Stand mit Füßen breiter als Schulterbreite",
-          "Seitlich zu einem Bein schritt (großer Schritt)",
-          "Dieses Bein beugen (Knie über Zehen!), anderes gestreckt",
-          "Gewicht über das arbeitende Bein (nicht auf hinteres Bein)",
-          "2-3 Sekunden halten, zur Mitte zurück"
-        ],
-        "focus": "Frontal-Plane Stabilität, Adduktor & Glute Kraft"
-      },
-      "commonMistakes": [
-        "Knie kollabiert nach innen (Valgus)",
-        "Nicht genug Kniebeugen",
-        "Gewicht auf hinterm Bein"
-      ],
-      "coachingTips": {
-        "observation": "Beobachte dass das vordere Knie über dem Fuß bleibt!",
-        "scaling_easier": "Kleinere Schritte, leichtere Tiefe",
-        "scaling_harder": "Mit Kurzhantel (Goblet Hold), oder Puls unten",
-        "motivation": "Seitwärts-Bewegung ist TYPISCH im Fußball – genau trainiert!"
-      },
-      "progressionPath": [],
       "videoLink": {
         "url": null,
         "title": "🏃‍♀️ Lateral Lunge (Seitwärts-Ausfallschritt)"
-      }
+      },
+      "poster": null
     },
     "acl_single_leg_balance": {
       "id": "acl_single_leg_balance",
-      "category": "acl_prevention",
-      "order": 8,
       "name": "🏃‍♀️ Single-Leg Balance (Einbeiniges Gleichgewicht)",
+      "category": "acl_prevention",
       "description": "Stehen auf einem Bein. Trainiert Propriozeption (Körper-Awareness) und neuromuskularische Kontrolle = schnelle Reaktion bei Fußversteppern und Drehbewegungen.",
       "duration": "3-4 Minuten",
-      "setup": {
-        "equipment": [
-          "Keine (optional: Wobble Board oder Foam Pad für schwerer)"
-        ],
-        "space": "Minimal",
-        "solo": true,
-        "partner": false
-      },
-      "technique": {
-        "keyPoints": [
-          "Ein Bein stehen, anderes Bein angehoben (Hüfte 90°)",
-          "Standbein stabilisiert Knie, micro-adjustments im Ankle",
-          "Arme für Balance nutzen OK",
-          "30-60 Sekunden halten"
-        ],
-        "focus": "Propriozeption, neuromuskuläre Kontrolle, Ankle/Knee/Hip Stabilität"
-      },
-      "commonMistakes": [
-        "Pendeln (zu viel Bewegung)",
-        "Zu schnelle Progression zu schwierigen Surfaces",
-        "Augen zumachen ohne Base-Level-Stabilität"
-      ],
-      "coachingTips": {
-        "observation": "Die 'Micro-adjustments' im Fußgelenk sollten sichtbar sein – das ist das Propriozeptor-Training!",
-        "scaling_easier": "Augen offen, normaler Boden, näher an einer Wand",
-        "scaling_harder": "Augen zu, auf instabilem Untergrund (Wobble Board), oder mit kognitiver Distraction (Ball catch)",
-        "motivation": "Propriozeption = schnelle Reaktion = beste Verletzungsprävention!"
-      },
-      "progressionPath": [],
       "videoLink": {
         "url": null,
         "title": "🏃‍♀️ Single-Leg Balance (Einbeiniges Gleichgewicht)"
-      }
+      },
+      "poster": null
     }
   }
 }

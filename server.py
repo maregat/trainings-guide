@@ -68,23 +68,114 @@ def admin():
     """Serve the admin panel"""
     return render_template('admin.html')
 
-@app.route('/api/exercises')
+@app.route('/api/exercises', methods=['GET'])
 def get_exercises():
     """Get all exercises from exercises.json"""
     try:
         with open('src/data/exercises.json') as f:
             data = json.load(f)
         
+        # Return full exercise data for editing
         exercises = []
         for ex_id, exercise in data['exercises'].items():
             exercises.append({
                 'id': ex_id,
-                'name': exercise['name'],
+                'name': exercise.get('name', ''),
                 'category': exercise.get('category', ''),
-                'currentVideo': exercise.get('videoLink', {}).get('url', None)
+                'description': exercise.get('description', ''),
+                'duration': exercise.get('duration', ''),
+                'videoLink': exercise.get('videoLink', {'url': None, 'title': None}),
+                'poster': exercise.get('poster', None)
             })
         
-        return jsonify({'exercises': sorted(exercises, key=lambda x: x['name'])})
+        # Return exercises sorted by category, then by name
+        return jsonify({
+            'exercises': sorted(exercises, key=lambda x: (x.get('category', ''), x.get('name', ''))),
+            'categories': data.get('categories', {})
+        })
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/exercises/<exercise_id>', methods=['GET'])
+def get_exercise(exercise_id):
+    """Get single exercise"""
+    try:
+        with open('src/data/exercises.json') as f:
+            data = json.load(f)
+        
+        if exercise_id not in data['exercises']:
+            return jsonify({'error': 'Exercise not found'}), 404
+        
+        return jsonify({'exercise': data['exercises'][exercise_id]})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/exercises', methods=['POST'])
+def create_exercise():
+    """Create new exercise"""
+    try:
+        password = request.json.get('password', '')
+        if password != ADMIN_PASSWORD:
+            return jsonify({'error': 'Invalid password'}), 403
+        
+        exercise_data = request.json
+        exercise_id = exercise_data.get('id', '')
+        
+        if not exercise_id or not exercise_data.get('name', ''):
+            return jsonify({'error': 'ID and name required'}), 400
+        
+        with open('src/data/exercises.json', 'r') as f:
+            data = json.load(f)
+        
+        if exercise_id in data['exercises']:
+            return jsonify({'error': 'Exercise ID already exists'}), 409
+        
+        # Create new exercise
+        new_exercise = {
+            'id': exercise_id,
+            'name': exercise_data.get('name', ''),
+            'category': exercise_data.get('category', ''),
+            'description': exercise_data.get('description', ''),
+            'duration': exercise_data.get('duration', ''),
+            'videoLink': {'url': None, 'title': None},
+            'poster': None
+        }
+        
+        data['exercises'][exercise_id] = new_exercise
+        
+        with open('src/data/exercises.json', 'w') as f:
+            json.dump(data, f, indent=2, ensure_ascii=False)
+        
+        return jsonify({'success': True, 'exercise': new_exercise})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/exercises/<exercise_id>', methods=['PUT'])
+def update_exercise(exercise_id):
+    """Update exercise metadata (not video)"""
+    try:
+        password = request.json.get('password', '')
+        if password != ADMIN_PASSWORD:
+            return jsonify({'error': 'Invalid password'}), 403
+        
+        exercise_data = request.json
+        
+        with open('src/data/exercises.json', 'r') as f:
+            data = json.load(f)
+        
+        if exercise_id not in data['exercises']:
+            return jsonify({'error': 'Exercise not found'}), 404
+        
+        # Update allowed fields only
+        allowed_fields = ['name', 'category', 'description', 'duration']
+        for field in allowed_fields:
+            if field in exercise_data:
+                data['exercises'][exercise_id][field] = exercise_data[field]
+        
+        with open('src/data/exercises.json', 'w') as f:
+            json.dump(data, f, indent=2, ensure_ascii=False)
+        
+        return jsonify({'success': True, 'exercise': data['exercises'][exercise_id]})
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
@@ -158,22 +249,21 @@ def upload_video():
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
-@app.route('/api/delete/<exercise_id>', methods=['POST'])
-def delete_video(exercise_id):
-    """Delete video and update exercises.json"""
+@app.route('/api/exercises/<exercise_id>', methods=['DELETE'])
+def delete_exercise(exercise_id):
+    """Delete exercise (metadata AND video files)"""
     try:
         password = request.json.get('password', '')
         if password != ADMIN_PASSWORD:
             return jsonify({'error': 'Invalid password'}), 403
         
-        # Update exercises.json
         with open('src/data/exercises.json', 'r') as f:
             data = json.load(f)
         
         if exercise_id not in data['exercises']:
             return jsonify({'error': 'Exercise not found'}), 404
         
-        # Get current video file
+        # Delete video file
         current_video = data['exercises'][exercise_id].get('videoLink', {}).get('url', '')
         if current_video and current_video.startswith('./data/videos/'):
             video_filename = current_video.replace('./data/videos/', '')
@@ -186,23 +276,13 @@ def delete_video(exercise_id):
         if os.path.exists(poster_path):
             os.remove(poster_path)
         
-        # Clear video link and poster
-        data['exercises'][exercise_id]['videoLink'] = {
-            'url': None,
-            'title': data['exercises'][exercise_id]['name']
-        }
-        if 'poster' in data['exercises'][exercise_id]:
-            del data['exercises'][exercise_id]['poster']
+        # Delete from JSON
+        del data['exercises'][exercise_id]
         
-        # Save updated exercises.json
         with open('src/data/exercises.json', 'w') as f:
             json.dump(data, f, indent=2, ensure_ascii=False)
         
-        return jsonify({
-            'success': True,
-            'message': 'Video deleted successfully'
-        })
-    
+        return jsonify({'success': True, 'message': 'Exercise deleted'})
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
