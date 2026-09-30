@@ -227,6 +227,15 @@
             padding: 4px 8px;
             border-radius: 4px;
             margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 1px solid #d0d8ff;
+        }
+
+        .exercise-card-category:hover {
+            background: #e8ecff;
+            border-color: #667eea;
+            transform: scale(1.05);
         }
 
         .exercise-card-desc {
@@ -695,6 +704,12 @@
             });
         }
 
+        function filterByCategory(categoryId) {
+            currentCategoryFilter = categoryId;
+            document.getElementById('categoryFilter').value = categoryId;
+            loadExercisesList();
+        }
+
         function loadExercisesList() {
             const list = document.getElementById('exercisesList');
             list.innerHTML = '';
@@ -730,7 +745,7 @@
                 card.className = 'exercise-card';
                 card.innerHTML = `
                     <div class="exercise-card-title">${escapeHtml(ex.name)}</div>
-                    <div class="exercise-card-category">${categories[ex.category]?.name || ex.category}</div>
+                    <div class="exercise-card-category" onclick="filterByCategory('${ex.category}')" title="Klick zum Filtern">${categories[ex.category]?.name || ex.category}</div>
                     <div class="exercise-card-desc">${escapeHtml(ex.description)}</div>
                     ${ex.duration ? `<div style="font-size: 0.85em; color: #999;">⏱️ ${escapeHtml(ex.duration)}</div>` : ''}
                     <div class="exercise-card-buttons">
