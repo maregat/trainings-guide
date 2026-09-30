@@ -699,15 +699,30 @@
             const list = document.getElementById('exercisesList');
             list.innerHTML = '';
 
+            // Ensure exercises is an array
+            const exercisesArray = Array.isArray(exercises) ? exercises : Object.values(exercises || {});
+            
             const filtered = currentCategoryFilter 
-                ? exercises.filter(ex => ex.category === currentCategoryFilter)
-                : exercises;
+                ? exercisesArray.filter(ex => ex.category === currentCategoryFilter)
+                : exercisesArray;
+
+            console.log('loadExercisesList - exercises count:', exercisesArray.length);
+            console.log('currentCategoryFilter:', currentCategoryFilter);
+            console.log('filtered count:', filtered.length);
 
             const filterInfo = document.getElementById('filterInfo');
             if (currentCategoryFilter) {
-                filterInfo.textContent = `Filter: ${categories[currentCategoryFilter]?.name || currentCategoryFilter} (${filtered.length}/${exercises.length} Übungen)`;
+                filterInfo.textContent = `Filter: ${categories[currentCategoryFilter]?.name || currentCategoryFilter} (${filtered.length}/${exercisesArray.length} Übungen)`;
             } else {
                 filterInfo.textContent = '';
+            }
+
+            if (filtered.length === 0 && currentCategoryFilter) {
+                const emptyMsg = document.createElement('div');
+                emptyMsg.style.cssText = 'text-align: center; color: #999; padding: 40px; font-size: 1.1em;';
+                emptyMsg.textContent = `❌ Keine Übungen in dieser Kategorie gefunden`;
+                list.appendChild(emptyMsg);
+                return;
             }
 
             filtered.forEach(ex => {
