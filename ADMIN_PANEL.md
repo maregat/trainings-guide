@@ -62,16 +62,17 @@ Dann öffnen: **http://localhost:5001**
 **Schneller Workflow mit Video-Cutter App:**
 
 1. Video-Cutter App (`http://localhost:5000`):
+
    - Video hochladen
    - Übung schneiden (z.B. "Sole Taps" von 14s-24s)
    - Download → `sole_taps_cut.mp4`
-
 2. Admin Panel (`http://localhost:5001`):
+
    - "Sole Taps" Übung auswählen
    - `sole_taps_cut.mp4` hochladen
    - Fertig!
-
 3. Build & Deploy:
+
    ```bash
    bash build.sh
    git add -A && git commit -m "Update: sole_taps video"
@@ -81,11 +82,13 @@ Dann öffnen: **http://localhost:5001**
 ## Dateiformat
 
 Videos werden so gespeichert:
+
 ```
 src/data/videos/{exercise_id}.mp4
 ```
 
 Beispiele:
+
 - `sole_taps.mp4`
 - `football_dance.webm`
 - `step_over.avi`
@@ -105,14 +108,17 @@ ADMIN_PASSWORD = os.getenv('ADMIN_PASSWORD', 'admin123')
 ## Troubleshooting
 
 **"Passwort falsch"**
+
 - Überprüfe Passwort in `server.py`
 - Server neu starten
 
 **"Video wird nicht gespeichert"**
+
 - `src/data/videos/` existiert?
 - Schreibberechtigung prüfen: `chmod 755 src/data/videos/`
 
 **"exercises.json wird nicht aktualisiert"**
+
 - Überprüfe JSON-Syntax
 - Übungs-ID muss in exercises.json existieren
 
