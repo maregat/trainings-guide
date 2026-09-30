@@ -140,7 +140,7 @@
     },
     "coo_basis_toe_taps": {
       "id": "coo_basis_toe_taps",
-      "name": "Sole Taps",
+      "name": "Fussspitzen auf Ball",
       "category": "warmup_coerver",
       "description": "Ball abwechselnd mit den Fußspitzen von oben antippen.",
       "duration": "40 Sekunden (+ 20 Sek Pause)",
@@ -157,10 +157,10 @@
       "description": "Ball in schnellem Fußwechsel antippen – tänzelnde, rhythmische Bewegung.",
       "duration": "40 Sekunden (+ 20 Sek Pause)",
       "videoLink": {
-        "url": "./data/videos/football_dance.mp4",
+        "url": "./data/videos/coo_basis_football_dance.mp4",
         "title": "Football Dance"
       },
-      "poster": null
+      "poster": "./data/videos/coo_basis_football_dance.jpg"
     },
     "coo_basis_ball_roll": {
       "id": "coo_basis_ball_roll",
@@ -169,10 +169,10 @@
       "description": "Im Stehen den Ball mit Sohle abwechselnd hin- und herrollen.",
       "duration": "40 Sekunden (+ 20 Sek Pause)",
       "videoLink": {
-        "url": "https://www.youtube.com/watch?v=IeMYh7roBjk",
-        "title": "Coerver-Referenzvideo"
+        "url": "./data/videos/coo_basis_ball_roll.mp4",
+        "title": "Ball zwischen den Füßen rollen"
       },
-      "poster": null
+      "poster": "./data/videos/coo_basis_ball_roll.jpg"
     },
     "coo_basis_inside_outside": {
       "id": "coo_basis_inside_outside",
@@ -188,19 +188,19 @@
     },
     "coo_set1_move1": {
       "id": "coo_set1_move1",
-      "name": "Continuous Scissors",
+      "name": "Übersteiger",
       "category": "warmup_coerver",
       "description": "Coerver Set 1: Continuous Scissors, Sole Drag, Triple Sole Drag",
       "duration": "40 Sekunden (+ 20 Sek Pause)",
       "videoLink": {
-        "url": "./data/videos/continuous_scissors.mp4",
+        "url": "./data/videos/coo_set1_move1.mp4",
         "title": "Continuous Scissors"
       },
-      "poster": null
+      "poster": "./data/videos/coo_set1_move1.jpg"
     },
     "coo_set1_move2": {
       "id": "coo_set1_move2",
-      "name": "Sole Drag",
+      "name": "Pendeln mit Sohle",
       "category": "warmup_coerver",
       "description": "Coerver Set 1: Continuous Scissors, Sole Drag, Triple Sole Drag",
       "duration": "40 Sekunden (+ 20 Sek Pause)",
@@ -210,233 +210,137 @@
       },
       "poster": null
     },
-    "coo_set1_move3": {
-      "id": "coo_set1_move3",
-      "name": "Triple Sole Drag",
-      "category": "warmup_coerver",
-      "description": "Coerver Set 1: Continuous Scissors, Sole Drag, Triple Sole Drag",
-      "duration": "40 Sekunden (+ 20 Sek Pause)",
-      "videoLink": {
-        "url": "./data/videos/triple_sole_drag.mp4",
-        "title": "Triple Sole Drag"
-      },
-      "poster": null
-    },
     "coo_set2_move1": {
       "id": "coo_set2_move1",
-      "name": "Sole Drag + Inside Push",
+      "name": "Push Pull - Außenseite",
       "category": "warmup_coerver",
-      "description": "Coerver Set 2: Sole Drag Kombis + The V Inside",
+      "description": "Mit der Außenseite nach schräg vorne, zurückziehen mit der Sohle des gleichen Fußes",
       "duration": "40 Sekunden (+ 20 Sek Pause)",
       "videoLink": {
-        "url": "./data/videos/sole_drag_+_inside_push.mp4",
-        "title": "Sole Drag + Inside Push"
+        "url": "./data/videos/coo_set2_move1.mp4",
+        "title": "Push Pull - Außenseite"
       },
-      "poster": null
+      "poster": "./data/videos/coo_set2_move1.jpg"
     },
     "coo_set2_move2": {
       "id": "coo_set2_move2",
-      "name": "Sole Drag + Outside Push",
+      "name": "Push Pull - Innenseite",
       "category": "warmup_coerver",
-      "description": "Coerver Set 2: Sole Drag Kombis + The V Inside",
+      "description": "Schräg nach vorne mit der Innenseite, zurückziehen mit der Sohle des anderen Fusses",
       "duration": "40 Sekunden (+ 20 Sek Pause)",
       "videoLink": {
-        "url": "./data/videos/sole_drag_+_outside_push.mp4",
-        "title": "Sole Drag + Outside Push"
+        "url": "./data/videos/coo_set2_move2.mp4",
+        "title": "Push Pull - Innenseite"
       },
-      "poster": null
+      "poster": "./data/videos/coo_set2_move2.jpg"
     },
     "coo_set2_move3": {
       "id": "coo_set2_move3",
-      "name": "The V – Inside",
+      "name": "V Form – Innenseite",
       "category": "warmup_coerver",
       "description": "Coerver Set 2: Sole Drag Kombis + The V Inside",
       "duration": "40 Sekunden (+ 20 Sek Pause)",
       "videoLink": {
-        "url": "./data/videos/the_v__inside.mp4",
-        "title": "The V – Inside"
+        "url": "./data/videos/coo_set2_move3.mp4",
+        "title": "V Form – Innenseite"
       },
-      "poster": null
+      "poster": "./data/videos/coo_set2_move3.jpg"
     },
     "coo_set3_move1": {
       "id": "coo_set3_move1",
-      "name": "The V – Outside",
+      "name": "V Form – Außenseite",
       "category": "warmup_coerver",
       "description": "Coerver Set 3: The V Outside + Pull-Push Instep",
       "duration": "40 Sekunden (+ 20 Sek Pause)",
       "videoLink": {
-        "url": "./data/videos/the_v__outside.mp4",
-        "title": "The V – Outside"
+        "url": "./data/videos/coo_set3_move1.mp4",
+        "title": "V Form – Außenseite"
       },
-      "poster": null
-    },
-    "coo_set3_move2": {
-      "id": "coo_set3_move2",
-      "name": "Pull-Push Instep (rechts)",
-      "category": "warmup_coerver",
-      "description": "Coerver Set 3: The V Outside + Pull-Push Instep",
-      "duration": "40 Sekunden (+ 20 Sek Pause)",
-      "videoLink": {
-        "url": "https://www.youtube.com/watch?v=IeMYh7roBjk&t=81s",
-        "title": "Coerver-Referenzvideo (mit Zeitstempel)"
-      },
-      "poster": null
+      "poster": "./data/videos/coo_set3_move1.jpg"
     },
     "coo_set3_move3": {
       "id": "coo_set3_move3",
-      "name": "Pull-Push Instep (links)",
+      "name": "Pull-Push 'nach Vorne'",
       "category": "warmup_coerver",
       "description": "Coerver Set 3: The V Outside + Pull-Push Instep",
       "duration": "40 Sekunden (+ 20 Sek Pause)",
       "videoLink": {
-        "url": "./data/videos/pull-push_instep_links.mp4",
-        "title": "Pull-Push Instep (links)"
+        "url": "./data/videos/coo_set3_move3.mp4",
+        "title": "Pull-Push 'nach Vorne'"
       },
-      "poster": null
-    },
-    "coo_set3_move4": {
-      "id": "coo_set3_move4",
-      "name": "Triple Pull-Push",
-      "category": "warmup_coerver",
-      "description": "Coerver Set 3: The V Outside + Pull-Push Instep",
-      "duration": "40 Sekunden (+ 20 Sek Pause)",
-      "videoLink": {
-        "url": "./data/videos/triple_pull-push.mp4",
-        "title": "Triple Pull-Push"
-      },
-      "poster": null
-    },
-    "coo_set4_move1": {
-      "id": "coo_set4_move1",
-      "name": "Rollover + Stop + Inside",
-      "category": "warmup_coerver",
-      "description": "Coerver Set 4: Rollover, Stop, Inside, Cuts",
-      "duration": "40 Sekunden (+ 20 Sek Pause)",
-      "videoLink": {
-        "url": "./data/videos/rollover_+_stop_+_inside.mp4",
-        "title": "Rollover + Stop + Inside"
-      },
-      "poster": null
-    },
-    "coo_set4_move2": {
-      "id": "coo_set4_move2",
-      "name": "Stop + Slide",
-      "category": "warmup_coerver",
-      "description": "Coerver Set 4: Rollover, Stop, Inside, Cuts",
-      "duration": "40 Sekunden (+ 20 Sek Pause)",
-      "videoLink": {
-        "url": "./data/videos/stop_+_slide.mp4",
-        "title": "Stop + Slide"
-      },
-      "poster": null
+      "poster": "./data/videos/coo_set3_move3.jpg"
     },
     "coo_set4_move3": {
       "id": "coo_set4_move3",
-      "name": "Inside Cut",
+      "name": "Rollen und Stoppen",
       "category": "warmup_coerver",
       "description": "Coerver Set 4: Rollover, Stop, Inside, Cuts",
       "duration": "40 Sekunden (+ 20 Sek Pause)",
       "videoLink": {
-        "url": "./data/videos/inside_cut.mp4",
-        "title": "Inside Cut"
+        "url": "./data/videos/coo_set4_move3.mp4",
+        "title": "Rollen und Stoppen"
       },
-      "poster": null
+      "poster": "./data/videos/coo_set4_move3.jpg"
     },
     "coo_set4_move4": {
       "id": "coo_set4_move4",
-      "name": "Outside Push (Messi)",
+      "name": "Außen schieben, Innen stoppen (der Messi)",
       "category": "warmup_coerver",
-      "description": "Coerver Set 4: Rollover, Stop, Inside, Cuts",
+      "description": "Innen schieben, außen stoppen",
       "duration": "40 Sekunden (+ 20 Sek Pause)",
       "videoLink": {
-        "url": "./data/videos/outside_push_messi.mp4",
-        "title": "Outside Push (Messi)"
+        "url": "./data/videos/coo_set4_move4.mp4",
+        "title": "Außen schieben, Innen stoppen (der Messi)"
       },
-      "poster": null
-    },
-    "coo_set5_move1": {
-      "id": "coo_set5_move1",
-      "name": "Rollover + Stop Instep",
-      "category": "warmup_coerver",
-      "description": "Coerver Set 5: Rollover, Stop Instep, The L, Step Over",
-      "duration": "40 Sekunden (+ 20 Sek Pause)",
-      "videoLink": {
-        "url": "./data/videos/rollover_+_stop_instep.mp4",
-        "title": "Rollover + Stop Instep"
-      },
-      "poster": null
+      "poster": "./data/videos/coo_set4_move4.jpg"
     },
     "coo_set5_move2": {
       "id": "coo_set5_move2",
-      "name": "The L (rechts)",
+      "name": "L Form - Beide Füsse",
       "category": "warmup_coerver",
       "description": "Coerver Set 5: Rollover, Stop Instep, The L, Step Over",
       "duration": "40 Sekunden (+ 20 Sek Pause)",
       "videoLink": {
-        "url": "./data/videos/the_l_rechts.mp4",
-        "title": "The L (rechts)"
+        "url": "./data/videos/coo_set5_move2.mp4",
+        "title": "L Form - Beide Füsse"
       },
-      "poster": null
+      "poster": "./data/videos/coo_set5_move2.jpg"
     },
     "coo_set5_move3": {
       "id": "coo_set5_move3",
-      "name": "The L (links)",
+      "name": "L Form - Ein Fuss",
       "category": "warmup_coerver",
       "description": "Coerver Set 5: Rollover, Stop Instep, The L, Step Over",
       "duration": "40 Sekunden (+ 20 Sek Pause)",
       "videoLink": {
-        "url": "./data/videos/the_l_links.mp4",
-        "title": "The L (links)"
+        "url": "./data/videos/coo_set5_move3.mp4",
+        "title": "L Form - Ein Fuss"
       },
-      "poster": null
-    },
-    "coo_set5_move4": {
-      "id": "coo_set5_move4",
-      "name": "Step Over",
-      "category": "warmup_coerver",
-      "description": "Coerver Set 5: Rollover, Stop Instep, The L, Step Over",
-      "duration": "40 Sekunden (+ 20 Sek Pause)",
-      "videoLink": {
-        "url": "./data/videos/step_over.mp4",
-        "title": "Step Over"
-      },
-      "poster": null
+      "poster": "./data/videos/coo_set5_move3.jpg"
     },
     "coo_set6_move1": {
       "id": "coo_set6_move1",
-      "name": "Around Two Cones (horizontal)",
+      "name": "Um 2 Hütchen",
       "category": "warmup_coerver",
       "description": "Coerver Set 6: Around Cones – Horizontal & Vertikal",
       "duration": "40 Sekunden (+ 20 Sek Pause)",
       "videoLink": {
-        "url": "./data/videos/around_two_cones_horizontal.mp4",
-        "title": "Around Two Cones (horizontal)"
+        "url": "./data/videos/coo_set6_move1.mp4",
+        "title": "Around Two Cones"
       },
-      "poster": null
-    },
-    "coo_set6_move2": {
-      "id": "coo_set6_move2",
-      "name": "Around Two Cones (vertikal)",
-      "category": "warmup_coerver",
-      "description": "Coerver Set 6: Around Cones – Horizontal & Vertikal",
-      "duration": "40 Sekunden (+ 20 Sek Pause)",
-      "videoLink": {
-        "url": "./data/videos/around_two_cones_vertikal.mp4",
-        "title": "Around Two Cones (vertikal)"
-      },
-      "poster": null
+      "poster": "./data/videos/coo_set6_move1.jpg"
     },
     "coo_set6_move3": {
       "id": "coo_set6_move3",
-      "name": "Around Four Cones",
+      "name": "Um 4 Hütchen",
       "category": "warmup_coerver",
       "description": "Coerver Set 6: Around Cones – Horizontal & Vertikal",
       "duration": "40 Sekunden (+ 20 Sek Pause)",
       "videoLink": {
-        "url": "./data/videos/around_four_cones.mp4",
+        "url": "./data/videos/coo_set6_move3.mp4",
         "title": "Around Four Cones"
       },
-      "poster": null
+      "poster": "./data/videos/coo_set6_move3.jpg"
     },
     "ft_wall_reception": {
       "id": "ft_wall_reception",
@@ -761,6 +665,18 @@
         "title": "🏃‍♀️ Single-Leg Balance (Einbeiniges Gleichgewicht)"
       },
       "poster": null
+    },
+    "Inside-Taps": {
+      "id": "Inside-Taps",
+      "name": "Ball Pendeln",
+      "category": "warmup_coerver",
+      "description": "Ball zwischen den beiden Füssen hin und her spielen",
+      "duration": "2 min",
+      "videoLink": {
+        "url": "./data/videos/Inside-Taps.mp4",
+        "title": "Inside Taps"
+      },
+      "poster": "./data/videos/Inside-Taps.jpg"
     }
   }
 }
