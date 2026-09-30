@@ -1,4 +1,4 @@
-const CACHE_NAME = 'trainings-guide-v7';
+const CACHE_NAME = 'trainings-guide-v8';
 const STATIC_ASSETS = [
     '/',
     '/index.html',
