@@ -524,6 +524,7 @@
         <div class="tabs">
             <button class="tab-btn active" data-tab="exercises">📋 Exercises</button>
             <button class="tab-btn" data-tab="videos">🎥 Videos</button>
+            <button class="tab-btn" data-tab="cleanup">🗑️ Cleanup</button>
         </div>
 
         <!-- Exercises Tab -->
@@ -567,6 +568,24 @@
             </div>
 
             <div class="status" id="videoStatus"></div>
+        </div>
+
+        <!-- Cleanup Tab -->
+        <div class="tab-content" id="cleanup-tab">
+            <div class="section-title">🗑️ Video-Speicher bereinigen</div>
+            
+            <div style="background: #f0f4ff; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+                <p style="margin-bottom: 10px; color: #333;">Dieser Bereich löscht alle Video- und Poster-Dateien, die nicht in den Übungen verlinkt sind.</p>
+                <p style="color: #666; font-size: 0.9em;">Aktuell im videos-Ordner: <strong id="cleanupStats">laden...</strong></p>
+            </div>
+
+            <div class="button-group">
+                <button class="btn-primary" id="cleanupBtn" style="background: #ff6b6b;">🗑️ Bereinigung starten</button>
+                <button class="btn-secondary" id="analyzeBtn">🔍 Analyse (ohne löschen)</button>
+            </div>
+
+            <div class="status" id="cleanupStatus"></div>
+            <div id="cleanupResults"></div>
         </div>
     </div>
 
@@ -1046,6 +1065,85 @@
             el.classList.remove('success', 'error', 'info');
             el.classList.add('active', type);
         }
+
+        // ============ CLEANUP FUNCTIONS ============
+        function showCleanupStatus(msg, type) {
+            const el = document.getElementById('cleanupStatus');
+            if (!msg) {
+                el.classList.remove('active');
+                return;
+            }
+            el.textContent = msg;
+            el.classList.remove('success', 'error', 'info');
+            el.classList.add('active', type);
+        }
+
+        async function performCleanup(analyze_only = false) {
+            showCleanupStatus('⏳ ' + (analyze_only ? 'Analysiere' : 'Lösche') + ' ungenutzte Dateien...', 'info');
+            
+            try {
+                const response = await fetch('/api/cleanup', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({password: currentPassword})
+                });
+
+                const data = await response.json();
+
+                if (data.error) {
+                    showCleanupStatus('❌ Fehler: ' + data.error, 'error');
+                    return;
+                }
+
+                // Show results
+                const resultsDiv = document.getElementById('cleanupResults');
+                let html = `
+                    <div style="background: #f0f4ff; padding: 20px; border-radius: 8px; margin-top: 20px;">
+                        <div style="font-size: 1.1em; font-weight: bold; color: #333; margin-bottom: 10px;">📊 Ergebnis:</div>
+                        <div style="margin: 8px 0; color: #555;">
+                            <strong>Gelöschte Dateien:</strong> ${data.deleted_count}
+                        </div>
+                        <div style="margin: 8px 0; color: #555;">
+                            <strong>Verlinkte Dateien:</strong> ${data.linked_count}
+                        </div>
+                        <div style="margin: 8px 0; color: #555;">
+                            <strong>Gesamt vorher:</strong> ${data.total_files}
+                        </div>
+                `;
+
+                if (data.deleted_files && data.deleted_files.length > 0) {
+                    html += `<div style="margin-top: 15px; color: #666; font-size: 0.95em;">
+                        <div style="font-weight: 600; margin-bottom: 8px;">Gelöschte Dateien:</div>
+                        <ul style="margin-left: 20px;">`;
+                    data.deleted_files.forEach(f => {
+                        html += `<li>${escapeHtml(f)}</li>`;
+                    });
+                    html += `</ul></div>`;
+                }
+
+                html += `</div>`;
+                resultsDiv.innerHTML = html;
+
+                if (data.deleted_count > 0) {
+                    showCleanupStatus('✅ ' + data.message, 'success');
+                } else {
+                    showCleanupStatus('ℹ️ Keine Dateien zum löschen gefunden', 'info');
+                }
+            } catch (error) {
+                showCleanupStatus('❌ Fehler: ' + error.message, 'error');
+            }
+        }
+
+        // Event Listeners for Cleanup
+        document.getElementById('cleanupBtn').addEventListener('click', () => {
+            if (confirm('⚠️ Wirklich alle ungenutzten Videos löschen? Das kann nicht rückgängig gemacht werden!')) {
+                performCleanup(false);
+            }
+        });
+
+        document.getElementById('analyzeBtn').addEventListener('click', () => {
+            performCleanup(true);
+        });
 
         function escapeHtml(text) {
             const div = document.createElement('div');

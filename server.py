@@ -286,6 +286,78 @@ def delete_exercise(exercise_id):
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
+@app.route('/api/cleanup', methods=['POST'])
+def cleanup_unused_videos():
+    """Delete all video files that are not linked in exercises.json"""
+    try:
+        password = request.json.get('password', '')
+        if password != ADMIN_PASSWORD:
+            return jsonify({'error': 'Invalid password'}), 403
+        
+        # Load exercises
+        with open('src/data/exercises.json', 'r') as f:
+            data = json.load(f)
+        
+        # Collect all linked video files
+        linked_files = set()
+        for exercise in data['exercises'].values():
+            video_url = exercise.get('videoLink', {}).get('url', '')
+            if video_url and video_url.startswith('./data/videos/'):
+                filename = video_url.replace('./data/videos/', '')
+                linked_files.add(filename)
+            
+            # Also check poster files
+            exercise_id = exercise.get('id', '')
+            if exercise_id:
+                linked_files.add(f"{exercise_id}.jpg")
+        
+        # Find all video files (mp4, webm, avi, etc.)
+        video_extensions = {'.mp4', '.webm', '.avi', '.mov', '.mkv'}
+        poster_extensions = {'.jpg', '.png'}
+        
+        all_files = []
+        for filename in os.listdir(app.config['UPLOAD_FOLDER']):
+            filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+            if os.path.isfile(filepath):
+                ext = os.path.splitext(filename)[1].lower()
+                if ext in video_extensions or ext in poster_extensions:
+                    all_files.append(filename)
+        
+        # Find unused files
+        unused_files = []
+        for filename in all_files:
+            if filename not in linked_files:
+                unused_files.append(filename)
+        
+        # Delete unused files
+        deleted_count = 0
+        deleted_files = []
+        for filename in unused_files:
+            filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+            try:
+                os.remove(filepath)
+                deleted_count += 1
+                deleted_files.append(filename)
+            except Exception as e:
+                pass
+        
+        # Calculate freed space
+        freed_space_mb = sum(
+            os.path.getsize(os.path.join(app.config['UPLOAD_FOLDER'], f)) / 1024 / 1024
+            for f in deleted_files if os.path.exists(os.path.join(app.config['UPLOAD_FOLDER'], f))
+        )
+        
+        return jsonify({
+            'success': True,
+            'deleted_count': deleted_count,
+            'deleted_files': deleted_files,
+            'linked_count': len(linked_files),
+            'total_files': len(all_files),
+            'message': f'✅ {deleted_count} ungenutzte Dateien gelöscht'
+        })
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
 if __name__ == '__main__':
     print("🎬 Admin Server starting...")
     print("📱 Open http://localhost:5001/admin in your browser")

@@ -145,10 +145,10 @@
       "description": "Ball abwechselnd mit den Fußspitzen von oben antippen.",
       "duration": "40 Sekunden (+ 20 Sek Pause)",
       "videoLink": {
-        "url": "./data/videos/sole_taps.mp4",
-        "title": "Sole Taps"
+        "url": "./data/videos/coo_basis_toe_taps.mp4",
+        "title": "Fussspitzen auf Ball"
       },
-      "poster": null
+      "poster": "./data/videos/coo_basis_toe_taps.jpg"
     },
     "coo_basis_football_dance": {
       "id": "coo_basis_football_dance",
@@ -194,21 +194,9 @@
       "duration": "40 Sekunden (+ 20 Sek Pause)",
       "videoLink": {
         "url": "./data/videos/coo_set1_move1.mp4",
-        "title": "Continuous Scissors"
+        "title": "Übersteiger"
       },
       "poster": "./data/videos/coo_set1_move1.jpg"
-    },
-    "coo_set1_move2": {
-      "id": "coo_set1_move2",
-      "name": "Pendeln mit Sohle",
-      "category": "warmup_coerver",
-      "description": "Coerver Set 1: Continuous Scissors, Sole Drag, Triple Sole Drag",
-      "duration": "40 Sekunden (+ 20 Sek Pause)",
-      "videoLink": {
-        "url": "./data/videos/sole_drag.mp4",
-        "title": "Sole Drag"
-      },
-      "poster": null
     },
     "coo_set2_move1": {
       "id": "coo_set2_move1",
@@ -326,7 +314,7 @@
       "duration": "40 Sekunden (+ 20 Sek Pause)",
       "videoLink": {
         "url": "./data/videos/coo_set6_move1.mp4",
-        "title": "Around Two Cones"
+        "title": "Um 2 Hütchen"
       },
       "poster": "./data/videos/coo_set6_move1.jpg"
     },
@@ -338,7 +326,7 @@
       "duration": "40 Sekunden (+ 20 Sek Pause)",
       "videoLink": {
         "url": "./data/videos/coo_set6_move3.mp4",
-        "title": "Around Four Cones"
+        "title": "Um 4 Hütchen"
       },
       "poster": "./data/videos/coo_set6_move3.jpg"
     },
