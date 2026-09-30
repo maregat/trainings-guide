@@ -1,14 +1,15 @@
 # 🎬 Trainings-Guide – Fußball Übungen
 
-Interaktive **Progressive Web App (PWA)** für Fußball-Trainingsübungen mit Video-Support.
+Interaktive **Progressive Web App (PWA)** für Fußball-Trainingsübungen mit Video-Support und Admin-Panel.
 
 **Features:**
-- 📱 **Offline-fähig** – Funktioniert ohne Internet (PWA mit Service Worker)
+- 📱 **Offline-fähig** – Funktioniert ohne Internet (PWA mit Service Worker v7)
 - 🎬 **Video-Übungen** – MP4-Videos lokal gehostet + YouTube/Vimeo-Einbindung
 - 📊 **58 Übungen** – 9 Kategorien (ACL-Prävention, Coerver Fundamentals, etc.)
 - 🎯 **Strukturiert** – Warm-Up, Ballkontrolle, Technische Skills, Taktik
-- ⏱️ **Details** – Zeit, Setup, Ausrüstung, Fehleranalyse, Progressionen
-- 🔐 **Admin Panel** – Videos direkt hochladen & mit Übungen verlinken
+- ⏱️ **Details** – Name, Kategorie, Beschreibung, Dauer, Video, Poster
+- 🔐 **Admin Panel** – Vollständiges CRUD für Übungen + Video-Upload mit Auto-Poster
+- 🔍 **Kategorie-Filter** – Übungen nach Kategorie filtern
 
 ---
 
@@ -58,17 +59,47 @@ trainings-guide/
 
 ---
 
+## 🎬 Admin-Panel: Übungen verwalten
+
+### Starten
+
+```bash
+cd trainings-guide
+./venv/bin/python3 server.py
+```
+
+Dann öffnen: **http://localhost:5001/admin**
+
+**Login-Daten:**
+- 🔐 Passwort: `admin123` (in `server.py` Zeile 20 ändern!)
+
+### Features
+
+#### 📋 Exercises Tab
+- ✏️ **Edit** – Übung bearbeiten (Name, Kategorie, Beschreibung, Dauer)
+- ➕ **Add** – Neue Übung mit eindeutiger ID erstellen
+- 🗑️ **Delete** – Übung + Video + Poster löschen
+- 🔍 **Filter** – Übungen nach Kategorie filtern + Reset-Button
+
+#### 🎥 Videos Tab
+- 📹 **Select Exercise** – Dropdown mit allen 58 Übungen
+- 💾 **Upload Video** – Drag & Drop oder Dateiauswahl
+- ✂️ **Auto-Poster** – JPG-Thumbnail wird automatisch generiert
+- 📊 **Status** – Dateiname und Größe anzeigen
+
+---
+
 ## 🎬 Workflow: Videos Hochladen
 
-### Empfohlener Workflow
+### Mit Admin-Panel (empfohlen)
 
-1. Video mit **lossless-cut** schneiden
-2. Admin-Panel öffnen: `http://localhost:5001/admin`
-3. Passwort: `admin123` (in `server.py` ändern!)
-4. Übung auswählen → Video hochladen → ✂️ Upload
-5. Fertig! Video + Poster werden automatisch erstellt
+1. Admin-Panel öffnen: `http://localhost:5001/admin`
+2. Passwort eingeben
+3. **Tab "Exercises"** – Übungen nach Bedarf bearbeiten
+4. **Tab "Videos"** – Übung auswählen → Video hochladen
+5. ✅ Fertig! Video + Poster + exercises.json werden automatisch aktualisiert
 
-### Alternative: Manuell mit build.sh
+### Mit build.sh (manuell)
 
 ```bash
 # 1. Video zu src/data/videos/{exercise_id}.mp4 kopieren
@@ -85,63 +116,126 @@ git push origin main
 
 ---
 
-## 📊 exercises.json Format
+## 📊 exercises.json Format (Simplifiziert)
+
+Die neue Struktur fokussiert auf **essenzielle Felder nur**:
 
 ```json
 {
-  "exercises": {
-    "sole_taps": {
+  "categories": {
+    "warmup_coerver": {
+      "name": "🎯 Coerver Fundamentals",
+      "description": "Ball-Fundamentals und Fußballtechnik",
+      "order": 1,
+      "phase": "warmup"
+    }
+  },
+  "exercises": [
+    {
+      "id": "sole_taps",
       "name": "Sole Taps",
       "category": "warmup_coerver",
-      "duration": 5,
+      "description": "Berühre den Ball mit der Sohle. Schnelle, rhythmische Bewegungen.",
+      "duration": "5 min",
       "videoLink": {
         "url": "./data/videos/sole_taps.mp4",
         "title": "Sole Taps"
       },
-      "poster": "./data/videos/sole_taps.jpg",
-      "setup": {
-        "solo": true,
-        "equipment": ["ball"],
-        "space": "5x5m"
-      },
-      "coaching": "Berühre den Ball mit der Sohle, schnelle Füße...",
-      "progressions": ["Mit zweitem Ball", "Rückwärts"]
+      "poster": "./data/videos/sole_taps.jpg"
     }
-  }
+  ]
+}
+```
+
+**Felder pro Übung (7):**
+1. `id` – Eindeutige ID (z.B. "sole_taps")
+2. `name` – Übungs-Name
+3. `category` – Kategorie-ID (z.B. "warmup_coerver")
+4. `description` – Kurzbeschreibung
+5. `duration` – Dauer (z.B. "5 min")
+6. `videoLink` – Video-Objekt mit URL + Titel
+7. `poster` – Thumbnail-Pfad (auto-generiert beim Upload)
+
+---
+
+## � Backend API (server.py)
+
+Port: **5001** (Nur lokal, nicht auf GitHub Pages)
+
+### Alle Übungen laden
+```
+GET /api/exercises
+Response: { "categories": {...}, "exercises": [...] }
+```
+
+### Einzelne Übung laden (zum Bearbeiten)
+```
+GET /api/exercises/{exercise_id}
+Response: { "exercise": {...} }
+```
+
+### Neue Übung erstellen
+```
+POST /api/exercises
+Body: {
+  "password": "admin123",
+  "id": "neue_ubung",
+  "name": "Neue Übung",
+  "category": "warmup_coerver",
+  "description": "Beschreibung",
+  "duration": "5 min"
+}
+Response: { "exercise": {...}, "success": true }
+```
+
+### Übung aktualisieren
+```
+PUT /api/exercises/{exercise_id}
+Body: {
+  "password": "admin123",
+  "name": "Neuer Name",
+  "category": "acl_prevention",
+  "description": "Neue Beschreibung",
+  "duration": "10 min"
+}
+Response: { "exercise": {...}, "success": true }
+```
+
+### Übung löschen (+ Video + Poster)
+```
+DELETE /api/exercises/{exercise_id}
+Body: { "password": "admin123" }
+Response: { "success": true, "deleted": true }
+```
+
+### Video hochladen & Poster generieren
+```
+POST /api/upload
+Body: (multipart/form-data)
+  - file: <video.mp4>
+  - exercise_id: "sole_taps"
+  - password: "admin123"
+Response: {
+  "success": true,
+  "url": "./data/videos/sole_taps.mp4",
+  "poster": "./data/videos/sole_taps.jpg",
+  "size_mb": 2.5
 }
 ```
 
 ---
 
-## 🔐 Admin-Panel Setup
+## 🔐 Sicherheit
 
-### Passwort ändern (WICHTIG!)
+### Passwort-Schutz
+- Alle `POST`, `PUT`, `DELETE` Requests benötigen `password` im Body
+- Standard: `admin123` (in `server.py` Zeile 20 ändern!)
+- ⚠️ **WICHTIG**: Ändern Sie das Passwort vor dem Deployment in der Produktion!
 
-In `server.py` (Zeile ~18):
-
-```python
-ADMIN_PASSWORD = 'dein_sicheres_passwort_hier'  # Change me!
-```
-
-### Abhängigkeiten
-
-```bash
-pip install Flask Werkzeug
-```
-
-Oder mit venv:
-
-```bash
-python3 -m venv venv
-source venv/bin/activate
-pip install Flask Werkzeug
-```
-
-### API-Endpoints
-
-- `GET /api/exercises` – Alle Übungen abrufen
-- `POST /api/upload` – Video hochladen & verlinken
-- `POST /api/delete/{exercise_id}` – Video & Poster löschen
+### CORS & Requests
+- Admin-Panel: Lokal auf `http://localhost:5001/admin`
+- App: Wird von GitHub Pages gehostet, hat keinen Zugriff auf Port 5001
+- Deshalb: Admin-Panel nur lokal verwenden!
 
 ---
 
@@ -173,6 +267,16 @@ git push origin main
 
 Live in ~30 Sekunden auf:
 https://maregat.github.io/trainings-guide/
+
+**Was wird deployed:**
+- `src/index.html` → `docs/index.html`
+- `src/app.js` → `docs/app.js`
+- `src/styles.css` → `docs/styles.css`
+- `src/sw.js` → `docs/sw.js`
+- `src/manifest.json` → `docs/manifest.json`
+- `src/data/exercises.json` → `docs/data/exercises.json`
+- `src/data/videos/*` → `docs/data/videos/*`
+- `templates/admin.html` → `docs/admin.html` (für lokale Verwaltung)
 
 ### Service Worker Cache-Invalidation
 
