@@ -517,7 +517,10 @@
     <div class="container main-panel" id="mainPanel">
         <div class="header">
             <h1>🎬 Admin Panel</h1>
-            <button class="logout-btn" id="logoutBtn">Logout</button>
+            <div style="display: flex; gap: 10px;">
+                <button class="btn-primary" id="deployBtn" style="background: #28a745;">🚀 Deploy Live</button>
+                <button class="logout-btn" id="logoutBtn">Logout</button>
+            </div>
         </div>
 
         <!-- Tabs -->
@@ -730,6 +733,36 @@
                 <div class="button-group">
                     <button type="submit" class="btn-primary">✅ Erstellen</button>
                     <button type="button" class="btn-secondary" onclick="closeAddCategoryModal()">Abbrechen</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Deploy Modal -->
+    <div class="modal" id="deployModal">
+        <div class="modal-content">
+            <span class="modal-close" id="modalCloseDeploy">&times;</span>
+            <h2>🚀 Live App deployen</h2>
+            <div style="background: #e3f2fd; padding: 15px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #2196F3;">
+                <p style="margin: 0; font-size: 0.95em; color: #1565c0;">
+                    <strong>Achtung:</strong> Alle Änderungen werden zu GitHub Pages deployed und sind dann live verfügbar.
+                </p>
+            </div>
+            <form id="deployForm" style="margin-top: 20px;">
+                <div class="form-group">
+                    <label for="deployMessage">Commit-Nachricht (optional):</label>
+                    <textarea id="deployMessage" placeholder="z.B. 'Update: neue Übungen hinzugefügt'" style="font-family: monospace;"></textarea>
+                </div>
+                <div class="button-group">
+                    <button type="submit" class="btn-primary" style="background: #28a745; flex: 1;">✅ Deploy starten</button>
+                    <button type="button" class="btn-secondary" style="flex: 1;" onclick="closeDeployModal()">Abbrechen</button>
+                </div>
+                <div id="deployProgress" style="margin-top: 20px; display: none;">
+                    <p style="color: #666; font-size: 0.9em; margin: 10px 0;">⏳ Deployment läuft...</p>
+                    <div style="background: #f0f0f0; border-radius: 8px; height: 8px; overflow: hidden;">
+                        <div id="deployProgressBar" style="background: linear-gradient(90deg, #667eea 0%, #764ba2 100%); height: 100%; width: 0%; transition: width 0.3s;"></div>
+                    </div>
+                    <p id="deployStatus" style="color: #666; font-size: 0.85em; margin-top: 10px; font-family: monospace;"></p>
                 </div>
             </form>
         </div>
@@ -1440,6 +1473,109 @@
             div.textContent = text;
             return div.innerHTML;
         }
+
+        // ============ DEPLOY FUNCTIONS ============
+
+        function openDeployModal() {
+            document.getElementById('deployModal').classList.add('active');
+            document.getElementById('deployMessage').value = '';
+            document.getElementById('deployProgress').style.display = 'none';
+            document.getElementById('deployForm').style.display = 'block';
+        }
+
+        function closeDeployModal() {
+            document.getElementById('deployModal').classList.remove('active');
+        }
+
+        document.getElementById('deployBtn').addEventListener('click', () => {
+            if (!confirm('⚠️ Wirklich alle Änderungen deployen? Die App wird aktualisiert.')) {
+                return;
+            }
+            openDeployModal();
+        });
+
+        document.getElementById('modalCloseDeploy').addEventListener('click', closeDeployModal);
+
+        document.getElementById('deployForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const message = document.getElementById('deployMessage').value.trim() || 
+                           'Admin Update: Deploy via web interface';
+
+            // Show progress
+            document.getElementById('deployForm').style.display = 'none';
+            document.getElementById('deployProgress').style.display = 'block';
+            const progressBar = document.getElementById('deployProgressBar');
+            const statusEl = document.getElementById('deployStatus');
+
+            // Simulate progress
+            let progress = 10;
+            const progressInterval = setInterval(() => {
+                if (progress < 90) {
+                    progress += Math.random() * 30;
+                    progressBar.style.width = Math.min(progress, 90) + '%';
+                }
+            }, 500);
+
+            try {
+                statusEl.textContent = '🔨 Building project...';
+                const response = await fetch('/api/deploy', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        password: currentPassword,
+                        message: message
+                    })
+                });
+
+                clearInterval(progressInterval);
+                progressBar.style.width = '100%';
+
+                const data = await response.json();
+
+                if (data.error) {
+                    statusEl.textContent = '❌ Error: ' + data.error;
+                    setTimeout(() => {
+                        document.getElementById('deployProgress').style.display = 'none';
+                        document.getElementById('deployForm').style.display = 'block';
+                        progressBar.style.width = '0%';
+                    }, 3000);
+                    return;
+                }
+
+                if (data.status === 'no_changes') {
+                    statusEl.textContent = data.message;
+                    setTimeout(() => {
+                        closeDeployModal();
+                    }, 2000);
+                    return;
+                }
+
+                statusEl.innerHTML = `
+                    <div style="color: #27ae60; font-weight: bold; margin-bottom: 10px;">✅ Deployment erfolgreich!</div>
+                    <div style="color: #666; font-size: 0.85em;">
+                        <div>Commit: ${escapeHtml(data.commit)}</div>
+                        <div>Status: ${data.status}</div>
+                        <div style="margin-top: 10px; padding-top: 10px; border-top: 1px solid #ddd;">
+                            <strong>App wird in ~1 Minute live aktualisiert</strong><br>
+                            <small>Aktuelle URL: <a href="https://maregat.github.io/trainings-guide/" target="_blank" style="color: #667eea;">https://maregat.github.io/trainings-guide/</a></small>
+                        </div>
+                    </div>
+                `;
+
+                setTimeout(() => {
+                    closeDeployModal();
+                }, 4000);
+            } catch (error) {
+                clearInterval(progressInterval);
+                statusEl.textContent = '❌ Network Error: ' + error.message;
+                setTimeout(() => {
+                    document.getElementById('deployProgress').style.display = 'none';
+                    document.getElementById('deployForm').style.display = 'block';
+                    progressBar.style.width = '0%';
+                }, 3000);
+            }
+        });
 
         passwordInput.focus();
     </script>

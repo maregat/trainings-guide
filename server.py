@@ -508,6 +508,127 @@ def delete_category(category_id):
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
+# ============ DEPLOYMENT ============
+
+@app.route('/api/deploy', methods=['POST'])
+def deploy():
+    """Build, commit and push to GitHub Pages"""
+    try:
+        password = request.json.get('password', '')
+        if password != ADMIN_PASSWORD:
+            return jsonify({'error': 'Invalid password'}), 403
+        
+        commit_message = request.json.get('message', 'Admin Update: Deploy via web interface').strip()
+        
+        # Validate commit message
+        if not commit_message or len(commit_message) < 3:
+            return jsonify({'error': 'Commit message too short (min 3 chars)'}), 400
+        
+        if len(commit_message) > 200:
+            return jsonify({'error': 'Commit message too long (max 200 chars)'}), 400
+        
+        # Current working directory
+        cwd = os.getcwd()
+        
+        # Step 1: Build (run build.sh)
+        try:
+            build_result = subprocess.run(
+                ['bash', 'build.sh'],
+                capture_output=True,
+                text=True,
+                timeout=30,
+                cwd=cwd
+            )
+            if build_result.returncode != 0:
+                return jsonify({
+                    'error': 'Build failed',
+                    'stderr': build_result.stderr
+                }), 400
+        except subprocess.TimeoutExpired:
+            return jsonify({'error': 'Build timeout (>30s)'}), 500
+        except Exception as e:
+            return jsonify({'error': f'Build error: {str(e)}'}), 500
+        
+        # Step 2: Git status check
+        try:
+            status_result = subprocess.run(
+                ['git', 'status', '--porcelain'],
+                capture_output=True,
+                text=True,
+                timeout=10,
+                cwd=cwd
+            )
+            
+            if not status_result.stdout.strip():
+                return jsonify({
+                    'success': True,
+                    'message': 'ℹ️ Keine Änderungen zum Committen',
+                    'status': 'no_changes'
+                })
+        except Exception as e:
+            return jsonify({'error': f'Git status error: {str(e)}'}), 500
+        
+        # Step 3: Git add
+        try:
+            subprocess.run(
+                ['git', 'add', '-A'],
+                capture_output=True,
+                text=True,
+                timeout=10,
+                cwd=cwd,
+                check=True
+            )
+        except Exception as e:
+            return jsonify({'error': f'Git add error: {str(e)}'}), 500
+        
+        # Step 4: Git commit
+        try:
+            commit_result = subprocess.run(
+                ['git', 'commit', '-m', commit_message],
+                capture_output=True,
+                text=True,
+                timeout=10,
+                cwd=cwd
+            )
+            
+            if commit_result.returncode != 0:
+                return jsonify({
+                    'error': 'Commit failed',
+                    'stderr': commit_result.stderr
+                }), 400
+        except Exception as e:
+            return jsonify({'error': f'Git commit error: {str(e)}'}), 500
+        
+        # Step 5: Git push
+        try:
+            push_result = subprocess.run(
+                ['git', 'push', 'origin', 'main'],
+                capture_output=True,
+                text=True,
+                timeout=30,
+                cwd=cwd
+            )
+            
+            if push_result.returncode != 0:
+                return jsonify({
+                    'error': 'Push failed (check git credentials/SSH key)',
+                    'stderr': push_result.stderr
+                }), 400
+        except subprocess.TimeoutExpired:
+            return jsonify({'error': 'Push timeout (>30s) - network issue?'}), 500
+        except Exception as e:
+            return jsonify({'error': f'Git push error: {str(e)}'}), 500
+        
+        return jsonify({
+            'success': True,
+            'message': '✅ Erfolgreich deployed! App wird in ~1 Min live.',
+            'commit': commit_message,
+            'status': 'deployed'
+        })
+        
+    except Exception as e:
+        return jsonify({'error': f'Unexpected error: {str(e)}'}), 500
+
 if __name__ == '__main__':
     print("🎬 Admin Server starting...")
     print("📱 Open http://localhost:5001/admin in your browser")
