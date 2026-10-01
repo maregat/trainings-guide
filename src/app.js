@@ -35,7 +35,6 @@ async function init() {
         
         // Setup Event Listener
         setupEventListeners();
-        setupModalListeners();
         
         // Render Categories
         renderCategories();
@@ -242,9 +241,6 @@ function renderExerciseDetail(exerciseId) {
                                 Dein Browser unterstützt HTML5 Video nicht.
                             </video>
                         </div>
-                        <div style="margin-top: 0.75rem; font-size: 0.85rem;">
-                            <button onclick="openVideoEditModal('${exercise.id}')" style="padding: 0.5rem 1rem; background: #f0f0f0; border: none; border-radius: 6px; cursor: pointer; font-size: 0.85rem;">✏️ Link bearbeiten</button>
-                        </div>
                     </div>
                     <script>
                         (function() {
@@ -290,7 +286,6 @@ function renderExerciseDetail(exerciseId) {
                             </div>
                             <div style="margin-top: 0.75rem; font-size: 0.85rem;">
                                 <a href="${videoUrl}" target="_blank" style="color: #0066cc; text-decoration: none;">🔗 Video auf Vimeo öffnen</a>
-                                <button onclick="openVideoEditModal('${exercise.id}')" style="margin-left: 0.5rem; padding: 0.5rem 1rem; background: #f0f0f0; border: none; border-radius: 6px; cursor: pointer; font-size: 0.85rem;">✏️ Link bearbeiten</button>
                             </div>
                         </div>
                     `;
@@ -303,7 +298,6 @@ function renderExerciseDetail(exerciseId) {
                         <a href="${videoUrl}" target="_blank" style="display: inline-block; padding: 0.75rem 1.5rem; background: #ff0000; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; cursor: pointer;">
                             🎥 Video anschauen
                         </a>
-                        <button onclick="openVideoEditModal('${exercise.id}')" style="margin-left: 0.5rem; padding: 0.75rem 1rem; background: #f0f0f0; border: none; border-radius: 6px; cursor: pointer; font-size: 0.85rem;">✏️ Link bearbeiten</button>
                     </div>
                 `;
             }
@@ -315,7 +309,6 @@ function renderExerciseDetail(exerciseId) {
                         <div class="video-icon">🎬</div>
                         <p>Video folgt in Kürze</p>
                     </div>
-                    <button onclick="openVideoEditModal('${exercise.id}')" style="margin-top: 0.5rem; padding: 0.5rem 1rem; background: #f0f0f0; border: none; border-radius: 6px; cursor: pointer; font-size: 0.85rem; width: 100%;">+ Video hinzufügen</button>
                 </div>
             `;
         }
@@ -460,13 +453,6 @@ function showVideoPlaceholder(title, duration) {
 }
 
 // ============================================
-// Video Edit Modal
-// ============================================
-
-function openVideoModal() {
-    document.getElementById('video-modal').classList.remove('hidden');
-    document.getElementById('modal-backdrop').classList.remove('hidden');
-}
 
 function closeVideoModal() {
     document.getElementById('video-modal').classList.add('hidden');

@@ -3,6 +3,7 @@
 Interaktive **Progressive Web App (PWA)** für Fußball-Trainingsübungen mit Video-Support und Admin-Panel.
 
 **Features:**
+
 - 📱 **Offline-fähig** – Funktioniert ohne Internet (PWA mit Service Worker v7)
 - 🎬 **Video-Übungen** – MP4-Videos lokal gehostet + YouTube/Vimeo-Einbindung
 - 📊 **58 Übungen** – 9 Kategorien (ACL-Prävention, Coerver Fundamentals, etc.)
@@ -71,17 +72,20 @@ cd trainings-guide
 Dann öffnen: **http://localhost:5001/admin**
 
 **Login-Daten:**
+
 - 🔐 Passwort: `admin123` (in `server.py` Zeile 20 ändern!)
 
 ### Features
 
 #### 📋 Exercises Tab
+
 - ✏️ **Edit** – Übung bearbeiten (Name, Kategorie, Beschreibung, Dauer)
 - ➕ **Add** – Neue Übung mit eindeutiger ID erstellen
 - 🗑️ **Delete** – Übung + Video + Poster löschen
 - 🔍 **Filter** – Übungen nach Kategorie filtern + Reset-Button
 
 #### 🎥 Videos Tab
+
 - 📹 **Select Exercise** – Dropdown mit allen 58 Übungen
 - 💾 **Upload Video** – Drag & Drop oder Dateiauswahl
 - ✂️ **Auto-Poster** – JPG-Thumbnail wird automatisch generiert
@@ -148,6 +152,7 @@ Die neue Struktur fokussiert auf **essenzielle Felder nur**:
 ```
 
 **Felder pro Übung (7):**
+
 1. `id` – Eindeutige ID (z.B. "sole_taps")
 2. `name` – Übungs-Name
 3. `category` – Kategorie-ID (z.B. "warmup_coerver")
@@ -163,18 +168,21 @@ Die neue Struktur fokussiert auf **essenzielle Felder nur**:
 Port: **5001** (Nur lokal, nicht auf GitHub Pages)
 
 ### Alle Übungen laden
+
 ```
 GET /api/exercises
 Response: { "categories": {...}, "exercises": [...] }
 ```
 
 ### Einzelne Übung laden (zum Bearbeiten)
+
 ```
 GET /api/exercises/{exercise_id}
 Response: { "exercise": {...} }
 ```
 
 ### Neue Übung erstellen
+
 ```
 POST /api/exercises
 Body: {
@@ -189,6 +197,7 @@ Response: { "exercise": {...}, "success": true }
 ```
 
 ### Übung aktualisieren
+
 ```
 PUT /api/exercises/{exercise_id}
 Body: {
@@ -202,6 +211,7 @@ Response: { "exercise": {...}, "success": true }
 ```
 
 ### Übung löschen (+ Video + Poster)
+
 ```
 DELETE /api/exercises/{exercise_id}
 Body: { "password": "admin123" }
@@ -209,6 +219,7 @@ Response: { "success": true, "deleted": true }
 ```
 
 ### Video hochladen & Poster generieren
+
 ```
 POST /api/upload
 Body: (multipart/form-data)
@@ -228,11 +239,13 @@ Response: {
 ## 🔐 Sicherheit
 
 ### Passwort-Schutz
+
 - Alle `POST`, `PUT`, `DELETE` Requests benötigen `password` im Body
 - Standard: `admin123` (in `server.py` Zeile 20 ändern!)
 - ⚠️ **WICHTIG**: Ändern Sie das Passwort vor dem Deployment in der Produktion!
 
 ### CORS & Requests
+
 - Admin-Panel: Lokal auf `http://localhost:5001/admin`
 - App: Wird von GitHub Pages gehostet, hat keinen Zugriff auf Port 5001
 - Deshalb: Admin-Panel nur lokal verwenden!
@@ -247,6 +260,7 @@ Response: {
 4. ✅ App ist jetzt wie eine native App nutzbar!
 
 **Features auf iPhone:**
+
 - ✅ Offline nutzbar (Downloads gecacht)
 - ✅ Videos bleiben in App (kein Fullscreen-Zwang)
 - ✅ Schnelle Warmladezeit
@@ -269,6 +283,7 @@ Live in ~30 Sekunden auf:
 https://maregat.github.io/trainings-guide/
 
 **Was wird deployed:**
+
 - `src/index.html` → `docs/index.html`
 - `src/app.js` → `docs/app.js`
 - `src/styles.css` → `docs/styles.css`
@@ -281,10 +296,12 @@ https://maregat.github.io/trainings-guide/
 ### Service Worker Cache-Invalidation
 
 Der Service Worker (v7) cache:
+
 - **Network-First**: `app.js`, `styles.css`, `index.html`, `exercises.json`
 - **Cache-First**: Videos, Bilder, Poster
 
 **Cache löschen bei Updates:**
+
 1. `sw.js` Version hochzählen: `const CACHE_NAME = 'trainings-guide-v8'`
 2. `build.sh && git push`
 3. Alte Versionen werden automatisch gelöscht
@@ -293,15 +310,15 @@ Der Service Worker (v7) cache:
 
 ## 🛠️ Technologie-Stack
 
-| Teil | Tech |
-|------|------|
-| Frontend | Vanilla JavaScript (SPA) |
-| Offline | Service Worker + PWA |
+| Teil          | Tech                        |
+| ------------- | --------------------------- |
+| Frontend      | Vanilla JavaScript (SPA)    |
+| Offline       | Service Worker + PWA        |
 | Video-Hosting | Lokal (MP4) + YouTube/Vimeo |
-| Admin-Backend | Flask (Python) |
-| Poster-Gen | ffmpeg (automatisch) |
-| Deploy | GitHub Pages |
-| Dateiformat | JSON |
+| Admin-Backend | Flask (Python)              |
+| Poster-Gen    | ffmpeg (automatisch)        |
+| Deploy        | GitHub Pages                |
+| Dateiformat   | JSON                        |
 
 ---
 
@@ -337,22 +354,27 @@ cmd = ['ffmpeg', '-i', video_path, '-ss', '0.5', '-vframes', '1', '-q:v', '2', o
 ## 🐛 Troubleshooting
 
 ### Video wird nicht angezeigt
+
 - Prüfen: `exercises.json` hat `videoLink.url` gesetzt?
 - Browser-Cache löschen (oder Service Worker Version bumpen)
 
 ### Admin-Panel zeigt "Invalid password"
+
 - Passwort in `server.py` überprüfen
 - Server neu starten: `python server.py`
 
 ### exercises.json wird nicht aktualisiert
+
 - Schreibberechtigung prüfen: `chmod 755 src/data/videos/`
 - JSON-Syntax prüfen: `python -m json.tool src/data/exercises.json`
 
 ### Video wird hochgeladen aber nicht verlinkt
+
 - ffmpeg installiert? `which ffmpeg`
 - Übungs-ID existiert in exercises.json?
 
 ### Poster wird nicht generiert
+
 - ffmpeg muss installiert sein
 - Speicherplatz im `src/data/videos/` verfügbar?
 

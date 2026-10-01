@@ -358,6 +358,156 @@ def cleanup_unused_videos():
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
+# ============ CATEGORY MANAGEMENT ============
+
+@app.route('/api/categories', methods=['GET'])
+def get_categories():
+    """Get all categories with exercise counts"""
+    try:
+        with open('src/data/exercises.json', 'r') as f:
+            data = json.load(f)
+        
+        categories = data.get('categories', {})
+        exercises = data.get('exercises', {})
+        
+        # Count exercises per category
+        category_counts = {}
+        for ex_id, ex in exercises.items():
+            cat = ex.get('category', '')
+            category_counts[cat] = category_counts.get(cat, 0) + 1
+        
+        # Build response with counts
+        result = {}
+        for cat_id, cat_data in categories.items():
+            result[cat_id] = {
+                'id': cat_id,
+                'name': cat_data.get('name', ''),
+                'description': cat_data.get('description', ''),
+                'order': cat_data.get('order', 999),
+                'phase': cat_data.get('phase', ''),
+                'exercise_count': category_counts.get(cat_id, 0)
+            }
+        
+        return jsonify({'categories': result})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/categories', methods=['POST'])
+def create_category():
+    """Create new category"""
+    try:
+        password = request.json.get('password', '')
+        if password != ADMIN_PASSWORD:
+            return jsonify({'error': 'Invalid password'}), 403
+        
+        cat_id = request.json.get('id', '').strip()
+        cat_name = request.json.get('name', '').strip()
+        
+        if not cat_id or not cat_name:
+            return jsonify({'error': 'ID and name required'}), 400
+        
+        # Sanitize ID
+        cat_id = ''.join(c if c.isalnum() or c == '_' else '_' for c in cat_id).lower()
+        
+        with open('src/data/exercises.json', 'r') as f:
+            data = json.load(f)
+        
+        if cat_id in data['categories']:
+            return jsonify({'error': 'Category ID already exists'}), 409
+        
+        # Create new category
+        new_category = {
+            'name': cat_name,
+            'description': request.json.get('description', ''),
+            'order': max([c.get('order', 0) for c in data['categories'].values()] + [0]) + 1,
+            'phase': request.json.get('phase', 'main')
+        }
+        
+        data['categories'][cat_id] = new_category
+        
+        with open('src/data/exercises.json', 'w') as f:
+            json.dump(data, f, indent=2, ensure_ascii=False)
+        
+        return jsonify({'success': True, 'category_id': cat_id, 'category': new_category})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/categories/<category_id>', methods=['PUT'])
+def update_category(category_id):
+    """Update category metadata"""
+    try:
+        password = request.json.get('password', '')
+        if password != ADMIN_PASSWORD:
+            return jsonify({'error': 'Invalid password'}), 403
+        
+        with open('src/data/exercises.json', 'r') as f:
+            data = json.load(f)
+        
+        if category_id not in data['categories']:
+            return jsonify({'error': 'Category not found'}), 404
+        
+        # Update fields
+        data['categories'][category_id]['name'] = request.json.get('name', data['categories'][category_id].get('name', ''))
+        data['categories'][category_id]['description'] = request.json.get('description', data['categories'][category_id].get('description', ''))
+        
+        if 'order' in request.json:
+            data['categories'][category_id]['order'] = request.json.get('order')
+        
+        with open('src/data/exercises.json', 'w') as f:
+            json.dump(data, f, indent=2, ensure_ascii=False)
+        
+        return jsonify({'success': True, 'category': data['categories'][category_id]})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/categories/<category_id>', methods=['DELETE'])
+def delete_category(category_id):
+    """Delete category and move exercises to another category"""
+    try:
+        password = request.json.get('password', '')
+        if password != ADMIN_PASSWORD:
+            return jsonify({'error': 'Invalid password'}), 403
+        
+        target_category = request.json.get('target_category', '')
+        
+        with open('src/data/exercises.json', 'r') as f:
+            data = json.load(f)
+        
+        # Validation
+        if category_id not in data['categories']:
+            return jsonify({'error': 'Category not found'}), 404
+        
+        if len(data['categories']) <= 1:
+            return jsonify({'error': 'Cannot delete last category'}), 400
+        
+        if not target_category or target_category == category_id:
+            return jsonify({'error': 'Target category required'}), 400
+        
+        if target_category not in data['categories']:
+            return jsonify({'error': 'Target category not found'}), 404
+        
+        # Find exercises in this category
+        exercises_to_move = [ex_id for ex_id, ex in data['exercises'].items() 
+                            if ex.get('category') == category_id]
+        
+        # Move all exercises to target category
+        for ex_id in exercises_to_move:
+            data['exercises'][ex_id]['category'] = target_category
+        
+        # Delete category
+        del data['categories'][category_id]
+        
+        with open('src/data/exercises.json', 'w') as f:
+            json.dump(data, f, indent=2, ensure_ascii=False)
+        
+        return jsonify({
+            'success': True,
+            'message': f'✅ Kategorie gelöscht, {len(exercises_to_move)} Übungen verschoben',
+            'moved_count': len(exercises_to_move)
+        })
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
 if __name__ == '__main__':
     print("🎬 Admin Server starting...")
     print("📱 Open http://localhost:5001/admin in your browser")

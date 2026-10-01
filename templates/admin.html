@@ -523,6 +523,7 @@
         <!-- Tabs -->
         <div class="tabs">
             <button class="tab-btn active" data-tab="exercises">📋 Exercises</button>
+            <button class="tab-btn" data-tab="categories">🏷️ Kategorien</button>
             <button class="tab-btn" data-tab="videos">🎥 Videos</button>
             <button class="tab-btn" data-tab="cleanup">🗑️ Cleanup</button>
         </div>
@@ -542,6 +543,15 @@
             <button class="btn-primary" id="addExerciseBtn">➕ Neue Übung</button>
             <div id="exercisesList" class="exercises-list"></div>
             <div class="status" id="exercisesStatus"></div>
+        </div>
+
+        <!-- Categories Tab -->
+        <div class="tab-content" id="categories-tab">
+            <div class="section-title">🏷️ Kategorien verwalten</div>
+            
+            <button class="btn-primary" id="addCategoryBtn">➕ Neue Kategorie</button>
+            <div id="categoriesList" class="exercises-list"></div>
+            <div class="status" id="categoriesStatus"></div>
         </div>
 
         <!-- Videos Tab -->
@@ -654,6 +664,77 @@
         </div>
     </div>
 
+    <!-- Edit Category Modal -->
+    <div class="modal" id="editCategoryModal">
+        <div class="modal-content">
+            <span class="modal-close" id="modalCloseCatEdit">&times;</span>
+            <h2>✏️ Kategorie bearbeiten</h2>
+            <form id="editCategoryForm" style="margin-top: 20px;">
+                <div class="form-group">
+                    <label for="editCategoryName">Name:</label>
+                    <input type="text" id="editCategoryName" required>
+                </div>
+                <div class="form-group">
+                    <label for="editCategoryDescription">Beschreibung:</label>
+                    <textarea id="editCategoryDescription"></textarea>
+                </div>
+                <div class="button-group">
+                    <button type="submit" class="btn-primary">💾 Speichern</button>
+                    <button type="button" class="btn-secondary" onclick="closeEditCategoryModal()">Abbrechen</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Delete Category Modal -->
+    <div class="modal" id="deleteCategoryModal">
+        <div class="modal-content">
+            <span class="modal-close" id="modalCloseCatDel">&times;</span>
+            <h2>🗑️ Kategorie löschen</h2>
+            <div style="background: #fff3cd; padding: 12px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #ff9800;">
+                <p id="deleteCategoryWarning"></p>
+                <p style="margin-top: 10px; font-size: 0.9em; color: #666;">Die Übungen werden in folgende Kategorie verschoben:</p>
+            </div>
+            <form id="deleteCategoryForm" style="margin-top: 20px;">
+                <div class="form-group">
+                    <label for="deleteCategoryTarget">Zielkategorie:</label>
+                    <select id="deleteCategoryTarget" required></select>
+                </div>
+                <div class="button-group">
+                    <button type="submit" class="btn-primary" style="background: #ff6b6b;">🗑️ Löschen</button>
+                    <button type="button" class="btn-secondary" onclick="closeDeleteCategoryModal()">Abbrechen</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add Category Modal -->
+    <div class="modal" id="addCategoryModal">
+        <div class="modal-content">
+            <span class="modal-close" id="modalCloseCatAdd" onclick="closeAddCategoryModal()">&times;</span>
+            <h2>➕ Neue Kategorie</h2>
+            <form id="addCategoryForm" style="margin-top: 20px;">
+                <div class="form-group">
+                    <label for="addCategoryId">Kategorien-ID (z.B. "my_category"):</label>
+                    <input type="text" id="addCategoryId" required>
+                    <small style="color: #999;">Nur Buchstaben, Zahlen, Unterstriche</small>
+                </div>
+                <div class="form-group">
+                    <label for="addCategoryName">Name:</label>
+                    <input type="text" id="addCategoryName" required>
+                </div>
+                <div class="form-group">
+                    <label for="addCategoryDescription">Beschreibung:</label>
+                    <textarea id="addCategoryDescription"></textarea>
+                </div>
+                <div class="button-group">
+                    <button type="submit" class="btn-primary">✅ Erstellen</button>
+                    <button type="button" class="btn-secondary" onclick="closeAddCategoryModal()">Abbrechen</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <script>
         let currentPassword = '';
         let categories = {};
@@ -702,6 +783,7 @@
 
         function loadUI() {
             loadCategorySelects();
+            loadCategoriesList();
             loadExercisesList();
             loadVideoExerciseSelect();
             setupFilterListeners();
@@ -1057,6 +1139,214 @@
 
         function showVideoStatus(msg, type) {
             const el = document.getElementById('videoStatus');
+            if (!msg) {
+                el.classList.remove('active');
+                return;
+            }
+            el.textContent = msg;
+            el.classList.remove('success', 'error', 'info');
+            el.classList.add('active', type);
+        }
+
+        // ============ CATEGORY FUNCTIONS ============
+
+        function loadCategoriesList() {
+            fetch('/api/categories')
+                .then(r => r.json())
+                .then(data => {
+                    if (data.error) {
+                        showCategoriesStatus('Error: ' + data.error, 'error');
+                        return;
+                    }
+
+                    categories = data.categories;
+                    const list = document.getElementById('categoriesList');
+                    
+                    const sortedCats = Object.values(categories)
+                        .sort((a, b) => a.order - b.order);
+
+                    list.innerHTML = sortedCats.map(cat => `
+                        <div class="card" style="padding: 15px; margin-bottom: 10px; border-left: 4px solid #667eea;">
+                            <div style="display: flex; justify-content: space-between; align-items: start;">
+                                <div style="flex: 1;">
+                                    <h3 style="margin: 0 0 5px 0; font-size: 1.1em;">${escapeHtml(cat.name)}</h3>
+                                    <p style="margin: 0 0 8px 0; color: #666; font-size: 0.95em;">${escapeHtml(cat.description)}</p>
+                                    <div style="color: #999; font-size: 0.9em;">
+                                        <strong>ID:</strong> ${escapeHtml(cat.id)} | 
+                                        <strong>Übungen:</strong> ${cat.exercise_count}
+                                    </div>
+                                </div>
+                                <div class="button-group" style="gap: 8px; margin-left: 15px;">
+                                    <button class="btn-secondary" onclick="openEditCategoryModal('${cat.id}')">✏️ Edit</button>
+                                    ${Object.keys(categories).length > 1 
+                                        ? `<button class="btn-secondary" style="background: #ff9800;" onclick="openDeleteCategoryModal('${cat.id}')">🗑️ Delete</button>`
+                                        : `<button class="btn-secondary" disabled title="Letzte Kategorie kann nicht gelöscht werden">🗑️ Delete</button>`
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    `).join('');
+
+                    if (sortedCats.length === 0) {
+                        list.innerHTML = '<p style="color: #999; text-align: center; padding: 20px;">Keine Kategorien gefunden</p>';
+                    }
+                })
+                .catch(e => showCategoriesStatus('Error: ' + e.message, 'error'));
+        }
+
+        function openEditCategoryModal(categoryId) {
+            const cat = categories[categoryId];
+            if (!cat) return;
+
+            document.getElementById('editCategoryName').value = cat.name;
+            document.getElementById('editCategoryDescription').value = cat.description || '';
+            
+            document.getElementById('editCategoryModal').dataset.categoryId = categoryId;
+            document.getElementById('editCategoryModal').classList.add('active');
+        }
+
+        function closeEditCategoryModal() {
+            document.getElementById('editCategoryModal').classList.remove('active');
+        }
+
+        document.getElementById('editCategoryForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const categoryId = document.getElementById('editCategoryModal').dataset.categoryId;
+
+            fetch(`/api/categories/${categoryId}`, {
+                method: 'PUT',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    password: currentPassword,
+                    name: document.getElementById('editCategoryName').value,
+                    description: document.getElementById('editCategoryDescription').value
+                })
+            })
+            .then(r => r.json())
+            .then(data => {
+                if (data.error) {
+                    showCategoriesStatus('❌ Error: ' + data.error, 'error');
+                    return;
+                }
+
+                closeEditCategoryModal();
+                loadCategoriesList();
+                showCategoriesStatus('✅ Kategorie aktualisiert', 'success');
+            })
+            .catch(e => showCategoriesStatus('❌ Error: ' + e.message, 'error'));
+        });
+
+        function openDeleteCategoryModal(categoryId) {
+            const cat = categories[categoryId];
+            if (!cat) return;
+
+            // Check if it's the last category
+            if (Object.keys(categories).length <= 1) {
+                alert('⚠️ Die letzte Kategorie kann nicht gelöscht werden!');
+                return;
+            }
+
+            document.getElementById('deleteCategoryWarning').textContent = 
+                `Kategorie "${cat.name}" hat ${cat.exercise_count} Übung(en).`;
+
+            // Fill target category select (all except current)
+            const targetSelect = document.getElementById('deleteCategoryTarget');
+            targetSelect.innerHTML = '<option value="">-- Zielkategorie wählen --</option>' +
+                Object.entries(categories)
+                    .filter(([id]) => id !== categoryId)
+                    .sort((a, b) => a[1].order - b[1].order)
+                    .map(([id, cat]) => `<option value="${id}">${escapeHtml(cat.name)}</option>`)
+                    .join('');
+
+            document.getElementById('deleteCategoryModal').dataset.categoryId = categoryId;
+            document.getElementById('deleteCategoryModal').classList.add('active');
+        }
+
+        function closeDeleteCategoryModal() {
+            document.getElementById('deleteCategoryModal').classList.remove('active');
+        }
+
+        document.getElementById('deleteCategoryForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const categoryId = document.getElementById('deleteCategoryModal').dataset.categoryId;
+            const targetCategory = document.getElementById('deleteCategoryTarget').value;
+
+            if (!targetCategory) {
+                alert('⚠️ Bitte Zielkategorie wählen');
+                return;
+            }
+
+            if (!confirm('⚠️ Kategorie wirklich löschen? Alle Übungen werden zur Zielkategorie verschoben!')) {
+                return;
+            }
+
+            fetch(`/api/categories/${categoryId}`, {
+                method: 'DELETE',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    password: currentPassword,
+                    target_category: targetCategory
+                })
+            })
+            .then(r => r.json())
+            .then(data => {
+                if (data.error) {
+                    showCategoriesStatus('❌ Error: ' + data.error, 'error');
+                    return;
+                }
+
+                closeDeleteCategoryModal();
+                loadCategoriesList();
+                loadExercisesList();  // Reload exercises in case filter was affected
+                showCategoriesStatus('✅ ' + data.message, 'success');
+            })
+            .catch(e => showCategoriesStatus('❌ Error: ' + e.message, 'error'));
+        });
+
+        function openAddCategoryModal() {
+            document.getElementById('addCategoryForm').reset();
+            document.getElementById('addCategoryModal').classList.add('active');
+        }
+
+        function closeAddCategoryModal() {
+            document.getElementById('addCategoryModal').classList.remove('active');
+        }
+
+        document.getElementById('addCategoryForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            fetch('/api/categories', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    password: currentPassword,
+                    id: document.getElementById('addCategoryId').value,
+                    name: document.getElementById('addCategoryName').value,
+                    description: document.getElementById('addCategoryDescription').value
+                })
+            })
+            .then(r => r.json())
+            .then(data => {
+                if (data.error) {
+                    showCategoriesStatus('❌ Error: ' + data.error, 'error');
+                    return;
+                }
+
+                closeAddCategoryModal();
+                loadCategoriesList();
+                loadExercisesList();  // Reload to get new category in select
+                showCategoriesStatus('✅ Kategorie erstellt', 'success');
+            })
+            .catch(e => showCategoriesStatus('❌ Error: ' + e.message, 'error'));
+        });
+
+        document.getElementById('addCategoryBtn').addEventListener('click', openAddCategoryModal);
+        document.getElementById('modalCloseCatEdit').addEventListener('click', closeEditCategoryModal);
+        document.getElementById('modalCloseCatDel').addEventListener('click', closeDeleteCategoryModal);
+        document.getElementById('modalCloseCatAdd').addEventListener('click', closeAddCategoryModal);
+
+        function showCategoriesStatus(msg, type) {
+            const el = document.getElementById('categoriesStatus');
             if (!msg) {
                 el.classList.remove('active');
                 return;
