@@ -1,14 +1,14 @@
 {
   "categories": {
     "warmup_coordination": {
-      "name": "Warm-Up – Koordination (ohne Ball)",
+      "name": "Koordination",
       "description": "Reine Koordinationsübungen – guter allererster Programmpunkt um Puls und Beine zu aktivieren",
       "order": 0,
       "phase": "warmup"
     },
     "warmup_coerver": {
-      "name": "Warm-Up – Ballgefühl (Coerver)",
-      "description": "Basis-Übungen (täglich) + rotierende Coerver-Sets (1 pro Woche)",
+      "name": "Ballgefühl (Coerver)",
+      "description": "Basis-Übungen für Ballgefühl nach Coerver, am besten JEDEN Tag",
       "order": 1,
       "phase": "warmup"
     },
@@ -176,7 +176,7 @@
     },
     "coo_basis_inside_outside": {
       "id": "coo_basis_inside_outside",
-      "name": "Innenseite-Außenseite-Tipping",
+      "name": "Innenseite-Außenseite-Antippen",
       "category": "warmup_coerver",
       "description": "Ball auf der Stelle abwechselnd mit Innen- und Außenseite antippen.",
       "duration": "40 Sekunden (+ 20 Sek Pause)",
@@ -662,9 +662,57 @@
       "duration": "2 min",
       "videoLink": {
         "url": "./data/videos/Inside-Taps.mp4",
-        "title": "Inside Taps"
+        "title": "Ball Pendeln"
       },
       "poster": "./data/videos/Inside-Taps.jpg"
+    },
+    "Sole roll": {
+      "id": "Sole roll",
+      "name": "Sohlen rollen",
+      "category": "warmup_coerver",
+      "description": "Ball mit der Sohle eines Fusses hin und her rollen",
+      "duration": "",
+      "videoLink": {
+        "url": "./data/videos/Sole roll.mp4",
+        "title": "Sohlen rollen"
+      },
+      "poster": "./data/videos/Sole roll.jpg"
+    },
+    "the U": {
+      "id": "the U",
+      "name": "U's",
+      "category": "warmup_coerver",
+      "description": "Ball wird durch Innenseite und anschließendem zurückziehen mit der Sohle und Rüberspielen zum anderen Fuß in einer U-Form geführt",
+      "duration": "",
+      "videoLink": {
+        "url": "./data/videos/the U.mp4",
+        "title": "U's"
+      },
+      "poster": "./data/videos/the U.jpg"
+    },
+    "inside outside cuts": {
+      "id": "inside outside cuts",
+      "name": "Innenseite-Außenseite-Schieben",
+      "category": "warmup_coerver",
+      "description": "Ball abwechselnd mit der Innenseite und Außenseite von links nach rechts spielen",
+      "duration": "",
+      "videoLink": {
+        "url": "./data/videos/inside outside cuts.mp4",
+        "title": "Innenseite-Außenseite-Schieben"
+      },
+      "poster": "./data/videos/inside outside cuts.jpg"
+    },
+    "cruyffts": {
+      "id": "cruyffts",
+      "name": "Cruyffts",
+      "category": "warmup_coerver",
+      "description": "Ball wird mit der Innenseite gestoppt und hinter dem anderen Bein durchgespielt",
+      "duration": "",
+      "videoLink": {
+        "url": "./data/videos/cruyffts.mp4",
+        "title": "Cruyffts"
+      },
+      "poster": "./data/videos/cruyffts.jpg"
     }
   }
 }
