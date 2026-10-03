@@ -20,7 +20,6 @@ def download(url, output_name=None):
     # yt-dlp command
     cmd = [
         'yt-dlp',
-        '-f', 'best',
         '-o', output_path,
         url
     ]
