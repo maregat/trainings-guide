@@ -63,6 +63,12 @@
       "description": "Schult vor allem Ballgefühl und Koordination",
       "order": 8,
       "phase": "main"
+    },
+    "stability": {
+      "name": "Kraft/Stabilität",
+      "description": "Stabilitäts und Kraft-Übungen zum Aufbau von Core Muskulatur für mehr Durchsetzungkraft",
+      "order": 9,
+      "phase": "main"
     }
   },
   "exercises": {
@@ -713,6 +719,114 @@
         "title": "Cruyffts"
       },
       "poster": "./data/videos/cruyffts.jpg"
+    },
+    "plank": {
+      "id": "plank",
+      "name": "Plank",
+      "category": "stability",
+      "description": "Plank halten auf beiden Ellenbogen",
+      "duration": "30 s - 3 min",
+      "videoLink": {
+        "url": "./data/videos/plank.mp4",
+        "title": "Plank"
+      },
+      "poster": "./data/videos/plank.jpg"
+    },
+    "pushups": {
+      "id": "pushups",
+      "name": "Liegestützen",
+      "category": "stability",
+      "description": "normale Liegestützen",
+      "duration": "20 - 100 am Stück ",
+      "videoLink": {
+        "url": null,
+        "title": null
+      },
+      "poster": null
+    },
+    "superman": {
+      "id": "superman",
+      "name": "Superman",
+      "category": "stability",
+      "description": "Auf dem Bauch liegend beide Beine und beide Arme hochheben und leicht auf und ab bewegen",
+      "duration": "30 s",
+      "videoLink": {
+        "url": null,
+        "title": null
+      },
+      "poster": null
+    },
+    "legs_up": {
+      "id": "legs_up",
+      "name": "Kerze",
+      "category": "stability",
+      "description": "Auf den Rücken legen, Arme seitlich daneben dann beide Füsse ohne Schwung nach oben heben und Richtung Decke strecken ",
+      "duration": "30 s",
+      "videoLink": {
+        "url": null,
+        "title": null
+      },
+      "poster": null
+    },
+    "side plank": {
+      "id": "side plank",
+      "name": "Seitenplanke",
+      "category": "stability",
+      "description": "seitlich auf den rechten oder linken Unterarm stützen und den Rest des Körpers durchstrecken. Beide Füsse übereinander und den freien oberen Arm ausstrecken und das ganze halten",
+      "duration": "30 s",
+      "videoLink": {
+        "url": "./data/videos/side plank.mp4",
+        "title": "Seitenplanke"
+      },
+      "poster": "./data/videos/side plank.jpg"
+    },
+    "plank crunch": {
+      "id": "plank crunch",
+      "name": "Planke und Crunch",
+      "category": "stability",
+      "description": "Planke und abwechselnd mit dem linken und dem rechten Fuss nach vorne Richtung Brust",
+      "duration": "30 s",
+      "videoLink": {
+        "url": "./data/videos/plank crunch.mp4",
+        "title": "Planke und Crunch"
+      },
+      "poster": "./data/videos/plank crunch.jpg"
+    },
+    "side plank crunch": {
+      "id": "side plank crunch",
+      "name": "Seitenplanke und Crunch",
+      "category": "stability",
+      "description": "Seitenplanke halten und dabei gleichzeitig das obere Bein ranziehen und wieder ausstrecken und den oberen Arm nach vorne ausstecken und wieder ranziehen",
+      "duration": "30 s",
+      "videoLink": {
+        "url": null,
+        "title": null
+      },
+      "poster": null
+    },
+    "squad": {
+      "id": "squad",
+      "name": "Squads",
+      "category": "stability",
+      "description": "Einfache Squads (optional mit Gewicht)",
+      "duration": "30 s",
+      "videoLink": {
+        "url": null,
+        "title": null
+      },
+      "poster": null
+    },
+    "side plank leg raise": {
+      "id": "side plank leg raise",
+      "name": "Seitenplanke mit Beinheben",
+      "category": "stability",
+      "description": "Seitenplanke und das obere Beine geht rauf und runter",
+      "duration": "30 s",
+      "videoLink": {
+        "url": "./data/videos/side plank leg raise.mp4",
+        "title": "Seitenplanke mit Beinheben"
+      },
+      "poster": "./data/videos/side plank leg raise.jpg"
     }
   }
 }
