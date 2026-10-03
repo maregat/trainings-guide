@@ -229,6 +229,7 @@ function renderExerciseDetail(exerciseId) {
                             <video 
                                 id="${videoId}"
                                 controls 
+                                loop
                                 muted
                                 playsinline
                                 webkit-playsinline
