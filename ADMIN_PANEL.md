@@ -48,6 +48,124 @@ python server.py
 
 Dann öffnen: **http://localhost:5001**
 
+## 🎥 YouTube Videos herunterladen
+
+Ein Python-Skript (`download_youtube.py`) macht es super einfach, Videos direkt von YouTube herunterzuladen!
+
+### Installation (einmalig)
+
+```bash
+pip install yt-dlp
+sudo apt install ffmpeg  # Ubuntu/Debian
+# oder
+brew install ffmpeg     # macOS
+```
+
+### Verwendung
+
+**Standard - beste verfügbare Qualität:**
+
+```bash
+python3 download_youtube.py "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+```
+
+**Mit Custom-Name:**
+
+```bash
+python3 download_youtube.py "https://www.youtube.com/watch?v=..." "mein_video"
+```
+
+**720p-Qualität (empfohlen für Mobile):**
+
+```bash
+python3 download_youtube.py "https://www.youtube.com/watch?v=..." "video" --720p
+```
+
+**Playlist herunterladen:**
+
+```bash
+python3 download_youtube.py "https://www.youtube.com/playlist?list=..." --playlist
+```
+
+### Qualitäts-Optionen
+
+```bash
+--best    # Beste verfügbare (Standard)
+--1080p   # Full HD
+--720p    # HD (empfohlen)
+--480p    # SD (klein)
+```
+
+### Beispiel: Kompletter Workflow
+
+```bash
+# 1. Video von YouTube herunterladen
+python3 download_youtube.py "https://www.youtube.com/watch?v=coerver123" "coerver_drill" --720p
+
+# 2. Admin Panel öffnen
+python server.py
+
+# 3. Browser: http://localhost:5001/admin
+# - Login
+# - Videos Tab
+# - Übung wählen: "Coerver Basis 1"
+# - Video ziehen/hochladen: coerver_drill.mp4
+# - Button "Upload & Generate Poster"
+# - ✅ Fertig!
+
+# 4. Deploy zur Live-App
+# - Im Admin Panel: 🚀 Deploy Live Button
+# - Oder manuell:
+bash build.sh
+git add -A && git commit -m "Add: Coerver Drill Video"
+git push origin main
+```
+
+### Output
+
+Videos werden automatisch zu `src/data/videos/` gespeichert:
+
+```
+src/data/videos/
+├── coerver_drill.mp4          ← Heruntergeladenes Video
+├── coerver_drill_cut.mp4      ← Zugeschnittene Version (mit cut_video.py)
+├── sole_taps.mp4
+└── ...
+```
+
+### Features
+
+✅ **Automatische Konvertierung** zu MP4 + H.264 (iPhone-kompatibel)  
+✅ **Quality-Select** - Wähle beste Qualität für deine Bandbreite  
+✅ **Playlist-Support** - Lade ganze Playlisten herunter  
+✅ **Dependency-Check** - Prüft auf ffmpeg & yt-dlp  
+✅ **Error-Handling** - Klare Fehlermeldungen  
+
+### Fehlerbehandlung
+
+**"yt-dlp: command not found"**
+```bash
+pip install yt-dlp
+```
+
+**"ffmpeg: command not found"**
+```bash
+# Ubuntu/Debian:
+sudo apt install ffmpeg
+
+# macOS:
+brew install ffmpeg
+```
+
+**"Video ist regional gesperrt"**
+- Video kann nicht heruntergeladen werden
+- Nutze VPN falls erlaubt, oder finde alternatives Video
+
+**yt-dlp aktualisieren:**
+```bash
+pip install --upgrade yt-dlp
+```
+
 ## Verwendung
 
 1. 🔐 **Login** - Passwort eingeben

@@ -63,6 +63,12 @@
       "description": "Schult vor allem Ballgefühl und Koordination",
       "order": 8,
       "phase": "main"
+    },
+    "stability": {
+      "name": "Kraft/Stabilität",
+      "description": "Stabilitäts und Kraft-Übungen zum Aufbau von Core Muskulatur für mehr Durchsetzungkraft",
+      "order": 9,
+      "phase": "main"
     }
   },
   "exercises": {
@@ -713,6 +719,30 @@
         "title": "Cruyffts"
       },
       "poster": "./data/videos/cruyffts.jpg"
+    },
+    "plank": {
+      "id": "plank",
+      "name": "Plank",
+      "category": "stability",
+      "description": "Plank halten auf beiden Ellenbogen",
+      "duration": "30 s - 3 min",
+      "videoLink": {
+        "url": null,
+        "title": null
+      },
+      "poster": null
+    },
+    "pushups": {
+      "id": "pushups",
+      "name": "Liegestützen",
+      "category": "stability",
+      "description": "normale Liegestützen",
+      "duration": "20 - 100 am Stück ",
+      "videoLink": {
+        "url": null,
+        "title": null
+      },
+      "poster": null
     }
   }
 }
