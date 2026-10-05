@@ -60,6 +60,12 @@ python3 download_youtube.py "https://www.youtube.com/watch?v=..." "video_name"
 
 Videos werden zu `src/data/videos/` gespeichert und können dann im Admin Panel hochgeladen werden.
 
+Videos in mp4 Format mit 1 keyframe pro Sekunde umwandeln:
+
+```
+ffmpeg -i input.webm -c:v libx264 -preset medium -crf 18 -g 30 -keyint_min 30 -sc_threshold 0 -c:a aac -b:a 192k -map_chapters -1 -movflags +faststart output.mp4
+```
+
 ## Verwendung
 
 1. 🔐 **Login** - Passwort eingeben

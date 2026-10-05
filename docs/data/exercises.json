@@ -739,10 +739,10 @@
       "description": "normale Liegestützen",
       "duration": "20 - 100 am Stück ",
       "videoLink": {
-        "url": null,
-        "title": null
+        "url": "./data/videos/pushups.mp4",
+        "title": "Liegestützen"
       },
-      "poster": null
+      "poster": "./data/videos/pushups.jpg"
     },
     "superman": {
       "id": "superman",
@@ -751,10 +751,10 @@
       "description": "Auf dem Bauch liegend beide Beine und beide Arme hochheben und leicht auf und ab bewegen",
       "duration": "30 s",
       "videoLink": {
-        "url": null,
-        "title": null
+        "url": "./data/videos/superman.mp4",
+        "title": "Superman"
       },
-      "poster": null
+      "poster": "./data/videos/superman.jpg"
     },
     "legs_up": {
       "id": "legs_up",
@@ -763,10 +763,10 @@
       "description": "Auf den Rücken legen, Arme seitlich daneben dann beide Füsse ohne Schwung nach oben heben und Richtung Decke strecken ",
       "duration": "30 s",
       "videoLink": {
-        "url": null,
-        "title": null
+        "url": "./data/videos/legs_up.mp4",
+        "title": "Kerze"
       },
-      "poster": null
+      "poster": "./data/videos/legs_up.jpg"
     },
     "side plank": {
       "id": "side plank",
@@ -811,10 +811,10 @@
       "description": "Einfache Squads (optional mit Gewicht)",
       "duration": "30 s",
       "videoLink": {
-        "url": null,
-        "title": null
+        "url": "./data/videos/squad.mp4",
+        "title": "Squads"
       },
-      "poster": null
+      "poster": "./data/videos/squad.jpg"
     },
     "side plank leg raise": {
       "id": "side plank leg raise",
