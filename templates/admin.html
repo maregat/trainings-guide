@@ -860,9 +860,16 @@
             // Ensure exercises is an array
             const exercisesArray = Array.isArray(exercises) ? exercises : Object.values(exercises || {});
             
-            const filtered = currentCategoryFilter 
+            let filtered = currentCategoryFilter 
                 ? exercisesArray.filter(ex => ex.category === currentCategoryFilter)
                 : exercisesArray;
+
+            // Sort: published first, hidden last
+            filtered = filtered.sort((a, b) => {
+                const aPublished = a.published !== false ? 1 : 0;
+                const bPublished = b.published !== false ? 1 : 0;
+                return bPublished - aPublished; // published=true first
+            });
 
             console.log('loadExercisesList - exercises count:', exercisesArray.length);
             console.log('currentCategoryFilter:', currentCategoryFilter);
@@ -896,8 +903,13 @@
                     ? '<span style="display: inline-block; background: #999; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.75em; font-weight: bold; margin-left: 4px;">🔴 Hidden</span>'
                     : '<span style="display: inline-block; background: #0ea5e9; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.75em; font-weight: bold; margin-left: 4px;">🟢 Live</span>';
                 
+                const titleColor = isPublished ? 'inherit' : '#999';
+                const cardOpacity = isPublished ? '1' : '0.6';
+                
+                card.style.opacity = cardOpacity;
+                
                 card.innerHTML = `
-                    <div class="exercise-card-title">${escapeHtml(ex.name)} ${videoStatusBadge} ${publishStatusBadge}</div>
+                    <div class="exercise-card-title" style="color: ${titleColor};">${escapeHtml(ex.name)} ${videoStatusBadge} ${publishStatusBadge}</div>
                     <div class="exercise-card-category" onclick="filterByCategory('${ex.category}')" title="Klick zum Filtern">${categories[ex.category]?.name || ex.category}</div>
                     <div class="exercise-card-desc">${escapeHtml(ex.description)}</div>
                     ${ex.duration ? `<div style="font-size: 0.85em; color: #999;">⏱️ ${escapeHtml(ex.duration)}</div>` : ''}

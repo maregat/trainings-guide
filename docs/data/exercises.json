@@ -69,10 +69,10 @@
       "description": "Auf einem Bein seitlich über eine Linie hin- und herspringen. Rechtes und linkes Bein getrennt üben.",
       "duration": "60-90 Sekunden pro Bein",
       "videoLink": {
-        "url": null,
-        "title": null
+        "url": "./data/videos/coo_line_jump_single.mp4",
+        "title": "Seitliche Sprünge – einbeinig"
       },
-      "poster": null,
+      "poster": "./data/videos/coo_line_jump_single.jpg",
       "published": true
     },
     "coo_line_jump_both": {
@@ -892,7 +892,7 @@
         "title": null
       },
       "poster": null,
-      "published": true
+      "published": false
     },
     "str_forward_lunge": {
       "id": "str_forward_lunge",
@@ -901,23 +901,10 @@
       "description": "Großer Schritt nach vorne, hinteres Knie absenken bis knapp über dem Boden. Fokus auf saubere Form.",
       "duration": "2-3 Minuten",
       "videoLink": {
-        "url": null,
-        "title": null
+        "url": "./data/videos/str_forward_lunge.mp4",
+        "title": "Ausfallschritt vorwärts (Forward Lunge)"
       },
-      "poster": null,
-      "published": true
-    },
-    "str_step_ups": {
-      "id": "str_step_ups",
-      "name": "Step-Ups (auf Bank/Stufe)",
-      "category": "strength_stability",
-      "description": "Auf eine erhöhte Bank/Stufe (30-50cm) hochsteigen. Abwechselnd die Beine. Trainiert Kraft in Quads und Glutes.",
-      "duration": "2-3 Minuten",
-      "videoLink": {
-        "url": null,
-        "title": null
-      },
-      "poster": null,
+      "poster": "./data/videos/str_forward_lunge.jpg",
       "published": true
     },
     "str_pullup_variations": {
@@ -931,7 +918,7 @@
         "title": null
       },
       "poster": null,
-      "published": true
+      "published": false
     },
     "str_jumping_jacks": {
       "id": "str_jumping_jacks",
@@ -940,10 +927,10 @@
       "description": "Klassisches Cardio-Grundelement: Füße springen auseinander während Arme nach oben gehen.",
       "duration": "40-60 Sekunden",
       "videoLink": {
-        "url": null,
-        "title": null
+        "url": "./data/videos/str_jumping_jacks.mp4",
+        "title": "Hampelmann (Jumping Jacks)"
       },
-      "poster": null,
+      "poster": "./data/videos/str_jumping_jacks.jpg",
       "published": true
     },
     "str_jump_rope": {
@@ -970,7 +957,7 @@
         "title": null
       },
       "poster": null,
-      "published": true
+      "published": false
     },
     "str_single_leg_hops": {
       "id": "str_single_leg_hops",
@@ -983,7 +970,7 @@
         "title": null
       },
       "poster": null,
-      "published": true
+      "published": false
     },
     "str_medicine_ball": {
       "id": "str_medicine_ball",
@@ -996,7 +983,7 @@
         "title": null
       },
       "poster": null,
-      "published": true
+      "published": false
     },
     "str_sprint_drills": {
       "id": "str_sprint_drills",
@@ -1009,7 +996,7 @@
         "title": null
       },
       "poster": null,
-      "published": true
+      "published": false
     },
     "str_running_abc": {
       "id": "str_running_abc",
@@ -1022,7 +1009,7 @@
         "title": null
       },
       "poster": null,
-      "published": true
+      "published": false
     },
     "grp_shoulder_to_shoulder": {
       "id": "grp_shoulder_to_shoulder",
@@ -1111,19 +1098,6 @@
       "videoLink": {
         "url": null,
         "title": "🏃‍♀️ Fire Hydrants"
-      },
-      "poster": null,
-      "published": false
-    },
-    "acl_reverse_hypers": {
-      "id": "acl_reverse_hypers",
-      "name": "🏃‍♀️ Reverse Hypers (Posterior Chain)",
-      "category": "strength_stability",
-      "description": "Auf dem Bauch liegen, Beine anheben und senken ohne den Rücken zu überstrecken. Trainiert Glutes und Hamstrings = Posterior Chain Kraft für ACL-Prävention.",
-      "duration": "3-4 Minuten",
-      "videoLink": {
-        "url": null,
-        "title": "🏃‍♀️ Reverse Hypers"
       },
       "poster": null,
       "published": false
