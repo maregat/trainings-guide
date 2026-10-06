@@ -167,7 +167,7 @@ def update_exercise(exercise_id):
             return jsonify({'error': 'Exercise not found'}), 404
         
         # Update allowed fields only
-        allowed_fields = ['name', 'category', 'description', 'duration']
+        allowed_fields = ['name', 'category', 'description', 'duration', 'published']
         for field in allowed_fields:
             if field in exercise_data:
                 data['exercises'][exercise_id][field] = exercise_data[field]

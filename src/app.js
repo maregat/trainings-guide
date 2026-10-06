@@ -414,7 +414,7 @@ function renderExerciseDetail(exerciseId) {
 
 function getExercisesInCategory(categoryKey) {
     return Object.values(exercisesData.exercises).filter(
-        exercise => exercise.category === categoryKey
+        exercise => exercise.category === categoryKey && exercise.published !== false
     ).sort((a, b) => a.name.localeCompare(b.name));  // Sort by name instead of order
 }
 

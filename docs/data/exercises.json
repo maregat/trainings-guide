@@ -88,7 +88,8 @@
         "url": null,
         "title": null
       },
-      "poster": null
+      "poster": null,
+      "published": true
     },
     "coo_line_jump_both": {
       "id": "coo_line_jump_both",
@@ -100,7 +101,8 @@
         "url": null,
         "title": null
       },
-      "poster": null
+      "poster": null,
+      "published": true
     },
     "coo_line_jump_forward": {
       "id": "coo_line_jump_forward",
@@ -112,7 +114,8 @@
         "url": null,
         "title": null
       },
-      "poster": null
+      "poster": null,
+      "published": true
     },
     "coo_ladder_one_per_field": {
       "id": "coo_ladder_one_per_field",
@@ -124,7 +127,8 @@
         "url": null,
         "title": null
       },
-      "poster": null
+      "poster": null,
+      "published": true
     },
     "coo_ladder_two_per_field": {
       "id": "coo_ladder_two_per_field",
@@ -136,7 +140,8 @@
         "url": null,
         "title": null
       },
-      "poster": null
+      "poster": null,
+      "published": true
     },
     "coo_ladder_sidestep": {
       "id": "coo_ladder_sidestep",
@@ -148,7 +153,8 @@
         "url": null,
         "title": null
       },
-      "poster": null
+      "poster": null,
+      "published": true
     },
     "coo_basis_toe_taps": {
       "id": "coo_basis_toe_taps",
@@ -160,7 +166,8 @@
         "url": "./data/videos/coo_basis_toe_taps.mp4",
         "title": "Fussspitzen auf Ball"
       },
-      "poster": "./data/videos/coo_basis_toe_taps.jpg"
+      "poster": "./data/videos/coo_basis_toe_taps.jpg",
+      "published": true
     },
     "coo_basis_football_dance": {
       "id": "coo_basis_football_dance",
@@ -172,7 +179,8 @@
         "url": "./data/videos/coo_basis_football_dance.mp4",
         "title": "Football Dance"
       },
-      "poster": "./data/videos/coo_basis_football_dance.jpg"
+      "poster": "./data/videos/coo_basis_football_dance.jpg",
+      "published": true
     },
     "coo_basis_ball_roll": {
       "id": "coo_basis_ball_roll",
@@ -184,7 +192,8 @@
         "url": "./data/videos/coo_basis_ball_roll.mp4",
         "title": "Ball zwischen den Füßen rollen"
       },
-      "poster": "./data/videos/coo_basis_ball_roll.jpg"
+      "poster": "./data/videos/coo_basis_ball_roll.jpg",
+      "published": true
     },
     "coo_basis_inside_outside": {
       "id": "coo_basis_inside_outside",
@@ -196,7 +205,8 @@
         "url": "./data/videos/innen-aussen.mp4",
         "title": "Innenseite-Außenseite-Tipping"
       },
-      "poster": null
+      "poster": null,
+      "published": true
     },
     "coo_set1_move1": {
       "id": "coo_set1_move1",
@@ -208,7 +218,8 @@
         "url": "./data/videos/coo_set1_move1.mp4",
         "title": "Übersteiger"
       },
-      "poster": "./data/videos/coo_set1_move1.jpg"
+      "poster": "./data/videos/coo_set1_move1.jpg",
+      "published": true
     },
     "coo_set2_move1": {
       "id": "coo_set2_move1",
@@ -220,7 +231,8 @@
         "url": "./data/videos/coo_set2_move1.mp4",
         "title": "Push Pull - Außenseite"
       },
-      "poster": "./data/videos/coo_set2_move1.jpg"
+      "poster": "./data/videos/coo_set2_move1.jpg",
+      "published": true
     },
     "coo_set2_move2": {
       "id": "coo_set2_move2",
@@ -232,7 +244,8 @@
         "url": "./data/videos/coo_set2_move2.mp4",
         "title": "Push Pull - Innenseite"
       },
-      "poster": "./data/videos/coo_set2_move2.jpg"
+      "poster": "./data/videos/coo_set2_move2.jpg",
+      "published": true
     },
     "coo_set2_move3": {
       "id": "coo_set2_move3",
@@ -244,7 +257,8 @@
         "url": "./data/videos/coo_set2_move3.mp4",
         "title": "V Form – Innenseite"
       },
-      "poster": "./data/videos/coo_set2_move3.jpg"
+      "poster": "./data/videos/coo_set2_move3.jpg",
+      "published": true
     },
     "coo_set3_move1": {
       "id": "coo_set3_move1",
@@ -256,7 +270,8 @@
         "url": "./data/videos/coo_set3_move1.mp4",
         "title": "V Form – Außenseite"
       },
-      "poster": "./data/videos/coo_set3_move1.jpg"
+      "poster": "./data/videos/coo_set3_move1.jpg",
+      "published": true
     },
     "coo_set3_move3": {
       "id": "coo_set3_move3",
@@ -268,7 +283,8 @@
         "url": "./data/videos/coo_set3_move3.mp4",
         "title": "Pull-Push 'nach Vorne'"
       },
-      "poster": "./data/videos/coo_set3_move3.jpg"
+      "poster": "./data/videos/coo_set3_move3.jpg",
+      "published": true
     },
     "coo_set4_move3": {
       "id": "coo_set4_move3",
@@ -280,7 +296,8 @@
         "url": "./data/videos/coo_set4_move3.mp4",
         "title": "Rollen und Stoppen"
       },
-      "poster": "./data/videos/coo_set4_move3.jpg"
+      "poster": "./data/videos/coo_set4_move3.jpg",
+      "published": true
     },
     "coo_set4_move4": {
       "id": "coo_set4_move4",
@@ -292,7 +309,8 @@
         "url": "./data/videos/coo_set4_move4.mp4",
         "title": "Außen schieben, Innen stoppen (der Messi)"
       },
-      "poster": "./data/videos/coo_set4_move4.jpg"
+      "poster": "./data/videos/coo_set4_move4.jpg",
+      "published": true
     },
     "coo_set5_move2": {
       "id": "coo_set5_move2",
@@ -304,7 +322,8 @@
         "url": "./data/videos/coo_set5_move2.mp4",
         "title": "L Form - Beide Füsse"
       },
-      "poster": "./data/videos/coo_set5_move2.jpg"
+      "poster": "./data/videos/coo_set5_move2.jpg",
+      "published": true
     },
     "coo_set5_move3": {
       "id": "coo_set5_move3",
@@ -316,7 +335,8 @@
         "url": "./data/videos/coo_set5_move3.mp4",
         "title": "L Form - Ein Fuss"
       },
-      "poster": "./data/videos/coo_set5_move3.jpg"
+      "poster": "./data/videos/coo_set5_move3.jpg",
+      "published": true
     },
     "coo_set6_move1": {
       "id": "coo_set6_move1",
@@ -328,7 +348,8 @@
         "url": "./data/videos/coo_set6_move1.mp4",
         "title": "Um 2 Hütchen"
       },
-      "poster": "./data/videos/coo_set6_move1.jpg"
+      "poster": "./data/videos/coo_set6_move1.jpg",
+      "published": true
     },
     "coo_set6_move3": {
       "id": "coo_set6_move3",
@@ -340,7 +361,8 @@
         "url": "./data/videos/coo_set6_move3.mp4",
         "title": "Um 4 Hütchen"
       },
-      "poster": "./data/videos/coo_set6_move3.jpg"
+      "poster": "./data/videos/coo_set6_move3.jpg",
+      "published": true
     },
     "ft_wall_reception": {
       "id": "ft_wall_reception",
@@ -352,7 +374,8 @@
         "url": null,
         "title": null
       },
-      "poster": null
+      "poster": null,
+      "published": true
     },
     "ft_throw_reception": {
       "id": "ft_throw_reception",
@@ -364,7 +387,8 @@
         "url": null,
         "title": null
       },
-      "poster": null
+      "poster": null,
+      "published": true
     },
     "ft_partner_pass": {
       "id": "ft_partner_pass",
@@ -376,7 +400,8 @@
         "url": null,
         "title": null
       },
-      "poster": null
+      "poster": null,
+      "published": true
     },
     "bi_wall_rotation": {
       "id": "bi_wall_rotation",
@@ -388,7 +413,8 @@
         "url": null,
         "title": null
       },
-      "poster": null
+      "poster": null,
+      "published": true
     },
     "bi_cone_intake": {
       "id": "bi_cone_intake",
@@ -400,7 +426,8 @@
         "url": null,
         "title": null
       },
-      "poster": null
+      "poster": null,
+      "published": true
     },
     "bi_pressure_timing": {
       "id": "bi_pressure_timing",
@@ -412,7 +439,8 @@
         "url": null,
         "title": null
       },
-      "poster": null
+      "poster": null,
+      "published": true
     },
     "bc_straight_line": {
       "id": "bc_straight_line",
@@ -424,7 +452,8 @@
         "url": null,
         "title": null
       },
-      "poster": null
+      "poster": null,
+      "published": true
     },
     "bc_zig_zag": {
       "id": "bc_zig_zag",
@@ -436,7 +465,8 @@
         "url": "./data/videos/bc_zig_zag.mp4",
         "title": "Zig-Zag-Dribbeln"
       },
-      "poster": "./data/videos/bc_zig_zag.jpg"
+      "poster": "./data/videos/bc_zig_zag.jpg",
+      "published": true
     },
     "bc_slalom": {
       "id": "bc_slalom",
@@ -448,7 +478,8 @@
         "url": null,
         "title": null
       },
-      "poster": null
+      "poster": null,
+      "published": true
     },
     "dr_speed_line": {
       "id": "dr_speed_line",
@@ -460,7 +491,8 @@
         "url": null,
         "title": null
       },
-      "poster": null
+      "poster": null,
+      "published": true
     },
     "dr_box_drill": {
       "id": "dr_box_drill",
@@ -472,7 +504,8 @@
         "url": null,
         "title": null
       },
-      "poster": null
+      "poster": null,
+      "published": true
     },
     "dr_cone_weave": {
       "id": "dr_cone_weave",
@@ -484,7 +517,8 @@
         "url": null,
         "title": null
       },
-      "poster": null
+      "poster": null,
+      "published": true
     },
     "dc_90_degree": {
       "id": "dc_90_degree",
@@ -496,7 +530,8 @@
         "url": null,
         "title": null
       },
-      "poster": null
+      "poster": null,
+      "published": true
     },
     "dc_180_turn": {
       "id": "dc_180_turn",
@@ -508,7 +543,8 @@
         "url": null,
         "title": null
       },
-      "poster": null
+      "poster": null,
+      "published": true
     },
     "dc_cut_back": {
       "id": "dc_cut_back",
@@ -520,7 +556,8 @@
         "url": null,
         "title": null
       },
-      "poster": null
+      "poster": null,
+      "published": true
     },
     "jgl_sole_to_instep": {
       "id": "jgl_sole_to_instep",
@@ -532,7 +569,8 @@
         "url": null,
         "title": null
       },
-      "poster": null
+      "poster": null,
+      "published": true
     },
     "jgl_alternating_feet": {
       "id": "jgl_alternating_feet",
@@ -544,7 +582,8 @@
         "url": null,
         "title": null
       },
-      "poster": null
+      "poster": null,
+      "published": true
     },
     "jgl_inside_outside": {
       "id": "jgl_inside_outside",
@@ -556,7 +595,8 @@
         "url": null,
         "title": null
       },
-      "poster": null
+      "poster": null,
+      "published": true
     },
     "jgl_thigh_chest": {
       "id": "jgl_thigh_chest",
@@ -568,7 +608,8 @@
         "url": null,
         "title": null
       },
-      "poster": null
+      "poster": null,
+      "published": true
     },
     "acl_glute_bridge": {
       "id": "acl_glute_bridge",
@@ -580,7 +621,8 @@
         "url": null,
         "title": "🏃‍♀️ Glute Bridge (Hüft-Strecker)"
       },
-      "poster": null
+      "poster": null,
+      "published": false
     },
     "acl_single_leg_squat": {
       "id": "acl_single_leg_squat",
@@ -592,7 +634,8 @@
         "url": null,
         "title": "🏃‍♀️ Single-Leg Squat (Einbeinige Kniebeuge)"
       },
-      "poster": null
+      "poster": null,
+      "published": false
     },
     "acl_monster_walk": {
       "id": "acl_monster_walk",
@@ -604,7 +647,8 @@
         "url": null,
         "title": "🏃‍♀️ Monster Walk (Seitwärts mit Widerstandsband)"
       },
-      "poster": null
+      "poster": null,
+      "published": false
     },
     "acl_single_leg_deadlift": {
       "id": "acl_single_leg_deadlift",
@@ -613,10 +657,11 @@
       "description": "Hüftbeugung auf einem Bein mit Kraft aus den Hamstrings und Glutes. Trainiert korrekte Hip-Hinge Mechanik und Posterior Chain Kraft = essentiell für ACL-Prävention.",
       "duration": "4-5 Minuten",
       "videoLink": {
-        "url": null,
+        "url": "./data/videos/acl_single_leg_deadlift.mp4",
         "title": "🏃‍♀️ Single-Leg Deadlift (Einbeiniges Hip-Hinge)"
       },
-      "poster": null
+      "poster": "./data/videos/acl_single_leg_deadlift.jpg",
+      "published": false
     },
     "acl_clamshells": {
       "id": "acl_clamshells",
@@ -625,10 +670,11 @@
       "description": "Liegen auf der Seite, oberes Knie aufklappen. Trainiert Hip External Rotation und Abduction = Prävention von Knee Valgus durch Hüft-Stabilität.",
       "duration": "3-4 Minuten",
       "videoLink": {
-        "url": null,
+        "url": "./data/videos/acl_clamshells.mp4",
         "title": "🏃‍♀️ Clamshells (Hüft-Abduktion liegend)"
       },
-      "poster": null
+      "poster": "./data/videos/acl_clamshells.jpg",
+      "published": false
     },
     "acl_box_jump": {
       "id": "acl_box_jump",
@@ -637,10 +683,11 @@
       "description": "Sprung auf eine Box mit Fokus auf KORREKTE Landungsmechanik. Das Wichtigste: 'Soft Landing' mit Knies über Zehen = direkte ACL-Prävention im dynamischen Movement.",
       "duration": "4-5 Minuten",
       "videoLink": {
-        "url": null,
+        "url": "./data/videos/acl_box_jump.mp4",
         "title": "🏃‍♀️ Box Jump (Plyometrics mit korrekter Landung)"
       },
-      "poster": null
+      "poster": "./data/videos/acl_box_jump.jpg",
+      "published": false
     },
     "acl_lateral_lunge": {
       "id": "acl_lateral_lunge",
@@ -652,7 +699,8 @@
         "url": null,
         "title": "🏃‍♀️ Lateral Lunge (Seitwärts-Ausfallschritt)"
       },
-      "poster": null
+      "poster": null,
+      "published": false
     },
     "acl_single_leg_balance": {
       "id": "acl_single_leg_balance",
@@ -664,7 +712,8 @@
         "url": null,
         "title": "🏃‍♀️ Single-Leg Balance (Einbeiniges Gleichgewicht)"
       },
-      "poster": null
+      "poster": null,
+      "published": false
     },
     "Inside-Taps": {
       "id": "Inside-Taps",
@@ -676,7 +725,8 @@
         "url": "./data/videos/Inside-Taps.mp4",
         "title": "Ball Pendeln"
       },
-      "poster": "./data/videos/Inside-Taps.jpg"
+      "poster": "./data/videos/Inside-Taps.jpg",
+      "published": true
     },
     "Sole roll": {
       "id": "Sole roll",
@@ -688,7 +738,8 @@
         "url": "./data/videos/Sole roll.mp4",
         "title": "Sohlen rollen"
       },
-      "poster": "./data/videos/Sole roll.jpg"
+      "poster": "./data/videos/Sole roll.jpg",
+      "published": true
     },
     "the U": {
       "id": "the U",
@@ -700,7 +751,8 @@
         "url": "./data/videos/the U.mp4",
         "title": "U's"
       },
-      "poster": "./data/videos/the U.jpg"
+      "poster": "./data/videos/the U.jpg",
+      "published": true
     },
     "inside outside cuts": {
       "id": "inside outside cuts",
@@ -712,7 +764,8 @@
         "url": "./data/videos/inside outside cuts.mp4",
         "title": "Innenseite-Außenseite-Schieben"
       },
-      "poster": "./data/videos/inside outside cuts.jpg"
+      "poster": "./data/videos/inside outside cuts.jpg",
+      "published": true
     },
     "cruyffts": {
       "id": "cruyffts",
@@ -724,7 +777,8 @@
         "url": "./data/videos/cruyffts.mp4",
         "title": "Cruyffts"
       },
-      "poster": "./data/videos/cruyffts.jpg"
+      "poster": "./data/videos/cruyffts.jpg",
+      "published": true
     },
     "plank": {
       "id": "plank",
@@ -736,7 +790,8 @@
         "url": "./data/videos/plank.mp4",
         "title": "Plank"
       },
-      "poster": "./data/videos/plank.jpg"
+      "poster": "./data/videos/plank.jpg",
+      "published": true
     },
     "pushups": {
       "id": "pushups",
@@ -748,7 +803,8 @@
         "url": "./data/videos/pushups.mp4",
         "title": "Liegestützen"
       },
-      "poster": "./data/videos/pushups.jpg"
+      "poster": "./data/videos/pushups.jpg",
+      "published": true
     },
     "superman": {
       "id": "superman",
@@ -760,7 +816,8 @@
         "url": "./data/videos/superman.mp4",
         "title": "Superman"
       },
-      "poster": "./data/videos/superman.jpg"
+      "poster": "./data/videos/superman.jpg",
+      "published": true
     },
     "legs_up": {
       "id": "legs_up",
@@ -772,7 +829,8 @@
         "url": "./data/videos/legs_up.mp4",
         "title": "Kerze"
       },
-      "poster": "./data/videos/legs_up.jpg"
+      "poster": "./data/videos/legs_up.jpg",
+      "published": true
     },
     "side plank": {
       "id": "side plank",
@@ -784,7 +842,8 @@
         "url": "./data/videos/side plank.mp4",
         "title": "Seitenplanke"
       },
-      "poster": "./data/videos/side plank.jpg"
+      "poster": "./data/videos/side plank.jpg",
+      "published": true
     },
     "plank crunch": {
       "id": "plank crunch",
@@ -796,7 +855,8 @@
         "url": "./data/videos/plank crunch.mp4",
         "title": "Planke und Crunch"
       },
-      "poster": "./data/videos/plank crunch.jpg"
+      "poster": "./data/videos/plank crunch.jpg",
+      "published": true
     },
     "side plank crunch": {
       "id": "side plank crunch",
@@ -808,7 +868,8 @@
         "url": null,
         "title": null
       },
-      "poster": null
+      "poster": null,
+      "published": true
     },
     "squad": {
       "id": "squad",
@@ -820,7 +881,8 @@
         "url": "./data/videos/squad.mp4",
         "title": "Squads"
       },
-      "poster": "./data/videos/squad.jpg"
+      "poster": "./data/videos/squad.jpg",
+      "published": true
     },
     "side plank leg raise": {
       "id": "side plank leg raise",
@@ -832,7 +894,8 @@
         "url": "./data/videos/side plank leg raise.mp4",
         "title": "Seitenplanke mit Beinheben"
       },
-      "poster": "./data/videos/side plank leg raise.jpg"
+      "poster": "./data/videos/side plank leg raise.jpg",
+      "published": true
     },
     "handstand": {
       "id": "handstand",
@@ -844,7 +907,8 @@
         "url": null,
         "title": null
       },
-      "poster": null
+      "poster": null,
+      "published": true
     },
     "str_forward_lunge": {
       "id": "str_forward_lunge",
@@ -856,7 +920,8 @@
         "url": null,
         "title": null
       },
-      "poster": null
+      "poster": null,
+      "published": true
     },
     "str_step_ups": {
       "id": "str_step_ups",
@@ -868,7 +933,8 @@
         "url": null,
         "title": null
       },
-      "poster": null
+      "poster": null,
+      "published": true
     },
     "str_pullup_variations": {
       "id": "str_pullup_variations",
@@ -880,7 +946,8 @@
         "url": null,
         "title": null
       },
-      "poster": null
+      "poster": null,
+      "published": true
     },
     "str_jumping_jacks": {
       "id": "str_jumping_jacks",
@@ -892,7 +959,8 @@
         "url": null,
         "title": null
       },
-      "poster": null
+      "poster": null,
+      "published": true
     },
     "str_jump_rope": {
       "id": "str_jump_rope",
@@ -904,7 +972,8 @@
         "url": null,
         "title": null
       },
-      "poster": null
+      "poster": null,
+      "published": true
     },
     "str_vertical_jump": {
       "id": "str_vertical_jump",
@@ -916,7 +985,8 @@
         "url": null,
         "title": null
       },
-      "poster": null
+      "poster": null,
+      "published": true
     },
     "str_single_leg_hops": {
       "id": "str_single_leg_hops",
@@ -928,7 +998,8 @@
         "url": null,
         "title": null
       },
-      "poster": null
+      "poster": null,
+      "published": true
     },
     "str_medicine_ball": {
       "id": "str_medicine_ball",
@@ -940,7 +1011,8 @@
         "url": null,
         "title": null
       },
-      "poster": null
+      "poster": null,
+      "published": true
     },
     "str_sprint_drills": {
       "id": "str_sprint_drills",
@@ -952,7 +1024,8 @@
         "url": null,
         "title": null
       },
-      "poster": null
+      "poster": null,
+      "published": true
     },
     "str_running_abc": {
       "id": "str_running_abc",
@@ -964,7 +1037,8 @@
         "url": null,
         "title": null
       },
-      "poster": null
+      "poster": null,
+      "published": true
     },
     "grp_shoulder_to_shoulder": {
       "id": "grp_shoulder_to_shoulder",
@@ -976,7 +1050,8 @@
         "url": null,
         "title": null
       },
-      "poster": null
+      "poster": null,
+      "published": true
     },
     "grp_ball_shielding": {
       "id": "grp_ball_shielding",
@@ -988,7 +1063,8 @@
         "url": null,
         "title": null
       },
-      "poster": null
+      "poster": null,
+      "published": true
     },
     "grp_push_pull_game": {
       "id": "grp_push_pull_game",
@@ -1000,7 +1076,8 @@
         "url": null,
         "title": null
       },
-      "poster": null
+      "poster": null,
+      "published": true
     },
     "acl_nordic_hamstring": {
       "id": "acl_nordic_hamstring",
@@ -1012,7 +1089,8 @@
         "url": null,
         "title": "🏃‍♀️ Nordic Hamstring Curl"
       },
-      "poster": null
+      "poster": null,
+      "published": false
     },
     "acl_dead_bug": {
       "id": "acl_dead_bug",
@@ -1021,10 +1099,11 @@
       "description": "Rücken auf dem Boden, Arme nach oben, Beine angewinkelt. Abwechselnd einen Arm und das gegenüber liegende Bein ausstrecken. Trainiert Core-Stabilität und neuromuskularische Kontrolle = Grundlage für ACL-Prävention.",
       "duration": "3-4 Minuten",
       "videoLink": {
-        "url": null,
-        "title": "🏃‍♀️ Dead Bug"
+        "url": "./data/videos/acl_dead_bug.mp4",
+        "title": "🏃‍♀️ Dead Bug (Core-Stabilität)"
       },
-      "poster": null
+      "poster": "./data/videos/acl_dead_bug.jpg",
+      "published": false
     },
     "acl_single_leg_glute_bridge": {
       "id": "acl_single_leg_glute_bridge",
@@ -1036,7 +1115,8 @@
         "url": null,
         "title": "🏃‍♀️ Single-Leg Glute Bridge"
       },
-      "poster": null
+      "poster": null,
+      "published": false
     },
     "acl_fire_hydrants": {
       "id": "acl_fire_hydrants",
@@ -1048,7 +1128,8 @@
         "url": null,
         "title": "🏃‍♀️ Fire Hydrants"
       },
-      "poster": null
+      "poster": null,
+      "published": false
     },
     "acl_reverse_hypers": {
       "id": "acl_reverse_hypers",
@@ -1060,7 +1141,8 @@
         "url": null,
         "title": "🏃‍♀️ Reverse Hypers"
       },
-      "poster": null
+      "poster": null,
+      "published": false
     },
     "acl_wall_sits": {
       "id": "acl_wall_sits",
@@ -1072,7 +1154,8 @@
         "url": null,
         "title": "🏃‍♀️ Wall Sits"
       },
-      "poster": null
+      "poster": null,
+      "published": false
     },
     "acl_lateral_shuffles": {
       "id": "acl_lateral_shuffles",
@@ -1084,7 +1167,34 @@
         "url": null,
         "title": "🏃‍♀️ Lateral Shuffles"
       },
-      "poster": null
+      "poster": null,
+      "published": false
+    },
+    "lateral hops": {
+      "id": "lateral hops",
+      "name": "Seitliche Sprünge und Halten",
+      "category": "acl_prevention",
+      "description": "auf einem Bein stehen, leicht gebeugt, dann auf das andere Bein Springen und die Balance auf einem Bein halten, dann wieder zurück",
+      "duration": "2 min",
+      "videoLink": {
+        "url": "./data/videos/lateral hops.mkv",
+        "title": "Seitliche Sprünge und Halten"
+      },
+      "poster": "./data/videos/lateral hops.jpg",
+      "published": false
+    },
+    "step ups": {
+      "id": "step ups",
+      "name": "Step-Ups",
+      "category": "acl_prevention",
+      "description": "Mit einem Bein auf einem Stepper starten, dann mit Schwung das andere Bein nach oben ziehen, dabei auf Stepper steigen und für ein paar Sekunden halten. Dann wieder das Bein runternehmen",
+      "duration": "2 min",
+      "videoLink": {
+        "url": "./data/videos/step ups.mp4",
+        "title": "Step-Ups"
+      },
+      "poster": "./data/videos/step ups.jpg",
+      "published": false
     }
   }
 }

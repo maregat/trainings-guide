@@ -254,7 +254,7 @@
             margin-top: 10px;
         }
 
-        .btn-edit, .btn-delete, .btn-video {
+        .btn-edit, .btn-delete, .btn-video, .btn-publish {
             flex: 1;
             padding: 8px;
             border: none;
@@ -281,6 +281,15 @@
 
         .btn-video:hover {
             background: #45a049;
+        }
+
+        .btn-publish {
+            background: #f59e0b;
+            color: white;
+        }
+
+        .btn-publish:hover {
+            background: #d97706;
         }
 
         .btn-delete {
@@ -882,14 +891,20 @@
                     ? '<span style="display: inline-block; background: #ff6b6b; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.75em; font-weight: bold; margin-left: 8px;">📭 No video</span>'
                     : '<span style="display: inline-block; background: #51cf66; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.75em; font-weight: bold; margin-left: 8px;">✅ Video</span>';
                 
+                const isPublished = ex.published !== false;
+                const publishStatusBadge = !isPublished
+                    ? '<span style="display: inline-block; background: #999; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.75em; font-weight: bold; margin-left: 4px;">🔴 Hidden</span>'
+                    : '<span style="display: inline-block; background: #0ea5e9; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.75em; font-weight: bold; margin-left: 4px;">🟢 Live</span>';
+                
                 card.innerHTML = `
-                    <div class="exercise-card-title">${escapeHtml(ex.name)} ${videoStatusBadge}</div>
+                    <div class="exercise-card-title">${escapeHtml(ex.name)} ${videoStatusBadge} ${publishStatusBadge}</div>
                     <div class="exercise-card-category" onclick="filterByCategory('${ex.category}')" title="Klick zum Filtern">${categories[ex.category]?.name || ex.category}</div>
                     <div class="exercise-card-desc">${escapeHtml(ex.description)}</div>
                     ${ex.duration ? `<div style="font-size: 0.85em; color: #999;">⏱️ ${escapeHtml(ex.duration)}</div>` : ''}
                     <div class="exercise-card-buttons">
                         <button class="btn-edit" onclick="editExercise('${ex.id}')">✏️ Edit</button>
                         <button class="btn-video" onclick="switchToVideoTab('${ex.id}')">🎥 Video</button>
+                        <button class="btn-publish" onclick="togglePublish('${ex.id}', ${isPublished})">${isPublished ? '🔒 Hide' : '🔓 Publish'}</button>
                         <button class="btn-delete" onclick="deleteExercise('${ex.id}')">🗑️ Delete</button>
                     </div>
                 `;
@@ -1061,6 +1076,37 @@
                 loadExercisesList();
                 loadVideoExerciseSelect();
                 showExercisesStatus('✅ Übung gelöscht', 'success');
+            })
+            .catch(e => showExercisesStatus('Error: ' + e.message, 'error'));
+        }
+
+        function togglePublish(exerciseId, currentlyPublished) {
+            const newStatus = !currentlyPublished;
+            const statusText = newStatus ? 'veröffentlicht' : 'versteckt';
+
+            fetch(`/api/exercises/${exerciseId}`, {
+                method: 'PUT',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    password: currentPassword,
+                    published: newStatus
+                })
+            })
+            .then(r => r.json())
+            .then(data => {
+                if (data.error) {
+                    showExercisesStatus('Error: ' + data.error, 'error');
+                    return;
+                }
+
+                // Update local exercise
+                const exercise = exercises.find(e => e.id === exerciseId);
+                if (exercise) {
+                    exercise.published = newStatus;
+                }
+
+                loadExercisesList();
+                showExercisesStatus(`✅ Übung ${statusText}`, 'success');
             })
             .catch(e => showExercisesStatus('Error: ' + e.message, 'error'));
         }
