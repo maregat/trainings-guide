@@ -82,10 +82,10 @@
       "description": "Mit geschlossenen Füßen seitlich über die Linie hin- und herspringen, zügiger Rhythmus.",
       "duration": "60-90 Sekunden",
       "videoLink": {
-        "url": null,
-        "title": null
+        "url": "./data/videos/coo_line_jump_both.mp4",
+        "title": "Seitliche Sprünge – beidbeinig"
       },
-      "poster": null,
+      "poster": "./data/videos/coo_line_jump_both.jpg",
       "published": true
     },
     "coo_line_jump_forward": {
@@ -675,7 +675,7 @@
     },
     "acl_lateral_lunge": {
       "id": "acl_lateral_lunge",
-      "name": "🏃‍♀️ Lateral Lunge (Seitwärts-Ausfallschritt)",
+      "name": "Ausfallschritt-Seitwärts",
       "category": "strength_stability",
       "description": "Ausfallschritt seitwärts. Trainiert Frontal-Plane Stabilität = essentiell weil viele Fußball-Cuts seitwärts sind. Stärkt Adduktoren und Glutes für seitliche Stabilität.",
       "duration": "4-5 Minuten",
@@ -849,10 +849,10 @@
       "description": "Seitenplanke halten und dabei gleichzeitig das obere Bein ranziehen und wieder ausstrecken und den oberen Arm nach vorne ausstecken und wieder ranziehen",
       "duration": "30 s",
       "videoLink": {
-        "url": null,
-        "title": null
+        "url": "./data/videos/side plank crunch.mp4",
+        "title": "Seitenplanke und Crunch"
       },
-      "poster": null,
+      "poster": "./data/videos/side plank crunch.jpg",
       "published": true
     },
     "squad": {
@@ -935,7 +935,7 @@
     },
     "str_jump_rope": {
       "id": "str_jump_rope",
-      "name": "Seilspringen (Jump Rope)",
+      "name": "Seilspringen",
       "category": "strength_stability",
       "description": "Klassisches Springseil-Training. Sehr effektiv für Koordination, Rhythmus und Cardio.",
       "duration": "1-2 Minuten",
@@ -1109,10 +1109,10 @@
       "description": "Mit Rücken gegen die Wand, Beine in 90°-Winkel. Statisch halten. Trainiert isometrische Quads-Kraft und Ausdauer = andere Trainingsreiz als dynamische Übungen.",
       "duration": "20-60 Sekunden",
       "videoLink": {
-        "url": null,
-        "title": "🏃‍♀️ Wall Sits"
+        "url": "./data/videos/acl_wall_sits.mp4",
+        "title": "🏃‍♀️ Wall Sits (Isometrische Quad-Kraft)"
       },
-      "poster": null,
+      "poster": "./data/videos/acl_wall_sits.jpg",
       "published": false
     },
     "acl_lateral_shuffles": {
