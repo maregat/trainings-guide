@@ -12,22 +12,6 @@
       "order": 1,
       "phase": "warmup"
     },
-    "acl_prevention": {
-      "name": "🏃‍♀️ ACL-Prävention",
-      "description": "Spezielle Übungen zur Prävention von Kreuzbandrissen. Besonders wichtig für Mädchen/Frauen, die ein 2-8x höheres Risiko haben. Fokus: Hamstring-Kraft, Hüft-Stabilität, Landungsmechanik, Balance. 2x pro Woche vor Training empfohlen.",
-      "order": 2,
-      "phase": "warmup",
-      "ageGroup": [
-        "U11",
-        "U12",
-        "U14",
-        "U16",
-        "U18",
-        "Adult"
-      ],
-      "importance": "HIGH",
-      "focus": "Injury Prevention – Hamstring, Glutes, Balance, Landing"
-    },
     "firstTouch": {
       "name": "First Touch (Ballannahme)",
       "description": "Der erste Kontakt entscheidet oft über Zeitgewinn im Spiel",
@@ -64,24 +48,24 @@
       "order": 8,
       "phase": "main"
     },
-    "stability": {
-      "name": "Athletik/Stabilität",
-      "description": "Stabilitäts und Kraft-Übungen zum Aufbau von Core Muskulatur für mehr Durchsetzungkraft",
-      "order": 9,
-      "phase": "main"
-    },
     "group": {
       "name": "Gruppenübungen",
       "description": "Übungen die nur mit 2+ Spielern durchführbar sind",
-      "order": 10,
+      "order": 9,
       "phase": "main"
+    },
+    "strength_stability": {
+      "name": "💪 Kraft & Stabilität",
+      "description": "Fundament für alle Fußball-Bewegungen: Hamstring-, Glute- und Core-Kraft, Balance, Landungsmechanik. Reduziert ACL-Risiko um 2-8x bei Frauen. 2x pro Woche VORHER vor Balltraining empfohlen.",
+      "order": 2,
+      "phase": "warmup"
     }
   },
   "exercises": {
     "coo_line_jump_single": {
       "id": "coo_line_jump_single",
-      "name": "Seitliches Linienspringen – einbeinig",
-      "category": "warmup_coordination",
+      "name": "Seitliche Sprünge – einbeinig",
+      "category": "strength_stability",
       "description": "Auf einem Bein seitlich über eine Linie hin- und herspringen. Rechtes und linkes Bein getrennt üben.",
       "duration": "60-90 Sekunden pro Bein",
       "videoLink": {
@@ -93,8 +77,8 @@
     },
     "coo_line_jump_both": {
       "id": "coo_line_jump_both",
-      "name": "Seitliches Linienspringen – beidbeinig",
-      "category": "warmup_coordination",
+      "name": "Seitliche Sprünge – beidbeinig",
+      "category": "strength_stability",
       "description": "Mit geschlossenen Füßen seitlich über die Linie hin- und herspringen, zügiger Rhythmus.",
       "duration": "60-90 Sekunden",
       "videoLink": {
@@ -107,7 +91,7 @@
     "coo_line_jump_forward": {
       "id": "coo_line_jump_forward",
       "name": "Linienspringen vor/zurück",
-      "category": "stability",
+      "category": "strength_stability",
       "description": "Beidbeinig vorwärts über die Linie springen, dann rückwärts zurück.",
       "duration": "60-90 Sekunden",
       "videoLink": {
@@ -128,7 +112,7 @@
         "title": null
       },
       "poster": null,
-      "published": true
+      "published": false
     },
     "coo_ladder_two_per_field": {
       "id": "coo_ladder_two_per_field",
@@ -141,7 +125,7 @@
         "title": null
       },
       "poster": null,
-      "published": true
+      "published": false
     },
     "coo_ladder_sidestep": {
       "id": "coo_ladder_sidestep",
@@ -154,7 +138,7 @@
         "title": null
       },
       "poster": null,
-      "published": true
+      "published": false
     },
     "coo_basis_toe_taps": {
       "id": "coo_basis_toe_taps",
@@ -414,7 +398,7 @@
         "title": null
       },
       "poster": null,
-      "published": true
+      "published": false
     },
     "bi_cone_intake": {
       "id": "bi_cone_intake",
@@ -427,7 +411,7 @@
         "title": null
       },
       "poster": null,
-      "published": true
+      "published": false
     },
     "bi_pressure_timing": {
       "id": "bi_pressure_timing",
@@ -440,7 +424,7 @@
         "title": null
       },
       "poster": null,
-      "published": true
+      "published": false
     },
     "bc_straight_line": {
       "id": "bc_straight_line",
@@ -453,7 +437,7 @@
         "title": null
       },
       "poster": null,
-      "published": true
+      "published": false
     },
     "bc_zig_zag": {
       "id": "bc_zig_zag",
@@ -479,7 +463,7 @@
         "title": null
       },
       "poster": null,
-      "published": true
+      "published": false
     },
     "dr_speed_line": {
       "id": "dr_speed_line",
@@ -531,7 +515,7 @@
         "title": null
       },
       "poster": null,
-      "published": true
+      "published": false
     },
     "dc_180_turn": {
       "id": "dc_180_turn",
@@ -544,7 +528,7 @@
         "title": null
       },
       "poster": null,
-      "published": true
+      "published": false
     },
     "dc_cut_back": {
       "id": "dc_cut_back",
@@ -557,7 +541,7 @@
         "title": null
       },
       "poster": null,
-      "published": true
+      "published": false
     },
     "jgl_sole_to_instep": {
       "id": "jgl_sole_to_instep",
@@ -570,7 +554,7 @@
         "title": null
       },
       "poster": null,
-      "published": true
+      "published": false
     },
     "jgl_alternating_feet": {
       "id": "jgl_alternating_feet",
@@ -583,7 +567,7 @@
         "title": null
       },
       "poster": null,
-      "published": true
+      "published": false
     },
     "jgl_inside_outside": {
       "id": "jgl_inside_outside",
@@ -596,7 +580,7 @@
         "title": null
       },
       "poster": null,
-      "published": true
+      "published": false
     },
     "jgl_thigh_chest": {
       "id": "jgl_thigh_chest",
@@ -609,12 +593,12 @@
         "title": null
       },
       "poster": null,
-      "published": true
+      "published": false
     },
     "acl_glute_bridge": {
       "id": "acl_glute_bridge",
       "name": "🏃‍♀️ Glute Bridge (Hüft-Strecker)",
-      "category": "acl_prevention",
+      "category": "strength_stability",
       "description": "Liegende Hüftstreck-Übung zur Aktivierung und Kräftigung der Glutes. Essentiell zur Prävention von Knee Valgus (Knie nach innen) beim Landen und Sprinten.",
       "duration": "3-4 Minuten",
       "videoLink": {
@@ -627,20 +611,20 @@
     "acl_single_leg_squat": {
       "id": "acl_single_leg_squat",
       "name": "🏃‍♀️ Single-Leg Squat (Einbeinige Kniebeuge)",
-      "category": "acl_prevention",
+      "category": "strength_stability",
       "description": "Kniebeuge auf einem Bein. Trainiert einbeinige Ausrichtung und verhindert Knee Valgus (Knie-Kollaps nach innen). KRITISCH für Prävention beim Landen und Drehen.",
       "duration": "4-5 Minuten",
       "videoLink": {
-        "url": null,
+        "url": "./data/videos/acl_single_leg_squat.mp4",
         "title": "🏃‍♀️ Single-Leg Squat (Einbeinige Kniebeuge)"
       },
-      "poster": null,
+      "poster": "./data/videos/acl_single_leg_squat.jpg",
       "published": false
     },
     "acl_monster_walk": {
       "id": "acl_monster_walk",
       "name": "🏃‍♀️ Monster Walk (Seitwärts mit Widerstandsband)",
-      "category": "acl_prevention",
+      "category": "strength_stability",
       "description": "Seitliches Gehen mit Widerstandsband um die Oberschenkel. Trainiert Hip Abduction und externe Rotation = Schlüssel zur Hüft-Stabilität und Prävention von Knee Valgus.",
       "duration": "3-4 Minuten",
       "videoLink": {
@@ -653,7 +637,7 @@
     "acl_single_leg_deadlift": {
       "id": "acl_single_leg_deadlift",
       "name": "🏃‍♀️ Single-Leg Deadlift (Einbeiniges Hip-Hinge)",
-      "category": "acl_prevention",
+      "category": "strength_stability",
       "description": "Hüftbeugung auf einem Bein mit Kraft aus den Hamstrings und Glutes. Trainiert korrekte Hip-Hinge Mechanik und Posterior Chain Kraft = essentiell für ACL-Prävention.",
       "duration": "4-5 Minuten",
       "videoLink": {
@@ -666,7 +650,7 @@
     "acl_clamshells": {
       "id": "acl_clamshells",
       "name": "🏃‍♀️ Clamshells (Hüft-Abduktion liegend)",
-      "category": "acl_prevention",
+      "category": "strength_stability",
       "description": "Liegen auf der Seite, oberes Knie aufklappen. Trainiert Hip External Rotation und Abduction = Prävention von Knee Valgus durch Hüft-Stabilität.",
       "duration": "3-4 Minuten",
       "videoLink": {
@@ -679,7 +663,7 @@
     "acl_box_jump": {
       "id": "acl_box_jump",
       "name": "🏃‍♀️ Box Jump (Plyometrics mit korrekter Landung)",
-      "category": "acl_prevention",
+      "category": "strength_stability",
       "description": "Sprung auf eine Box mit Fokus auf KORREKTE Landungsmechanik. Das Wichtigste: 'Soft Landing' mit Knies über Zehen = direkte ACL-Prävention im dynamischen Movement.",
       "duration": "4-5 Minuten",
       "videoLink": {
@@ -692,20 +676,20 @@
     "acl_lateral_lunge": {
       "id": "acl_lateral_lunge",
       "name": "🏃‍♀️ Lateral Lunge (Seitwärts-Ausfallschritt)",
-      "category": "acl_prevention",
+      "category": "strength_stability",
       "description": "Ausfallschritt seitwärts. Trainiert Frontal-Plane Stabilität = essentiell weil viele Fußball-Cuts seitwärts sind. Stärkt Adduktoren und Glutes für seitliche Stabilität.",
       "duration": "4-5 Minuten",
       "videoLink": {
-        "url": null,
+        "url": "./data/videos/acl_lateral_lunge.mp4",
         "title": "🏃‍♀️ Lateral Lunge (Seitwärts-Ausfallschritt)"
       },
-      "poster": null,
+      "poster": "./data/videos/acl_lateral_lunge.jpg",
       "published": false
     },
     "acl_single_leg_balance": {
       "id": "acl_single_leg_balance",
       "name": "🏃‍♀️ Single-Leg Balance (Einbeiniges Gleichgewicht)",
-      "category": "acl_prevention",
+      "category": "strength_stability",
       "description": "Stehen auf einem Bein. Trainiert Propriozeption (Körper-Awareness) und neuromuskularische Kontrolle = schnelle Reaktion bei Fußversteppern und Drehbewegungen.",
       "duration": "3-4 Minuten",
       "videoLink": {
@@ -783,7 +767,7 @@
     "plank": {
       "id": "plank",
       "name": "Plank",
-      "category": "stability",
+      "category": "strength_stability",
       "description": "Plank halten auf beiden Ellenbogen",
       "duration": "30 s - 3 min",
       "videoLink": {
@@ -796,7 +780,7 @@
     "pushups": {
       "id": "pushups",
       "name": "Liegestützen",
-      "category": "stability",
+      "category": "strength_stability",
       "description": "normale Liegestützen",
       "duration": "20 - 100 am Stück ",
       "videoLink": {
@@ -809,7 +793,7 @@
     "superman": {
       "id": "superman",
       "name": "Superman",
-      "category": "stability",
+      "category": "strength_stability",
       "description": "Auf dem Bauch liegend beide Beine und beide Arme hochheben und leicht auf und ab bewegen",
       "duration": "30 s",
       "videoLink": {
@@ -822,7 +806,7 @@
     "legs_up": {
       "id": "legs_up",
       "name": "Kerze",
-      "category": "stability",
+      "category": "strength_stability",
       "description": "Auf den Rücken legen, Arme seitlich daneben dann beide Füsse ohne Schwung nach oben heben und Richtung Decke strecken ",
       "duration": "30 s",
       "videoLink": {
@@ -835,7 +819,7 @@
     "side plank": {
       "id": "side plank",
       "name": "Seitenplanke",
-      "category": "stability",
+      "category": "strength_stability",
       "description": "seitlich auf den rechten oder linken Unterarm stützen und den Rest des Körpers durchstrecken. Beide Füsse übereinander und den freien oberen Arm ausstrecken und das ganze halten",
       "duration": "30 s - 3 min",
       "videoLink": {
@@ -848,7 +832,7 @@
     "plank crunch": {
       "id": "plank crunch",
       "name": "Planke und Crunch",
-      "category": "stability",
+      "category": "strength_stability",
       "description": "Planke und abwechselnd mit dem linken und dem rechten Fuss nach vorne Richtung Brust",
       "duration": "30 s",
       "videoLink": {
@@ -861,7 +845,7 @@
     "side plank crunch": {
       "id": "side plank crunch",
       "name": "Seitenplanke und Crunch",
-      "category": "stability",
+      "category": "strength_stability",
       "description": "Seitenplanke halten und dabei gleichzeitig das obere Bein ranziehen und wieder ausstrecken und den oberen Arm nach vorne ausstecken und wieder ranziehen",
       "duration": "30 s",
       "videoLink": {
@@ -874,7 +858,7 @@
     "squad": {
       "id": "squad",
       "name": "Squads",
-      "category": "stability",
+      "category": "strength_stability",
       "description": "Einfache Squads (optional mit Gewicht)",
       "duration": "30 s",
       "videoLink": {
@@ -887,7 +871,7 @@
     "side plank leg raise": {
       "id": "side plank leg raise",
       "name": "Seitenplanke mit Beinheben",
-      "category": "stability",
+      "category": "strength_stability",
       "description": "Seitenplanke und das obere Beine geht rauf und runter",
       "duration": "30 s",
       "videoLink": {
@@ -900,7 +884,7 @@
     "handstand": {
       "id": "handstand",
       "name": "Handstand",
-      "category": "stability",
+      "category": "strength_stability",
       "description": "Handstand üben bis man es kann:\nStufe 1: an der Wand (30 s)\nStufe 2: frei\nStufe 3: frei und auf Händen laufen",
       "duration": "30 s",
       "videoLink": {
@@ -913,7 +897,7 @@
     "str_forward_lunge": {
       "id": "str_forward_lunge",
       "name": "Ausfallschritt vorwärts (Forward Lunge)",
-      "category": "stability",
+      "category": "strength_stability",
       "description": "Großer Schritt nach vorne, hinteres Knie absenken bis knapp über dem Boden. Fokus auf saubere Form.",
       "duration": "2-3 Minuten",
       "videoLink": {
@@ -926,7 +910,7 @@
     "str_step_ups": {
       "id": "str_step_ups",
       "name": "Step-Ups (auf Bank/Stufe)",
-      "category": "stability",
+      "category": "strength_stability",
       "description": "Auf eine erhöhte Bank/Stufe (30-50cm) hochsteigen. Abwechselnd die Beine. Trainiert Kraft in Quads und Glutes.",
       "duration": "2-3 Minuten",
       "videoLink": {
@@ -939,7 +923,7 @@
     "str_pullup_variations": {
       "id": "str_pullup_variations",
       "name": "Klimmzug-Varianten (Hängen, Australian Pulls)",
-      "category": "stability",
+      "category": "strength_stability",
       "description": "Stufe 1: An der Stange hängen (Grip-Kraft)\nStufe 2: Australian Pulls (Körper unter Stange hochziehen)\nStufe 3: Vollständige Klimmzüge",
       "duration": "3-5 Minuten",
       "videoLink": {
@@ -952,7 +936,7 @@
     "str_jumping_jacks": {
       "id": "str_jumping_jacks",
       "name": "Hampelmann (Jumping Jacks)",
-      "category": "stability",
+      "category": "strength_stability",
       "description": "Klassisches Cardio-Grundelement: Füße springen auseinander während Arme nach oben gehen.",
       "duration": "40-60 Sekunden",
       "videoLink": {
@@ -965,7 +949,7 @@
     "str_jump_rope": {
       "id": "str_jump_rope",
       "name": "Seilspringen (Jump Rope)",
-      "category": "stability",
+      "category": "strength_stability",
       "description": "Klassisches Springseil-Training. Sehr effektiv für Koordination, Rhythmus und Cardio.",
       "duration": "1-2 Minuten",
       "videoLink": {
@@ -978,7 +962,7 @@
     "str_vertical_jump": {
       "id": "str_vertical_jump",
       "name": "Sprung (Vertical Jump)",
-      "category": "stability",
+      "category": "strength_stability",
       "description": "Maximaler vertikaler Sprung aus dem Stand. Trainiert Explosivkraft in den Beinen.",
       "duration": "5-10 Wiederholungen",
       "videoLink": {
@@ -991,7 +975,7 @@
     "str_single_leg_hops": {
       "id": "str_single_leg_hops",
       "name": "Hüpfen auf einem Bein (Single-Leg Hops)",
-      "category": "stability",
+      "category": "strength_stability",
       "description": "Auf einem Bein hüpfen für Distanz oder Zeit. Trainiert Explosivkraft und einbeinige Stabilität.",
       "duration": "30-60 Sekunden pro Bein",
       "videoLink": {
@@ -1004,7 +988,7 @@
     "str_medicine_ball": {
       "id": "str_medicine_ball",
       "name": "Medizinball-Würfe (Chest Pass, Überkopfwurf)",
-      "category": "stability",
+      "category": "strength_stability",
       "description": "Mit Medizinball (1-2 kg) üben:\n- Chest Pass (nach vorne werfen)\n- Overhead Throw (Überkopfwurf)\n- Side Throw (seitwärts)\nTrainiert Explosivkraft und Rumpfkraft.",
       "duration": "3-4 Minuten",
       "videoLink": {
@@ -1017,7 +1001,7 @@
     "str_sprint_drills": {
       "id": "str_sprint_drills",
       "name": "Sprint-Drills (Slalom, Richtungswechsel)",
-      "category": "stability",
+      "category": "strength_stability",
       "description": "Schnelle Sprints mit Richtungswechseln (ohne Ball):\n- Slalom zwischen Hütchen\n- T-Shuttle Runs\n- 90°/180° Schnellwechsel\nTrainiert reine Sprintgeschwindigkeit und Agilität.",
       "duration": "5-10 Minuten",
       "videoLink": {
@@ -1030,7 +1014,7 @@
     "str_running_abc": {
       "id": "str_running_abc",
       "name": "Lauf-ABC (Kniehebelauf, Anfersen, Skipping)",
-      "category": "stability",
+      "category": "strength_stability",
       "description": "Klassische Lauf-ABC Übungen für Koordination und Aktivierung:\n- Kniehebelauf (Sprints mit hohem Knieaufzug)\n- Anfersen (Sohlen zu den Gesäßbacken)\n- Skipping (schnelle kleine Sprünge mit Vorwärtsbewegung)\nJede 20-30m.",
       "duration": "5-10 Minuten",
       "videoLink": {
@@ -1051,7 +1035,7 @@
         "title": null
       },
       "poster": null,
-      "published": true
+      "published": false
     },
     "grp_ball_shielding": {
       "id": "grp_ball_shielding",
@@ -1064,7 +1048,7 @@
         "title": null
       },
       "poster": null,
-      "published": true
+      "published": false
     },
     "grp_push_pull_game": {
       "id": "grp_push_pull_game",
@@ -1077,12 +1061,12 @@
         "title": null
       },
       "poster": null,
-      "published": true
+      "published": false
     },
     "acl_nordic_hamstring": {
       "id": "acl_nordic_hamstring",
       "name": "🏃‍♀️ Nordic Hamstring Curl (Exzentrische Hamstring-Kraft)",
-      "category": "acl_prevention",
+      "category": "strength_stability",
       "description": "Knie auf dem Boden, Körper nach vorne kippen mit Fokus auf die Hamstrings. Arme stützen ab um kontrolliert zu landen. KRITISCH: Exzentrische Kraft ist die höchste ACL-Prävention für Frauen!",
       "duration": "3-4 Minuten",
       "videoLink": {
@@ -1095,7 +1079,7 @@
     "acl_dead_bug": {
       "id": "acl_dead_bug",
       "name": "🏃‍♀️ Dead Bug (Core-Stabilität)",
-      "category": "acl_prevention",
+      "category": "strength_stability",
       "description": "Rücken auf dem Boden, Arme nach oben, Beine angewinkelt. Abwechselnd einen Arm und das gegenüber liegende Bein ausstrecken. Trainiert Core-Stabilität und neuromuskularische Kontrolle = Grundlage für ACL-Prävention.",
       "duration": "3-4 Minuten",
       "videoLink": {
@@ -1108,7 +1092,7 @@
     "acl_single_leg_glute_bridge": {
       "id": "acl_single_leg_glute_bridge",
       "name": "🏃‍♀️ Single-Leg Glute Bridge (Einbeinige Hüft-Strecker)",
-      "category": "acl_prevention",
+      "category": "strength_stability",
       "description": "Ähnlich Glute Bridge, aber nur mit einem Bein. Intensiver und spezifischer für einbeinige Stabilität und Glute-Kraft. ESSENTIELL für asymmetrische Kraft-Balance.",
       "duration": "3-4 Minuten",
       "videoLink": {
@@ -1121,7 +1105,7 @@
     "acl_fire_hydrants": {
       "id": "acl_fire_hydrants",
       "name": "🏃‍♀️ Fire Hydrants (Glute Abduction)",
-      "category": "acl_prevention",
+      "category": "strength_stability",
       "description": "Auf Händen und Knien, ein Bein seitlich hochziehen (wie ein Hund beim Markieren). Trainiert Glute Abduction und Hip External Rotation = Prävention von Knee Valgus.",
       "duration": "3-4 Minuten",
       "videoLink": {
@@ -1134,7 +1118,7 @@
     "acl_reverse_hypers": {
       "id": "acl_reverse_hypers",
       "name": "🏃‍♀️ Reverse Hypers (Posterior Chain)",
-      "category": "acl_prevention",
+      "category": "strength_stability",
       "description": "Auf dem Bauch liegen, Beine anheben und senken ohne den Rücken zu überstrecken. Trainiert Glutes und Hamstrings = Posterior Chain Kraft für ACL-Prävention.",
       "duration": "3-4 Minuten",
       "videoLink": {
@@ -1147,7 +1131,7 @@
     "acl_wall_sits": {
       "id": "acl_wall_sits",
       "name": "🏃‍♀️ Wall Sits (Isometrische Quad-Kraft)",
-      "category": "acl_prevention",
+      "category": "strength_stability",
       "description": "Mit Rücken gegen die Wand, Beine in 90°-Winkel. Statisch halten. Trainiert isometrische Quads-Kraft und Ausdauer = andere Trainingsreiz als dynamische Übungen.",
       "duration": "20-60 Sekunden",
       "videoLink": {
@@ -1160,7 +1144,7 @@
     "acl_lateral_shuffles": {
       "id": "acl_lateral_shuffles",
       "name": "🏃‍♀️ Lateral Shuffles (Seitwärts-Pendeln)",
-      "category": "acl_prevention",
+      "category": "strength_stability",
       "description": "Schnelle seitwärts Pendeln ohne Kreuzen der Beine. Trainiert frontal-plane Stabilität und Agility = spielspezifisch, da viele Fußball-Bewegungen seitwärts sind.",
       "duration": "4-5 Minuten",
       "videoLink": {
@@ -1173,7 +1157,7 @@
     "lateral hops": {
       "id": "lateral hops",
       "name": "Seitliche Sprünge und Halten",
-      "category": "acl_prevention",
+      "category": "strength_stability",
       "description": "auf einem Bein stehen, leicht gebeugt, dann auf das andere Bein Springen und die Balance auf einem Bein halten, dann wieder zurück",
       "duration": "2 min",
       "videoLink": {
@@ -1186,7 +1170,7 @@
     "step ups": {
       "id": "step ups",
       "name": "Step-Ups",
-      "category": "acl_prevention",
+      "category": "strength_stability",
       "description": "Mit einem Bein auf einem Stepper starten, dann mit Schwung das andere Bein nach oben ziehen, dabei auf Stepper steigen und für ein paar Sekunden halten. Dann wieder das Bein runternehmen",
       "duration": "2 min",
       "videoLink": {
