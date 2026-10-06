@@ -69,6 +69,12 @@
       "description": "Stabilitäts und Kraft-Übungen zum Aufbau von Core Muskulatur für mehr Durchsetzungkraft",
       "order": 9,
       "phase": "main"
+    },
+    "group": {
+      "name": "Gruppenübungen",
+      "description": "Übungen die nur mit 2+ Spielern durchführbar sind",
+      "order": 10,
+      "phase": "main"
     }
   },
   "exercises": {
@@ -834,6 +840,162 @@
       "category": "stability",
       "description": "Handstand üben bis man es kann:\nStufe 1: an der Wand (30 s)\nStufe 2: frei\nStufe 3: frei und auf Händen laufen",
       "duration": "30 s",
+      "videoLink": {
+        "url": null,
+        "title": null
+      },
+      "poster": null
+    },
+    "str_forward_lunge": {
+      "id": "str_forward_lunge",
+      "name": "Ausfallschritt vorwärts (Forward Lunge)",
+      "category": "stability",
+      "description": "Großer Schritt nach vorne, hinteres Knie absenken bis knapp über dem Boden. Fokus auf saubere Form.",
+      "duration": "2-3 Minuten",
+      "videoLink": {
+        "url": null,
+        "title": null
+      },
+      "poster": null
+    },
+    "str_step_ups": {
+      "id": "str_step_ups",
+      "name": "Step-Ups (auf Bank/Stufe)",
+      "category": "stability",
+      "description": "Auf eine erhöhte Bank/Stufe (30-50cm) hochsteigen. Abwechselnd die Beine. Trainiert Kraft in Quads und Glutes.",
+      "duration": "2-3 Minuten",
+      "videoLink": {
+        "url": null,
+        "title": null
+      },
+      "poster": null
+    },
+    "str_pullup_variations": {
+      "id": "str_pullup_variations",
+      "name": "Klimmzug-Varianten (Hängen, Australian Pulls)",
+      "category": "stability",
+      "description": "Stufe 1: An der Stange hängen (Grip-Kraft)\nStufe 2: Australian Pulls (Körper unter Stange hochziehen)\nStufe 3: Vollständige Klimmzüge",
+      "duration": "3-5 Minuten",
+      "videoLink": {
+        "url": null,
+        "title": null
+      },
+      "poster": null
+    },
+    "str_jumping_jacks": {
+      "id": "str_jumping_jacks",
+      "name": "Hampelmann (Jumping Jacks)",
+      "category": "stability",
+      "description": "Klassisches Cardio-Grundelement: Füße springen auseinander während Arme nach oben gehen.",
+      "duration": "40-60 Sekunden",
+      "videoLink": {
+        "url": null,
+        "title": null
+      },
+      "poster": null
+    },
+    "str_jump_rope": {
+      "id": "str_jump_rope",
+      "name": "Seilspringen (Jump Rope)",
+      "category": "stability",
+      "description": "Klassisches Springseil-Training. Sehr effektiv für Koordination, Rhythmus und Cardio.",
+      "duration": "1-2 Minuten",
+      "videoLink": {
+        "url": null,
+        "title": null
+      },
+      "poster": null
+    },
+    "str_vertical_jump": {
+      "id": "str_vertical_jump",
+      "name": "Sprung (Vertical Jump)",
+      "category": "stability",
+      "description": "Maximaler vertikaler Sprung aus dem Stand. Trainiert Explosivkraft in den Beinen.",
+      "duration": "5-10 Wiederholungen",
+      "videoLink": {
+        "url": null,
+        "title": null
+      },
+      "poster": null
+    },
+    "str_single_leg_hops": {
+      "id": "str_single_leg_hops",
+      "name": "Hüpfen auf einem Bein (Single-Leg Hops)",
+      "category": "stability",
+      "description": "Auf einem Bein hüpfen für Distanz oder Zeit. Trainiert Explosivkraft und einbeinige Stabilität.",
+      "duration": "30-60 Sekunden pro Bein",
+      "videoLink": {
+        "url": null,
+        "title": null
+      },
+      "poster": null
+    },
+    "str_medicine_ball": {
+      "id": "str_medicine_ball",
+      "name": "Medizinball-Würfe (Chest Pass, Überkopfwurf)",
+      "category": "stability",
+      "description": "Mit Medizinball (1-2 kg) üben:\n- Chest Pass (nach vorne werfen)\n- Overhead Throw (Überkopfwurf)\n- Side Throw (seitwärts)\nTrainiert Explosivkraft und Rumpfkraft.",
+      "duration": "3-4 Minuten",
+      "videoLink": {
+        "url": null,
+        "title": null
+      },
+      "poster": null
+    },
+    "str_sprint_drills": {
+      "id": "str_sprint_drills",
+      "name": "Sprint-Drills (Slalom, Richtungswechsel)",
+      "category": "stability",
+      "description": "Schnelle Sprints mit Richtungswechseln (ohne Ball):\n- Slalom zwischen Hütchen\n- T-Shuttle Runs\n- 90°/180° Schnellwechsel\nTrainiert reine Sprintgeschwindigkeit und Agilität.",
+      "duration": "5-10 Minuten",
+      "videoLink": {
+        "url": null,
+        "title": null
+      },
+      "poster": null
+    },
+    "str_running_abc": {
+      "id": "str_running_abc",
+      "name": "Lauf-ABC (Kniehebelauf, Anfersen, Skipping)",
+      "category": "stability",
+      "description": "Klassische Lauf-ABC Übungen für Koordination und Aktivierung:\n- Kniehebelauf (Sprints mit hohem Knieaufzug)\n- Anfersen (Sohlen zu den Gesäßbacken)\n- Skipping (schnelle kleine Sprünge mit Vorwärtsbewegung)\nJede 20-30m.",
+      "duration": "5-10 Minuten",
+      "videoLink": {
+        "url": null,
+        "title": null
+      },
+      "poster": null
+    },
+    "grp_shoulder_to_shoulder": {
+      "id": "grp_shoulder_to_shoulder",
+      "name": "Zweikampf: Schulter-an-Schulter",
+      "category": "group",
+      "description": "Zwei Spieler stehen sich gegenüber, versuchen sich gegenseitig zu drücken und seitlich zu verdrängen. Trainiert Körperkontakt, Stabilität und Kraft.",
+      "duration": "2-3 Minuten",
+      "videoLink": {
+        "url": null,
+        "title": null
+      },
+      "poster": null
+    },
+    "grp_ball_shielding": {
+      "id": "grp_ball_shielding",
+      "name": "Zweikampf: Ball abschirmen",
+      "category": "group",
+      "description": "Ein Spieler hat Ball, anderer versucht abzugewinnen. Trainiert Ball-Abschirmung, Positionierung und Kraft unter Druck.",
+      "duration": "3-5 Minuten",
+      "videoLink": {
+        "url": null,
+        "title": null
+      },
+      "poster": null
+    },
+    "grp_push_pull_game": {
+      "id": "grp_push_pull_game",
+      "name": "Zweikampf: Schiebe- und Ziehspiele",
+      "category": "group",
+      "description": "Zwei Spieler halten sich an einem Seil/Band oder kreuzen Arme. Wechsel zwischen aktiv schieben und passiv halten. Trainiert explosive Kraft und Widerstandskraft.",
+      "duration": "2-3 Minuten",
       "videoLink": {
         "url": null,
         "title": null
