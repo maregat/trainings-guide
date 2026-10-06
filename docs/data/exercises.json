@@ -7,7 +7,7 @@
       "phase": "warmup"
     },
     "warmup_coerver": {
-      "name": "Ballgefühl (Coerver)",
+      "name": "Ballkontrolle (Coerver)",
       "description": "Basis-Übungen für Ballgefühl nach Coerver, am besten JEDEN Tag",
       "order": 1,
       "phase": "warmup"
@@ -55,7 +55,7 @@
       "phase": "main"
     },
     "strength_stability": {
-      "name": "💪 Kraft & Stabilität",
+      "name": "Kraft & Stabilität",
       "description": "Fundament für alle Fußball-Bewegungen: Hamstring-, Glute- und Core-Kraft, Balance, Landungsmechanik. Reduziert ACL-Risiko um 2-8x bei Frauen. 2x pro Woche VORHER vor Balltraining empfohlen.",
       "order": 2,
       "phase": "warmup"
@@ -112,7 +112,7 @@
         "title": null
       },
       "poster": null,
-      "published": false
+      "published": true
     },
     "coo_ladder_two_per_field": {
       "id": "coo_ladder_two_per_field",
@@ -125,7 +125,7 @@
         "title": null
       },
       "poster": null,
-      "published": false
+      "published": true
     },
     "coo_ladder_sidestep": {
       "id": "coo_ladder_sidestep",
@@ -138,7 +138,7 @@
         "title": null
       },
       "poster": null,
-      "published": false
+      "published": true
     },
     "coo_basis_toe_taps": {
       "id": "coo_basis_toe_taps",

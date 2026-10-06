@@ -749,7 +749,7 @@
 
     <!-- Deploy Modal -->
     <div class="modal" id="deployModal">
-        <div class="modal-content">
+        <div class="modal-content" style="max-height: 80vh; overflow-y: auto;">
             <span class="modal-close" id="modalCloseDeploy">&times;</span>
             <h2>🚀 Live App deployen</h2>
             <div style="background: #e3f2fd; padding: 15px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #2196F3;">
@@ -771,7 +771,20 @@
                     <div style="background: #f0f0f0; border-radius: 8px; height: 8px; overflow: hidden;">
                         <div id="deployProgressBar" style="background: linear-gradient(90deg, #667eea 0%, #764ba2 100%); height: 100%; width: 0%; transition: width 0.3s;"></div>
                     </div>
-                    <p id="deployStatus" style="color: #666; font-size: 0.85em; margin-top: 10px; font-family: monospace;"></p>
+                    <div id="deployStatus" style="color: #666; font-size: 0.85em; margin-top: 10px; font-family: monospace;"></div>
+                    
+                    <!-- Error box -->
+                    <div id="deployErrorBox" style="display: none; background: #ffebee; border: 1px solid #f44336; border-radius: 8px; padding: 15px; margin-top: 20px;">
+                        <div style="color: #c62828; font-weight: bold; margin-bottom: 10px;">❌ Deployment fehlgeschlagen</div>
+                        <div id="deployErrorMessage" style="color: #d32f2f; font-size: 0.9em; white-space: pre-wrap; word-break: break-word;"></div>
+                        <div id="deployErrorDetails" style="display: none; margin-top: 15px; background: #fafafa; border: 1px solid #e0e0e0; border-radius: 4px; padding: 10px; max-height: 200px; overflow-y: auto;">
+                            <div style="color: #666; font-size: 0.8em; font-weight: bold; margin-bottom: 5px;">📋 Details:</div>
+                            <div id="deployErrorDetailsText" style="color: #666; font-size: 0.8em; font-family: monospace; white-space: pre-wrap; word-break: break-word;"></div>
+                        </div>
+                        <div style="margin-top: 15px;">
+                            <button type="button" class="btn-secondary" style="width: 100%;" onclick="tryAgainDeploy()">🔄 Erneut versuchen</button>
+                        </div>
+                    </div>
                 </div>
             </form>
         </div>
@@ -1543,11 +1556,19 @@
             document.getElementById('deployModal').classList.add('active');
             document.getElementById('deployMessage').value = '';
             document.getElementById('deployProgress').style.display = 'none';
+            document.getElementById('deployErrorBox').style.display = 'none';
             document.getElementById('deployForm').style.display = 'block';
         }
 
         function closeDeployModal() {
             document.getElementById('deployModal').classList.remove('active');
+        }
+
+        function tryAgainDeploy() {
+            document.getElementById('deployErrorBox').style.display = 'none';
+            document.getElementById('deployProgress').style.display = 'none';
+            document.getElementById('deployForm').style.display = 'block';
+            document.getElementById('deployProgressBar').style.width = '0%';
         }
 
         document.getElementById('deployBtn').addEventListener('click', () => {
@@ -1568,6 +1589,7 @@
             // Show progress
             document.getElementById('deployForm').style.display = 'none';
             document.getElementById('deployProgress').style.display = 'block';
+            document.getElementById('deployErrorBox').style.display = 'none';
             const progressBar = document.getElementById('deployProgressBar');
             const statusEl = document.getElementById('deployStatus');
 
@@ -1597,12 +1619,15 @@
                 const data = await response.json();
 
                 if (data.error) {
-                    statusEl.textContent = '❌ Error: ' + data.error;
-                    setTimeout(() => {
-                        document.getElementById('deployProgress').style.display = 'none';
-                        document.getElementById('deployForm').style.display = 'block';
-                        progressBar.style.width = '0%';
-                    }, 3000);
+                    // Show error box with details
+                    document.getElementById('deployErrorBox').style.display = 'block';
+                    document.getElementById('deployErrorMessage').textContent = data.error;
+                    
+                    if (data.stderr) {
+                        document.getElementById('deployErrorDetails').style.display = 'block';
+                        document.getElementById('deployErrorDetailsText').textContent = data.stderr;
+                    }
+                    statusEl.textContent = '❌ Fehler aufgetreten - siehe unten';
                     return;
                 }
 
@@ -1631,12 +1656,9 @@
                 }, 4000);
             } catch (error) {
                 clearInterval(progressInterval);
-                statusEl.textContent = '❌ Network Error: ' + error.message;
-                setTimeout(() => {
-                    document.getElementById('deployProgress').style.display = 'none';
-                    document.getElementById('deployForm').style.display = 'block';
-                    progressBar.style.width = '0%';
-                }, 3000);
+                document.getElementById('deployErrorBox').style.display = 'block';
+                document.getElementById('deployErrorMessage').textContent = 'Network Error: ' + error.message;
+                statusEl.textContent = '❌ Verbindungsfehler';
             }
         });
 
