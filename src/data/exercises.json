@@ -65,7 +65,7 @@
       "phase": "main"
     },
     "stability": {
-      "name": "Kraft/Stabilität",
+      "name": "Athletik/Stabilität",
       "description": "Stabilitäts und Kraft-Übungen zum Aufbau von Core Muskulatur für mehr Durchsetzungkraft",
       "order": 9,
       "phase": "main"
@@ -99,7 +99,7 @@
     "coo_line_jump_forward": {
       "id": "coo_line_jump_forward",
       "name": "Linienspringen vor/zurück",
-      "category": "warmup_coordination",
+      "category": "stability",
       "description": "Beidbeinig vorwärts über die Linie springen, dann rückwärts zurück.",
       "duration": "60-90 Sekunden",
       "videoLink": {
@@ -773,7 +773,7 @@
       "name": "Seitenplanke",
       "category": "stability",
       "description": "seitlich auf den rechten oder linken Unterarm stützen und den Rest des Körpers durchstrecken. Beide Füsse übereinander und den freien oberen Arm ausstrecken und das ganze halten",
-      "duration": "30 s",
+      "duration": "30 s - 3 min",
       "videoLink": {
         "url": "./data/videos/side plank.mp4",
         "title": "Seitenplanke"
@@ -827,6 +827,18 @@
         "title": "Seitenplanke mit Beinheben"
       },
       "poster": "./data/videos/side plank leg raise.jpg"
+    },
+    "handstand": {
+      "id": "handstand",
+      "name": "Handstand",
+      "category": "stability",
+      "description": "Handstand üben bis man es kann:\nStufe 1: an der Wand (30 s)\nStufe 2: frei\nStufe 3: frei und auf Händen laufen",
+      "duration": "30 s",
+      "videoLink": {
+        "url": null,
+        "title": null
+      },
+      "poster": null
     }
   }
 }

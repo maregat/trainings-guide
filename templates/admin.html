@@ -877,8 +877,13 @@
             filtered.forEach(ex => {
                 const card = document.createElement('div');
                 card.className = 'exercise-card';
+                const hasVideo = ex.videoLink && ex.videoLink.url;
+                const videoStatusBadge = !hasVideo 
+                    ? '<span style="display: inline-block; background: #ff6b6b; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.75em; font-weight: bold; margin-left: 8px;">📭 No video</span>'
+                    : '<span style="display: inline-block; background: #51cf66; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.75em; font-weight: bold; margin-left: 8px;">✅ Video</span>';
+                
                 card.innerHTML = `
-                    <div class="exercise-card-title">${escapeHtml(ex.name)}</div>
+                    <div class="exercise-card-title">${escapeHtml(ex.name)} ${videoStatusBadge}</div>
                     <div class="exercise-card-category" onclick="filterByCategory('${ex.category}')" title="Klick zum Filtern">${categories[ex.category]?.name || ex.category}</div>
                     <div class="exercise-card-desc">${escapeHtml(ex.description)}</div>
                     ${ex.duration ? `<div style="font-size: 0.85em; color: #999;">⏱️ ${escapeHtml(ex.duration)}</div>` : ''}
