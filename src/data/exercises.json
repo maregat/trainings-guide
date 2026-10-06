@@ -1001,6 +1001,90 @@
         "title": null
       },
       "poster": null
+    },
+    "acl_nordic_hamstring": {
+      "id": "acl_nordic_hamstring",
+      "name": "🏃‍♀️ Nordic Hamstring Curl (Exzentrische Hamstring-Kraft)",
+      "category": "acl_prevention",
+      "description": "Knie auf dem Boden, Körper nach vorne kippen mit Fokus auf die Hamstrings. Arme stützen ab um kontrolliert zu landen. KRITISCH: Exzentrische Kraft ist die höchste ACL-Prävention für Frauen!",
+      "duration": "3-4 Minuten",
+      "videoLink": {
+        "url": null,
+        "title": "🏃‍♀️ Nordic Hamstring Curl"
+      },
+      "poster": null
+    },
+    "acl_dead_bug": {
+      "id": "acl_dead_bug",
+      "name": "🏃‍♀️ Dead Bug (Core-Stabilität)",
+      "category": "acl_prevention",
+      "description": "Rücken auf dem Boden, Arme nach oben, Beine angewinkelt. Abwechselnd einen Arm und das gegenüber liegende Bein ausstrecken. Trainiert Core-Stabilität und neuromuskularische Kontrolle = Grundlage für ACL-Prävention.",
+      "duration": "3-4 Minuten",
+      "videoLink": {
+        "url": null,
+        "title": "🏃‍♀️ Dead Bug"
+      },
+      "poster": null
+    },
+    "acl_single_leg_glute_bridge": {
+      "id": "acl_single_leg_glute_bridge",
+      "name": "🏃‍♀️ Single-Leg Glute Bridge (Einbeinige Hüft-Strecker)",
+      "category": "acl_prevention",
+      "description": "Ähnlich Glute Bridge, aber nur mit einem Bein. Intensiver und spezifischer für einbeinige Stabilität und Glute-Kraft. ESSENTIELL für asymmetrische Kraft-Balance.",
+      "duration": "3-4 Minuten",
+      "videoLink": {
+        "url": null,
+        "title": "🏃‍♀️ Single-Leg Glute Bridge"
+      },
+      "poster": null
+    },
+    "acl_fire_hydrants": {
+      "id": "acl_fire_hydrants",
+      "name": "🏃‍♀️ Fire Hydrants (Glute Abduction)",
+      "category": "acl_prevention",
+      "description": "Auf Händen und Knien, ein Bein seitlich hochziehen (wie ein Hund beim Markieren). Trainiert Glute Abduction und Hip External Rotation = Prävention von Knee Valgus.",
+      "duration": "3-4 Minuten",
+      "videoLink": {
+        "url": null,
+        "title": "🏃‍♀️ Fire Hydrants"
+      },
+      "poster": null
+    },
+    "acl_reverse_hypers": {
+      "id": "acl_reverse_hypers",
+      "name": "🏃‍♀️ Reverse Hypers (Posterior Chain)",
+      "category": "acl_prevention",
+      "description": "Auf dem Bauch liegen, Beine anheben und senken ohne den Rücken zu überstrecken. Trainiert Glutes und Hamstrings = Posterior Chain Kraft für ACL-Prävention.",
+      "duration": "3-4 Minuten",
+      "videoLink": {
+        "url": null,
+        "title": "🏃‍♀️ Reverse Hypers"
+      },
+      "poster": null
+    },
+    "acl_wall_sits": {
+      "id": "acl_wall_sits",
+      "name": "🏃‍♀️ Wall Sits (Isometrische Quad-Kraft)",
+      "category": "acl_prevention",
+      "description": "Mit Rücken gegen die Wand, Beine in 90°-Winkel. Statisch halten. Trainiert isometrische Quads-Kraft und Ausdauer = andere Trainingsreiz als dynamische Übungen.",
+      "duration": "20-60 Sekunden",
+      "videoLink": {
+        "url": null,
+        "title": "🏃‍♀️ Wall Sits"
+      },
+      "poster": null
+    },
+    "acl_lateral_shuffles": {
+      "id": "acl_lateral_shuffles",
+      "name": "🏃‍♀️ Lateral Shuffles (Seitwärts-Pendeln)",
+      "category": "acl_prevention",
+      "description": "Schnelle seitwärts Pendeln ohne Kreuzen der Beine. Trainiert frontal-plane Stabilität und Agility = spielspezifisch, da viele Fußball-Bewegungen seitwärts sind.",
+      "duration": "4-5 Minuten",
+      "videoLink": {
+        "url": null,
+        "title": "🏃‍♀️ Lateral Shuffles"
+      },
+      "poster": null
     }
   }
 }
