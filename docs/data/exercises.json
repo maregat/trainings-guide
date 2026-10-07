@@ -1241,6 +1241,34 @@
       "poster": "./data/videos/double pass touch cross.jpg",
       "published": true,
       "isPartnerExercise": true
+    },
+    "double pass open up": {
+      "id": "double pass open up",
+      "name": "Doppelpass & 180° Aufdrehen",
+      "category": "firstTouch",
+      "description": "Erster Pass klatschen lassen, frei laufen, Schulterblick, zweiten Pass annehmen und 180° aufdrehen, abschließen",
+      "duration": "20 min",
+      "videoLink": {
+        "url": null,
+        "title": null
+      },
+      "poster": null,
+      "published": true,
+      "isPartnerExercise": true
+    },
+    "double pass open up 90": {
+      "id": "double pass open up 90",
+      "name": "Doppelpass & 90° Aufdrehen",
+      "category": "firstTouch",
+      "description": "Erster Pass klatschen lassen, frei laufen, Schulterblick, zweiten Pass annehmen und 90° aufdrehen, abschließen",
+      "duration": "20 min",
+      "videoLink": {
+        "url": "./data/videos/double pass open up 90.mp4",
+        "title": "Doppelpass & 90° Aufdrehen"
+      },
+      "poster": "./data/videos/double pass open up 90.jpg",
+      "published": true,
+      "isPartnerExercise": true
     }
   }
 }
