@@ -1051,14 +1051,16 @@
                     return;
                 }
 
-                const idx = exercises.findIndex(e => e.id === currentEditExerciseId);
-                if (idx !== -1) {
-                    exercises[idx] = data.exercise;
-                }
-
-                closeEditModal();
-                loadExercisesList();
-                showExercisesStatus('✅ Übung aktualisiert', 'success');
+                // Reload exercises from server to ensure persistence
+                fetch('/api/exercises')
+                    .then(r => r.json())
+                    .then(exData => {
+                        exercises = Array.isArray(exData) ? exData : Object.values(exData || {});
+                        closeEditModal();
+                        loadExercisesList();
+                        showExercisesStatus('✅ Übung aktualisiert', 'success');
+                    })
+                    .catch(e => console.error('Error reloading exercises:', e));
             })
             .catch(e => showExercisesStatus('Error: ' + e.message, 'error'));
         });
@@ -1088,11 +1090,17 @@
                     return;
                 }
 
-                exercises.push(data.exercise);
-                closeAddModal();
-                loadExercisesList();
-                loadVideoExerciseSelect();
-                showExercisesStatus('✅ Neue Übung erstellt', 'success');
+                // Reload exercises from server to ensure persistence
+                fetch('/api/exercises')
+                    .then(r => r.json())
+                    .then(exData => {
+                        exercises = Array.isArray(exData) ? exData : Object.values(exData || {});
+                        closeAddModal();
+                        loadExercisesList();
+                        loadVideoExerciseSelect();
+                        showExercisesStatus('✅ Neue Übung erstellt', 'success');
+                    })
+                    .catch(e => console.error('Error reloading exercises:', e));
             })
             .catch(e => showExercisesStatus('Error: ' + e.message, 'error'));
         });
@@ -1139,14 +1147,15 @@
                     return;
                 }
 
-                // Update local exercise
-                const exercise = exercises.find(e => e.id === exerciseId);
-                if (exercise) {
-                    exercise.published = newStatus;
-                }
-
-                loadExercisesList();
-                showExercisesStatus(`✅ Übung ${statusText}`, 'success');
+                // Reload exercises from server to ensure persistence
+                fetch('/api/exercises')
+                    .then(r => r.json())
+                    .then(exData => {
+                        exercises = Array.isArray(exData) ? exData : Object.values(exData || {});
+                        loadExercisesList();
+                        showExercisesStatus(`✅ Übung ${statusText}`, 'success');
+                    })
+                    .catch(e => console.error('Error reloading exercises:', e));
             })
             .catch(e => showExercisesStatus('Error: ' + e.message, 'error'));
         }
