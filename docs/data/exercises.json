@@ -7,50 +7,26 @@
       "phase": "warmup"
     },
     "warmup_coerver": {
-      "name": "Ballkontrolle (Coerver)",
-      "description": "Basis-Übungen für Ballgefühl nach Coerver, am besten JEDEN Tag",
+      "name": "Ballkontrolle (Coerver, Hochhalten)",
+      "description": "Basis-Übungen für Ballgefühl und Ballkontrolle nach Coerver und anderen, am besten JEDEN Tag",
       "order": 1,
       "phase": "warmup"
     },
     "firstTouch": {
-      "name": "First Touch (Ballannahme)",
+      "name": "First Touch (An- & Mitnahme, Pässe)",
       "description": "Der erste Kontakt entscheidet oft über Zeitgewinn im Spiel",
       "order": 3,
       "phase": "main"
     },
-    "ballIntake": {
-      "name": "Ballmitnahme",
-      "description": "Annahme kombiniert mit sofortiger Richtungsänderung",
-      "order": 4,
-      "phase": "main"
-    },
     "ballControl": {
-      "name": "Ballführung",
-      "description": "Enger Ballkontakt in Bewegung",
+      "name": "Ballführung (Dribbling, Richtungswechsel)",
+      "description": "Enger Ballkontakt in Bewegung, Dribbling mit und ohne Hütchen, Richtungswechsel, Ball vorantreiben bei höchster Geschwindigkeit",
       "order": 5,
       "phase": "main"
     },
-    "dribbling": {
-      "name": "Dribbling (mit Hütchen)",
-      "description": "Klassische Hütchen-Parcours für Ballkontrolle und Finten",
-      "order": 6,
-      "phase": "main"
-    },
-    "directionChange": {
-      "name": "Richtungswechsel (mit Hütchen)",
-      "description": "Simulieren typische Spielsituationen besser als reines Slalomdribbling",
-      "order": 7,
-      "phase": "main"
-    },
-    "juggling": {
-      "name": "Juggling (Hochhalten)",
-      "description": "Schult vor allem Ballgefühl und Koordination",
-      "order": 8,
-      "phase": "main"
-    },
     "group": {
-      "name": "Gruppenübungen",
-      "description": "Übungen die nur mit 2+ Spielern durchführbar sind",
+      "name": "Zweikampf (Finten, 1v1, 1v2)",
+      "description": "Übungen zum Zweikampf gegen Hütchen und Partner: Finten, Tricks, Geschwindigkeitsanpassung, Körperkontakt, Dribbeln unter Gegnerdruck",
       "order": 9,
       "phase": "main"
     },
@@ -381,7 +357,7 @@
         "title": null
       },
       "poster": null,
-      "published": true,
+      "published": false,
       "isPartnerExercise": false
     },
     "ft_throw_reception": {
@@ -395,7 +371,7 @@
         "title": null
       },
       "poster": null,
-      "published": true,
+      "published": false,
       "isPartnerExercise": false
     },
     "ft_partner_pass": {
@@ -409,13 +385,13 @@
         "title": null
       },
       "poster": null,
-      "published": true,
+      "published": false,
       "isPartnerExercise": false
     },
     "bi_wall_rotation": {
       "id": "bi_wall_rotation",
       "name": "Wand-Mitnahme mit Drehung",
-      "category": "ballIntake",
+      "category": "firstTouch",
       "description": "Ball an die Wand spielen, mit erstem Kontakt um 90° oder 180° wegdrehen.",
       "duration": "10-15 Minuten",
       "videoLink": {
@@ -429,7 +405,7 @@
     "bi_cone_intake": {
       "id": "bi_cone_intake",
       "name": "Hütchen-Mitnahme",
-      "category": "ballIntake",
+      "category": "firstTouch",
       "description": "Zugespielten Ball mit erstem Kontakt gezielt in Richtung eines Hütchens mitnehmen.",
       "duration": "10-15 Minuten",
       "videoLink": {
@@ -443,7 +419,7 @@
     "bi_pressure_timing": {
       "id": "bi_pressure_timing",
       "name": "Mitnahme unter Zeitdruck",
-      "category": "ballIntake",
+      "category": "firstTouch",
       "description": "Nach Signal (Klatschen/Pfeife) Mitnahme so schnell wie möglich.",
       "duration": "10-15 Minuten",
       "videoLink": {
@@ -499,7 +475,7 @@
     "dr_speed_line": {
       "id": "dr_speed_line",
       "name": "Sprint-Dribbling – Geradlinie",
-      "category": "dribbling",
+      "category": "ballControl",
       "description": "Ball auf Geschwindigkeit führen über längere Strecke (20-30m).",
       "duration": "10-15 Minuten",
       "videoLink": {
@@ -513,7 +489,7 @@
     "dr_box_drill": {
       "id": "dr_box_drill",
       "name": "Hütchen-Box-Drill",
-      "category": "dribbling",
+      "category": "ballControl",
       "description": "Um vier Hütchen in Box-Formation dribbeln, verschiedene Geschwindigkeiten.",
       "duration": "15-20 Minuten",
       "videoLink": {
@@ -527,7 +503,7 @@
     "dr_cone_weave": {
       "id": "dr_cone_weave",
       "name": "Slalom zwischen Hütchen",
-      "category": "dribbling",
+      "category": "ballControl",
       "description": "Präzisions-Dribbling durch mehrere in Reihe stehende Hütchen.",
       "duration": "10-15 Minuten",
       "videoLink": {
@@ -541,7 +517,7 @@
     "dc_90_degree": {
       "id": "dc_90_degree",
       "name": "90°-Wechsel – Hütchen",
-      "category": "directionChange",
+      "category": "ballControl",
       "description": "Auf Hütchen zuspielen, Spieler nimmt an und dreht 90° ab.",
       "duration": "15 Minuten",
       "videoLink": {
@@ -555,7 +531,7 @@
     "dc_180_turn": {
       "id": "dc_180_turn",
       "name": "180°-Wende – Ballkontakt",
-      "category": "directionChange",
+      "category": "ballControl",
       "description": "Ball führen, auf Signal schnelle 180°-Drehung ohne Ball zu verlieren.",
       "duration": "10-15 Minuten",
       "videoLink": {
@@ -569,7 +545,7 @@
     "dc_cut_back": {
       "id": "dc_cut_back",
       "name": "Cut-Back (Rückpass-Simulation)",
-      "category": "directionChange",
+      "category": "ballControl",
       "description": "Dribbeln, dann schneller Rückpass in neuer Richtung.",
       "duration": "15 Minuten",
       "videoLink": {
@@ -583,7 +559,7 @@
     "jgl_sole_to_instep": {
       "id": "jgl_sole_to_instep",
       "name": "Sohle-Spann-Wechsel",
-      "category": "juggling",
+      "category": "warmup_coerver",
       "description": "Ball mit Sohle antippen, dann mit Spann hochhalten – Wechsel.",
       "duration": "5-10 Minuten",
       "videoLink": {
@@ -597,7 +573,7 @@
     "jgl_alternating_feet": {
       "id": "jgl_alternating_feet",
       "name": "Abwechselnd beide Füße",
-      "category": "juggling",
+      "category": "warmup_coerver",
       "description": "Ball abwechselnd mit rechts und links hochhalten.",
       "duration": "5-10 Minuten",
       "videoLink": {
@@ -611,7 +587,7 @@
     "jgl_inside_outside": {
       "id": "jgl_inside_outside",
       "name": "Innenseite-Außenseite",
-      "category": "juggling",
+      "category": "warmup_coerver",
       "description": "Ball nur mit Innen- und Außenseite (kein Spann) hochhalten.",
       "duration": "5-10 Minuten",
       "videoLink": {
@@ -625,7 +601,7 @@
     "jgl_thigh_chest": {
       "id": "jgl_thigh_chest",
       "name": "Oberschenkel-Brust-Variation",
-      "category": "juggling",
+      "category": "warmup_coerver",
       "description": "Ball mit Oberschenkel oder Brust miteinbeziehen (nicht nur Fuß).",
       "duration": "5-10 Minuten",
       "videoLink": {
@@ -1237,6 +1213,34 @@
       "poster": "./data/videos/step ups.jpg",
       "published": false,
       "isPartnerExercise": false
+    },
+    "box passing": {
+      "id": "box passing",
+      "name": "Box Pässe",
+      "category": "firstTouch",
+      "description": "4 Hütchen bilden ein kleines 4 Eck. Spieler steht in der Mitte und bekommt einen Pass zugespielt der sofort sauber zurückgespielt wird, dann geht der Spieler abwechselnd vorne recht, vorne links, hinten rechts, hinten links raus und spielt erneute einen Pass direkt zurück",
+      "duration": "10-20 min",
+      "videoLink": {
+        "url": "./data/videos/box passing.mp4",
+        "title": "Box Pässe"
+      },
+      "poster": "./data/videos/box passing.jpg",
+      "published": true,
+      "isPartnerExercise": true
+    },
+    "double pass touch cross": {
+      "id": "double pass touch cross",
+      "name": "Zwei Pässe & zur Seite mitnehmen",
+      "category": "firstTouch",
+      "description": "Hütchenreihe, daneben steht der Spieler und bekommt nacheinander dreiPässe die direkt mit dem linken und dem rechten Fuss zurückgespielt werden. Vor dem dritten erfolgt ein Schulterblick und der Spieler nimmt den Pass mit einer Berühung rüber zur anderen Seite. Berührung wird variiert: Innenseite (äußerer und innerer Fuss), Außenseite, Sohle",
+      "duration": "20-30 min",
+      "videoLink": {
+        "url": "./data/videos/double pass touch cross.mp4",
+        "title": "Zwei Pässe & zur Seite mitnehmen"
+      },
+      "poster": "./data/videos/double pass touch cross.jpg",
+      "published": true,
+      "isPartnerExercise": true
     }
   }
 }
