@@ -85,7 +85,9 @@ def get_exercises():
                 'description': exercise.get('description', ''),
                 'duration': exercise.get('duration', ''),
                 'videoLink': exercise.get('videoLink', {'url': None, 'title': None}),
-                'poster': exercise.get('poster', None)
+                'poster': exercise.get('poster', None),
+                'published': exercise.get('published', True),
+                'isPartnerExercise': exercise.get('isPartnerExercise', False)
             })
         
         # Return exercises sorted by category, then by name
