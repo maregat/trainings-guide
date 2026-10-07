@@ -623,7 +623,7 @@
         "title": "🏃‍♀️ Glute Bridge (Hüft-Strecker)"
       },
       "poster": null,
-      "published": false,
+      "published": true,
       "isPartnerExercise": false
     },
     "acl_single_leg_squat": {
@@ -707,7 +707,7 @@
         "title": "🏃‍♀️ Lateral Lunge (Seitwärts-Ausfallschritt)"
       },
       "poster": "./data/videos/acl_lateral_lunge.jpg",
-      "published": false,
+      "published": true,
       "isPartnerExercise": false
     },
     "acl_single_leg_balance": {
@@ -1113,7 +1113,7 @@
         "title": "🏃‍♀️ Nordic Hamstring Curl"
       },
       "poster": null,
-      "published": false,
+      "published": true,
       "isPartnerExercise": false
     },
     "acl_dead_bug": {
@@ -1169,7 +1169,7 @@
         "title": "🏃‍♀️ Wall Sits (Isometrische Quad-Kraft)"
       },
       "poster": "./data/videos/acl_wall_sits.jpg",
-      "published": false,
+      "published": true,
       "isPartnerExercise": false
     },
     "acl_lateral_shuffles": {
@@ -1197,7 +1197,7 @@
         "title": "Seitliche Sprünge und Halten"
       },
       "poster": "./data/videos/lateral hops.jpg",
-      "published": false,
+      "published": true,
       "isPartnerExercise": false
     },
     "step ups": {
@@ -1211,7 +1211,7 @@
         "title": "Step-Ups"
       },
       "poster": "./data/videos/step ups.jpg",
-      "published": false,
+      "published": true,
       "isPartnerExercise": false
     },
     "box passing": {
