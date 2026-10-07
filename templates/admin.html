@@ -1055,7 +1055,7 @@
                 fetch('/api/exercises')
                     .then(r => r.json())
                     .then(exData => {
-                        exercises = Array.isArray(exData) ? exData : Object.values(exData || {});
+                        exercises = exData.exercises || [];
                         closeEditModal();
                         loadExercisesList();
                         showExercisesStatus('✅ Übung aktualisiert', 'success');
@@ -1094,7 +1094,7 @@
                 fetch('/api/exercises')
                     .then(r => r.json())
                     .then(exData => {
-                        exercises = Array.isArray(exData) ? exData : Object.values(exData || {});
+                        exercises = exData.exercises || [];
                         closeAddModal();
                         loadExercisesList();
                         loadVideoExerciseSelect();
@@ -1151,7 +1151,7 @@
                 fetch('/api/exercises')
                     .then(r => r.json())
                     .then(exData => {
-                        exercises = Array.isArray(exData) ? exData : Object.values(exData || {});
+                        exercises = exData.exercises || [];
                         loadExercisesList();
                         showExercisesStatus(`✅ Übung ${statusText}`, 'success');
                     })

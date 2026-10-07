@@ -77,7 +77,7 @@
         "title": null
       },
       "poster": null,
-      "published": true,
+      "published": false,
       "isPartnerExercise": false
     },
     "coo_ladder_one_per_field": {
@@ -483,7 +483,7 @@
         "title": null
       },
       "poster": null,
-      "published": true,
+      "published": false,
       "isPartnerExercise": false
     },
     "dr_box_drill": {
