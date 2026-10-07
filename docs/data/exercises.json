@@ -1249,10 +1249,10 @@
       "description": "Erster Pass klatschen lassen, frei laufen, Schulterblick, zweiten Pass annehmen und 180° aufdrehen, abschließen",
       "duration": "20 min",
       "videoLink": {
-        "url": null,
-        "title": null
+        "url": "./data/videos/double pass open up.mp4",
+        "title": "Doppelpass & 180° Aufdrehen"
       },
-      "poster": null,
+      "poster": "./data/videos/double pass open up.jpg",
       "published": true,
       "isPartnerExercise": true
     },
