@@ -633,6 +633,10 @@
                     <label for="editDuration">Dauer (z.B. "5 min"):</label>
                     <input type="text" id="editDuration">
                 </div>
+                <div class="form-group" style="display: flex; align-items: center; gap: 10px;">
+                    <input type="checkbox" id="editPartnerExercise" style="width: auto; margin: 0;">
+                    <label for="editPartnerExercise" style="margin: 0;">👥 Partnerübung</label>
+                </div>
                 <div class="button-group">
                     <button type="submit" class="btn-primary">💾 Speichern</button>
                     <button type="button" class="btn-secondary" onclick="closeEditModal()">Abbrechen</button>
@@ -667,6 +671,10 @@
                 <div class="form-group">
                     <label for="addDuration">Dauer (z.B. "5 min"):</label>
                     <input type="text" id="addDuration">
+                </div>
+                <div class="form-group" style="display: flex; align-items: center; gap: 10px;">
+                    <input type="checkbox" id="addPartnerExercise" style="width: auto; margin: 0;">
+                    <label for="addPartnerExercise" style="margin: 0;">👥 Partnerübung</label>
                 </div>
                 <div class="button-group">
                     <button type="submit" class="btn-primary">✅ Erstellen</button>
@@ -916,13 +924,17 @@
                     ? '<span style="display: inline-block; background: #999; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.75em; font-weight: bold; margin-left: 4px;">🔴 Hidden</span>'
                     : '<span style="display: inline-block; background: #0ea5e9; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.75em; font-weight: bold; margin-left: 4px;">🟢 Live</span>';
                 
+                const partnerBadge = ex.isPartnerExercise 
+                    ? '<span style="display: inline-block; background: #9c27b0; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.75em; font-weight: bold; margin-left: 4px;">👥 Partner</span>'
+                    : '';
+                
                 const titleColor = isPublished ? 'inherit' : '#999';
                 const cardOpacity = isPublished ? '1' : '0.6';
                 
                 card.style.opacity = cardOpacity;
                 
                 card.innerHTML = `
-                    <div class="exercise-card-title" style="color: ${titleColor};">${escapeHtml(ex.name)} ${videoStatusBadge} ${publishStatusBadge}</div>
+                    <div class="exercise-card-title" style="color: ${titleColor};">${escapeHtml(ex.name)} ${videoStatusBadge} ${publishStatusBadge} ${partnerBadge}</div>
                     <div class="exercise-card-category" onclick="filterByCategory('${ex.category}')" title="Klick zum Filtern">${categories[ex.category]?.name || ex.category}</div>
                     <div class="exercise-card-desc">${escapeHtml(ex.description)}</div>
                     ${ex.duration ? `<div style="font-size: 0.85em; color: #999;">⏱️ ${escapeHtml(ex.duration)}</div>` : ''}
@@ -1010,6 +1022,7 @@
             document.getElementById('editCategory').value = ex.category;
             document.getElementById('editDescription').value = ex.description;
             document.getElementById('editDuration').value = ex.duration || '';
+            document.getElementById('editPartnerExercise').checked = ex.isPartnerExercise || false;
 
             document.getElementById('editModal').classList.add('active');
         }
@@ -1022,7 +1035,8 @@
                 name: document.getElementById('editName').value,
                 category: document.getElementById('editCategory').value,
                 description: document.getElementById('editDescription').value,
-                duration: document.getElementById('editDuration').value
+                duration: document.getElementById('editDuration').value,
+                isPartnerExercise: document.getElementById('editPartnerExercise').checked
             };
 
             fetch(`/api/exercises/${currentEditExerciseId}`, {
@@ -1058,7 +1072,8 @@
                 name: document.getElementById('addName').value,
                 category: document.getElementById('addCategory').value,
                 description: document.getElementById('addDescription').value,
-                duration: document.getElementById('addDuration').value
+                duration: document.getElementById('addDuration').value,
+                isPartnerExercise: document.getElementById('addPartnerExercise').checked
             };
 
             fetch('/api/exercises', {

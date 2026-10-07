@@ -163,10 +163,11 @@ function renderExerciseList(categoryKey) {
     exercises.forEach(exercise => {
         const item = document.createElement('div');
         item.className = 'exercise-item';
+        const partnerIcon = exercise.isPartnerExercise ? '👥 ' : '';
         item.innerHTML = `
             <div style="text-align: left;">
                 <div class="exercise-item-name">
-                    ${exercise.name}
+                    ${partnerIcon}${exercise.name}
                 </div>
                 <div class="exercise-item-meta">
                     ⏱️ ${exercise.duration || 'N/A'}
@@ -200,9 +201,11 @@ function renderExerciseDetail(exerciseId) {
     
     showView('exercise');
     
+    const partnerIcon = exercise.isPartnerExercise ? '👥 ' : '';
+    
     let html = `
         <div class="exercise-header">
-            <h1 class="exercise-title">${exercise.name}</h1>
+            <h1 class="exercise-title">${partnerIcon}${exercise.name}</h1>
             <div class="exercise-meta">
                 <div class="meta-item">⏱️ ${exercise.duration || 'N/A'}</div>
             </div>

@@ -138,7 +138,9 @@ def create_exercise():
             'description': exercise_data.get('description', ''),
             'duration': exercise_data.get('duration', ''),
             'videoLink': {'url': None, 'title': None},
-            'poster': None
+            'poster': None,
+            'published': True,
+            'isPartnerExercise': exercise_data.get('isPartnerExercise', False)
         }
         
         data['exercises'][exercise_id] = new_exercise
@@ -167,7 +169,7 @@ def update_exercise(exercise_id):
             return jsonify({'error': 'Exercise not found'}), 404
         
         # Update allowed fields only
-        allowed_fields = ['name', 'category', 'description', 'duration', 'published']
+        allowed_fields = ['name', 'category', 'description', 'duration', 'published', 'isPartnerExercise']
         for field in allowed_fields:
             if field in exercise_data:
                 data['exercises'][exercise_id][field] = exercise_data[field]
