@@ -881,3 +881,59 @@ html, body {
 .update-btn:active {
     background: #f0f0f0;
 }
+
+/* ============ WORKOUTS STYLES ============ */
+
+.workouts-container,
+.workout-execute-container {
+    padding: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.workout-card {
+    background: #f8f9fa;
+    border-left: 5px solid #667eea;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.workout-card:hover {
+    background: #f0f1ff;
+    box-shadow: 0 2px 6px rgba(102, 126, 234, 0.2);
+    transform: translateY(-2px);
+}
+
+.workout-card div:first-child {
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-size: 1.1em;
+}
+
+.workout-card div:nth-child(2) {
+    font-size: 0.85em;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.workout-card div:last-child {
+    font-size: 0.8em;
+    color: #999;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+    .workouts-container,
+    .workout-execute-container {
+        padding: 10px;
+    }
+    
+    .workout-card {
+        padding: 12px;
+        margin-bottom: 10px;
+    }
+}

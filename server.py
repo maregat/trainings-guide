@@ -633,6 +633,221 @@ def deploy():
     except Exception as e:
         return jsonify({'error': f'Unexpected error: {str(e)}'}), 500
 
+# ============ WORKOUTS MANAGEMENT ============
+
+@app.route('/api/workouts', methods=['GET'])
+def get_workouts():
+    """Get all workouts"""
+    try:
+        with open('src/data/workouts.json', 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        
+        return jsonify({
+            'workouts': data.get('workouts', [])
+        })
+    except FileNotFoundError:
+        return jsonify({'workouts': [], 'message': 'No workouts file found'}), 200
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/workouts/<workout_id>', methods=['GET'])
+def get_workout(workout_id):
+    """Get single workout by ID"""
+    try:
+        with open('src/data/workouts.json', 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        
+        workout = next((w for w in data.get('workouts', []) if w['id'] == workout_id), None)
+        
+        if not workout:
+            return jsonify({'error': 'Workout not found'}), 404
+        
+        return jsonify({'workout': workout})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/workouts', methods=['POST'])
+def create_workout():
+    """Create new workout (admin only)"""
+    try:
+        password = request.json.get('password', '')
+        if password != ADMIN_PASSWORD:
+            return jsonify({'error': 'Invalid password'}), 403
+        
+        workout_data = request.json.get('workout', {})
+        
+        if not workout_data.get('id') or not workout_data.get('name'):
+            return jsonify({'error': 'ID and name required'}), 400
+        
+        # Load workouts
+        try:
+            with open('src/data/workouts.json', 'r', encoding='utf-8') as f:
+                data = json.load(f)
+        except FileNotFoundError:
+            data = {'workouts': []}
+        
+        # Check if ID exists
+        if any(w['id'] == workout_data['id'] for w in data.get('workouts', [])):
+            return jsonify({'error': 'Workout ID already exists'}), 409
+        
+        # Add new workout
+        data['workouts'].append(workout_data)
+        
+        with open('src/data/workouts.json', 'w', encoding='utf-8') as f:
+            json.dump(data, f, indent=2, ensure_ascii=False)
+        
+        return jsonify({'success': True, 'workout': workout_data})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/workouts/<workout_id>', methods=['PUT'])
+def update_workout(workout_id):
+    """Update workout (admin only)"""
+    try:
+        password = request.json.get('password', '')
+        if password != ADMIN_PASSWORD:
+            return jsonify({'error': 'Invalid password'}), 403
+        
+        workout_data = request.json.get('workout', {})
+        
+        with open('src/data/workouts.json', 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        
+        # Find and update workout
+        workout_idx = next((i for i, w in enumerate(data.get('workouts', [])) 
+                           if w['id'] == workout_id), None)
+        
+        if workout_idx is None:
+            return jsonify({'error': 'Workout not found'}), 404
+        
+        data['workouts'][workout_idx] = workout_data
+        
+        with open('src/data/workouts.json', 'w', encoding='utf-8') as f:
+            json.dump(data, f, indent=2, ensure_ascii=False)
+        
+        return jsonify({'success': True, 'workout': workout_data})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/workouts/<workout_id>', methods=['DELETE'])
+def delete_workout(workout_id):
+    """Delete workout (admin only)"""
+    try:
+        password = request.json.get('password', '')
+        if password != ADMIN_PASSWORD:
+            return jsonify({'error': 'Invalid password'}), 403
+        
+        with open('src/data/workouts.json', 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        
+        # Find and remove workout
+        data['workouts'] = [w for w in data.get('workouts', []) if w['id'] != workout_id]
+        
+        with open('src/data/workouts.json', 'w', encoding='utf-8') as f:
+            json.dump(data, f, indent=2, ensure_ascii=False)
+        
+        return jsonify({'success': True, 'message': 'Workout deleted'})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+# ============ WORKOUT SESSIONS (tracking progress) ============
+
+@app.route('/api/sessions', methods=['GET'])
+def get_sessions():
+    """Get all user sessions (workout progress tracking)"""
+    try:
+        if not os.path.exists('src/data/sessions.json'):
+            return jsonify({'sessions': []})
+        
+        with open('src/data/sessions.json', 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        
+        return jsonify({'sessions': data.get('sessions', [])})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/sessions/<session_id>', methods=['GET'])
+def get_session(session_id):
+    """Get single session by ID"""
+    try:
+        if not os.path.exists('src/data/sessions.json'):
+            return jsonify({'error': 'No sessions found'}), 404
+        
+        with open('src/data/sessions.json', 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        
+        session = next((s for s in data.get('sessions', []) if s['id'] == session_id), None)
+        
+        if not session:
+            return jsonify({'error': 'Session not found'}), 404
+        
+        return jsonify({'session': session})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/sessions', methods=['POST'])
+def create_session():
+    """Create/start new workout session"""
+    try:
+        session_data = request.json
+        
+        if not session_data.get('id') or not session_data.get('workout_id'):
+            return jsonify({'error': 'ID and workout_id required'}), 400
+        
+        # Load or create sessions file
+        try:
+            with open('src/data/sessions.json', 'r', encoding='utf-8') as f:
+                data = json.load(f)
+        except FileNotFoundError:
+            data = {'sessions': []}
+        
+        # Add current timestamp
+        from datetime import datetime
+        session_data['created_at'] = datetime.now().isoformat()
+        session_data['started_at'] = datetime.now().isoformat()
+        session_data['current_exercise_index'] = 0
+        session_data['current_block_index'] = 0
+        session_data['completed_exercises'] = []
+        
+        data['sessions'].append(session_data)
+        
+        with open('src/data/sessions.json', 'w', encoding='utf-8') as f:
+            json.dump(data, f, indent=2, ensure_ascii=False)
+        
+        return jsonify({'success': True, 'session': session_data})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/sessions/<session_id>', methods=['PUT'])
+def update_session(session_id):
+    """Update session progress"""
+    try:
+        session_data = request.json
+        
+        if not os.path.exists('src/data/sessions.json'):
+            return jsonify({'error': 'No sessions found'}), 404
+        
+        with open('src/data/sessions.json', 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        
+        # Find and update session
+        session_idx = next((i for i, s in enumerate(data.get('sessions', [])) 
+                           if s['id'] == session_id), None)
+        
+        if session_idx is None:
+            return jsonify({'error': 'Session not found'}), 404
+        
+        # Update session
+        data['sessions'][session_idx].update(session_data)
+        data['sessions'][session_idx]['updated_at'] = datetime.now().isoformat()
+        
+        with open('src/data/sessions.json', 'w', encoding='utf-8') as f:
+            json.dump(data, f, indent=2, ensure_ascii=False)
+        
+        return jsonify({'success': True, 'session': data['sessions'][session_idx]})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
 if __name__ == '__main__':
     print("🎬 Admin Server starting...")
     print("📱 Open http://localhost:5001/admin in your browser")

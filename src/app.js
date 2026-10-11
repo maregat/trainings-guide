@@ -27,6 +27,9 @@ async function init() {
     try {
         showLoading();
         
+        // Initialize workout elements first
+        initWorkoutElements();
+        
         // Lade exercises.json mit Version-Busting (v6)
         const response = await fetch('./data/exercises.json?v=7&t=' + Date.now());
         if (!response.ok) throw new Error('Fehler beim Laden von exercises.json');
@@ -440,13 +443,19 @@ function showView(viewName) {
     elements.categoryView.classList.remove('active');
     elements.exerciseView.classList.remove('active');
     elements.videoView.classList.remove('active');
+    workoutElements.workoutsView.classList.remove('active');
+    workoutElements.workoutExecuteView.classList.remove('active');
     
-    if (viewName === 'category') {
+    if (viewName === 'category' || viewName === 'categories') {
         elements.categoryView.classList.add('active');
     } else if (viewName === 'exercise') {
         elements.exerciseView.classList.add('active');
     } else if (viewName === 'video') {
         elements.videoView.classList.add('active');
+    } else if (viewName === 'workouts') {
+        workoutElements.workoutsView.classList.add('active');
+    } else if (viewName === 'workout-execute') {
+        workoutElements.workoutExecuteView.classList.add('active');
     }
 }
 
@@ -545,6 +554,239 @@ function showError(message) {
 }
 
 // ============================================
+// WORKOUTS MANAGEMENT
+// ============================================
+
+let workoutsData = [];
+let currentWorkout = null;
+let currentSession = null;
+let currentBlockIndex = 0;
+let currentExerciseIndex = 0;
+let completedExercises = [];
+
+// Lazy-load workoutElements after DOM is ready
+let workoutElements = {};
+
+function initWorkoutElements() {
+    workoutElements = {
+        workoutsView: document.getElementById('workouts-view'),
+        workoutExecuteView: document.getElementById('workout-execute-view'),
+        workoutsContainer: document.querySelector('.workouts-container'),
+        workoutExecuteContainer: document.querySelector('.workout-execute-container'),
+        workoutsMenuBtn: document.getElementById('workouts-menu-btn')
+    };
+    
+    // Add event listener for menu button
+    if (workoutElements.workoutsMenuBtn) {
+        workoutElements.workoutsMenuBtn.addEventListener('click', () => {
+            showView('workouts');
+            renderWorkouts();
+            elements.sidebar.classList.remove('open');
+        });
+    }
+}
+
+async function loadWorkouts() {
+    try {
+        // Load workouts.json directly like exercises.json
+        const response = await fetch('./data/workouts.json?v=1&t=' + Date.now());
+        if (!response.ok) throw new Error('Fehler beim Laden von workouts.json');
+        const data = await response.json();
+        workoutsData = data.workouts || [];
+        console.log('✅ Workouts loaded:', workoutsData.length);
+    } catch (error) {
+        console.error('❌ Error loading workouts:', error);
+        workoutsData = [];
+    }
+}
+
+function renderWorkouts() {
+    workoutElements.workoutsContainer.innerHTML = '';
+    
+    if (workoutsData.length === 0) {
+        workoutElements.workoutsContainer.innerHTML = '<div style="padding: 20px; text-align: center; color: #999;">Keine Trainingseinheiten verfügbar</div>';
+        return;
+    }
+    
+    // Group by unit and week
+    const grouped = {};
+    workoutsData.forEach(w => {
+        const key = `${w.unit}-${w.week}`;
+        if (!grouped[key]) grouped[key] = [];
+        grouped[key].push(w);
+    });
+    
+    // Display grouped
+    Object.entries(grouped).sort().forEach(([key, items]) => {
+        items.forEach(workout => {
+            const exerciseCount = workout.blocks.reduce((sum, b) => sum + b.exercises.length, 0);
+            
+            const card = document.createElement('div');
+            card.className = 'workout-card';
+            card.style.cssText = `
+                padding: 15px;
+                background: #f8f9fa;
+                border-radius: 8px;
+                margin-bottom: 12px;
+                border-left: 5px solid #667eea;
+                cursor: pointer;
+                transition: all 0.2s;
+            `;
+            
+            card.innerHTML = `
+                <div style="font-weight: 600; margin-bottom: 5px;">${workout.name}</div>
+                <div style="font-size: 0.85em; color: #666; margin-bottom: 8px;">
+                    ${workout.blocks.length} Blöcke | ${exerciseCount} Übungen | ${workout.totalDuration} Min
+                </div>
+                <div style="font-size: 0.8em; color: #999;">Level ${workout.difficulty}: ${workout.goal}</div>
+            `;
+            
+            card.addEventListener('click', () => startWorkoutSession(workout));
+            card.addEventListener('mouseover', () => card.style.background = '#f0f1ff');
+            card.addEventListener('mouseout', () => card.style.background = '#f8f9fa');
+            
+            workoutElements.workoutsContainer.appendChild(card);
+        });
+    });
+}
+
+async function startWorkoutSession(workout) {
+    currentWorkout = workout;
+    currentBlockIndex = 0;
+    currentExerciseIndex = 0;
+    completedExercises = [];
+    
+    // Create session record
+    const sessionId = `session-${Date.now()}`;
+    currentSession = {
+        id: sessionId,
+        workout_id: workout.id,
+        created_at: new Date().toISOString(),
+        current_block_index: 0,
+        current_exercise_index: 0,
+        completed_exercises: []
+    };
+    
+    // Try to save session (optional)
+    try {
+        await fetch('/api/sessions', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(currentSession)
+        });
+    } catch (e) {
+        console.log('Session save failed (offline?), continuing...');
+    }
+    
+    // Display workout execution view
+    showView('workout-execute');
+    displayWorkoutExecution();
+}
+
+function displayWorkoutExecution() {
+    if (!currentWorkout || currentBlockIndex >= currentWorkout.blocks.length) {
+        showWorkoutComplete();
+        return;
+    }
+    
+    const block = currentWorkout.blocks[currentBlockIndex];
+    const exercise = block.exercises[currentExerciseIndex];
+    
+    if (!exercise) {
+        currentBlockIndex++;
+        currentExerciseIndex = 0;
+        displayWorkoutExecution();
+        return;
+    }
+    
+    const totalExercises = currentWorkout.blocks.reduce((sum, b) => sum + b.exercises.length, 0);
+    const completedCount = completedExercises.length;
+    const progressPercent = Math.round((completedCount / totalExercises) * 100);
+    
+    workoutElements.workoutExecuteContainer.innerHTML = `
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+            <h2 style="margin: 0; font-size: 1.2em;">${currentWorkout.name}</h2>
+            <button onclick="goBackFromWorkout()" style="padding: 8px 12px; background: #ddd; border: none; border-radius: 6px; cursor: pointer;">← Back</button>
+        </div>
+        
+        <div style="background: #667eea; color: white; padding: 10px; border-radius: 6px; margin-bottom: 15px; font-size: 0.9em;">
+            Block: <strong>${currentBlockIndex + 1}/${currentWorkout.blocks.length}</strong> | Progress: <strong>${completedCount}/${totalExercises} (${progressPercent}%)</strong>
+        </div>
+        
+        <div style="width: 100%; height: 8px; background: #eee; border-radius: 4px; margin-bottom: 20px;">
+            <div style="width: ${progressPercent}%; height: 100%; background: #667eea;"></div>
+        </div>
+        
+        <div style="background: #f0f1ff; padding: 12px; border-radius: 6px; margin-bottom: 15px;">
+            <div style="font-size: 0.85em; color: #666;">Block: ${block.name}</div>
+        </div>
+        
+        <div style="background: white; border: 2px solid #667eea; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+            <div style="font-size: 1.1em; font-weight: 600; margin-bottom: 10px;">${exercise.sets}x${exercise.reps}</div>
+            <div style="font-size: 0.9em; color: #555;">${exercise.notes || 'No notes'}</div>
+        </div>
+        
+        <button onclick="markExerciseComplete()" style="width: 100%; padding: 12px; background: #27ae60; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer;">
+            ✓ Done - Next Exercise
+        </button>
+    `;
+}
+
+function markExerciseComplete() {
+    const block = currentWorkout.blocks[currentBlockIndex];
+    const exercise = block.exercises[currentExerciseIndex];
+    
+    completedExercises.push({
+        block: currentBlockIndex,
+        exercise: currentExerciseIndex,
+        exerciseId: exercise.exerciseId,
+        timestamp: Date.now()
+    });
+    
+    currentExerciseIndex++;
+    displayWorkoutExecution();
+    
+    if (currentSession) {
+        fetch(`/api/sessions/${currentSession.id}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                current_block_index: currentBlockIndex,
+                current_exercise_index: currentExerciseIndex,
+                completed_exercises: completedExercises
+            })
+        }).catch(e => console.log('Session save failed'));
+    }
+}
+
+function showWorkoutComplete() {
+    const totalExercises = currentWorkout.blocks.reduce((sum, b) => sum + b.exercises.length, 0);
+    
+    workoutElements.workoutExecuteContainer.innerHTML = `
+        <div style="text-align: center; padding: 40px 20px;">
+            <div style="font-size: 4em; margin-bottom: 20px;">🎉</div>
+            <h2 style="font-size: 1.5em; margin-bottom: 10px;">Congratulations!</h2>
+            <p style="color: #666; font-size: 1.1em; margin-bottom: 20px;">All exercises completed!</p>
+            <div style="background: #f0f1ff; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+                <div>✅ ${totalExercises}/${totalExercises} Exercises</div>
+                <div>⏱️ ${currentWorkout.totalDuration} Min</div>
+            </div>
+            <button onclick="goBackFromWorkout()" style="width: 100%; padding: 12px; background: #667eea; color: white; border: none; border-radius: 6px; cursor: pointer;">
+                ← Back to Workouts
+            </button>
+        </div>
+    `;
+}
+
+function goBackFromWorkout() {
+    currentWorkout = null;
+    currentSession = null;
+    showView('workouts');
+    renderWorkouts();
+    elements.sidebar.classList.remove('open');
+}
+
+// ============================================
 // Service Worker Update Check
 // ============================================
 
@@ -597,7 +839,8 @@ function showUpdateBanner() {
 // Start
 // ============================================
 
-document.addEventListener('DOMContentLoaded', () => {
-    init();
+document.addEventListener('DOMContentLoaded', async () => {
+    await init();
+    await loadWorkouts();
     setupUpdateCheck();
 });

@@ -535,6 +535,7 @@
         <!-- Tabs -->
         <div class="tabs">
             <button class="tab-btn active" data-tab="exercises">📋 Exercises</button>
+            <button class="tab-btn" data-tab="workouts">🏃 Trainingseinheiten</button>
             <button class="tab-btn" data-tab="categories">🏷️ Kategorien</button>
             <button class="tab-btn" data-tab="videos">🎥 Videos</button>
             <button class="tab-btn" data-tab="cleanup">🗑️ Cleanup</button>
@@ -555,6 +556,15 @@
             <button class="btn-primary" id="addExerciseBtn">➕ Neue Übung</button>
             <div id="exercisesList" class="exercises-list"></div>
             <div class="status" id="exercisesStatus"></div>
+        </div>
+
+        <!-- Workouts Tab -->
+        <div class="tab-content" id="workouts-tab">
+            <div class="section-title">🏃 Trainingseinheiten verwalten</div>
+            
+            <button class="btn-primary" id="addWorkoutBtn">➕ Neue Einheit</button>
+            <div id="workoutsList" class="exercises-list"></div>
+            <div class="status" id="workoutsStatus"></div>
         </div>
 
         <!-- Categories Tab -->
@@ -1687,6 +1697,115 @@
         });
 
         passwordInput.focus();
+    </script>
+
+    <script>
+        // ============ WORKOUTS MANAGEMENT ============
+        let workouts = [];
+        
+        // Load workouts on page load
+        async function loadWorkouts() {
+            try {
+                const response = await fetch('/api/workouts');
+                const data = await response.json();
+                workouts = data.workouts || [];
+                displayWorkouts();
+            } catch (error) {
+                console.error('Error loading workouts:', error);
+                document.getElementById('workoutsStatus').textContent = '❌ Fehler beim Laden der Einheiten';
+            }
+        }
+        
+        function displayWorkouts() {
+            const list = document.getElementById('workoutsList');
+            list.innerHTML = '';
+            
+            if (workouts.length === 0) {
+                list.innerHTML = '<div style="padding: 20px; text-align: center; color: #999;">Keine Trainingseinheiten vorhanden</div>';
+                return;
+            }
+            
+            // Group by unit and week
+            const grouped = {};
+            workouts.forEach(w => {
+                const key = `${w.unit}-${w.week}`;
+                if (!grouped[key]) grouped[key] = [];
+                grouped[key].push(w);
+            });
+            
+            // Display grouped
+            Object.entries(grouped).sort().forEach(([key, items]) => {
+                const [unit, week] = key.split('-');
+                items.forEach(workout => {
+                    const div = document.createElement('div');
+                    div.className = 'exercise-item';
+                    div.style.marginBottom = '15px';
+                    
+                    const exerciseCount = workout.blocks.reduce((sum, b) => sum + b.exercises.length, 0);
+                    
+                    div.innerHTML = `
+                        <div style="display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: center;">
+                            <div>
+                                <div style="font-weight: 600; margin-bottom: 5px;">${escapeHtml(workout.name)}</div>
+                                <div style="font-size: 0.85em; color: #666;">
+                                    ${workout.blocks.length} Blöcke | ${exerciseCount} Übungen | ${workout.totalDuration} Min | Level ${workout.difficulty}
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 8px;">
+                                <button class="btn-small" onclick="editWorkout('${escapeHtml(workout.id)}')">✏️ Edit</button>
+                                <button class="btn-small" onclick="deleteWorkout('${escapeHtml(workout.id)}', '${escapeHtml(workout.name)}')">🗑️ Del</button>
+                            </div>
+                        </div>
+                    `;
+                    list.appendChild(div);
+                });
+            });
+        }
+        
+        function editWorkout(workoutId) {
+            const workout = workouts.find(w => w.id === workoutId);
+            if (!workout) {
+                alert('Einheit nicht gefunden');
+                return;
+            }
+            alert('Edit Funktion kommt bald! Einheit:\n' + workout.name);
+            // TODO: Implement edit modal
+        }
+        
+        async function deleteWorkout(workoutId, name) {
+            if (!confirm(`Soll die Einheit "${name}" gelöscht werden?`)) return;
+            
+            try {
+                const response = await fetch(`/api/workouts/${workoutId}`, {
+                    method: 'DELETE',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ password: document.getElementById('adminPassword').value })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    document.getElementById('workoutsStatus').textContent = '✅ Einheit gelöscht';
+                    loadWorkouts();
+                    setTimeout(() => {
+                        document.getElementById('workoutsStatus').textContent = '';
+                    }, 3000);
+                } else {
+                    alert('Fehler: ' + (data.error || 'Unbekannter Fehler'));
+                }
+            } catch (error) {
+                alert('Fehler beim Löschen: ' + error.message);
+            }
+        }
+        
+        // Add button event listener
+        document.getElementById('addWorkoutBtn').addEventListener('click', () => {
+            alert('Create Funktion kommt bald!');
+            // TODO: Implement create modal
+        });
+        
+        // Load workouts on startup
+        loadWorkouts();
     </script>
 </body>
 </html>
