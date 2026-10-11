@@ -471,11 +471,11 @@
       "description": "In Slalomlinie um Hütchen dribbeln – maximale Ballkontrolle.",
       "duration": "10-15 Minuten",
       "videoLink": {
-        "url": null,
-        "title": null
+        "url": "./data/videos/bc_slalom.mp4",
+        "title": "Slalom-Dribbeln"
       },
-      "poster": null,
-      "published": false,
+      "poster": "./data/videos/bc_slalom.jpg",
+      "published": true,
       "isPartnerExercise": false
     },
     "dr_speed_line": {
@@ -506,20 +506,6 @@
       "published": false,
       "isPartnerExercise": false
     },
-    "dr_cone_weave": {
-      "id": "dr_cone_weave",
-      "name": "Slalom zwischen Hütchen",
-      "category": "ballControl",
-      "description": "Präzisions-Dribbling durch mehrere in Reihe stehende Hütchen.",
-      "duration": "10-15 Minuten",
-      "videoLink": {
-        "url": null,
-        "title": null
-      },
-      "poster": null,
-      "published": false,
-      "isPartnerExercise": false
-    },
     "dc_90_degree": {
       "id": "dc_90_degree",
       "name": "90°-Wechsel – Hütchen",
@@ -536,16 +522,16 @@
     },
     "dc_180_turn": {
       "id": "dc_180_turn",
-      "name": "180°-Wende – Ballkontakt",
+      "name": "180°-Wende",
       "category": "ballControl",
-      "description": "Ball führen, auf Signal schnelle 180°-Drehung ohne Ball zu verlieren.",
+      "description": "Ball führen, schnelle 180°-Drehung ohne Ball zu verlieren.\nInnenseite, Cuts, Step-Over",
       "duration": "10-15 Minuten",
       "videoLink": {
-        "url": null,
-        "title": null
+        "url": "./data/videos/dc_180_turn.mp4",
+        "title": "180°-Wende"
       },
-      "poster": null,
-      "published": false,
+      "poster": "./data/videos/dc_180_turn.jpg",
+      "published": true,
       "isPartnerExercise": false
     },
     "dc_cut_back": {
