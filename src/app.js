@@ -712,21 +712,35 @@ function displayWorkoutExecution() {
     // Build video HTML if available
     let videoHTML = '';
     if (videoLink && videoLink.trim() !== 'null') {
-        const videoId = videoLink.includes('youtube.com') || videoLink.includes('youtu.be')
-            ? videoLink.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/)?.[1]
-            : null;
-        
-        if (videoId) {
+        // Check if it's a YouTube link
+        if (videoLink.includes('youtube.com') || videoLink.includes('youtu.be')) {
+            const videoId = videoLink.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/)?.[1];
+            if (videoId) {
+                videoHTML = `
+                    <div style="margin-bottom: 20px; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                        <iframe 
+                            width="100%" 
+                            height="250" 
+                            src="https://www.youtube.com/embed/${videoId}?modestbranding=1" 
+                            frameborder="0" 
+                            allowfullscreen
+                            style="border: none;">
+                        </iframe>
+                    </div>
+                `;
+            }
+        } else if (videoLink.endsWith('.mp4') || videoLink.includes('/data/videos/')) {
+            // Local MP4 video
             videoHTML = `
-                <div style="margin-bottom: 20px; border-radius: 8px; overflow: hidden;">
-                    <iframe 
+                <div style="margin-bottom: 20px; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); background: #000;">
+                    <video 
                         width="100%" 
                         height="250" 
-                        src="https://www.youtube.com/embed/${videoId}?modestbranding=1" 
-                        frameborder="0" 
-                        allowfullscreen
-                        style="border: none;">
-                    </iframe>
+                        controls 
+                        style="width: 100%; height: auto; display: block; background: #000;">
+                        <source src="${videoLink}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
             `;
         }
@@ -734,12 +748,11 @@ function displayWorkoutExecution() {
     
     workoutElements.workoutExecuteContainer.innerHTML = `
         <!-- HEADER mit Buttons -->
-        <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 20px; position: sticky; top: 0; background: white; z-index: 10; padding-top: 10px; padding-bottom: 10px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 20px; position: sticky; top: 0; background: white; z-index: 10; padding-top: 10px; padding-bottom: 10px; border-bottom: 1px solid #ecf0f1;">
             <button onclick="goBackFromWorkout()" style="padding: 10px 16px; background: #e74c3c; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; flex: 1;">← Back</button>
             <div style="text-align: center; flex: 2; font-size: 0.9em; color: #666;">
                 <strong>${completedCount}/${totalExercises}</strong> (${progressPercent}%)
             </div>
-            <button onclick="markExerciseComplete()" style="padding: 10px 16px; background: #27ae60; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; flex: 1;">✓ Done</button>
         </div>
 
         <!-- Progress Bar -->
