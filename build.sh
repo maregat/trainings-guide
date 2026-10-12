@@ -69,6 +69,15 @@ mkdir -p ./docs/data
 cp ./src/data/exercises.json ./docs/data/exercises.json
 echo "   ✅ exercises.json ($(wc -c < ./docs/data/exercises.json) bytes)"
 
+cp ./src/data/workouts.json ./docs/data/workouts.json
+echo "   ✅ workouts.json ($(wc -c < ./docs/data/workouts.json) bytes)"
+
+# Kopiere sessions.json (falls vorhanden)
+if [ -f ./src/data/sessions.json ]; then
+    cp ./src/data/sessions.json ./docs/data/sessions.json
+    echo "   ✅ sessions.json ($(wc -c < ./docs/data/sessions.json) bytes)"
+fi
+
 # Kopiere Videos (falls vorhanden)
 if [ -d ./src/data/videos ]; then
     mkdir -p ./docs/data/videos
@@ -96,6 +105,7 @@ required_files=(
     "./docs/sw.js"
     "./docs/manifest.json"
     "./docs/data/exercises.json"
+    "./docs/data/workouts.json"
 )
 
 all_good=true
