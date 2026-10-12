@@ -56,8 +56,8 @@ trainings-guide/
   │   └── admin.html                  # Admin-Panel (Password-geschützt, lokal nur)
   ├── docs/                           # GitHub Pages Deployment (auto via build.sh)
   ├── server.py                       # Flask Backend (Admin APIs, lokal Port 5001)
-  ├── build.sh                        # Deploy-Automation (src/ → docs/)
-  ├── sync_to_docs.sh                 # Git-Sync zwischen src/ und docs/
+  ├── build.sh                        # Deploy-Automation (src/ → docs/ mit Cleanup + Verification)
+  ├── download_youtube.py             # Tool: YouTube Videos herunterladen
   ├── venv/                           # Python Virtual Environment
   └── README.md                       # Diese Datei
 ```
@@ -132,30 +132,29 @@ Dann öffnen: **http://localhost:5001/admin**
 
 ---
 
-## 🎬 Workflow: Videos Hochladen
+## 🎬 Workflow: Übungen & Videos verwalten
 
 ### Mit Admin-Panel (empfohlen)
 
 1. Admin-Panel öffnen: `http://localhost:5001/admin`
 2. Passwort eingeben
-3. **Tab "Exercises"** – Übungen nach Bedarf bearbeiten
+3. **Tab "Exercises"** – Übungen bearbeiten/erstellen
 4. **Tab "Videos"** – Übung auswählen → Video hochladen
 5. ✅ Fertig! Video + Poster + exercises.json werden automatisch aktualisiert
 
-### Mit build.sh (manuell)
+### Dann deployen auf GitHub Pages
 
 ```bash
-# 1. Video zu src/data/videos/{exercise_id}.mp4 kopieren
-cp video.mp4 src/data/videos/new_exercise.mp4
-
-# 2. exercises.json manuell aktualisieren
-# (oder Admin-Panel nutzen)
-
-# 3. Deployen
-bash build.sh
-git add -A && git commit -m "Update: new exercise"
+bash build.sh          # src/ → docs/ mit Cleanup + Verification
+git add -A
+git commit -m "Update: neue Übungen/Videos"
 git push origin main
 ```
+
+⚠️ **WICHTIG:** Immer `build.sh` verwenden (nicht einzelne Dateien kopieren)!
+- ✅ build.sh macht Cleanup (entfernt alte Dateien)
+- ✅ build.sh macht Verification (checkt dass alles da ist)
+- ✅ Verhindert Deployment-Fehler durch alte/fehlende Dateien
 
 ---
 
@@ -308,42 +307,73 @@ Response: {
 
 ## 🔄 Deployment
 
-### GitHub Pages (automatisch)
+### Workflow für die Veröffentlichung
+
+**Schritt 1: Änderungen vornehmen** (z.B. über Admin-Panel oder manuelle src/data/ Edits)
+
+**Schritt 2: build.sh ausführen** (bereitet Deployment vor)
 
 ```bash
 cd trainings-guide
-bash build.sh                    # src/ → docs/ kopieren
+bash build.sh
+```
+
+Was build.sh macht:
+- ✅ `docs/` cleanen (alte Dateien löschen)
+- ✅ `src/` komplett zu `docs/` kopieren
+- ✅ Daten-Dateien + 107 Videos synchronisieren
+- ✅ Verifikation (checkt dass alles da ist)
+
+**Schritt 3: Git push** (deployed auf GitHub Pages)
+
+```bash
 git add -A
 git commit -m "Update: neue Videos"
 git push origin main
 ```
 
-Live in ~30 Sekunden auf:
-https://maregat.github.io/trainings-guide/
+Live in ~30 Sekunden auf: https://maregat.github.io/trainings-guide/
 
-**Was wird deployed:**
+### Was wird deployed zu GitHub Pages
 
-- `src/index.html` → `docs/index.html`
-- `src/app.js` → `docs/app.js`
-- `src/styles.css` → `docs/styles.css`
-- `src/sw.js` → `docs/sw.js`
-- `src/manifest.json` → `docs/manifest.json`
-- `src/data/exercises.json` → `docs/data/exercises.json`
-- `src/data/videos/*` → `docs/data/videos/*`
-- `templates/admin.html` → `docs/admin.html` (für lokale Verwaltung)
+- `src/` komplett (HTML, CSS, JS, Manifest)
+- `src/data/exercises.json`, `workouts.json`, `sessions.json`
+- `src/data/videos/` (107 MP4 + JPG Dateien)
+
+### Was wird NICHT deployed
+
+- `templates/admin.html` – Nur lokal, von `server.py` verwendet
+- `venv/`, `.git/`, Python/JS Quelldateien
+- Alte/gelöschte Dateien (werden durch build.sh cleanup entfernt)
 
 ### Service Worker Cache-Invalidation
 
-Der Service Worker (v8) cache:
+Der Service Worker (v8) managed die PWA-Caches:
 
 - **Network-First**: `app.js`, `styles.css`, `index.html`, `exercises.json`, `workouts.json`
-- **Cache-First**: Videos, Bilder, Poster
+  - Versucht immer die neueste Version vom Server zu laden
+  - Fallback auf gecachte Version wenn offline
+  
+- **Cache-First**: Videos, Poster, Bilder
+  - Lädt aus Cache (schneller)
+  - Updated im Hintergrund
 
-**Cache löschen bei Updates:**
+**PWA-Updateverhältnisse für iPhone-Nutzer:**
 
-1. `sw.js` Version hochzählen: `const CACHE_NAME = 'trainings-guide-v8'`
-2. `build.sh && git push`
-3. Alte Versionen werden automatisch gelöscht (auf iPhone: Hard Refresh `Cmd+Shift+R`)
+1. Standard Update: Beim nächsten App-Open wird neue Version geladen (wegen Network-First)
+2. Sofort-Update: iPhone User macht Hard Refresh: `Cmd+Shift+R` (Force clear cache)
+3. Manuelle Cache-Löschung:
+   - App vom Home Screen entfernen
+   - Neu hinzufügen: "Zum Home-Bildschirm"
+
+**Service Worker Version hochzählen** (wenn alte Caches zu Problems führen):
+
+In `src/sw.js` Zeile ~3:
+```javascript
+const CACHE_NAME = 'trainings-guide-v8';  // ← Increment to v9, v10, etc.
+```
+
+Dann `build.sh && git push` → Alte Caches werden automatisch gelöscht
 
 ---
 
