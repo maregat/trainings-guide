@@ -1,11 +1,13 @@
-const CACHE_NAME = 'trainings-guide-v7';
+const CACHE_NAME = 'trainings-guide-v8';
 const STATIC_ASSETS = [
     '/',
     '/index.html',
     '/app.js',
     '/styles.css',
     '/manifest.json',
-    'data/exercises.json'
+    'data/exercises.json',
+    'data/workouts.json',
+    'data/sessions.json'
 ];
 
 // ============================================

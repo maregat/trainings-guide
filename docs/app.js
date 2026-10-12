@@ -30,8 +30,8 @@ async function init() {
         // Initialize workout elements first
         initWorkoutElements();
         
-        // Lade exercises.json mit Version-Busting (v6)
-        const response = await fetch('./data/exercises.json?v=7&t=' + Date.now());
+        // Lade exercises.json mit Version-Busting (v8)
+        const response = await fetch('./data/exercises.json?v=8&t=' + Date.now());
         if (!response.ok) throw new Error('Fehler beim Laden von exercises.json');
         
         exercisesData = await response.json();
@@ -589,7 +589,7 @@ function initWorkoutElements() {
 async function loadWorkouts() {
     try {
         // Load workouts.json directly like exercises.json
-        const response = await fetch('./data/workouts.json?v=1&t=' + Date.now());
+        const response = await fetch('./data/workouts.json?v=2&t=' + Date.now());
         if (!response.ok) throw new Error('Fehler beim Laden von workouts.json');
         const data = await response.json();
         workoutsData = data.workouts || [];
