@@ -1,15 +1,17 @@
-# 🎬 Trainings-Guide – Fußball Übungen
+# 🎬 Trainings-Guide – Fußball Trainingseinheiten
 
-Interaktive **Progressive Web App (PWA)** für Fußball-Trainingsübungen mit Video-Support und Admin-Panel.
+Interaktive **Progressive Web App (PWA)** mit strukturierten Trainingseinheiten, 113 Übungen, Video-Support und Admin-Panel.
 
 **Features:**
 
-- 📱 **Offline-fähig** – Funktioniert ohne Internet (PWA mit Service Worker v7)
-- 🎬 **Video-Übungen** – MP4-Videos lokal gehostet + YouTube/Vimeo-Einbindung
-- 📊 **58 Übungen** – 9 Kategorien (ACL-Prävention, Coerver Fundamentals, etc.)
-- 🎯 **Strukturiert** – Warm-Up, Ballkontrolle, Technische Skills, Taktik
-- ⏱️ **Details** – Name, Kategorie, Beschreibung, Dauer, Video, Poster
-- 🔐 **Admin Panel** – Vollständiges CRUD für Übungen + Video-Upload mit Auto-Poster
+- 📱 **Offline-fähig** – Funktioniert ohne Internet (PWA mit Service Worker v8)
+- 🏃 **12 Trainingseinheiten** – 3 Units × 4 Wochen, progressiv aufbauend (ACL-Prävention bis Koordination)
+- 🎬 **Video-Übungen** – 60 Übungen mit Video-Support (YouTube + lokale MP4)
+- 📊 **113 Übungen** – Warm-Up, Kraft, Stabilität, Koordination, Schnelligkeit, Techniken
+- 🎯 **Strukturiert** – Workouts mit Blöcken (Aufwärmen, FIFA-Kids-Kern, Kraft, Ausklang)
+- 📊 **Live Progress** – Sticky Header mit Fortschrittsanzeige während Workouts
+- ⏱️ **Workout-Execution** – Exercise-Cards mit großer Sets/Reps-Display, Beschreibung, Notes
+- 🔐 **Admin Panel** – Vollständiges CRUD für Übungen + Video-Upload (lokal nur)
 - 🔍 **Kategorie-Filter** – Übungen nach Kategorie filtern
 
 ---
@@ -40,27 +42,64 @@ https://maregat.github.io/trainings-guide/
 trainings-guide/
   ├── src/
   │   ├── index.html                  # PWA Shell
-  │   ├── app.js                      # SPA Logic (23KB)
-  │   ├── sw.js                       # Service Worker v7 (Offline)
-  │   ├── styles.css                  # Responsive Design
+  │   ├── app.js                      # SPA Logic (38KB) - Workout Execution + Video Player
+  │   ├── sw.js                       # Service Worker v8 (Offline + Cache Invalidation)
+  │   ├── styles.css                  # Responsive Design (Mobile-First)
   │   ├── types.ts                    # TypeScript Typen
+  │   ├── manifest.json               # PWA Manifest
   │   └── data/
-  │       ├── exercises.json          # 58 Übungen mit Metadaten
-  │       └── videos/
-  │           ├── *.mp4               # 23 lokal gehostete Videos
-  │           └── *.jpg               # Video-Poster (Thumbnails)
+  │       ├── exercises.json          # 113 Übungen mit Metadaten (60 mit Videos)
+  │       ├── workouts.json           # 12 Trainingseinheiten (3 Units × 4 Wochen)
+  │       ├── sessions.json           # Progress Tracking (lokal)
+  │       └── videos/                 # 107 Video-Dateien (MP4)
   ├── templates/
-  │   └── admin.html                  # Admin-Panel (Password-geschützt)
-  ├── docs/                           # GitHub Pages (auto-deployed)
-  ├── server.py                       # Flask Backend (Upload, API)
+  │   └── admin.html                  # Admin-Panel (Password-geschützt, lokal nur)
+  ├── docs/                           # GitHub Pages Deployment (auto via build.sh)
+  ├── server.py                       # Flask Backend (Admin APIs, lokal Port 5001)
   ├── build.sh                        # Deploy-Automation (src/ → docs/)
+  ├── sync_to_docs.sh                 # Git-Sync zwischen src/ und docs/
   ├── venv/                           # Python Virtual Environment
   └── README.md                       # Diese Datei
 ```
 
 ---
 
-## 🎬 Admin-Panel: Übungen verwalten
+## � Trainingseinheiten (Workouts)
+
+### Struktur: 3 Units × 4 Wochen = 12 Trainingseinheiten
+
+Jede Trainingseinheit besteht aus **4 Blöcken**:
+
+1. **Aufwärmen und Aktivieren** (~5 Min) – Locker Traben, Dynamisches Stretching
+2. **FIFA-Kids-Kern** (~10 Min) – FIFA 11+ Kids Fokus auf Core/Rumpf
+3. **Kraft** (~20 Min) – 5-7 Übungen zum Schwerpunkt der Woche
+4. **Ausklang** (~3 Min) – Cool Down, Statisches Stretching
+
+### Unit A: Landung & Beine
+- Woche 1: Level 1 (Technik lernen)
+- Woche 2: Level 2 (Anfänger)
+- Woche 3: Level 3 (Fortgeschrittene)
+- Woche 4: Level 2 (Stabilisierung)
+
+### Unit B: Hintere Kette, Rumpf, Oberkörper
+- Fokus auf Posterior Chain, Core Stability, Upper Body
+- 4 Wochen progressiver Aufbau
+
+### Unit C: Einbein-Stabilität, Koordination, Schnelligkeit
+- Fokus auf Balance, Coordination, Speed
+- 4 Wochen progressiver Aufbau
+
+**Live beim Trainieren:**
+- 📊 Sticky Header mit Back-Button + Fortschrittsanzeige (z.B. "3/14 (21%)")
+- 📈 Animierte Progress Bar (Gradient Purple)
+- 💪 Exercise-Cards mit großem Sets/Reps (2.5em bold)
+- 🎬 Video-Support für jede Übung (YouTube + MP4)
+- ✅ Single Done Button zum Weitermachen
+- 🎉 Completion Screen mit Statistiken
+
+---
+
+## �🎬 Admin-Panel: Übungen verwalten
 
 ### Starten
 
@@ -295,16 +334,16 @@ https://maregat.github.io/trainings-guide/
 
 ### Service Worker Cache-Invalidation
 
-Der Service Worker (v7) cache:
+Der Service Worker (v8) cache:
 
-- **Network-First**: `app.js`, `styles.css`, `index.html`, `exercises.json`
+- **Network-First**: `app.js`, `styles.css`, `index.html`, `exercises.json`, `workouts.json`
 - **Cache-First**: Videos, Bilder, Poster
 
 **Cache löschen bei Updates:**
 
 1. `sw.js` Version hochzählen: `const CACHE_NAME = 'trainings-guide-v8'`
 2. `build.sh && git push`
-3. Alte Versionen werden automatisch gelöscht
+3. Alte Versionen werden automatisch gelöscht (auf iPhone: Hard Refresh `Cmd+Shift+R`)
 
 ---
 
@@ -313,9 +352,11 @@ Der Service Worker (v7) cache:
 | Teil          | Tech                        |
 | ------------- | --------------------------- |
 | Frontend      | Vanilla JavaScript (SPA)    |
-| Offline       | Service Worker + PWA        |
-| Video-Hosting | Lokal (MP4) + YouTube/Vimeo |
-| Admin-Backend | Flask (Python)              |
+| Workout UI    | Sticky Header + Progress Bar + Exercise Cards |
+| Video Player  | YouTube iFrame + HTML5 Video |
+| Offline       | Service Worker v8 + PWA     |
+| Video-Hosting | Lokal MP4 (/data/videos/) + YouTube |
+| Admin-Backend | Flask (Python, lokal nur)   |
 | Poster-Gen    | ffmpeg (automatisch)        |
 | Deploy        | GitHub Pages                |
 | Dateiformat   | JSON                        |
