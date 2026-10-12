@@ -13,7 +13,7 @@
       "notes": "Level 1: Technik lernen. Knie über Fuß, leise landen, 3 Sek halten.",
       "blocks": [
         {
-          "name": "Aktivierung",
+          "name": "Aufwärmen und Aktivieren",
           "duration": 5,
           "exercises": [
             {
@@ -135,7 +135,7 @@
       "notes": "Level 2: Technik festigen. Erste Belastungssteigerung, nur wenn Technik sauber.",
       "blocks": [
         {
-          "name": "Aktivierung",
+          "name": "Aufwärmen und Aktivieren",
           "duration": 5,
           "exercises": [
             {
@@ -245,7 +245,7 @@
       "notes": "Level 3: Höchste Belastung. Bei unsauberer Technik bei Level 2 bleiben.",
       "blocks": [
         {
-          "name": "Aktivierung",
+          "name": "Aufwärmen und Aktivieren",
           "duration": 5,
           "exercises": [
             {
@@ -349,7 +349,7 @@
       "notes": "Level 2: Entlastungswoche. Reduktion zur Regeneration, Technik überprüfen.",
       "blocks": [
         {
-          "name": "Aktivierung",
+          "name": "Aufwärmen und Aktivieren",
           "duration": 5,
           "exercises": [
             {
@@ -453,7 +453,7 @@
       "notes": "Level 1: Technik lernen. Posterior Chain Training.",
       "blocks": [
         {
-          "name": "Aktivierung",
+          "name": "Aufwärmen und Aktivieren",
           "duration": 5,
           "exercises": [
             {
@@ -563,7 +563,7 @@
       "notes": "Level 2: Technik festigen. Erste Belastungssteigerung.",
       "blocks": [
         {
-          "name": "Aktivierung",
+          "name": "Aufwärmen und Aktivieren",
           "duration": 5,
           "exercises": [
             {
@@ -673,7 +673,7 @@
       "notes": "Level 3: Höchste Belastung. Nordic-Hamstring optional ab hier (nur mit Hilfe).",
       "blocks": [
         {
-          "name": "Aktivierung",
+          "name": "Aufwärmen und Aktivieren",
           "duration": 5,
           "exercises": [
             {
@@ -783,7 +783,7 @@
       "notes": "Level 2: Entlastungswoche.",
       "blocks": [
         {
-          "name": "Aktivierung",
+          "name": "Aufwärmen und Aktivieren",
           "duration": 5,
           "exercises": [
             {
@@ -893,7 +893,7 @@
       "notes": "Level 1: Technik lernen. Koordination und Schnelligkeit.",
       "blocks": [
         {
-          "name": "Aktivierung",
+          "name": "Aufwärmen und Aktivieren",
           "duration": 5,
           "exercises": [
             {
@@ -997,7 +997,7 @@
       "notes": "Level 2: Technik festigen.",
       "blocks": [
         {
-          "name": "Aktivierung",
+          "name": "Aufwärmen und Aktivieren",
           "duration": 5,
           "exercises": [
             {
@@ -1101,7 +1101,7 @@
       "notes": "Level 3: Höchste Belastung.",
       "blocks": [
         {
-          "name": "Aktivierung",
+          "name": "Aufwärmen und Aktivieren",
           "duration": 5,
           "exercises": [
             {
@@ -1205,7 +1205,7 @@
       "notes": "Level 2: Entlastungswoche.",
       "blocks": [
         {
-          "name": "Aktivierung",
+          "name": "Aufwärmen und Aktivieren",
           "duration": 5,
           "exercises": [
             {

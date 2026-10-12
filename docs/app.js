@@ -699,35 +699,103 @@ function displayWorkoutExecution() {
         return;
     }
     
+    // Get full exercise data
+    const fullExercise = exercisesData.exercises[exercise.exerciseId];
+    const exerciseName = fullExercise ? fullExercise.name : 'Unknown Exercise';
+    const exerciseDescription = fullExercise ? fullExercise.description : '';
+    const videoLink = fullExercise?.videoLink?.url;
+    
     const totalExercises = currentWorkout.blocks.reduce((sum, b) => sum + b.exercises.length, 0);
     const completedCount = completedExercises.length;
     const progressPercent = Math.round((completedCount / totalExercises) * 100);
     
+    // Build video HTML if available
+    let videoHTML = '';
+    if (videoLink && videoLink.trim() !== 'null') {
+        const videoId = videoLink.includes('youtube.com') || videoLink.includes('youtu.be')
+            ? videoLink.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/)?.[1]
+            : null;
+        
+        if (videoId) {
+            videoHTML = `
+                <div style="margin-bottom: 20px; border-radius: 8px; overflow: hidden;">
+                    <iframe 
+                        width="100%" 
+                        height="250" 
+                        src="https://www.youtube.com/embed/${videoId}?modestbranding=1" 
+                        frameborder="0" 
+                        allowfullscreen
+                        style="border: none;">
+                    </iframe>
+                </div>
+            `;
+        }
+    }
+    
     workoutElements.workoutExecuteContainer.innerHTML = `
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-            <h2 style="margin: 0; font-size: 1.2em;">${currentWorkout.name}</h2>
-            <button onclick="goBackFromWorkout()" style="padding: 8px 12px; background: #ddd; border: none; border-radius: 6px; cursor: pointer;">← Back</button>
+        <!-- HEADER mit Buttons -->
+        <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 20px; position: sticky; top: 0; background: white; z-index: 10; padding-top: 10px; padding-bottom: 10px;">
+            <button onclick="goBackFromWorkout()" style="padding: 10px 16px; background: #e74c3c; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; flex: 1;">← Back</button>
+            <div style="text-align: center; flex: 2; font-size: 0.9em; color: #666;">
+                <strong>${completedCount}/${totalExercises}</strong> (${progressPercent}%)
+            </div>
+            <button onclick="markExerciseComplete()" style="padding: 10px 16px; background: #27ae60; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; flex: 1;">✓ Done</button>
         </div>
-        
-        <div style="background: #667eea; color: white; padding: 10px; border-radius: 6px; margin-bottom: 15px; font-size: 0.9em;">
-            Block: <strong>${currentBlockIndex + 1}/${currentWorkout.blocks.length}</strong> | Progress: <strong>${completedCount}/${totalExercises} (${progressPercent}%)</strong>
+
+        <!-- Progress Bar -->
+        <div style="width: 100%; height: 6px; background: #ecf0f1; border-radius: 3px; margin-bottom: 20px; overflow: hidden;">
+            <div style="width: ${progressPercent}%; height: 100%; background: linear-gradient(90deg, #667eea, #764ba2); transition: width 0.3s ease;"></div>
         </div>
-        
-        <div style="width: 100%; height: 8px; background: #eee; border-radius: 4px; margin-bottom: 20px;">
-            <div style="width: ${progressPercent}%; height: 100%; background: #667eea;"></div>
+
+        <!-- Workout & Block Info -->
+        <div style="margin-bottom: 15px;">
+            <div style="font-size: 0.85em; color: #7f8c8d; margin-bottom: 5px;">
+                ${currentWorkout.name}
+            </div>
+            <div style="font-size: 0.95em; color: #34495e; background: #ecf0f1; padding: 8px 12px; border-radius: 6px; display: inline-block;">
+                Block ${currentBlockIndex + 1}/${currentWorkout.blocks.length} • ${block.name}
+            </div>
         </div>
-        
-        <div style="background: #f0f1ff; padding: 12px; border-radius: 6px; margin-bottom: 15px;">
-            <div style="font-size: 0.85em; color: #666;">Block: ${block.name}</div>
+
+        <!-- MAIN EXERCISE CARD -->
+        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 12px; margin-bottom: 20px;">
+            <!-- Sets/Reps GROSS oben -->
+            <div style="margin-bottom: 15px; padding-bottom: 15px; border-bottom: 2px solid rgba(255,255,255,0.2);">
+                <div style="font-size: 2.5em; font-weight: bold; line-height: 1;">
+                    ${exercise.sets}${exercise.sets === 1 ? '×' : '×'}${exercise.reps}
+                </div>
+                <div style="font-size: 0.9em; opacity: 0.9; margin-top: 5px;">
+                    ${exercise.sets === 1 ? 'Set' : 'Sets'} × ${exercise.reps}
+                </div>
+            </div>
+            
+            <!-- Exercise Name GROSS -->
+            <div style="font-size: 1.8em; font-weight: bold; margin-bottom: 10px; line-height: 1.2;">
+                ${exerciseName}
+            </div>
+            
+            <!-- Exercise Description -->
+            ${exerciseDescription ? `<div style="font-size: 0.95em; opacity: 0.95; margin-bottom: 10px;">${exerciseDescription}</div>` : ''}
+            
+            <!-- Notes if any -->
+            ${exercise.notes && exercise.notes !== 'No notes' ? `<div style="font-size: 0.9em; opacity: 0.85; font-style: italic;">💡 ${exercise.notes}</div>` : ''}
         </div>
-        
-        <div style="background: white; border: 2px solid #667eea; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
-            <div style="font-size: 1.1em; font-weight: 600; margin-bottom: 10px;">${exercise.sets}x${exercise.reps}</div>
-            <div style="font-size: 0.9em; color: #555;">${exercise.notes || 'No notes'}</div>
-        </div>
-        
-        <button onclick="markExerciseComplete()" style="width: 100%; padding: 12px; background: #27ae60; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer;">
-            ✓ Done - Next Exercise
+
+        <!-- Video wenn vorhanden -->
+        ${videoHTML}
+
+        <!-- Exercise Details -->
+        ${fullExercise ? `
+            <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                <div style="font-size: 0.85em; color: #7f8c8d; margin-bottom: 8px;">Exercise Details</div>
+                ${fullExercise.category ? `<div style="font-size: 0.9em; color: #34495e; margin-bottom: 5px;"><strong>Category:</strong> ${fullExercise.category}</div>` : ''}
+                ${fullExercise.duration ? `<div style="font-size: 0.9em; color: #34495e;"><strong>Duration:</strong> ${fullExercise.duration}</div>` : ''}
+            </div>
+        ` : ''}
+
+        <!-- Bottom Done Button -->
+        <button onclick="markExerciseComplete()" style="width: 100%; padding: 16px; background: #27ae60; color: white; border: none; border-radius: 8px; font-weight: 700; font-size: 1.05em; cursor: pointer; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);">
+            ✓ Mark as Done
         </button>
     `;
 }
@@ -762,19 +830,50 @@ function markExerciseComplete() {
 function showWorkoutComplete() {
     const totalExercises = currentWorkout.blocks.reduce((sum, b) => sum + b.exercises.length, 0);
     
+    // Calculate by block
+    let blockStats = currentWorkout.blocks.map((block, idx) => {
+        return {
+            name: block.name,
+            count: block.exercises.length
+        };
+    });
+    
+    let blockSummary = blockStats.map(b => `<div style="padding: 8px 0; border-bottom: 1px solid #ecf0f1;">
+        <div style="font-weight: 600; color: #34495e;">${b.name}</div>
+        <div style="font-size: 0.9em; color: #7f8c8d;">${b.count} ${b.count === 1 ? 'Exercise' : 'Exercises'}</div>
+    </div>`).join('');
+    
     workoutElements.workoutExecuteContainer.innerHTML = `
-        <div style="text-align: center; padding: 40px 20px;">
-            <div style="font-size: 4em; margin-bottom: 20px;">🎉</div>
-            <h2 style="font-size: 1.5em; margin-bottom: 10px;">Congratulations!</h2>
-            <p style="color: #666; font-size: 1.1em; margin-bottom: 20px;">All exercises completed!</p>
-            <div style="background: #f0f1ff; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
-                <div>✅ ${totalExercises}/${totalExercises} Exercises</div>
-                <div>⏱️ ${currentWorkout.totalDuration} Min</div>
-            </div>
-            <button onclick="goBackFromWorkout()" style="width: 100%; padding: 12px; background: #667eea; color: white; border: none; border-radius: 6px; cursor: pointer;">
-                ← Back to Workouts
-            </button>
+        <!-- Header -->
+        <div style="text-align: center; padding: 30px 20px 20px;">
+            <div style="font-size: 5em; margin-bottom: 15px; animation: pulse 1s ease-in-out;">🎉</div>
+            <h1 style="font-size: 2em; color: #27ae60; margin: 0 0 10px; font-weight: 700;">Perfekt erledigt!</h1>
+            <p style="color: #7f8c8d; font-size: 1em; margin: 0 0 30px;">Großartig gemacht! 💪</p>
         </div>
+
+        <!-- Stats Card -->
+        <div style="background: linear-gradient(135deg, #27ae60 0%, #229954 100%); color: white; padding: 25px; border-radius: 12px; margin-bottom: 25px;">
+            <div style="font-size: 3em; font-weight: bold; margin-bottom: 10px;">
+                ${totalExercises}/${totalExercises}
+            </div>
+            <div style="font-size: 1.1em; opacity: 0.95;">Exercises Completed</div>
+            <div style="font-size: 0.95em; opacity: 0.85; margin-top: 12px;">
+                ⏱️ ${currentWorkout.totalDuration} minutes • 💯 100% Complete
+            </div>
+        </div>
+
+        <!-- Block Breakdown -->
+        <div style="background: #f8f9fa; padding: 20px; border-radius: 12px; margin-bottom: 25px;">
+            <div style="font-size: 0.9em; color: #7f8c8d; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">Workout Breakdown</div>
+            <div>
+                ${blockSummary}
+            </div>
+        </div>
+
+        <!-- Back Button -->
+        <button onclick="goBackFromWorkout()" style="width: 100%; padding: 16px; background: #667eea; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 700; font-size: 1.05em; box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);">
+            ← Back to Workouts
+        </button>
     `;
 }
 
