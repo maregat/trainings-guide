@@ -808,6 +808,17 @@
         </div>
     </div>
 
+    <!-- Workout Edit Modal -->
+    <div class="modal" id="workoutEditModal">
+        <div class="modal-content" style="max-height: 85vh; overflow-y: auto; width: 90%; max-width: 900px;">
+            <span class="modal-close" onclick="closeWorkoutEditModal()">&times;</span>
+            <h2 id="workoutEditTitle">Trainingseinheit bearbeiten</h2>
+            <div id="workoutEditContent" style="margin-top: 20px;">
+                <!-- Filled by JavaScript -->
+            </div>
+        </div>
+    </div>
+
     <script>
         let currentPassword = '';
         let categories = {};
@@ -815,6 +826,8 @@
         let currentEditExerciseId = null;
         let selectedVideoFile = null;
         let currentCategoryFilter = '';
+        let workouts = [];
+        let currentEditingWorkout = null;
 
         const loginPanel = document.getElementById('loginPanel');
         const mainPanel = document.getElementById('mainPanel');
@@ -1768,8 +1781,164 @@
                 alert('Einheit nicht gefunden');
                 return;
             }
-            alert('Edit Funktion kommt bald! Einheit:\n' + workout.name);
-            // TODO: Implement edit modal
+            
+            currentEditingWorkout = JSON.parse(JSON.stringify(workout)); // Deep copy
+            
+            // Build modal content
+            const modal = document.getElementById('workoutEditModal');
+            const title = document.getElementById('workoutEditTitle');
+            title.textContent = `✏️ ${workout.name} bearbeiten`;
+            
+            let html = `
+                <div style="background: #f5f5f5; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                    <div><strong>Unit ${workout.unit}</strong> | Woche ${workout.week} | Level ${workout.difficulty}</div>
+                    <div style="font-size: 0.9em; color: #666; margin-top: 5px;">${escapeHtml(workout.description)}</div>
+                </div>
+                
+                <div style="margin-bottom: 20px;">
+                    <h3 style="margin-bottom: 15px;">📚 Blöcke & Übungen</h3>
+            `;
+            
+            // Display blocks
+            currentEditingWorkout.blocks.forEach((block, blockIdx) => {
+                html += `
+                    <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 15px; margin-bottom: 15px;">
+                        <h4 style="margin-bottom: 10px;">Block ${blockIdx + 1}: ${escapeHtml(block.name)} (${block.duration} min)</h4>
+                        <div style="margin-bottom: 15px;">
+                `;
+                
+                // Display exercises
+                block.exercises.forEach((ex, exIdx) => {
+                    const exercise = exercises.find(e => e.id === ex.exerciseId);
+                    const exName = exercise ? exercise.name : `❌ Unknown (${ex.exerciseId})`;
+                    
+                    html += `
+                        <div style="background: #f9f9f9; padding: 10px; border-radius: 6px; margin-bottom: 10px; border-left: 3px solid #667eea;">
+                            <div style="display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: start;">
+                                <div>
+                                    <div style="font-weight: 600;">${escapeHtml(exName)}</div>
+                                    <div style="font-size: 0.85em; color: #666; margin-top: 3px;">
+                                        Sets: ${ex.sets} | Reps: ${ex.reps} | Notes: ${escapeHtml(ex.notes || '-')}
+                                    </div>
+                                </div>
+                                <button class="btn-small" onclick="editBlockExercise(${blockIdx}, ${exIdx})" style="white-space: nowrap;">✏️ Edit</button>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                html += `
+                        </div>
+                        <button class="btn-small" style="background: #28a745; color: white;" onclick="addExerciseToBlock(${blockIdx})">➕ Übung hinzufügen</button>
+                    </div>
+                `;
+            });
+            
+            html += `
+                </div>
+                
+                <div class="button-group">
+                    <button class="btn-primary" onclick="saveWorkoutChanges()">💾 Änderungen speichern</button>
+                    <button class="btn-secondary" onclick="closeWorkoutEditModal()">Abbrechen</button>
+                </div>
+            `;
+            
+            document.getElementById('workoutEditContent').innerHTML = html;
+            modal.style.display = 'block';
+        }
+        
+        function editBlockExercise(blockIdx, exIdx) {
+            const exercise = currentEditingWorkout.blocks[blockIdx].exercises[exIdx];
+            const sets = prompt('Sets:', exercise.sets);
+            if (sets === null) return;
+            
+            const reps = prompt('Reps/Duration:', exercise.reps);
+            if (reps === null) return;
+            
+            const notes = prompt('Notes:', exercise.notes || '');
+            if (notes === null) return;
+            
+            currentEditingWorkout.blocks[blockIdx].exercises[exIdx].sets = parseInt(sets) || 1;
+            currentEditingWorkout.blocks[blockIdx].exercises[exIdx].reps = reps;
+            currentEditingWorkout.blocks[blockIdx].exercises[exIdx].notes = notes;
+            
+            // Refresh modal
+            editWorkout(currentEditingWorkout.id);
+        }
+        
+        function addExerciseToBlock(blockIdx) {
+            // Get list of exercises not in this block
+            const usedIds = new Set(currentEditingWorkout.blocks[blockIdx].exercises.map(e => e.exerciseId));
+            const available = exercises.filter(e => !usedIds.has(e.id));
+            
+            if (available.length === 0) {
+                alert('Alle Übungen sind bereits in diesem Block vorhanden');
+                return;
+            }
+            
+            // Simple select via list
+            let message = 'Geben Sie die Übungs-ID ein:\n\n';
+            message += 'Verfügbare Übungen:\n';
+            available.slice(0, 20).forEach(e => {
+                message += `  ${e.id} - ${e.name}\n`;
+            });
+            if (available.length > 20) message += `  ... und ${available.length - 20} weitere\n`;
+            
+            const exerciseId = prompt(message);
+            if (!exerciseId) return;
+            
+            if (!exercises.find(e => e.id === exerciseId)) {
+                alert('Übungs-ID nicht gefunden');
+                return;
+            }
+            
+            if (usedIds.has(exerciseId)) {
+                alert('Diese Übung ist bereits in diesem Block vorhanden');
+                return;
+            }
+            
+            currentEditingWorkout.blocks[blockIdx].exercises.push({
+                exerciseId: exerciseId,
+                sets: 1,
+                reps: '1',
+                notes: ''
+            });
+            
+            // Refresh modal
+            editWorkout(currentEditingWorkout.id);
+        }
+        
+        async function saveWorkoutChanges() {
+            try {
+                const response = await fetch(`/api/workouts/${currentEditingWorkout.id}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        password: currentPassword,
+                        workout: currentEditingWorkout
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    document.getElementById('workoutsStatus').textContent = '✅ Einheit aktualisiert';
+                    closeWorkoutEditModal();
+                    loadWorkouts();
+                    setTimeout(() => {
+                        document.getElementById('workoutsStatus').textContent = '';
+                    }, 3000);
+                } else {
+                    alert('Fehler beim Speichern: ' + (data.error || 'Unbekannter Fehler'));
+                }
+            } catch (error) {
+                alert('Fehler: ' + error.message);
+            }
+        }
+        
+        function closeWorkoutEditModal() {
+            document.getElementById('workoutEditModal').style.display = 'none';
+            currentEditingWorkout = null;
         }
         
         async function deleteWorkout(workoutId, name) {
