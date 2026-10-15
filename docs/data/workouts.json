@@ -2,13 +2,10 @@
   "workouts": [
     {
       "id": "ath_wk1_einheit_a",
-      "name": "Woche 1 - Einheit A: Landung und Beine",
-      "week": 1,
-      "unit": "A",
+      "name": "Landung und Beine (Einheit A, Level 1)",
       "description": "Fokus auf Landungstechnik und Beinstabilität",
       "targetAge": "10-11",
       "totalDuration": 40,
-      "difficulty": 1,
       "goal": "ACL-Prävention - Technik lernen",
       "notes": "Level 1: Technik lernen. Knie über Fuß, leise landen, 3 Sek halten.",
       "blocks": [
@@ -124,13 +121,10 @@
     },
     {
       "id": "ath_wk2_einheit_a",
-      "name": "Woche 2 - Einheit A: Landung und Beine",
-      "week": 2,
-      "unit": "A",
+      "name": "Landung und Beine (Einheit A, Level 2)",
       "description": "Technik festigen, leichte Progression",
       "targetAge": "10-11",
       "totalDuration": 40,
-      "difficulty": 2,
       "goal": "ACL-Prävention - Technik festigen",
       "notes": "Level 2: Technik festigen. Erste Belastungssteigerung, nur wenn Technik sauber.",
       "blocks": [
@@ -234,13 +228,10 @@
     },
     {
       "id": "ath_wk3_einheit_a",
-      "name": "Woche 3 - Einheit A: Landung und Beine",
-      "week": 3,
-      "unit": "A",
+      "name": "Landung und Beine (Einheit A, Level 3)",
       "description": "Höchste Belastung dieser Blockphase",
       "targetAge": "10-11",
       "totalDuration": 40,
-      "difficulty": 3,
       "goal": "ACL-Prävention - Maximale Belastung",
       "notes": "Level 3: Höchste Belastung. Bei unsauberer Technik bei Level 2 bleiben.",
       "blocks": [
@@ -338,13 +329,10 @@
     },
     {
       "id": "ath_wk4_einheit_a",
-      "name": "Woche 4 - Einheit A: Landung und Beine",
-      "week": 4,
-      "unit": "A",
+      "name": "Landung und Beine (Einheit A, Level 2)",
       "description": "Entlastung und Technik-Check",
       "targetAge": "10-11",
       "totalDuration": 40,
-      "difficulty": 2,
       "goal": "ACL-Prävention - Erholung",
       "notes": "Level 2: Entlastungswoche. Reduktion zur Regeneration, Technik überprüfen.",
       "blocks": [
@@ -442,13 +430,10 @@
     },
     {
       "id": "ath_wk1_einheit_b",
-      "name": "Woche 1 - Einheit B: Hintere Kette, Rumpf, Oberkörper",
-      "week": 1,
-      "unit": "B",
+      "name": "Hintere Kette, Rumpf, Oberkörper (Einheit B, Level 1)",
       "description": "Fokus auf Rücken, Hamstring, Core und Oberkörper",
       "targetAge": "10-11",
       "totalDuration": 40,
-      "difficulty": 1,
       "goal": "ACL-Prävention - Posterior Chain",
       "notes": "Level 1: Technik lernen. Posterior Chain Training.",
       "blocks": [
@@ -552,13 +537,10 @@
     },
     {
       "id": "ath_wk2_einheit_b",
-      "name": "Woche 2 - Einheit B: Hintere Kette, Rumpf, Oberkörper",
-      "week": 2,
-      "unit": "B",
+      "name": "Hintere Kette, Rumpf, Oberkörper (Einheit B, Level 2)",
       "description": "Technik festigen",
       "targetAge": "10-11",
       "totalDuration": 40,
-      "difficulty": 2,
       "goal": "ACL-Prävention - Progression",
       "notes": "Level 2: Technik festigen. Erste Belastungssteigerung.",
       "blocks": [
@@ -662,13 +644,10 @@
     },
     {
       "id": "ath_wk3_einheit_b",
-      "name": "Woche 3 - Einheit B: Hintere Kette, Rumpf, Oberkörper",
-      "week": 3,
-      "unit": "B",
+      "name": "Hintere Kette, Rumpf, Oberkörper (Einheit B, Level 3)",
       "description": "Maximale Belastung mit Variationen",
       "targetAge": "10-11",
       "totalDuration": 40,
-      "difficulty": 3,
       "goal": "ACL-Prävention - Max Load",
       "notes": "Level 3: Höchste Belastung. Nordic-Hamstring optional ab hier (nur mit Hilfe).",
       "blocks": [
@@ -772,13 +751,10 @@
     },
     {
       "id": "ath_wk4_einheit_b",
-      "name": "Woche 4 - Einheit B: Hintere Kette, Rumpf, Oberkörper",
-      "week": 4,
-      "unit": "B",
+      "name": "Hintere Kette, Rumpf, Oberkörper (Einheit B, Level 2)",
       "description": "Entlastungswoche",
       "targetAge": "10-11",
       "totalDuration": 40,
-      "difficulty": 2,
       "goal": "ACL-Prävention - Erholung",
       "notes": "Level 2: Entlastungswoche.",
       "blocks": [
@@ -882,13 +858,10 @@
     },
     {
       "id": "ath_wk1_einheit_c",
-      "name": "Woche 1 - Einheit C: Einbein-Stabilität, Koordination, Schnelligkeit",
-      "week": 1,
-      "unit": "C",
+      "name": "Einbein-Stabilität, Koordination, Schnelligkeit (Einheit C, Level 1)",
       "description": "Fokus auf Balance, Laufschule und Richtungswechsel",
       "targetAge": "10-11",
       "totalDuration": 40,
-      "difficulty": 1,
       "goal": "ACL-Prävention - Single-Leg & Speed",
       "notes": "Level 1: Technik lernen. Koordination und Schnelligkeit.",
       "blocks": [
@@ -986,13 +959,10 @@
     },
     {
       "id": "ath_wk2_einheit_c",
-      "name": "Woche 2 - Einheit C: Einbein-Stabilität, Koordination, Schnelligkeit",
-      "week": 2,
-      "unit": "C",
+      "name": "Einbein-Stabilität, Koordination, Schnelligkeit (Einheit C, Level 2)",
       "description": "Technik festigen",
       "targetAge": "10-11",
       "totalDuration": 40,
-      "difficulty": 2,
       "goal": "ACL-Prävention - Progression",
       "notes": "Level 2: Technik festigen.",
       "blocks": [
@@ -1090,13 +1060,10 @@
     },
     {
       "id": "ath_wk3_einheit_c",
-      "name": "Woche 3 - Einheit C: Einbein-Stabilität, Koordination, Schnelligkeit",
-      "week": 3,
-      "unit": "C",
+      "name": "Einbein-Stabilität, Koordination, Schnelligkeit (Einheit C, Level 3)",
       "description": "Maximale Belastung",
       "targetAge": "10-11",
       "totalDuration": 40,
-      "difficulty": 3,
       "goal": "ACL-Prävention - Max Load",
       "notes": "Level 3: Höchste Belastung.",
       "blocks": [
@@ -1194,13 +1161,10 @@
     },
     {
       "id": "ath_wk4_einheit_c",
-      "name": "Woche 4 - Einheit C: Einbein-Stabilität, Koordination, Schnelligkeit",
-      "week": 4,
-      "unit": "C",
+      "name": "Einbein-Stabilität, Koordination, Schnelligkeit (Einheit C, Level 2)",
       "description": "Entlastungswoche",
       "targetAge": "10-11",
       "totalDuration": 40,
-      "difficulty": 2,
       "goal": "ACL-Prävention - Erholung",
       "notes": "Level 2: Entlastungswoche.",
       "blocks": [

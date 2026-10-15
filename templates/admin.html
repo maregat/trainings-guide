@@ -826,44 +826,13 @@
             <h2>➕ Neue Trainingseinheit erstellen</h2>
             <div style="margin-top: 20px;">
                 <div style="background: #f5f5f5; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
-                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 10px; margin-bottom: 10px;">
-                        <div>
-                            <label style="font-weight: 600; display: block; margin-bottom: 5px;">Name *</label>
-                            <input type="text" id="newWorkoutName" placeholder="z.B. Woche 1 - Einheit A" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
-                        </div>
-                        <div>
-                            <label style="font-weight: 600; display: block; margin-bottom: 5px;">Unit (A/B/C) *</label>
-                            <select id="newWorkoutUnit" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
-                                <option value="">-- Wählen --</option>
-                                <option value="A">A</option>
-                                <option value="B">B</option>
-                                <option value="C">C</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label style="font-weight: 600; display: block; margin-bottom: 5px;">Woche (1-4) *</label>
-                            <select id="newWorkoutWeek" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
-                                <option value="">-- Wählen --</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label style="font-weight: 600; display: block; margin-bottom: 5px;">Schwierigkeit (1-4) *</label>
-                            <select id="newWorkoutDifficulty" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
-                                <option value="">-- Wählen --</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                            </select>
-                        </div>
+                    <div style="margin-bottom: 10px;">
+                        <label style="font-weight: 600; display: block; margin-bottom: 5px;">Name *</label>
+                        <input type="text" id="newWorkoutName" placeholder="z.B. Landung und Beine (Einheit A, Level 1)" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
                     </div>
                     <div style="margin-bottom: 10px;">
                         <label style="font-weight: 600; display: block; margin-bottom: 5px;">Beschreibung</label>
-                        <input type="text" id="newWorkoutDescription" placeholder="z.B. Fokus auf Landungstechnik" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                        <input type="text" id="newWorkoutDescription" placeholder="z.B. Fokus auf Landungstechnik und Beinstabilität" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
                     </div>
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
                         <div>
@@ -1814,40 +1783,29 @@
                 return;
             }
             
-            // Group by unit and week
-            const grouped = {};
-            workouts.forEach(w => {
-                const key = `${w.unit}-${w.week}`;
-                if (!grouped[key]) grouped[key] = [];
-                grouped[key].push(w);
-            });
-            
-            // Display grouped
-            Object.entries(grouped).sort().forEach(([key, items]) => {
-                const [unit, week] = key.split('-');
-                items.forEach(workout => {
-                    const div = document.createElement('div');
-                    div.className = 'exercise-item';
-                    div.style.marginBottom = '15px';
-                    
-                    const exerciseCount = workout.blocks.reduce((sum, b) => sum + b.exercises.length, 0);
-                    
-                    div.innerHTML = `
-                        <div style="display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: center;">
-                            <div>
-                                <div style="font-weight: 600; margin-bottom: 5px;">${escapeHtml(workout.name)}</div>
-                                <div style="font-size: 0.85em; color: #666;">
-                                    ${workout.blocks.length} Blöcke | ${exerciseCount} Übungen | ${workout.totalDuration} Min | Level ${workout.difficulty}
-                                </div>
-                            </div>
-                            <div style="display: flex; gap: 8px;">
-                                <button class="btn-small" onclick="editWorkout('${escapeHtml(workout.id)}')">✏️ Edit</button>
-                                <button class="btn-small" onclick="deleteWorkout('${escapeHtml(workout.id)}', '${escapeHtml(workout.name)}')">🗑️ Del</button>
+            // Display all workouts (no grouping since unit/week are in name now)
+            workouts.forEach(workout => {
+                const div = document.createElement('div');
+                div.className = 'exercise-item';
+                div.style.marginBottom = '15px';
+                
+                const exerciseCount = workout.blocks.reduce((sum, b) => sum + b.exercises.length, 0);
+                
+                div.innerHTML = `
+                    <div style="display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: center;">
+                        <div>
+                            <div style="font-weight: 600; margin-bottom: 5px;">${escapeHtml(workout.name)}</div>
+                            <div style="font-size: 0.85em; color: #666;">
+                                ${workout.blocks.length} Blöcke | ${exerciseCount} Übungen | ${workout.totalDuration} Min
                             </div>
                         </div>
-                    `;
-                    list.appendChild(div);
-                });
+                        <div style="display: flex; gap: 8px;">
+                            <button class="btn-small" onclick="editWorkout('${escapeHtml(workout.id)}')">✏️ Edit</button>
+                            <button class="btn-small" onclick="deleteWorkout('${escapeHtml(workout.id)}', '${escapeHtml(workout.name)}')">🗑️ Del</button>
+                        </div>
+                    </div>
+                `;
+                list.appendChild(div);
             });
         }
         
@@ -1867,7 +1825,7 @@
             
             let html = `
                 <div style="background: #f5f5f5; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
-                    <div><strong>Unit ${workout.unit}</strong> | Woche ${workout.week} | Level ${workout.difficulty}</div>
+                    <div><strong>${escapeHtml(workout.name)}</strong></div>
                     <div style="font-size: 0.9em; color: #666; margin-top: 5px;">${escapeHtml(workout.description)}</div>
                 </div>
                 
@@ -1897,7 +1855,11 @@
                                         Sets: ${ex.sets} | Reps: ${ex.reps} | Notes: ${escapeHtml(ex.notes || '-')}
                                     </div>
                                 </div>
-                                <button class="btn-small" onclick="editBlockExercise(${blockIdx}, ${exIdx})" style="white-space: nowrap;">✏️ Edit</button>
+                                <div style="display: flex; gap: 4px;">
+                                    ${exIdx > 0 ? `<button class="btn-small" onclick="moveExerciseUp(${blockIdx}, ${exIdx})" style="white-space: nowrap;">⬆️</button>` : ''}
+                                    ${exIdx < block.exercises.length - 1 ? `<button class="btn-small" onclick="moveExerciseDown(${blockIdx}, ${exIdx})" style="white-space: nowrap;">⬇️</button>` : ''}
+                                    <button class="btn-small" onclick="editBlockExercise(${blockIdx}, ${exIdx})" style="white-space: nowrap;">✏️</button>
+                                </div>
                             </div>
                         </div>
                     `;
@@ -1939,6 +1901,20 @@
             currentEditingWorkout.blocks[blockIdx].exercises[exIdx].notes = notes;
             
             // Refresh modal
+            editWorkout(currentEditingWorkout.id);
+        }
+
+        function moveExerciseUp(blockIdx, exIdx) {
+            if (exIdx === 0) return; // Already at top
+            const block = currentEditingWorkout.blocks[blockIdx];
+            [block.exercises[exIdx - 1], block.exercises[exIdx]] = [block.exercises[exIdx], block.exercises[exIdx - 1]];
+            editWorkout(currentEditingWorkout.id);
+        }
+
+        function moveExerciseDown(blockIdx, exIdx) {
+            const block = currentEditingWorkout.blocks[blockIdx];
+            if (exIdx === block.exercises.length - 1) return; // Already at bottom
+            [block.exercises[exIdx], block.exercises[exIdx + 1]] = [block.exercises[exIdx + 1], block.exercises[exIdx]];
             editWorkout(currentEditingWorkout.id);
         }
         
@@ -2025,9 +2001,6 @@
         function addNewWorkout() {
             newWorkoutData = { blocks: [] };
             document.getElementById('newWorkoutName').value = '';
-            document.getElementById('newWorkoutUnit').value = '';
-            document.getElementById('newWorkoutWeek').value = '';
-            document.getElementById('newWorkoutDifficulty').value = '';
             document.getElementById('newWorkoutDescription').value = '';
             document.getElementById('newWorkoutDuration').value = '';
             document.getElementById('newWorkoutAge').value = '';
@@ -2143,30 +2116,24 @@
 
         async function saveNewWorkout() {
             const name = document.getElementById('newWorkoutName').value.trim();
-            const unit = document.getElementById('newWorkoutUnit').value;
-            const week = document.getElementById('newWorkoutWeek').value;
-            const difficulty = document.getElementById('newWorkoutDifficulty').value;
             const description = document.getElementById('newWorkoutDescription').value.trim();
             const duration = document.getElementById('newWorkoutDuration').value;
             const age = document.getElementById('newWorkoutAge').value.trim();
             
-            if (!name || !unit || !week || !difficulty || !duration || newWorkoutData.blocks.length === 0) {
-                alert('Bitte alle erforderlichen Felder ausfüllen und mindestens einen Block hinzufügen!');
+            if (!name || !duration || newWorkoutData.blocks.length === 0) {
+                alert('Bitte Name, Dauer und mindestens einen Block ausfüllen!');
                 return;
             }
             
-            // Generate ID
-            const id = `ath_wk${week}_einheit_${unit.toLowerCase()}`;
+            // Generate simple ID
+            const id = 'ath_' + Date.now();
             
             const workout = {
                 id: id,
                 name: name,
-                week: parseInt(week),
-                unit: unit,
                 description: description,
                 targetAge: age || '10-11',
                 totalDuration: parseInt(duration) || 40,
-                difficulty: parseInt(difficulty),
                 goal: '',
                 notes: '',
                 blocks: newWorkoutData.blocks
