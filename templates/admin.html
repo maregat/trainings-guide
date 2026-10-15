@@ -1937,11 +1937,7 @@
                                         Sets: ${ex.sets} | Reps: ${ex.reps} | Notes: ${escapeHtml(ex.notes || '-')}
                                     </div>
                                 </div>
-                                <div style="display: flex; gap: 4px;">
-                                    ${exIdx > 0 ? `<button class="btn-small" onclick="moveExerciseUp(${blockIdx}, ${exIdx})" style="white-space: nowrap;">⬆️</button>` : ''}
-                                    ${exIdx < block.exercises.length - 1 ? `<button class="btn-small" onclick="moveExerciseDown(${blockIdx}, ${exIdx})" style="white-space: nowrap;">⬇️</button>` : ''}
-                                    <button class="btn-small" onclick="editBlockExercise(${blockIdx}, ${exIdx})" style="white-space: nowrap;">✏️</button>
-                                </div>
+                                <button class="btn-small" onclick="editBlockExercise(${blockIdx}, ${exIdx})" style="white-space: nowrap;">✏️</button>
                             </div>
                         </div>
                     `;
@@ -1967,6 +1963,41 @@
             modal.style.display = 'block';
         }
         
+        // Old event delegation - remove this
+        // document.addEventListener('click', function(e) {
+        //     const btn = e.target.closest('[data-action]');
+        //     if (!btn) return;
+        //     
+        //     if (document.getElementById('workoutEditModal').style.display !== 'block') return;
+        //     
+        //     const action = btn.getAttribute('data-action');
+        //     const blockIdx = parseInt(btn.getAttribute('data-block'));
+        //     const exIdx = parseInt(btn.getAttribute('data-exercise'));
+        //     
+        //     switch(action) {
+        //         case 'moveUp':
+        //             moveExerciseUp(blockIdx, exIdx);
+        //             e.preventDefault();
+        //             e.stopPropagation();
+        //             break;
+        //         case 'moveDown':
+        //             moveExerciseDown(blockIdx, exIdx);
+        //             e.preventDefault();
+        //             e.stopPropagation();
+        //             break;
+        //         case 'edit':
+        //             editBlockExercise(blockIdx, exIdx);
+        //             e.preventDefault();
+        //             e.stopPropagation();
+        //             break;
+        //         case 'addExercise':
+        //             addExerciseToBlock(blockIdx);
+        //             e.preventDefault();
+        //             e.stopPropagation();
+        //             break;
+        //     }
+        // }, true);
+        
         function editBlockExercise(blockIdx, exIdx) {
             const exercise = currentEditingWorkout.blocks[blockIdx].exercises[exIdx];
             
@@ -1979,20 +2010,6 @@
             document.getElementById('exerciseEditSets').focus();
         }
 
-        function moveExerciseUp(blockIdx, exIdx) {
-            if (exIdx === 0) return; // Already at top
-            const block = currentEditingWorkout.blocks[blockIdx];
-            [block.exercises[exIdx - 1], block.exercises[exIdx]] = [block.exercises[exIdx], block.exercises[exIdx - 1]];
-            editWorkout(currentEditingWorkout.id);
-        }
-
-        function moveExerciseDown(blockIdx, exIdx) {
-            const block = currentEditingWorkout.blocks[blockIdx];
-            if (exIdx === block.exercises.length - 1) return; // Already at bottom
-            [block.exercises[exIdx], block.exercises[exIdx + 1]] = [block.exercises[exIdx + 1], block.exercises[exIdx]];
-            editWorkout(currentEditingWorkout.id);
-        }
-        
         function addExerciseToBlock(blockIdx) {
             populateExerciseSelect();
             document.getElementById('exerciseAddId').value = '';
@@ -2143,7 +2160,7 @@
         function confirmExerciseAdd() {
             if (!exerciseAddContext) return;
             
-            const exerciseId = document.getElementById('exerciseAddId').value.trim();
+            let exerciseId = document.getElementById('exerciseAddId').value.trim();
             const sets = document.getElementById('exerciseAddSets').value;
             const reps = document.getElementById('exerciseAddReps').value.trim();
             const notes = document.getElementById('exerciseAddNotes').value.trim();
@@ -2153,7 +2170,13 @@
                 return;
             }
             
-            const exercise = exercises.find(e => e.id === exerciseId);
+            // Try to find by ID or name
+            let exercise = exercises.find(e => e.id === exerciseId);
+            if (!exercise) {
+                exercise = exercises.find(e => e.name === exerciseId);
+                if (exercise) exerciseId = exercise.id;
+            }
+            
             if (!exercise) {
                 alert('Übung nicht gefunden!');
                 return;
