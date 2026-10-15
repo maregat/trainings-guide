@@ -1259,6 +1259,29 @@
           ]
         }
       ]
+    },
+    {
+      "id": "ath_1792054296655",
+      "name": "Test Einheit",
+      "description": "",
+      "targetAge": "10-11",
+      "totalDuration": 10,
+      "goal": "",
+      "notes": "",
+      "blocks": [
+        {
+          "name": "Test Block",
+          "duration": 10,
+          "exercises": [
+            {
+              "exerciseId": "str_warm_traben",
+              "sets": 1,
+              "reps": "5 min",
+              "notes": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

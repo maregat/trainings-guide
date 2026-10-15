@@ -864,6 +864,88 @@
         </div>
     </div>
 
+    <!-- Block Input Dialog Modal -->
+    <div class="modal" id="blockInputModal">
+        <div class="modal-content" style="width: 90%; max-width: 400px;">
+            <span class="modal-close" onclick="closeBlockInputModal()">&times;</span>
+            <h2>➕ Neuer Block</h2>
+            <div style="margin-top: 20px;">
+                <div style="margin-bottom: 15px;">
+                    <label style="font-weight: 600; display: block; margin-bottom: 5px;">Block-Name *</label>
+                    <input type="text" id="blockInputName" placeholder="z.B. Aufwärmen und Aktivieren" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label style="font-weight: 600; display: block; margin-bottom: 5px;">Dauer (Minuten) *</label>
+                    <input type="number" id="blockInputDuration" placeholder="z.B. 5" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                </div>
+                <div class="button-group">
+                    <button class="btn-primary" onclick="confirmBlockInput()">💾 Block hinzufügen</button>
+                    <button class="btn-secondary" onclick="closeBlockInputModal()">Abbrechen</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Exercise Input Dialog Modal (for editing) -->
+    <div class="modal" id="exerciseEditModal">
+        <div class="modal-content" style="width: 90%; max-width: 400px;">
+            <span class="modal-close" onclick="closeExerciseEditModal()">&times;</span>
+            <h2>✏️ Übung bearbeiten</h2>
+            <div style="margin-top: 20px;">
+                <div style="margin-bottom: 15px;">
+                    <label style="font-weight: 600; display: block; margin-bottom: 5px;">Sets *</label>
+                    <input type="number" id="exerciseEditSets" placeholder="1" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label style="font-weight: 600; display: block; margin-bottom: 5px;">Wiederholungen/Dauer *</label>
+                    <input type="text" id="exerciseEditReps" placeholder="z.B. 10 oder 30 Sek" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label style="font-weight: 600; display: block; margin-bottom: 5px;">Notizen</label>
+                    <input type="text" id="exerciseEditNotes" placeholder="z.B. locker durchführen" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                </div>
+                <div class="button-group">
+                    <button class="btn-primary" onclick="confirmExerciseEdit()">💾 Speichern</button>
+                    <button class="btn-secondary" onclick="closeExerciseEditModal()">Abbrechen</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Exercise ID Input Dialog Modal (for adding) -->
+    <div class="modal" id="exerciseAddModal">
+        <div class="modal-content" style="width: 90%; max-width: 600px;">
+            <span class="modal-close" onclick="closeExerciseAddModal()">&times;</span>
+            <h2>➕ Übung hinzufügen</h2>
+            <div style="margin-top: 20px;">
+                <div style="margin-bottom: 15px;">
+                    <label style="font-weight: 600; display: block; margin-bottom: 5px;">Übungs-ID *</label>
+                    <input type="text" id="exerciseAddId" placeholder="z.B. str_warm_traben" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                    <div style="font-size: 0.85em; color: #666; margin-top: 5px;">Verfügbare Übungen:</div>
+                    <select id="exerciseAddSelect" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px; margin-top: 5px;">
+                        <option value="">-- Aus Liste wählen --</option>
+                    </select>
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label style="font-weight: 600; display: block; margin-bottom: 5px;">Sets *</label>
+                    <input type="number" id="exerciseAddSets" placeholder="1" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label style="font-weight: 600; display: block; margin-bottom: 5px;">Wiederholungen/Dauer *</label>
+                    <input type="text" id="exerciseAddReps" placeholder="z.B. 10 oder 30 Sek" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label style="font-weight: 600; display: block; margin-bottom: 5px;">Notizen</label>
+                    <input type="text" id="exerciseAddNotes" placeholder="z.B. locker durchführen" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                </div>
+                <div class="button-group">
+                    <button class="btn-primary" onclick="confirmExerciseAdd()">💾 Übung hinzufügen</button>
+                    <button class="btn-secondary" onclick="closeExerciseAddModal()">Abbrechen</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         let currentPassword = '';
         let categories = {};
@@ -1887,21 +1969,14 @@
         
         function editBlockExercise(blockIdx, exIdx) {
             const exercise = currentEditingWorkout.blocks[blockIdx].exercises[exIdx];
-            const sets = prompt('Sets:', exercise.sets);
-            if (sets === null) return;
             
-            const reps = prompt('Reps/Duration:', exercise.reps);
-            if (reps === null) return;
+            document.getElementById('exerciseEditSets').value = exercise.sets;
+            document.getElementById('exerciseEditReps').value = exercise.reps;
+            document.getElementById('exerciseEditNotes').value = exercise.notes || '';
             
-            const notes = prompt('Notes:', exercise.notes || '');
-            if (notes === null) return;
-            
-            currentEditingWorkout.blocks[blockIdx].exercises[exIdx].sets = parseInt(sets) || 1;
-            currentEditingWorkout.blocks[blockIdx].exercises[exIdx].reps = reps;
-            currentEditingWorkout.blocks[blockIdx].exercises[exIdx].notes = notes;
-            
-            // Refresh modal
-            editWorkout(currentEditingWorkout.id);
+            exerciseEditContext = { blockIdx, exIdx };
+            document.getElementById('exerciseEditModal').style.display = 'block';
+            document.getElementById('exerciseEditSets').focus();
         }
 
         function moveExerciseUp(blockIdx, exIdx) {
@@ -1919,45 +1994,15 @@
         }
         
         function addExerciseToBlock(blockIdx) {
-            // Get list of exercises not in this block
-            const usedIds = new Set(currentEditingWorkout.blocks[blockIdx].exercises.map(e => e.exerciseId));
-            const available = exercises.filter(e => !usedIds.has(e.id));
+            populateExerciseSelect();
+            document.getElementById('exerciseAddId').value = '';
+            document.getElementById('exerciseAddSets').value = '1';
+            document.getElementById('exerciseAddReps').value = '';
+            document.getElementById('exerciseAddNotes').value = '';
             
-            if (available.length === 0) {
-                alert('Alle Übungen sind bereits in diesem Block vorhanden');
-                return;
-            }
-            
-            // Simple select via list
-            let message = 'Geben Sie die Übungs-ID ein:\n\n';
-            message += 'Verfügbare Übungen:\n';
-            available.slice(0, 20).forEach(e => {
-                message += `  ${e.id} - ${e.name}\n`;
-            });
-            if (available.length > 20) message += `  ... und ${available.length - 20} weitere\n`;
-            
-            const exerciseId = prompt(message);
-            if (!exerciseId) return;
-            
-            if (!exercises.find(e => e.id === exerciseId)) {
-                alert('Übungs-ID nicht gefunden');
-                return;
-            }
-            
-            if (usedIds.has(exerciseId)) {
-                alert('Diese Übung ist bereits in diesem Block vorhanden');
-                return;
-            }
-            
-            currentEditingWorkout.blocks[blockIdx].exercises.push({
-                exerciseId: exerciseId,
-                sets: 1,
-                reps: '1',
-                notes: ''
-            });
-            
-            // Refresh modal
-            editWorkout(currentEditingWorkout.id);
+            exerciseAddContext = { blockIdx };
+            document.getElementById('exerciseAddModal').style.display = 'block';
+            document.getElementById('exerciseAddId').focus();
         }
         
         async function saveWorkoutChanges() {
@@ -2014,11 +2059,24 @@
         }
 
         function addBlockToNewWorkout() {
-            const blockName = prompt('Block-Name (z.B. "Aufwärmen und Aktivieren"):');
-            if (!blockName) return;
+            document.getElementById('blockInputName').value = '';
+            document.getElementById('blockInputDuration').value = '';
+            document.getElementById('blockInputModal').style.display = 'block';
+            document.getElementById('blockInputName').focus();
+        }
+
+        function closeBlockInputModal() {
+            document.getElementById('blockInputModal').style.display = 'none';
+        }
+
+        function confirmBlockInput() {
+            const blockName = document.getElementById('blockInputName').value.trim();
+            const duration = document.getElementById('blockInputDuration').value;
             
-            const duration = prompt('Dauer (Minuten):');
-            if (!duration) return;
+            if (!blockName || !duration) {
+                alert('Bitte Block-Name und Dauer eingeben!');
+                return;
+            }
             
             newWorkoutData.blocks.push({
                 name: blockName,
@@ -2026,7 +2084,104 @@
                 exercises: []
             });
             
+            closeBlockInputModal();
             renderNewWorkoutBlocks();
+        }
+
+        // Exercise Edit Dialog
+        let exerciseEditContext = null;
+
+        function closeExerciseEditModal() {
+            document.getElementById('exerciseEditModal').style.display = 'none';
+            exerciseEditContext = null;
+        }
+
+        function confirmExerciseEdit() {
+            if (!exerciseEditContext) return;
+            
+            const sets = document.getElementById('exerciseEditSets').value;
+            const reps = document.getElementById('exerciseEditReps').value.trim();
+            const notes = document.getElementById('exerciseEditNotes').value.trim();
+            
+            if (!sets || !reps) {
+                alert('Bitte Sets und Wiederholungen eingeben!');
+                return;
+            }
+            
+            const { blockIdx, exIdx } = exerciseEditContext;
+            currentEditingWorkout.blocks[blockIdx].exercises[exIdx].sets = parseInt(sets) || 1;
+            currentEditingWorkout.blocks[blockIdx].exercises[exIdx].reps = reps;
+            currentEditingWorkout.blocks[blockIdx].exercises[exIdx].notes = notes;
+            
+            closeExerciseEditModal();
+            editWorkout(currentEditingWorkout.id);
+        }
+
+        // Exercise Add Dialog
+        let exerciseAddContext = null;
+
+        function closeExerciseAddModal() {
+            document.getElementById('exerciseAddModal').style.display = 'none';
+            exerciseAddContext = null;
+        }
+
+        function populateExerciseSelect() {
+            const select = document.getElementById('exerciseAddSelect');
+            select.innerHTML = '<option value="">-- Aus Liste wählen --</option>';
+            exercises.forEach(ex => {
+                const option = document.createElement('option');
+                option.value = ex.id;
+                option.textContent = ex.name;
+                select.appendChild(option);
+            });
+            
+            select.addEventListener('change', function() {
+                document.getElementById('exerciseAddId').value = this.value;
+            });
+        }
+
+        function confirmExerciseAdd() {
+            if (!exerciseAddContext) return;
+            
+            const exerciseId = document.getElementById('exerciseAddId').value.trim();
+            const sets = document.getElementById('exerciseAddSets').value;
+            const reps = document.getElementById('exerciseAddReps').value.trim();
+            const notes = document.getElementById('exerciseAddNotes').value.trim();
+            
+            if (!exerciseId || !sets || !reps) {
+                alert('Bitte Übung, Sets und Wiederholungen eingeben!');
+                return;
+            }
+            
+            const exercise = exercises.find(e => e.id === exerciseId);
+            if (!exercise) {
+                alert('Übung nicht gefunden!');
+                return;
+            }
+            
+            const { blockIdx, isNew } = exerciseAddContext;
+            
+            if (isNew) {
+                // Adding to new workout
+                newWorkoutData.blocks[blockIdx].exercises.push({
+                    exerciseId: exerciseId,
+                    sets: parseInt(sets) || 1,
+                    reps: reps,
+                    notes: notes
+                });
+                closeExerciseAddModal();
+                renderNewWorkoutBlocks();
+            } else {
+                // Adding to existing workout
+                currentEditingWorkout.blocks[blockIdx].exercises.push({
+                    exerciseId: exerciseId,
+                    sets: parseInt(sets) || 1,
+                    reps: reps,
+                    notes: notes
+                });
+                closeExerciseAddModal();
+                editWorkout(currentEditingWorkout.id);
+            }
         }
 
         function removeBlockFromNew(blockIdx) {
@@ -2035,27 +2190,15 @@
         }
 
         function addExerciseToNewBlock(blockIdx) {
-            const exerciseId = prompt('Übungs-ID eingeben:');
-            if (!exerciseId) return;
+            populateExerciseSelect();
+            document.getElementById('exerciseAddId').value = '';
+            document.getElementById('exerciseAddSets').value = '1';
+            document.getElementById('exerciseAddReps').value = '';
+            document.getElementById('exerciseAddNotes').value = '';
             
-            const exercise = exercises.find(e => e.id === exerciseId);
-            if (!exercise) {
-                alert('Übung nicht gefunden!');
-                return;
-            }
-            
-            const sets = prompt('Sets:') || '1';
-            const reps = prompt('Wiederholungen:') || '';
-            const notes = prompt('Notizen (optional):') || '';
-            
-            newWorkoutData.blocks[blockIdx].exercises.push({
-                exerciseId: exerciseId,
-                sets: parseInt(sets) || 1,
-                reps: reps,
-                notes: notes
-            });
-            
-            renderNewWorkoutBlocks();
+            exerciseAddContext = { blockIdx, isNew: true };
+            document.getElementById('exerciseAddModal').style.display = 'block';
+            document.getElementById('exerciseAddId').focus();
         }
 
         function removeExerciseFromNew(blockIdx, exIdx) {
