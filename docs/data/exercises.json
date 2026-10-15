@@ -1611,6 +1611,34 @@
       "poster": "./data/videos/single leg squads.jpg",
       "published": true,
       "isPartnerExercise": false
+    },
+    "str_einbeinige_kniebeuge_bank": {
+      "id": "str_einbeinige_kniebeuge_bank",
+      "name": "Einbeinige Kniebeuge (Bulgarische Split-Squats)",
+      "category": "strength_stability",
+      "description": "Hinteres Bein auf Bank/Stuhl, vorderes Bein Kniebeuge. Fokus auf Bein-Kraft und Balance.",
+      "duration": "5 je Bein",
+      "videoLink": {
+        "url": null,
+        "title": null
+      },
+      "poster": null,
+      "published": true,
+      "isPartnerExercise": false
+    },
+    "str_seilspringen": {
+      "id": "str_seilspringen",
+      "name": "Seilspringen",
+      "category": "strength_stability",
+      "description": "Klassisches Seilspringen für Rhythmus, Koordination und Schnelligkeit. Mit echtem Seil oder imaginär.",
+      "duration": "30-60 Sek",
+      "videoLink": {
+        "url": null,
+        "title": null
+      },
+      "poster": null,
+      "published": true,
+      "isPartnerExercise": false
     }
   }
 }
