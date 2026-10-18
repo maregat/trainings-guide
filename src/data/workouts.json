@@ -80,7 +80,7 @@
               "notes": "Auf Stepper (20cm), herabsteigen"
             },
             {
-              "exerciseId": "str_kniebeuge",
+              "exerciseId": "squad",
               "sets": 2,
               "reps": "10",
               "notes": ""
@@ -187,7 +187,7 @@
               "notes": ""
             },
             {
-              "exerciseId": "str_kniebeuge",
+              "exerciseId": "squad",
               "sets": 2,
               "reps": "12",
               "notes": "Progression von Woche 1"
@@ -288,7 +288,7 @@
               "notes": "Progression"
             },
             {
-              "exerciseId": "str_kniebeuge",
+              "exerciseId": "squad",
               "sets": 3,
               "reps": "10",
               "notes": "Ein Satz extra"
@@ -389,7 +389,7 @@
               "notes": "Reduktion"
             },
             {
-              "exerciseId": "str_kniebeuge",
+              "exerciseId": "squad",
               "sets": 2,
               "reps": "10",
               "notes": ""
@@ -1254,29 +1254,6 @@
               "exerciseId": "str_warm_traben",
               "sets": 1,
               "reps": "3 min",
-              "notes": ""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ath_1792054296655",
-      "name": "Test Einheit",
-      "description": "",
-      "targetAge": "10-11",
-      "totalDuration": 10,
-      "goal": "",
-      "notes": "",
-      "blocks": [
-        {
-          "name": "Test Block",
-          "duration": 10,
-          "exercises": [
-            {
-              "exerciseId": "str_warm_traben",
-              "sets": 1,
-              "reps": "5 min",
               "notes": ""
             }
           ]

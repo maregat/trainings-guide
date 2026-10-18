@@ -1388,20 +1388,6 @@
       "published": true,
       "isPartnerExercise": false
     },
-    "str_kniebeuge": {
-      "id": "str_kniebeuge",
-      "name": "Kniebeuge",
-      "category": "strength_stability",
-      "description": "Füße schulterbreit, Gesäß nach hinten unten, Knie über den Fußspitzen, Brust offen, Arme nach vorn. Tiefe so weit wie sauber möglich.",
-      "duration": "Variable je nach Trainingsplan",
-      "videoLink": {
-        "url": null,
-        "title": null
-      },
-      "poster": null,
-      "published": true,
-      "isPartnerExercise": false
-    },
     "str_ausfallschritt_rückwärts": {
       "id": "str_ausfallschritt_rückwärts",
       "name": "Ausfallschritt rückwärts",
