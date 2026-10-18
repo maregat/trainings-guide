@@ -1402,20 +1402,6 @@
       "published": true,
       "isPartnerExercise": false
     },
-    "str_step_up": {
-      "id": "str_step_up",
-      "name": "Step-up",
-      "category": "strength_stability",
-      "description": "Fuß ganz auf die Stufe, ohne Schwung hochdrücken, kontrolliert absenken. Stufe 20-30cm hoch.",
-      "duration": "Variable je nach Trainingsplan",
-      "videoLink": {
-        "url": null,
-        "title": null
-      },
-      "poster": null,
-      "published": true,
-      "isPartnerExercise": false
-    },
     "str_mini_band_seitschritte": {
       "id": "str_mini_band_seitschritte",
       "name": "Mini-Band-Seitschritte",
