@@ -253,19 +253,99 @@ def upload_video():
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
+def check_exercise_usage(exercise_id):
+    """
+    Check if an exercise is used in any workouts.
+    Returns: {
+        'isUsed': bool,
+        'usedIn': [{'workoutId': str, 'workoutName': str, 'blockName': str, 'blockIndex': int}, ...]
+    }
+    """
+    try:
+        with open('src/data/workouts.json', 'r') as f:
+            workouts = json.load(f)
+        
+        usage_list = []
+        
+        # Check each workout and its blocks
+        for workout_id, workout in workouts.items():
+            if 'blocks' not in workout:
+                continue
+            
+            for block_idx, block in enumerate(workout.get('blocks', [])):
+                # Check each exercise in the block
+                for exercise_idx, ex in enumerate(block.get('exercises', [])):
+                    if ex.get('exerciseId') == exercise_id:
+                        usage_list.append({
+                            'workoutId': workout_id,
+                            'workoutName': workout.get('name', 'Unknown'),
+                            'blockName': block.get('name', f'Block {block_idx + 1}'),
+                            'blockIndex': block_idx,
+                            'exerciseIndex': exercise_idx
+                        })
+        
+        return {
+            'isUsed': len(usage_list) > 0,
+            'usedIn': usage_list
+        }
+    except Exception as e:
+        print(f"Error checking exercise usage: {e}")
+        return {'isUsed': False, 'usedIn': []}
+
 @app.route('/api/exercises/<exercise_id>', methods=['DELETE'])
 def delete_exercise(exercise_id):
-    """Delete exercise (metadata AND video files)"""
+    """Delete exercise (metadata AND video files)
+    
+    Request JSON can include:
+    - password: required
+    - confirmed: if true, also remove from all workouts
+    """
     try:
         password = request.json.get('password', '')
         if password != ADMIN_PASSWORD:
             return jsonify({'error': 'Invalid password'}), 403
+        
+        confirmed = request.json.get('confirmed', False)
+        
+        # Check if exercise is used in any workouts
+        usage_info = check_exercise_usage(exercise_id)
+        
+        # If used and not confirmed, return usage info
+        if usage_info['isUsed'] and not confirmed:
+            return jsonify({
+                'isUsed': True,
+                'usedIn': usage_info['usedIn'],
+                'message': f"Diese Übung wird in {len(usage_info['usedIn'])} Trainingseinheit(en) verwendet."
+            })
         
         with open('src/data/exercises.json', 'r') as f:
             data = json.load(f)
         
         if exercise_id not in data['exercises']:
             return jsonify({'error': 'Exercise not found'}), 404
+        
+        # If confirmed and used, remove from all workouts
+        if confirmed and usage_info['isUsed']:
+            try:
+                with open('src/data/workouts.json', 'r') as f:
+                    workouts = json.load(f)
+                
+                # Remove exercise from all blocks in all workouts
+                for workout_id, workout in workouts.items():
+                    if 'blocks' in workout:
+                        for block in workout['blocks']:
+                            if 'exercises' in block:
+                                # Filter out the exercise with matching id
+                                block['exercises'] = [
+                                    ex for ex in block['exercises'] 
+                                    if ex.get('exerciseId') != exercise_id
+                                ]
+                
+                # Save modified workouts
+                with open('src/data/workouts.json', 'w') as f:
+                    json.dump(workouts, f, indent=2, ensure_ascii=False)
+            except Exception as e:
+                return jsonify({'error': f'Error removing from workouts: {str(e)}'}), 500
         
         # Delete video file
         current_video = data['exercises'][exercise_id].get('videoLink', {}).get('url', '')

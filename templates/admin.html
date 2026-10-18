@@ -946,11 +946,36 @@
         </div>
     </div>
 
+    <!-- Delete Exercise Confirmation Modal -->
+    <div class="modal" id="exerciseDeleteConfirmModal">
+        <div class="modal-content" style="width: 90%; max-width: 600px;">
+            <span class="modal-close" onclick="closeExerciseDeleteConfirmModal()">&times;</span>
+            <h2>⚠️ Übung löschen</h2>
+            <div style="background: #fff3cd; padding: 15px; border-radius: 6px; margin: 15px 0; border-left: 4px solid #ff9800;">
+                <p style="font-weight: 600; margin-bottom: 10px;">Diese Übung wird noch verwendet!</p>
+                <p id="exerciseDeleteUsageInfo" style="margin-bottom: 15px; font-size: 0.95em;"></p>
+                <p style="color: #d32f2f; font-weight: 600; margin-top: 10px;">⚠️ Was passiert beim Löschen:</p>
+                <ul style="margin-left: 20px; margin-top: 5px;">
+                    <li>Übung wird aus der Bibliothek gelöscht</li>
+                    <li>Eintrag wird aus allen betroffenen Trainingseinheiten entfernt</li>
+                    <li>Die Trainingseinheiten bleiben bestehen, nur die Übung wird entfernt</li>
+                </ul>
+            </div>
+            <div class="button-group">
+                <button class="btn-primary" style="background: #ff6b6b;" onclick="confirmExerciseDelete()">🗑️ Ja, löschen</button>
+                <button class="btn-secondary" onclick="closeExerciseDeleteConfirmModal()">Abbrechen</button>
+            </div>
+        </div>
+    </div>
+
     <script>
+
+
         let currentPassword = '';
         let categories = {};
         let exercises = [];
         let currentEditExerciseId = null;
+        let currentExerciseToDelete = null;  // New: for delete confirmation
         let selectedVideoFile = null;
         let currentCategoryFilter = '';
         let workouts = [];
@@ -1257,12 +1282,64 @@
         });
 
         function deleteExercise(exerciseId) {
-            if (!confirm('Übung und Video wirklich löschen?')) return;
-
+            // First DELETE request without confirmation
+            // Backend will check if exercise is used
             fetch(`/api/exercises/${exerciseId}`, {
                 method: 'DELETE',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({password: currentPassword})
+            })
+            .then(r => r.json())
+            .then(data => {
+                // If exercise is used somewhere, show confirmation modal
+                if (data.isUsed) {
+                    currentExerciseToDelete = exerciseId;
+                    
+                    // Build usage information text
+                    let usageText = `Diese Übung wird an ${data.usedIn.length} Stelle(n) verwendet:\n\n`;
+                    data.usedIn.forEach(usage => {
+                        usageText += `• ${usage.workoutName} → ${usage.blockName}\n`;
+                    });
+                    
+                    document.getElementById('exerciseDeleteUsageInfo').textContent = usageText;
+                    document.getElementById('exerciseDeleteConfirmModal').classList.add('active');
+                    return;
+                }
+                
+                // If not used or successfully deleted after confirmation
+                if (data.success) {
+                    exercises = exercises.filter(e => e.id !== exerciseId);
+                    loadExercisesList();
+                    loadVideoExerciseSelect();
+                    showExercisesStatus('✅ Übung gelöscht', 'success');
+                    return;
+                }
+                
+                if (data.error) {
+                    showExercisesStatus('Error: ' + data.error, 'error');
+                }
+            })
+            .catch(e => showExercisesStatus('Error: ' + e.message, 'error'));
+        }
+
+        function closeExerciseDeleteConfirmModal() {
+            document.getElementById('exerciseDeleteConfirmModal').classList.remove('active');
+            currentExerciseToDelete = null;
+        }
+
+        function confirmExerciseDelete() {
+            if (!currentExerciseToDelete) return;
+            
+            closeExerciseDeleteConfirmModal();
+            
+            // Send DELETE with confirmed flag
+            fetch(`/api/exercises/${currentExerciseToDelete}`, {
+                method: 'DELETE',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    password: currentPassword,
+                    confirmed: true
+                })
             })
             .then(r => r.json())
             .then(data => {
@@ -1271,10 +1348,12 @@
                     return;
                 }
 
-                exercises = exercises.filter(e => e.id !== exerciseId);
-                loadExercisesList();
-                loadVideoExerciseSelect();
-                showExercisesStatus('✅ Übung gelöscht', 'success');
+                if (data.success) {
+                    exercises = exercises.filter(e => e.id !== currentExerciseToDelete);
+                    loadExercisesList();
+                    loadVideoExerciseSelect();
+                    showExercisesStatus('✅ Übung und Einträge gelöscht', 'success');
+                }
             })
             .catch(e => showExercisesStatus('Error: ' + e.message, 'error'));
         }
