@@ -1269,10 +1269,10 @@
       "description": "Auf Signal plötzlich auf einem Bein stehen und Balance halten (3 Sek). Verschiedene Niveau-Varianten 1-5.",
       "duration": "3 Sätze à 5 Stopps",
       "videoLink": {
-        "url": null,
-        "title": null
+        "url": "./data/videos/fifa_lauf_stopp_spiel.mp4",
+        "title": "FIFA 1: Lauf-Stopp-Spiel"
       },
-      "poster": null,
+      "poster": "./data/videos/fifa_lauf_stopp_spiel.jpg",
       "published": true,
       "isPartnerExercise": false
     },
@@ -1283,10 +1283,10 @@
       "description": "Seitlich-vorwärts von Bein zu Bein springen, weich landen. Nach der Landung kurz stabil stehen.",
       "duration": "2 Sätze à 10 Sprünge (5 pro Bein)",
       "videoLink": {
-        "url": null,
-        "title": null
+        "url": "./data/videos/fifa_skating_sprünge.mp4",
+        "title": "FIFA 2: Skating-Sprünge"
       },
-      "poster": null,
+      "poster": "./data/videos/fifa_skating_sprünge.jpg",
       "published": true,
       "isPartnerExercise": false
     },
@@ -1297,10 +1297,10 @@
       "description": "Auf einem Bein stehen, Ball an die Wand werfen und fangen. Verschiedene Niveau-Varianten. Je Bein 1 Satz.",
       "duration": "Je Bein 20-30 Sekunden",
       "videoLink": {
-        "url": null,
-        "title": null
+        "url": "./data/videos/fifa_einbeinstand_ball.mp4",
+        "title": "FIFA 3: Einbeinstand mit Ball (Wand)"
       },
-      "poster": null,
+      "poster": "./data/videos/fifa_einbeinstand_ball.jpg",
       "published": true,
       "isPartnerExercise": false
     },
@@ -1311,10 +1311,10 @@
       "description": "Hoher Stütz, abwechselnd eine Hand zur Schulter tippen (ersetzt Tunnelübung). Verschiedene Varianten für Level 1-5.",
       "duration": "3 Sätze à 15 Sekunden",
       "videoLink": {
-        "url": null,
-        "title": null
+        "url": "./data/videos/fifa_liegestütz_variation.mp4",
+        "title": "FIFA 4: Liegestütz-Variation"
       },
-      "poster": null,
+      "poster": "./data/videos/fifa_liegestütz_variation.jpg",
       "published": true,
       "isPartnerExercise": false
     },
@@ -1325,10 +1325,10 @@
       "description": "Auf einem Bein springen, auf demselben Bein landen und 3 Sekunden halten. Verschiedene Richtungen und Varianten.",
       "duration": "2 Sätze à 5 Sprünge pro Bein",
       "videoLink": {
-        "url": null,
-        "title": null
+        "url": "./data/videos/fifa_einbeinsprünge.mp4",
+        "title": "FIFA 5: Einbeinsprünge"
       },
-      "poster": null,
+      "poster": "./data/videos/fifa_einbeinsprünge.jpg",
       "published": true,
       "isPartnerExercise": false
     },
@@ -1339,10 +1339,10 @@
       "description": "Krebsgang: Bauch nach oben, Hände nach hinten, Füße nach vorn bis zur Streckung. Verschiedene Varianten und Levelsteigerungen.",
       "duration": "3 Sätze à 15 Sekunden (Level 3: 5-10m Krebsgang)",
       "videoLink": {
-        "url": null,
-        "title": null
+        "url": "./data/videos/fifa_spiderman.mp4",
+        "title": "FIFA 6: Spiderman"
       },
-      "poster": null,
+      "poster": "./data/videos/fifa_spiderman.jpg",
       "published": true,
       "isPartnerExercise": false
     },
